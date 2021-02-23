@@ -127,7 +127,7 @@
         "title": "Anthropocene Campus Venice 2021"
     },
     "anthropocene-east-asia": {
-        "abstract": "Where is the Anthropocene? If seen from a corner of the East Asian Continent/Peninsula/Archipelago, does the same image come into focus as seen from other parts of the world? Although the notion of the Anthropocene points to humanity\u2019s involvement in Earth history, especially in light of contemporary global environmental change, the very same planet is comprised of individual ecological niches and diverse cultures existing within particular milieu. So we might also ask: Who is this humanity? Collaborating with both Japanese and European museums and their associated communities, the aim of the project is to design a sequence of events to explore the conceptual, material, and immaterial cultural forms through which environmental knowledge has historically been recognized, organized, activated, and transmitted in East Asia by way of conferences, public events, and publications.",
+        "abstract": "Where is the Anthropocene? If seen from a corner of the East Asian Continent/Peninsula/Archipelago, does the same image come into focus as seen from other parts of the world? Although the notion of the Anthropocene points to humanity\u2019s involvement in Earth history, especially in light of contemporary global environmental change, the very same planet is comprised of individual ecological niches and diverse cultures existing within particular milieu. So we might also ask: Who is this humanity? Collaborating with both Japanese and European museums and their associated communities, the aim of the project was to design a sequence of events to explore the conceptual, material, and immaterial cultural forms through which environmental knowledge has historically been recognized, organized, activated, and transmitted in East Asia by way of conferences, public events, and publications.",
         "content": [
             {
                 "text": "Newspaper Sketches of Ocean Waves (2016), pen on Inkjet Prints. Image courtesy of the artist Hicosaka Toshiaki",
@@ -1108,7 +1108,7 @@
             220,
             226
         ],
-        "link": "https://www.anthropocene-curriculum.org/project/lisboa-parallax-2020/",
+        "link": "https://www.anthropocene-curriculum.org/project/parallax-lisboa/lisboa-parallax-2020/",
         "meta_datetime": "2019-08-07T13:30:28",
         "methods": [
             10,
@@ -1450,6 +1450,33 @@
         ],
         "subtitle": "Symposium at Weisman Art Museum, Minneapolis \u2013 June 20, 2018",
         "title": "Project Launch Minneapolis"
+    },
+    "re-patterning-with-kudzu": {
+        "abstract": "It is time to contend with kudzu, the multifaceted plant that is both a monolithic myth\u2014the \u201cvine that ate the South\u201d\u2014and a rooted, living plurality comprised of at least five species and subspecies of semi-woody climbing vines in the Pueraria genus. Transplanted from East Asia in an age of imperial expansion and bioprospecting, Pueraria species have become firmly rooted in the natural-cultural landscape of the Southeastern United States over the past 150 years. Meanwhile the myth of kudzu has seeped into the collective consciousness of Americans well beyond the plant\u2019s biological range, becoming a rallying symbol for the \u201cwar on invasive species,\u201d which has claimed the attention and energy of conservation biologists, agrochemical engineers, and weekend \u201cweed warriors\u201d across the United States in recent decades.",
+        "content": [
+            {
+                "text": "Ellie Irons in collaboration with Angela Dittmar and Pueraria montana, Chattanooga, Tennessee, September 1, 2019.",
+                "type": "image"
+            }
+        ],
+        "folksonomy": [],
+        "id": 8790,
+        "keywords": [
+            174,
+            182,
+            239,
+            321,
+            322,
+            264
+        ],
+        "link": "https://www.anthropocene-curriculum.org/project/mississippi/field-stations/field-station-5-commodity-exploitation/natchez-etiologies-of-athropogenic-emergence/re-patterning-with-kudzu/",
+        "meta_datetime": "2019-09-11T12:00:12",
+        "methods": [
+            5,
+            3
+        ],
+        "subtitle": "Reckoning in Search of Regeneration",
+        "title": "Re-Patterning with Kudzu"
     },
     "reshaping-the-shape-embodiment-ecology-and-culture-of-a-postnatural-carp": {
         "abstract": "There are some species that have been bolstered rather than hampered by the era of the Anthropocene. Through their work, Sarah Lewison and Andrew Yang trace the postnatural expansion of one such species, seeking modes of convivial coexistence as opposed to eradication.",
