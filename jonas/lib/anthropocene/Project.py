@@ -12,6 +12,7 @@ class Project:
         data['subtitle'] = self.raw_data['acf']['subtitle']
         data['abstract'] = get_text_from_html(self.raw_data['acf']['abstract'])
         data['link'] = self.raw_data['link'].replace('content.', 'www.')
+        data['tags'] = self.raw_data['method'] + self.raw_data['keyword'] + self.raw_data['folksonomy']
         data['content'] = self._get_contents()
 
         return data

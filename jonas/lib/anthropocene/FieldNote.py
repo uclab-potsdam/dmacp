@@ -11,6 +11,7 @@ class FieldNote:
 
         data['link'] = 'https://notes.anthropocene-curriculum.org/id/%s' % self.raw_data['id']
         data['text'] = get_text_from_html(self.raw_data['acf']['text'])
+        data['tags'] = self.raw_data['method'] + self.raw_data['keyword'] + self.raw_data['folksonomy']
 
         return data
 
