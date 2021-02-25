@@ -1,0 +1,36 @@
+{
+    "DATE": [
+        "the opening week",
+        "recent years"
+    ],
+    "GPE": [
+        "US",
+        "Germany",
+        "Carbondale",
+        "Illinois",
+        "China",
+        "Chicago",
+        "Berlin",
+        "Louisiana",
+        "Tiergarten"
+    ],
+    "LOC": [
+        "Southern Illinois",
+        "Mississippi River"
+    ],
+    "NORP": [
+        "Asian"
+    ],
+    "PERSON": [
+        "Sarah Lewison",
+        "Andy Yang",
+        "Florian Ruland",
+        "Swan Parsons",
+        "Alexandra Toland Closing",
+        "Andrew Yang",
+        "Alexandra Toland"
+    ],
+    "WORK_OF_ART": [
+        "The Shape of a Practice"
+    ]
+}

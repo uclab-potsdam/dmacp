@@ -1,0 +1,41 @@
+{
+    "DATE": [
+        "some fifty years ago"
+    ],
+    "GPE": [
+        "Paducah",
+        "Kentucky",
+        "Carbondale",
+        "Mississippi",
+        "US",
+        "Ohio",
+        "Mississippi Rivers"
+    ],
+    "LOC": [
+        "Confluence",
+        "Great Lakes"
+    ],
+    "NORP": [
+        "Asian",
+        "Midwestern",
+        "Americans"
+    ],
+    "ORG": [
+        "Fin Gourmet",
+        "Fin Gourmet\u2019s",
+        "the Field Station 4",
+        "Crilly"
+    ],
+    "PERSON": [
+        "John Crilly",
+        "Lula Luu",
+        "Crilly",
+        "Luu"
+    ],
+    "TIME": [
+        "just over an hour"
+    ],
+    "WORK_OF_ART": [
+        "The Politics and Economics of Care"
+    ]
+}

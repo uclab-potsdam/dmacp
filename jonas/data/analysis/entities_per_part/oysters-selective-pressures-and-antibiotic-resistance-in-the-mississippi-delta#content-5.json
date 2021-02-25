@@ -1,0 +1,33 @@
+{
+    "DATE": [
+        "the past year",
+        "26 July 2019",
+        "2018",
+        "the past hundred years or so"
+    ],
+    "GPE": [
+        "Louisiana",
+        "USA",
+        "New Orleans"
+    ],
+    "LOC": [
+        "the Mississippi River Delta",
+        "the Global South",
+        "the Mississippi River"
+    ],
+    "ORG": [
+        "CDC",
+        "the U.S. Center for Disease Control Prevention",
+        "HAI",
+        "Journal of Water Supply: Research and Technology-Aqua",
+        "Cancer Alley",
+        "the Louisiana Environmental Action Network",
+        "the Concerned Citizens of St. John"
+    ],
+    "PERSON": [
+        "Raj Boopathy"
+    ],
+    "TIME": [
+        "ten hours"
+    ]
+}

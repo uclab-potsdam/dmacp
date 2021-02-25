@@ -1,0 +1,23 @@
+{
+    "DATE": [
+        "the last decades",
+        "the last three years",
+        "2016",
+        "the seven years",
+        "the last seven years",
+        "30 years",
+        "the last thirty years",
+        "the last ten years"
+    ],
+    "GPE": [
+        "Mississippi"
+    ],
+    "LOC": [
+        "Mississippi",
+        "the Mississippi River"
+    ],
+    "ORG": [
+        "the New York Times",
+        "EPA"
+    ]
+}

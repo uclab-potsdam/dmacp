@@ -1,0 +1,36 @@
+{
+    "DATE": [
+        "August",
+        "today"
+    ],
+    "GPE": [
+        "NJ",
+        "Louisiana"
+    ],
+    "LOC": [
+        "Gulf Coast"
+    ],
+    "NORP": [
+        "Indigenous"
+    ],
+    "ORG": [
+        "the State of Louisiana",
+        "the Native American Commission",
+        "Commission",
+        "the Louisiana Department of Indian Affairs",
+        "the State of",
+        "State Recognition",
+        "the U.S. Department of Agriculture",
+        "the BP Oil Spill",
+        "Representative Scalise",
+        "Traditional Harvesters",
+        "the First Peoples Conservation Council"
+    ],
+    "PERSON": [
+        "Parfait-Dardar",
+        "Tanner Magee",
+        "Steve Scalise",
+        "Theresa Dardar",
+        "Philippe"
+    ]
+}

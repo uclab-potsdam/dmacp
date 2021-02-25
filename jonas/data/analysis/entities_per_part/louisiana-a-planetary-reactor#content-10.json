@@ -1,0 +1,39 @@
+{
+    "DATE": [
+        "As early as 1920",
+        "1937",
+        "1948",
+        "a week",
+        "the day",
+        "a few days"
+    ],
+    "GPE": [
+        "US"
+    ],
+    "LOC": [
+        "the River Journey"
+    ],
+    "NORP": [
+        "US American",
+        "German",
+        "European"
+    ],
+    "ORG": [
+        "Staudinger\u2019s",
+        "Exxon",
+        "Baton Rouge"
+    ],
+    "PERSON": [
+        "Hermann Staudinger",
+        "Der Aufstand der technischen",
+        "Sklaven",
+        "Essen",
+        "Hans von Chamier Verla"
+    ],
+    "TIME": [
+        "the early morning"
+    ],
+    "WORK_OF_ART": [
+        "Nobel Prize Laureate"
+    ]
+}

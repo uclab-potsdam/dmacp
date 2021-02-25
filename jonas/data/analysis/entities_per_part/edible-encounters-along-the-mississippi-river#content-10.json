@@ -1,0 +1,25 @@
+{
+    "DATE": [
+        "Four-year-olds",
+        "forty-year-olds",
+        "this year",
+        "2020",
+        "one hundred years",
+        "days long ago"
+    ],
+    "LOC": [
+        "the Mississippi River"
+    ],
+    "NORP": [
+        "Austrian",
+        "American",
+        "German"
+    ],
+    "PERSON": [
+        "Tahani Nadim",
+        "Stockbrot"
+    ],
+    "PRODUCT": [
+        "Campfire Marshmallows"
+    ]
+}

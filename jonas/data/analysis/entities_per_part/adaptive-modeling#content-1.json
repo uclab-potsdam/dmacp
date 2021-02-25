@@ -1,0 +1,46 @@
+{
+    "DATE": [
+        "1970s",
+        "2012",
+        "the 1960s",
+        "4 (1973",
+        "1973",
+        "the 1970s"
+    ],
+    "GPE": [
+        "Cambridge",
+        "Holling"
+    ],
+    "LOC": [
+        "Obergurgl"
+    ],
+    "NORP": [
+        "Canadian"
+    ],
+    "ORG": [
+        "Polity Press",
+        "Annual Review of Ecology and Systematics",
+        "eco)systems",
+        "the Institute of Animal Resource Ecology",
+        "the University of British Columbia",
+        "the Ecology Project",
+        "the International Institute for Applied Systems Analysis",
+        "IIASA",
+        "A. D. Chambers",
+        "the Alpine Research Center of Innsbruck University",
+        "UNESCO",
+        "the Biosphere Program",
+        "MAB",
+        "Tyrolean Alpine"
+    ],
+    "PERSON": [
+        "Edwards Lorenz\u2019 Chaos Theory",
+        "Ren\u00e9 Thom\u2019s",
+        "Crawford S. Holling",
+        "S. Holling",
+        "C. S. Holling"
+    ],
+    "WORK_OF_ART": [
+        "Resilience and Stability of Ecosystems"
+    ]
+}

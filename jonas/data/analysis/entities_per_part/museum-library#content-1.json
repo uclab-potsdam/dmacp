@@ -1,0 +1,32 @@
+{
+    "DATE": [
+        "2013"
+    ],
+    "GPE": [
+        "the United States",
+        "Berkeley"
+    ],
+    "LOC": [
+        "the Global South"
+    ],
+    "NORP": [
+        "Post\u2010Pasteurian"
+    ],
+    "ORG": [
+        "the New York Public Library",
+        "post-PasteurianHeather Paxson",
+        "University of California Press",
+        "the National Academy of Sciences",
+        "Museum of Human Welfare",
+        "The Museum of Innocence",
+        "the Museum of the Anthropocene"
+    ],
+    "PERSON": [
+        "seawaterStefan Helmreich",
+        "Borges",
+        "Orhan Pamuk\u2019s"
+    ],
+    "WORK_OF_ART": [
+        "La biblioteca de Babel"
+    ]
+}

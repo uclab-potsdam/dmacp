@@ -1,0 +1,20 @@
+{
+    "DATE": [
+        "the last decades",
+        "weekly",
+        "daily",
+        "yearly",
+        "seven-day",
+        "winter"
+    ],
+    "GPE": [
+        "Mississippi",
+        "Louisiana"
+    ],
+    "LOC": [
+        "the Mississippi River"
+    ],
+    "PRODUCT": [
+        "ProPublica"
+    ]
+}

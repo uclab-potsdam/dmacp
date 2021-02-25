@@ -1,0 +1,69 @@
+{
+    "DATE": [
+        "two days",
+        "the 1970s",
+        "the end of the two-day"
+    ],
+    "EVENT": [
+        "post-Katrina",
+        "Hurricane Katrina"
+    ],
+    "FAC": [
+        "this River Road",
+        "the Industrial Canal",
+        "the Bonne Carr\u00e9 Spillway"
+    ],
+    "GPE": [
+        "New Orleans",
+        "the United States",
+        "Reserve",
+        "LA",
+        "Baton Rouge",
+        "Washington",
+        "D.C.",
+        "Louisiana",
+        "America",
+        "Queen Sugar"
+    ],
+    "LOC": [
+        "Europe",
+        "Asia",
+        "the Anthropocene River Campus",
+        "Mississippi River Delta",
+        "Earth",
+        "Mississippi River",
+        "the Mississippi River",
+        "Gulf",
+        "Deep South"
+    ],
+    "NORP": [
+        "African American"
+    ],
+    "ORG": [
+        "the Lower 9th Ward of New Orleans",
+        "the Lower 9th Center for Sustainable Environmental Development",
+        "Cancer Alley",
+        "the Lower 9th Ward",
+        "Slim",
+        "HBO",
+        "Treme",
+        "PBS"
+    ],
+    "PERSON": [
+        "Charles Parishes",
+        "Latinx",
+        "Dread Scott",
+        "Jim Crow",
+        "\u2019d",
+        "Spike Lee\u2019s",
+        "Ava Durvenay"
+    ],
+    "PRODUCT": [
+        "Blackness"
+    ],
+    "WORK_OF_ART": [
+        "Black",
+        "Cancer Alley",
+        "Roots"
+    ]
+}

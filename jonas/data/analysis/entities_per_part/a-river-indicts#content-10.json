@@ -1,0 +1,33 @@
+{
+    "DATE": [
+        "ninety day",
+        "the 1960s",
+        "2005",
+        "Today",
+        "2020"
+    ],
+    "EVENT": [
+        "Katrina"
+    ],
+    "GPE": [
+        "Mississippi",
+        "New Orleans"
+    ],
+    "NORP": [
+        "German"
+    ],
+    "ORG": [
+        "the Army Corps of Engineers",
+        "The Mississippi River Grand Outlet",
+        "\u00d6kokrise"
+    ],
+    "PERSON": [
+        "Go",
+        "Mark Twain",
+        "Charles Darwin",
+        "\u00dcber Leben \u2013 Zukunftsfrage Artensterben",
+        "Dirk Steffens",
+        "Fritz Habeku\u00df",
+        "Penguin Verlag"
+    ]
+}

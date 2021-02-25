@@ -1,0 +1,44 @@
+{
+    "DATE": [
+        "1976",
+        "1988"
+    ],
+    "FAC": [
+        "the Twin Cities",
+        "the National Mall and Memorials",
+        "St. Anthony Falls"
+    ],
+    "GPE": [
+        "Mississippi",
+        "America",
+        "Gettysburg",
+        "Mesa Verde",
+        "Yellowstone"
+    ],
+    "LOC": [
+        "the Mississippi River",
+        "the Mississippi River\u2019s",
+        "the Grand Canyon",
+        "Mississippi River",
+        "the Minnesota River"
+    ],
+    "ORG": [
+        "the National Park Service",
+        "NPS",
+        "the Twin Cities\u2019",
+        "Congress",
+        "the National Park System",
+        "the Mississippi NRRA",
+        "The Mississippi NRRA",
+        "UHT",
+        "NRRA",
+        "the Mississippi NRRA\u2019s",
+        "Stonewall",
+        "Charles Young Buffalo Soldiers"
+    ],
+    "PERSON": [
+        "Wendell Anderson",
+        "C\u00e9sar E. Ch\u00e1vez",
+        "Mark Twain"
+    ]
+}

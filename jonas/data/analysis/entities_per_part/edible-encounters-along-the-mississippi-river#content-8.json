@@ -1,0 +1,45 @@
+{
+    "DATE": [
+        "today",
+        "early October",
+        "10,000 years ago",
+        "Winter 2001",
+        "thousands of years",
+        "annual"
+    ],
+    "FAC": [
+        "Weisenberger Mill"
+    ],
+    "GPE": [
+        "Cahokia",
+        "Kentucky",
+        "Missouri",
+        "Mississippi"
+    ],
+    "LOC": [
+        "Missouri River"
+    ],
+    "NORP": [
+        "Cahokians",
+        "American"
+    ],
+    "ORG": [
+        "the Eastern Agriculture Complex",
+        "the Indigenous Peoples of",
+        "Journal of Ethnobiology"
+    ],
+    "PERSON": [
+        "Fritz",
+        "Hickory",
+        "Kunuche",
+        "\u201dGayle Fritz"
+    ],
+    "PRODUCT": [
+        "Cherokee",
+        "Corylus",
+        "Vitis"
+    ],
+    "WORK_OF_ART": [
+        "Ethnobotany of Ku-Nu-Che:"
+    ]
+}

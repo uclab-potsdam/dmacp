@@ -1,0 +1,37 @@
+{
+    "DATE": [
+        "years",
+        "2018",
+        "the year"
+    ],
+    "FAC": [
+        "the Bonnet Carr\u00e9 Spillway"
+    ],
+    "GPE": [
+        "Reserve",
+        "Louisiana",
+        "St. Charles",
+        "Mississippi",
+        "New Orleans",
+        "US"
+    ],
+    "LOC": [
+        "Mississippi River",
+        "the Gulf of Mexico"
+    ],
+    "ORG": [
+        "the Great Mississippi Flood of 1927",
+        "Wilma",
+        "The Environmental Protection Agency",
+        "EPA",
+        "Environmental Protection Agency",
+        "Ethylene Oxide"
+    ],
+    "PERSON": [
+        "Wilma Subra",
+        "St. Charles"
+    ],
+    "TIME": [
+        "that morning"
+    ]
+}

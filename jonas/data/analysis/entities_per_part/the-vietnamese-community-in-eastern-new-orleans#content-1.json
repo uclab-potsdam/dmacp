@@ -1,0 +1,61 @@
+{
+    "DATE": [
+        "Today",
+        "the 1950s",
+        "between 1963 and 1972",
+        "the early 1970s",
+        "around ten years earlier",
+        "1965",
+        "the following years",
+        "1975"
+    ],
+    "EVENT": [
+        "Hurricane Betsy",
+        "the Vietnamese War"
+    ],
+    "FAC": [
+        "Chef Menteur Highway",
+        "the Industrial Canal"
+    ],
+    "GPE": [
+        "Versailles",
+        "the United States",
+        "New Orleans",
+        "Vietnam",
+        "Saigon",
+        "Vatican",
+        "The United States",
+        "US",
+        "California",
+        "Florida",
+        "Pennsylvania",
+        "Arkansas"
+    ],
+    "LOC": [
+        "Eastern New Orleans",
+        "New Orleans East",
+        "North and South",
+        "North Vietnam",
+        "North to South Vietnam",
+        "the Mekong Delta"
+    ],
+    "NORP": [
+        "Vietnamese",
+        "Roman Catholic",
+        "French",
+        "Buddhist",
+        "Catholics",
+        "Catholic Vietnamese"
+    ],
+    "ORG": [
+        "Village de l\u2019Est",
+        "Eastern New Orleans",
+        "I-10",
+        "The Flood Control Act",
+        "NASA",
+        "Roman Catholicism"
+    ],
+    "PERSON": [
+        "Ho Chi Minh"
+    ]
+}

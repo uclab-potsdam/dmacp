@@ -1,0 +1,67 @@
+{
+    "DATE": [
+        "the eighteenth century",
+        "1910",
+        "the end of the 1920s",
+        "the years",
+        "today",
+        "the beginning of the twentieth century",
+        "the twentieth century",
+        "Today",
+        "the first day",
+        "1930s",
+        "two-day"
+    ],
+    "EVENT": [
+        "the Great Acceleration of the twentieth century"
+    ],
+    "FAC": [
+        "Whitney"
+    ],
+    "GPE": [
+        "US",
+        "Geismar",
+        "Essen",
+        "Baton Rouge",
+        "Mississippi",
+        "Donaldsonville",
+        "Louisiana",
+        "New Orleans"
+    ],
+    "LOC": [
+        "Asia",
+        "Europe",
+        "Midwest",
+        "the Gulf of Mexico"
+    ],
+    "NORP": [
+        "German"
+    ],
+    "ORG": [
+        "BASF",
+        "Siegen",
+        "Haber-Bosch",
+        "Standard Oil of New Jersey",
+        "I.G. Farben",
+        "Community Science",
+        "Healthy Gulf",
+        "St. James Parish",
+        "DuPont",
+        "Through Chemistry",
+        "Department of Energy",
+        "the \u201cBureau of Commodity Flows"
+    ],
+    "PERSON": [
+        "Gore-Tex",
+        "Scott Eustis",
+        "Scott",
+        "Travis London",
+        "Clyde Cooper",
+        "Clyde",
+        "Travis"
+    ],
+    "WORK_OF_ART": [
+        "German Coast",
+        "Better Things for Better Living&#8230"
+    ]
+}

@@ -1,0 +1,59 @@
+{
+    "DATE": [
+        "October 4, 1957",
+        "2014",
+        "the twentieth century",
+        "2013",
+        "the 1980s",
+        "12/22/2015",
+        "the early 1970s",
+        "the beginning of the 1980s",
+        "1985",
+        "the early 1980s",
+        "December 10, 2014",
+        "A century ago",
+        "2015"
+    ],
+    "GPE": [
+        "Cambridge",
+        "Russia",
+        "China",
+        "Vancouver",
+        "India",
+        "Japan",
+        "London",
+        "United Kingdom"
+    ],
+    "LOC": [
+        "Earth",
+        "the Global North",
+        "Europe"
+    ],
+    "NORP": [
+        "Soviet",
+        "European"
+    ],
+    "ORG": [
+        "MA",
+        "MIT Press",
+        "UBC Press",
+        "British Petroleum",
+        "British Geological Survey",
+        "BGS",
+        "World Mineral Statistics",
+        "the Swedish Space Corporation",
+        "the Swedish National Space Board",
+        "the National Academy of Sciences"
+    ],
+    "PERSON": [
+        "Mimi Sheller",
+        "Robin S. Gendron et al",
+        "Jonathan McDowell",
+        "Volker Zepf et al",
+        "Thomas E. Graedel et al",
+        "Haff"
+    ],
+    "WORK_OF_ART": [
+        "Launch Log of Satellites"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "DATE": [
+        "the 1970s",
+        "five-year",
+        "this day"
+    ],
+    "GPE": [
+        "Berlin",
+        "the Socialist Republic of Vietnam",
+        "GDR",
+        "East Germany",
+        "Vietnam",
+        "West Germany",
+        "Germany",
+        "East Berlin"
+    ],
+    "LOC": [
+        "Europe"
+    ],
+    "NORP": [
+        "Vietnamese",
+        "German",
+        "South Vietnamese"
+    ],
+    "ORG": [
+        "VEB Elektrokohle"
+    ]
+}

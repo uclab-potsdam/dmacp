@@ -1,0 +1,35 @@
+{
+    "DATE": [
+        "daily",
+        "1850",
+        "2010"
+    ],
+    "FAC": [
+        "the Swamp Land Acts"
+    ],
+    "GPE": [
+        "Geneva",
+        "Louisiana"
+    ],
+    "LOC": [
+        "the Mississippi River"
+    ],
+    "ORG": [
+        "the Isle de Jean Charles",
+        "Biloxi-Chitimacha-Choctaw Tribe",
+        "BP"
+    ],
+    "PERSON": [
+        "Nathan Jessee",
+        "Laura Kelley"
+    ],
+    "PRODUCT": [
+        "Corexit 9500A"
+    ],
+    "TIME": [
+        "every hundred minutes"
+    ],
+    "WORK_OF_ART": [
+        "PhD"
+    ]
+}

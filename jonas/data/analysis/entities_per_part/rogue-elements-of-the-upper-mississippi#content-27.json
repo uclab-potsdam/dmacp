@@ -1,0 +1,46 @@
+{
+    "DATE": [
+        "just a few months later",
+        "2009",
+        "1688",
+        "1995"
+    ],
+    "EVENT": [
+        "the Black Lives Matter",
+        "the Spring Breeze Enter"
+    ],
+    "GPE": [
+        "Mississippi",
+        "Fukushima",
+        "Japan",
+        "the United States",
+        "Minneapolis",
+        "New York",
+        "St. Louis"
+    ],
+    "LOC": [
+        "Western Pennsylvania",
+        "the Mississippi River"
+    ],
+    "ORG": [
+        "the Twin Cities",
+        "Bdote"
+    ],
+    "PERSON": [
+        "George Floyd",
+        "Rebecca Solnit",
+        "Solnit",
+        "Masahide Mizuta",
+        "Basho",
+        "Lucien Stryk",
+        "Takashi Ikemoto",
+        "Barn"
+    ],
+    "TIME": [
+        "morning",
+        "late one night"
+    ],
+    "WORK_OF_ART": [
+        "The Wild"
+    ]
+}

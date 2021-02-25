@@ -1,0 +1,72 @@
+{
+    "DATE": [
+        "the weekend",
+        "a few days",
+        "Last year",
+        "as long as 30 years",
+        "each decade",
+        "the twentieth century",
+        "June 2014",
+        "two days",
+        "2019",
+        "April 6, 2019",
+        "centuries"
+    ],
+    "FAC": [
+        "Island Road",
+        "Bayou Pointe-au-Chien",
+        "Pointe-au-Chien",
+        "Viewing Hours"
+    ],
+    "GPE": [
+        "Geneva",
+        "Louisiana",
+        "America",
+        "France",
+        "Terrebonne Parish"
+    ],
+    "LAW": [
+        "the Swamp Act"
+    ],
+    "LOC": [
+        "Atlantic",
+        "the Mississippi River Valley",
+        "NYC"
+    ],
+    "NORP": [
+        "Indian",
+        "Indigenous Peoples",
+        "Black Americans",
+        "American",
+        "European"
+    ],
+    "ORG": [
+        "the Isle de Jean Charles",
+        "Biloxi-Chitimacha-Choctaw Tribe",
+        "the Isle de Jean Charles Band",
+        "Geneva Lebeouf"
+    ],
+    "PERSON": [
+        "Laura",
+        "Ta-Nehisi Coates",
+        "\u201dTa-Nehisi Coates",
+        "Robert de La Salle",
+        "Ravi Agarwal",
+        "Shana",
+        "Mayfield Brooks",
+        "Morgan Adamson",
+        "Grace Treffinger",
+        "Shana M. griffin",
+        "Bruce Braun",
+        "Nathan Jessee",
+        "Carlina Ross\u00e9e"
+    ],
+    "TIME": [
+        "the countless hours",
+        "the viewing hours"
+    ],
+    "WORK_OF_ART": [
+        "The Case for Reparations",
+        "Viewing Hours"
+    ]
+}

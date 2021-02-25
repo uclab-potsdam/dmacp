@@ -1,0 +1,102 @@
+{
+    "DATE": [
+        "the 1970s",
+        "2011",
+        "2013",
+        "1924",
+        "the early twentieth century",
+        "the day",
+        "nearly twenty years",
+        "1999",
+        "February 1971",
+        "August",
+        "1974",
+        "1975",
+        "the years",
+        "2002",
+        "June 2002",
+        "2008",
+        "February of 2009",
+        "2014"
+    ],
+    "EVENT": [
+        "the Indian Citizenship Act",
+        "Hurricane Carmen",
+        "Hurricane Gustav"
+    ],
+    "FAC": [
+        "the Isle de Jean Charles Biloxi-Chitimacha-Choctaw Tribal"
+    ],
+    "GPE": [
+        "NJ",
+        "U.S.",
+        "the United States",
+        "the United States Bureau of Indian Affairs",
+        "United States",
+        "Louisiana",
+        "New Orleans"
+    ],
+    "LOC": [
+        "Standing Rock",
+        "Island"
+    ],
+    "NORP": [
+        "Indigenous",
+        "Indian",
+        "Native Americans",
+        "Native American",
+        "Native",
+        "European",
+        "Natives",
+        "Tribal"
+    ],
+    "ORG": [
+        "The First Peoples Conservation Council",
+        "the U.S. Department of Agriculture\u2019s Natural Resources Conservation Service",
+        "the U.S. Environmental Protection Agency",
+        "EPA",
+        "National Oceanic and Atmospheric Administration",
+        "NOAA",
+        "the U.S. Department of Housing and Urban Development",
+        "HUD",
+        "Recognition",
+        "Cultural Authenticity",
+        "Duke University Press",
+        "UNC Press Books",
+        "Congress",
+        "BIA",
+        "the BP Oil Spill",
+        "BP",
+        "the State of",
+        "Tribal Community Resettlement",
+        "Army",
+        "The U.S. Army Corps of Engineer",
+        "ACE",
+        "the Army Corps of Engineers",
+        "Corps",
+        "Tribe",
+        "the Lowlander Center",
+        "The U.S. Department of Housing and Urban Development",
+        "the National Disaster Resilience Competition",
+        "Louisiana\u2019s Office of Community Development"
+    ],
+    "PERSON": [
+        "Joanne Barker",
+        "Amy E. Den Ouden",
+        "Jean M. O\u2019Brien",
+        "Theresa Dardar",
+        "Philippe",
+        "Parfait-Dardar",
+        "Comardelle",
+        "Shirell",
+        "Albert",
+        "Albert Naquin",
+        "Ike"
+    ],
+    "TIME": [
+        "The night"
+    ],
+    "WORK_OF_ART": [
+        "Trail of Tears"
+    ]
+}

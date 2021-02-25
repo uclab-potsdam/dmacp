@@ -1,0 +1,41 @@
+{
+    "DATE": [
+        "1990",
+        "O3",
+        "many years",
+        "the year 1990",
+        "decades",
+        "several decades",
+        "the last 30 years"
+    ],
+    "GPE": [
+        "the United States",
+        "US",
+        "North"
+    ],
+    "LAW": [
+        "the Clean Air Act"
+    ],
+    "LOC": [
+        "Mississippi River",
+        "the Mississippi River",
+        "South"
+    ],
+    "NORP": [
+        "North American"
+    ],
+    "ORG": [
+        "the US Environmental Protection Agency",
+        "EPA",
+        "NAAQS",
+        "CO",
+        "the US EPA Air Quality System Data Mart"
+    ],
+    "PRODUCT": [
+        "NO2"
+    ],
+    "TIME": [
+        "hourly",
+        "1-hour"
+    ]
+}

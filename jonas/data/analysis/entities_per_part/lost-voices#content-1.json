@@ -1,0 +1,53 @@
+{
+    "DATE": [
+        "centuries",
+        "nineteenth-century",
+        "2019",
+        "the past couple of hundred years",
+        "1955",
+        "1940"
+    ],
+    "GPE": [
+        "India",
+        "New Delhi",
+        "New Orleans",
+        "Bangladesh",
+        "Mississippi",
+        "New York",
+        "NY",
+        "Bengal"
+    ],
+    "LOC": [
+        "The Unquiet River",
+        "Mississippi River",
+        "the Gulf of Mexico",
+        "the Mississippi Delta",
+        "Gulf",
+        "the Bay of Bengal"
+    ],
+    "NORP": [
+        "Brahmaputra",
+        "Sundarbans"
+    ],
+    "ORG": [
+        "Brahmaputra",
+        "OUP",
+        "Ganges",
+        "the Mississippi River Commission",
+        "the Indian Government",
+        "Harper &amp",
+        "Brothers"
+    ],
+    "PERSON": [
+        "Arupjyoti Saika",
+        "Harvill E. Weller",
+        "Mark Twain",
+        "Bernard DeVoto",
+        "Amitav Ghosh",
+        "Bon Bibi",
+        "Larry Buell"
+    ],
+    "WORK_OF_ART": [
+        "Nature"
+    ]
+}

@@ -1,0 +1,53 @@
+{
+    "DATE": [
+        "1999",
+        "2019"
+    ],
+    "GPE": [
+        "The Extractive Zone",
+        "Dunedin",
+        "New Zealand",
+        "Natchez",
+        "Mississippi",
+        "Louisiana"
+    ],
+    "LOC": [
+        "West",
+        "Anthropocene River",
+        "the Mississippi River",
+        "South",
+        "Upper Delta",
+        "Europe",
+        "North",
+        "the Anthropocene River Journey"
+    ],
+    "NORP": [
+        "Indigenous",
+        "European",
+        "Indigenous Peoples",
+        "African Americans",
+        "American",
+        "Westerners",
+        "Easterners",
+        "Mississippians"
+    ],
+    "ORG": [
+        "University of Otago Press",
+        "the Natchez Museum of African American History and Culture\u2019s",
+        "HKW",
+        "Skype"
+    ],
+    "PERSON": [
+        "G\u00f2mez-Barris",
+        "Linda] Tuhiwai Smith",
+        "Macarena G\u00f3mez-Barris",
+        "Tuhiwai Smith",
+        "Linda Tuhiwai Smith",
+        "Bernd Scherer",
+        "Scherer"
+    ],
+    "WORK_OF_ART": [
+        "Within Native American",
+        "Decolonizing Methodologies: Research and Indigenous Peoples"
+    ]
+}

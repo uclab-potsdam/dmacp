@@ -1,0 +1,19 @@
+{
+    "DATE": [
+        "each day"
+    ],
+    "EVENT": [
+        "post-Event"
+    ],
+    "GPE": [
+        "United States",
+        "Minneapolis",
+        "Chicago"
+    ],
+    "NORP": [
+        "American"
+    ],
+    "PERSON": [
+        "Bakken"
+    ]
+}

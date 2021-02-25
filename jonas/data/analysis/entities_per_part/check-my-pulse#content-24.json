@@ -1,0 +1,58 @@
+{
+    "DATE": [
+        "the winter and spring of 2019",
+        "the day",
+        "three full months",
+        "the late 1960s",
+        "\u201970s",
+        "these days",
+        "mid-nineteenth-century",
+        "the end of the nineteenth century",
+        "1907",
+        "2016",
+        "the 1910s"
+    ],
+    "FAC": [
+        "Len Small Levee",
+        "Fort Defiance State Park",
+        "the Panama Canal"
+    ],
+    "GPE": [
+        "Carbondale",
+        "Illinois",
+        "Cairo",
+        "Missouri",
+        "Cape Girardeau",
+        "the United States",
+        "Mississippi"
+    ],
+    "LOC": [
+        "Horseshoe Lake",
+        "Ohio River",
+        "the Bootheel region",
+        "the Middle and Upper Mississippi River",
+        "the Big Swamp",
+        "the Little River Drainage District",
+        "the Ozark Plateau",
+        "St. Francois Mountains"
+    ],
+    "ORG": [
+        "Confluence Ecologies",
+        "Deep Time Chicago",
+        "the Corps",
+        "Missouri Ozark Plateau Headwaters Diversion Engineering Feat",
+        "Journal of Soil and Water Conservation",
+        "the Headwaters Diversion Channel",
+        "the Diversion Channel",
+        "Ozark"
+    ],
+    "PERSON": [
+        "Claire",
+        "Sarah Lewison",
+        "Limbaugh",
+        "Bootheel",
+        "Kenneth R. Olson",
+        "Lois Wright Morton",
+        "David Speidel"
+    ]
+}

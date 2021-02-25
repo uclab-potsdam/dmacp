@@ -1,0 +1,27 @@
+{
+    "DATE": [
+        "Today",
+        "decades",
+        "weeks"
+    ],
+    "GPE": [
+        "Brunswick",
+        "Melbourne City",
+        "Merri Creek"
+    ],
+    "NORP": [
+        "Edwardian"
+    ],
+    "ORG": [
+        "the Anthropocene Campus Melbourne",
+        "the Central Business District",
+        "the Community Environment Park",
+        "EcoHouse"
+    ],
+    "PERSON": [
+        "Ron"
+    ],
+    "TIME": [
+        "spring morning"
+    ]
+}

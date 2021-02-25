@@ -1,0 +1,54 @@
+{
+    "DATE": [
+        "the nineteenth century",
+        "the eighteenth and nineteenth centuries",
+        "the twentieth century",
+        "the first day"
+    ],
+    "FAC": [
+        "the Whitney Plantation"
+    ],
+    "GPE": [
+        "Mississippi",
+        "US",
+        "Senegal",
+        "Gambia",
+        "Western Africa",
+        "USA",
+        "Louisiana",
+        "Baton Rouge",
+        "New Orleans",
+        "Formosa",
+        "Witco"
+    ],
+    "LOC": [
+        "Asia",
+        "Donaldsville"
+    ],
+    "NORP": [
+        "North American",
+        "American",
+        "Shintech"
+    ],
+    "ORG": [
+        "Haber-Bosch",
+        "Exxon",
+        "BASF",
+        "Shell",
+        "Rubicon",
+        "Air Liquide",
+        "Mexichem",
+        "Poly One",
+        "Mosaic",
+        "CF Industries",
+        "Chevron",
+        "Epsilon",
+        "Nalco",
+        "Colonial Sugar",
+        "DSM Polymer"
+    ],
+    "PERSON": [
+        "Praxair",
+        "Sid Richardson"
+    ]
+}

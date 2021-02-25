@@ -1,0 +1,28 @@
+{
+    "DATE": [
+        "the 1930s",
+        "July 16, 1945",
+        "the early 1990s",
+        "today",
+        "2009",
+        "Today",
+        "1,000 years"
+    ],
+    "FAC": [
+        "the Trinity Site"
+    ],
+    "GPE": [
+        "New Mexico",
+        "White Sands"
+    ],
+    "ORG": [
+        "White Sands Missile Range",
+        "World Heritage Site"
+    ],
+    "PERSON": [
+        "Robert Goddard"
+    ],
+    "WORK_OF_ART": [
+        "the Space Age"
+    ]
+}

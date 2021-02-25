@@ -1,0 +1,40 @@
+{
+    "DATE": [
+        "today",
+        "Sunday",
+        "the early twentieth century"
+    ],
+    "GPE": [
+        "Mississippi",
+        "Ohio",
+        "Hills",
+        "Illinois",
+        "Carbondale"
+    ],
+    "LOC": [
+        "Southern Illinois",
+        "Ozark Highlands",
+        "The Interior Plateau",
+        "River Valleys",
+        "Alluvial Plain",
+        "Mississippi Delta",
+        "the Loess Plains",
+        "Delta",
+        "Confluence",
+        "the Cache River Valley",
+        "the Ohio River"
+    ],
+    "NORP": [
+        "Europeans"
+    ],
+    "ORG": [
+        "Field Station 4"
+    ],
+    "PERSON": [
+        "Confluence Ecologies",
+        "Mississippi Embayment"
+    ],
+    "TIME": [
+        "about an hour"
+    ]
+}

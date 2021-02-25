@@ -1,0 +1,57 @@
+{
+    "DATE": [
+        "the summer of 1997",
+        "1997",
+        "the 1990s",
+        "May 21, 2019",
+        "the 1980s",
+        "1984",
+        "the past 40 years",
+        "July of 2019",
+        "2016",
+        "2015"
+    ],
+    "EVENT": [
+        "Olympic Games"
+    ],
+    "GPE": [
+        "Mississippi",
+        "US",
+        "Singapore",
+        "Miami",
+        "Rio de Janeiro",
+        "Dubai",
+        "Ramsey County"
+    ],
+    "LOC": [
+        "the Capital City",
+        "the Twin Cities"
+    ],
+    "ORG": [
+        "St. Paul",
+        "the Riverfront Development Corporation",
+        "the Ramsey County Board",
+        "St. Paul\u2019s",
+        "West Publishing Company",
+        "AECOM",
+        "the World Trade Center"
+    ],
+    "PERSON": [
+        "Norm Coleman",
+        "Coleman",
+        "Lewinberg Greenberg",
+        "Dark Gabor Limited",
+        "Ken Greenberg",
+        "Nunnally",
+        "Patrick",
+        "Riversedge"
+    ],
+    "PRODUCT": [
+        "https://rchs.com/wp-content/uploads/2017/09/St.-Paul-on-the-Mississippi-Development-Framework_1997.pdf",
+        "https://riverlife.umn.edu/rivertalk/21may2019"
+    ],
+    "WORK_OF_ART": [
+        "Saint Paul",
+        "Mapping the \u2018Retreat of the Industrial Glacier"
+    ]
+}

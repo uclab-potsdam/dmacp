@@ -1,0 +1,71 @@
+{
+    "DATE": [
+        "five-day",
+        "eighteen months",
+        "Sep 23",
+        "2016",
+        "Feb 10, 2020",
+        "Feb 22, 2017",
+        "August 1832",
+        "1883",
+        "the 1850s",
+        "April",
+        "a few days"
+    ],
+    "GPE": [
+        "Mississippi",
+        "De Soto",
+        "Wisconsin",
+        "Alberta",
+        "Canada",
+        "Fieldsights",
+        "Blackhawk Park",
+        "Illinois",
+        "Kickapoo",
+        "US",
+        "Dakota",
+        "Clark Counties",
+        "Chicago",
+        "Saukenuk",
+        "Prairie du Chien"
+    ],
+    "LOC": [
+        "Blackhawk Park",
+        "The Mississippi River",
+        "the Mississippi River"
+    ],
+    "NORP": [
+        "Indigenous",
+        "M\u00e9tis",
+        "Ojibwe",
+        "Native Americans",
+        "American"
+    ],
+    "ORG": [
+        "Anthropocene Drift",
+        "Ho-Chunk",
+        "the US Army",
+        "Potawatomi"
+    ],
+    "PERSON": [
+        "Chelsea Vowel",
+        "Lac Ste",
+        "Anne",
+        "\u201dChelsea Vowel",
+        "http://apihtawikosisan.com/2016/09/beyond-territorial-acknowledgments/",
+        "Andrea Carlson",
+        "Vowell",
+        "Heather Anne Swanson",
+        "Anne Swanson",
+        "Black Hawk",
+        "Black Hawk\u2019s",
+        "Henry Perrin",
+        "Crawford",
+        "O. L. Baskin"
+    ],
+    "WORK_OF_ART": [
+        "Beyond Territorial Acknowledgments",
+        "The Banality of the Anthropocene",
+        "the Battle of Bad Axe"
+    ]
+}

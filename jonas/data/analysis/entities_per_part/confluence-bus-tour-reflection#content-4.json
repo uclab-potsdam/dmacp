@@ -1,0 +1,40 @@
+{
+    "DATE": [
+        "the 1950s",
+        "the late 1970s",
+        "1980",
+        "90\u2019s",
+        "the late 1960s",
+        "six days",
+        "1803",
+        "present-day",
+        "today",
+        "century"
+    ],
+    "FAC": [
+        "Heron Pond",
+        "Fort Defiance State Park",
+        "Second Street"
+    ],
+    "GPE": [
+        "Karnak",
+        "Ohio",
+        "Mississippi",
+        "Cairo",
+        "Illinois"
+    ],
+    "LOC": [
+        "the Cache River"
+    ],
+    "ORG": [
+        "The Main Brothers",
+        "the Post Creek Cutoff",
+        "the Civil Rights Movement",
+        "the Army Corps of Engineers"
+    ],
+    "PERSON": [
+        "Max Hutchison",
+        "Lewis",
+        "Clark"
+    ]
+}

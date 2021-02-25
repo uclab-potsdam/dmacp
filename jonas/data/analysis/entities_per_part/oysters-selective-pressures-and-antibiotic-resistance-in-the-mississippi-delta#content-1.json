@@ -1,0 +1,48 @@
+{
+    "DATE": [
+        "many centuries",
+        "1877",
+        "2016",
+        "the eighteenth century",
+        "years",
+        "almost two centuries ago",
+        "the beginning of the twentieth century",
+        "the nineteenth century",
+        "almost seventy years",
+        "2017"
+    ],
+    "GPE": [
+        "Vienna",
+        "Cancale",
+        "France",
+        "Austernwirthschaft",
+        "Berlin",
+        "Parey",
+        "New Orleans",
+        "Louisiana"
+    ],
+    "LOC": [
+        "the Kiel Bay",
+        "the Gulf of Mexico"
+    ],
+    "NORP": [
+        "German",
+        "French"
+    ],
+    "ORG": [
+        "Lebensgemeinde",
+        "The Holobiont Imperative",
+        "Hempel &amp",
+        "The New York Academy of Sciences"
+    ],
+    "PERSON": [
+        "Karl August",
+        "Thomas C. G. Bosch",
+        "David J. Miller",
+        "Karl Moebius",
+        "Michael R. Gillings"
+    ],
+    "PRODUCT": [
+        "Oysters"
+    ]
+}

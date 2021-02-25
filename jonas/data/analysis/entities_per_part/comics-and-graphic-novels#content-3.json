@@ -1,0 +1,37 @@
+{
+    "DATE": [
+        "2009",
+        "2014",
+        "2012",
+        "today",
+        "2013",
+        "12/08/2015",
+        "2015",
+        "12/07/2015"
+    ],
+    "GPE": [
+        "New York"
+    ],
+    "ORG": [
+        "Slow Media",
+        "Qualitative Social Research",
+        "These Times",
+        "capitalism,\u201dSlow Media"
+    ],
+    "PERSON": [
+        "Mark Fisher",
+        "Winchester",
+        "Heather Mendick",
+        "Mendick",
+        "Yvonne Liu",
+        "Tracie McMillan",
+        "Rebecca Burns",
+        "Sabria David"
+    ],
+    "TIME": [
+        "40 to 50 hours"
+    ],
+    "WORK_OF_ART": [
+        "Food Fight: Feminists"
+    ]
+}

@@ -1,0 +1,41 @@
+{
+    "DATE": [
+        "years",
+        "A thousand years from now",
+        "1540",
+        "Another hundred years",
+        "November 2019",
+        "the spring of 2019"
+    ],
+    "EVENT": [
+        "Anthropocene River Campus"
+    ],
+    "GPE": [
+        "Mississippi",
+        "France",
+        "St. Louis",
+        "New Orleans"
+    ],
+    "LOC": [
+        "the Mississippi River",
+        "the Anthropocene River Midway Meeting"
+    ],
+    "NORP": [
+        "French"
+    ],
+    "ORG": [
+        "BCE",
+        "Hernando de Soto"
+    ],
+    "PERSON": [
+        "Robert de La Salle",
+        "Morgan Adamson",
+        "Bruce Braun",
+        "Ravi Agarwal",
+        "Shana M. griffin",
+        "Grace Treffinger",
+        "Geneva Leboeuf",
+        "Laura Kelley",
+        "Nathan Jessee"
+    ]
+}

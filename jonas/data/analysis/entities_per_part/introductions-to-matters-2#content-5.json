@@ -1,0 +1,91 @@
+{
+    "DATE": [
+        "weeks",
+        "2015",
+        "the past few years",
+        "a couple weeks later",
+        "2017",
+        "The day",
+        "centuries",
+        "several thousands years ago",
+        "today"
+    ],
+    "GPE": [
+        "Berlin",
+        "K\u00f3vskaya",
+        "Paris",
+        "the Southeastern United States",
+        "Atlanta",
+        "Georgia",
+        "New Orleans",
+        "Mississippi",
+        "Natchez",
+        "Extractive Zone",
+        "The Extractive Zone",
+        "Durham",
+        "NC"
+    ],
+    "LOC": [
+        "Mississippi",
+        "South",
+        "the Anthropocene River Journey",
+        "the Anthropocene River Campus",
+        "Anthropocene River",
+        "Mississippi River",
+        "the Emerald Mound",
+        "Emerald"
+    ],
+    "NORP": [
+        "African American",
+        "Western",
+        "European",
+        "Indigenous",
+        "African",
+        "Indigenous Peoples",
+        "Indian",
+        "Mississippian"
+    ],
+    "ORG": [
+        "HKW",
+        "Antebellum Natchez",
+        "the Cultural Services of",
+        "the French Embassy",
+        "Sciences, Arts, Creation and Research",
+        "the Anthropocene Project\u2019s",
+        "the Anthropocene Working Group",
+        "the Anthropocene Working Group\u2019s",
+        "https://anthropocene-curriculum.org//contribution/in-situ-anthropocene\u2014producing",
+        "Natchez",
+        "Field Station 5",
+        "the \u201cUnbound Engineering",
+        "Social Ecologies",
+        "Decolonial Perspectives",
+        "Duke University Press",
+        "Natchez Heritage Tour",
+        "the Natchez Trace",
+        "National Park Service",
+        "the Old Natchez Trace"
+    ],
+    "PERSON": [
+        "Haus der Kulturen der Welt",
+        "Duncan",
+        "Donna Haraway",
+        "Kin",
+        "pedagogy,\u201d\u201cMississippi",
+        "Jamie Allen",
+        "Macarena G\u00f3mez-Barris\u2019s",
+        "Macarena G\u00f3mez-Barris"
+    ],
+    "PRODUCT": [
+        "Ecole"
+    ],
+    "TIME": [
+        "only the night"
+    ],
+    "WORK_OF_ART": [
+        "Field Station 5: Narrative of a Natchez Slave: From Enslavement and Exploitation to Resistance and Emancipation",
+        "PhD",
+        "Human Impacts and Its Consequences",
+        "In Situ Anthropocene: Curatorial Statement"
+    ]
+}

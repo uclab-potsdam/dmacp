@@ -1,0 +1,23 @@
+{
+    "DATE": [
+        "One week later",
+        "fifteen days"
+    ],
+    "GPE": [
+        "New York",
+        "Berlin",
+        "Messel",
+        "Frankfurt"
+    ],
+    "NORP": [
+        "German"
+    ],
+    "ORG": [
+        "Lufthansa"
+    ],
+    "PERSON": [
+        "Anja Seidinger",
+        "Stock",
+        "Mrs Seidinger"
+    ]
+}

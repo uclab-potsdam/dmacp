@@ -1,0 +1,47 @@
+{
+    "DATE": [
+        "at least half a century",
+        "the next decade",
+        "2011",
+        "present day",
+        "R. 2009"
+    ],
+    "GPE": [
+        "UK",
+        "US",
+        "Australia",
+        "Cambridge",
+        "Hollywood",
+        "Houston"
+    ],
+    "LAW": [
+        "the Paris Agreement"
+    ],
+    "LOC": [
+        "Haraway",
+        "Pitcairn Island",
+        "Earth"
+    ],
+    "NORP": [
+        "Australian"
+    ],
+    "ORG": [
+        "MA",
+        "Harvard University Press",
+        "University of Texas Press",
+        "Penguin Books"
+    ],
+    "PERSON": [
+        "Rob Nixon\u2019s",
+        "Nixon R.",
+        "Max Galleon",
+        "Judith Hess Wright",
+        "Wright",
+        "J. 2003",
+        "Barry Keith Grant",
+        "Rebecca Solnit"
+    ],
+    "WORK_OF_ART": [
+        "A Paradise Built In Hell"
+    ]
+}

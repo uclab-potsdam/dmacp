@@ -1,0 +1,41 @@
+{
+    "DATE": [
+        "2011",
+        "2015",
+        "4/20/2015",
+        "2014",
+        "1856",
+        "decades",
+        "centuries"
+    ],
+    "GPE": [
+        "Ann Arbor"
+    ],
+    "LOC": [
+        "Earth",
+        "Ocean",
+        "Holocene"
+    ],
+    "ORG": [
+        "Digital Rubbish",
+        "University of Michigan Press",
+        "Gabrys",
+        "Digital"
+    ],
+    "PERSON": [
+        "Jennifer Gabrys",
+        "MI",
+        "Jenna R. Jambeck et al",
+        "Jan Zalasiewicz et al",
+        "Technofossil",
+        "Jambeck et al",
+        "Zalasiewicz et al",
+        "Jeffrey L. Howard",
+        "LEO"
+    ],
+    "WORK_OF_ART": [
+        "Plastic Waste Inputs from Land",
+        "Plastic Waste",
+        "The Technofossil Record of Humans"
+    ]
+}

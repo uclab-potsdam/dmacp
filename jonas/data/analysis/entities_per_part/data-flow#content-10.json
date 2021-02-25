@@ -1,0 +1,50 @@
+{
+    "DATE": [
+        "March 1 2013",
+        "the 1950s",
+        "\u201960s",
+        "Later that day",
+        "Halloween"
+    ],
+    "GPE": [
+        "Mississippi",
+        "Minneapolis",
+        "St. Louis",
+        "Hannibal",
+        "Missouri",
+        "Burlington",
+        "Illinois",
+        "Lodge",
+        "Rock Island",
+        "Brazil",
+        "Ecuador",
+        "Peru"
+    ],
+    "LOC": [
+        "the Quad Cities",
+        "Caribbean"
+    ],
+    "NORP": [
+        "African American"
+    ],
+    "ORG": [
+        "the Jim\u2019s Journey: The Huck Finn Freedom Center",
+        "HKW",
+        "the Aldo Leopold Foundation",
+        "the Black Hawk Museum",
+        "First Nations",
+        "Indigenous Peoples",
+        "BCE"
+    ],
+    "PERSON": [
+        "Filippo Bertoni",
+        "Faye Dant",
+        "John Kim",
+        "Steven Diehl",
+        "Neli Wagner",
+        "Bertoni"
+    ],
+    "TIME": [
+        "hours"
+    ]
+}

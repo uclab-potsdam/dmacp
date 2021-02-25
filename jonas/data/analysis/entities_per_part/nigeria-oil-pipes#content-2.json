@@ -1,0 +1,38 @@
+{
+    "DATE": [
+        "yearly",
+        "2014",
+        "2011"
+    ],
+    "GPE": [
+        "Ikarama",
+        "Nigeria",
+        "Dallas",
+        "London",
+        "New Orleans",
+        "Durham"
+    ],
+    "LOC": [
+        "the Niger River Delta",
+        "North",
+        "the Gulf of Mexico",
+        "Gulf",
+        "the Black Sea"
+    ],
+    "ORG": [
+        "Amnesty International",
+        "Shell",
+        "BP",
+        "The Multispecies Salon",
+        "Corexit",
+        "Duke University Press",
+        "Royal Dutch Shell"
+    ],
+    "PERSON": [
+        "Timothy Mitchell",
+        "Eben Kirksey",
+        "Nicholas Shapiro",
+        "Maria Brodine",
+        "Jacqueline Bishop"
+    ]
+}

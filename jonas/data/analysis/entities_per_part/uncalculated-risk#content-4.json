@@ -1,0 +1,30 @@
+{
+    "DATE": [
+        "1986",
+        "the years",
+        "thirteen years",
+        "decades"
+    ],
+    "EVENT": [
+        "Katrina"
+    ],
+    "FAC": [
+        "the Industrial Canal"
+    ],
+    "GPE": [
+        "New Orleans"
+    ],
+    "LOC": [
+        "Riverfront"
+    ],
+    "ORG": [
+        "Port",
+        "IHNC",
+        "Corp",
+        "MRGO",
+        "Corps",
+        "the Port of New Orleans",
+        "the Corps of Engineers",
+        "COE"
+    ]
+}

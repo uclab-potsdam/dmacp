@@ -1,0 +1,68 @@
+{
+    "DATE": [
+        "2014",
+        "2013",
+        "2007",
+        "2009",
+        "2012",
+        "2010",
+        "1994",
+        "1998",
+        "2005"
+    ],
+    "GPE": [
+        "Brunswick",
+        "NJ",
+        "Cambridge",
+        "Blarksburg",
+        "VA",
+        "Yugoslavia",
+        "New York: Zone Books",
+        "Durham",
+        "NC"
+    ],
+    "LOC": [
+        "Earth",
+        "Holocene",
+        "Aral Sea"
+    ],
+    "NORP": [
+        "Serbian"
+    ],
+    "ORG": [
+        "Geological Society Special Publication",
+        "779\u201295",
+        "Rutgers University Press",
+        "MA",
+        "MIT Press",
+        "D.Phil Science and Technology Studies",
+        "Virginia Polytechnic Institute",
+        "State University",
+        "Duke University Press"
+    ],
+    "PERSON": [
+        "Peter Haff",
+        "K. Haff",
+        "Jan Zalasiewicz et al",
+        "Kathryn Yusoff",
+        "Haff",
+        "Rob Nixon",
+        "Will Steffen et al.",
+        "AMBIO",
+        "Dipesh Chakrabarty",
+        "Lisa Parks",
+        "James Schwoch",
+        "LEO",
+        "Paul N. Edwards",
+        "Kenneth Thompson",
+        "Laura Kurgan"
+    ],
+    "WORK_OF_ART": [
+        "A Stratigraphical Basis for the Anthropocene",
+        "Geologic Life",
+        "The Anthropocene:",
+        "The Anthropocene: Are humans",
+        "The Climate of History:",
+        "A Political History of U.S. Commercial Remote Sensing"
+    ]
+}

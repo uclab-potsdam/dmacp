@@ -1,0 +1,75 @@
+{
+    "DATE": [
+        "year to year",
+        "9,000 years ago",
+        "140 years ago",
+        "a few years ago",
+        "2019",
+        "recent years",
+        "2002",
+        "up to three years",
+        "every year",
+        "1988",
+        "2010",
+        "1972",
+        "annually",
+        "thousands of years"
+    ],
+    "GPE": [
+        "Mississippi",
+        "Minneapolis",
+        "the United States",
+        "New Zealand",
+        "India",
+        "Yamuna",
+        "Ecuador",
+        "Pachamama",
+        "Switzerland",
+        "Austria",
+        "Holland",
+        "Germany",
+        "Hamburg",
+        "Iowa",
+        "Shanghai",
+        "Abidjan",
+        "Rotterdam",
+        "Bremerhaven",
+        "Louisiana"
+    ],
+    "LOC": [
+        "Europe",
+        "the Whanganui River",
+        "Mississippi",
+        "the North Sea"
+    ],
+    "NORP": [
+        "the Native Americans",
+        "Maoris",
+        "Maori",
+        "Brazilian",
+        "German",
+        "Native Americans",
+        "American"
+    ],
+    "ORG": [
+        "St. Paul",
+        "Ganges",
+        "Amazon",
+        "the UN Security Council",
+        "the Federal Constitutional Court",
+        "PETA",
+        "the European Court of Justice",
+        "the Constitutional Court",
+        "Itaqui",
+        "The US Army Corps of Engineers",
+        "Corps"
+    ],
+    "PERSON": [
+        "Jair Bolsonaro",
+        "Bolsonaro",
+        "Christopher D. Stone"
+    ],
+    "WORK_OF_ART": [
+        "Should Trees Have Standing"
+    ]
+}

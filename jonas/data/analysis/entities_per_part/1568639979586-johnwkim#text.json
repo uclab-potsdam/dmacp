@@ -1,0 +1,23 @@
+{
+    "DATE": [
+        "1952",
+        "1965",
+        "1990",
+        "2001",
+        "2011",
+        "2019",
+        "year"
+    ],
+    "LOC": [
+        "the Mississippi River",
+        "Midwest"
+    ],
+    "ORG": [
+        "Bdote",
+        "the Twin Cities",
+        "Nytimes"
+    ],
+    "PERSON": [
+        "Joe Underhill"
+    ]
+}

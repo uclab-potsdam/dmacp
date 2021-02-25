@@ -1,0 +1,34 @@
+{
+    "DATE": [
+        "1982",
+        "A couple of days later",
+        "46",
+        "July 29 2019"
+    ],
+    "GPE": [
+        "Baltimore",
+        "Moline",
+        "Illinois"
+    ],
+    "LOC": [
+        "Earth",
+        "the Corn Belt"
+    ],
+    "ORG": [
+        "Thermodynamics",
+        "Johns Hopkins University Press",
+        "the John Deere Pavilion",
+        "Big Ag",
+        "Journal of Peasant Studies"
+    ],
+    "PERSON": [
+        "\u201dMichel Serres",
+        "Josu\u00e9 V. Harari und David F. Bell",
+        "Audrey Buturian Larson",
+        "Steven Diehl",
+        "Alistair Fraser"
+    ],
+    "WORK_OF_ART": [
+        "The Origin of Language: Biology, Information Theory"
+    ]
+}

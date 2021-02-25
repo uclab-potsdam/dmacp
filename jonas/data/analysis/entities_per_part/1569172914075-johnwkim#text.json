@@ -1,0 +1,36 @@
+{
+    "DATE": [
+        "between 1948 and 1963",
+        "June 9, 2015",
+        "2014",
+        "June 10, 2014",
+        "later than 1 year"
+    ],
+    "GPE": [
+        "Mississippi",
+        "Minneapolis"
+    ],
+    "LAW": [
+        "Section 2010"
+    ],
+    "NORP": [
+        "Asian"
+    ],
+    "ORG": [
+        "Upper St. Anthony Falls Lock and Dam",
+        "Field Station",
+        "the United States Army Corps of Engineers",
+        "Wikipedia"
+    ],
+    "PERSON": [
+        "St. Anthony Falls",
+        "Barack Obama",
+        "Alicia Johnson"
+    ],
+    "TIME": [
+        "midnight"
+    ],
+    "WORK_OF_ART": [
+        "H.R.3080 - Water Resources Reform and Development Act"
+    ]
+}

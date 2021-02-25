@@ -1,0 +1,55 @@
+{
+    "DATE": [
+        "2016",
+        "2019",
+        "2007",
+        "A decade later",
+        "2018",
+        "the last century",
+        "a century ago",
+        "19-52",
+        "every year",
+        "the 1930s"
+    ],
+    "GPE": [
+        "New Orleans",
+        "Louisiana",
+        "USA",
+        "Amsterdam"
+    ],
+    "LOC": [
+        "Louisiana Gulf",
+        "the Mississippi River Delta",
+        "the Mississippi River",
+        "the Louisiana Gulf",
+        "Mississippi River Delta"
+    ],
+    "ORG": [
+        "Journal of Global Antimicrobial Resistance",
+        "Frontiers of Environmental Science &amp",
+        "Louisiana State University",
+        "Louisiana Gulf",
+        "Applied and Environmental Microbiology",
+        "Journal of Water Supply: Research and Technology-Aqua",
+        "Elsevier"
+    ],
+    "PERSON": [
+        "Ali Liaqat et al",
+        "Christine C. Nguyen et al",
+        "Feifei Han et al.",
+        "Cameron Bedling",
+        "Raj Boopathy",
+        "Hannah Landecker",
+        "Acinetobacer",
+        "Enterobacteriaceae",
+        "John W. Day",
+        "Ramesh Ramachandran et al",
+        "Eric Wolanski",
+        "Michael Elliott",
+        "Ramesh Ramachandran"
+    ],
+    "WORK_OF_ART": [
+        "Antimicrobial Susceptibilities of Vibrio",
+        "Delta Winners and Losers in the Anthropocene"
+    ]
+}

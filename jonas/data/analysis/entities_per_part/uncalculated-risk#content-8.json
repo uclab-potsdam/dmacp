@@ -1,0 +1,53 @@
+{
+    "DATE": [
+        "1923",
+        "daily",
+        "thirteen-year",
+        "13-year",
+        "three to four years",
+        "the 1900s",
+        "twenty-first century",
+        "the early twentieth century"
+    ],
+    "EVENT": [
+        "Hurricane Katrina",
+        "Katrina"
+    ],
+    "FAC": [
+        "St. Claude Bridge",
+        "Claiborne Avenue",
+        "The Seeber Bridge",
+        "Galvez Street",
+        "the Seeber Bridge",
+        "the Industrial Canal"
+    ],
+    "GPE": [
+        "New Orleans",
+        "America",
+        "City"
+    ],
+    "LOC": [
+        "Lake Pontchartrain",
+        "Mississippi River"
+    ],
+    "NORP": [
+        "Corps"
+    ],
+    "ORG": [
+        "Historic District Landmark Commission",
+        "IHNC",
+        "St. Bernard Parish",
+        "COE",
+        "Seeber",
+        "the Lower Ninth Ward",
+        "Holy Cross",
+        "Bywater Historic Districts",
+        "Corps",
+        "Conclusion New Orleans",
+        "Industrial Canal Lock"
+    ],
+    "PERSON": [
+        "Seeber",
+        "Betsy"
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "DATE": [
+        "2019",
+        "2018",
+        "Vintage, 2015",
+        "2017",
+        "1731",
+        "2012",
+        "2013",
+        "2001"
+    ],
+    "GPE": [
+        "Louisiana",
+        "Great Britain",
+        "the Northeastern United States",
+        "New York:",
+        "Mississippi",
+        "New York",
+        "US",
+        "Cambridge",
+        "Virginia",
+        "Carolinas"
+    ],
+    "LAW": [
+        "the Slave Rebellion Reenactment"
+    ],
+    "LOC": [
+        "the River Journey",
+        "Africa"
+    ],
+    "NORP": [
+        "German",
+        "European",
+        "Indigenous",
+        "French",
+        "Africans"
+    ],
+    "ORG": [
+        "LaPlace",
+        "https://www.slave-revolt.com",
+        "University of New Orleans",
+        "Empire of Cotton",
+        "Oxford University Press",
+        "MA",
+        "Harvard University Press"
+    ],
+    "PERSON": [
+        "Dread Scott\u2019s",
+        "Leila K. Blackbird",
+        "Sven Beckert",
+        "Aaron G. Jakes",
+        "Ahmad Shokr",
+        "\u00c9tienne Boucher de P\u00e9rier",
+        "Christopher Morris",
+        "Walter Johnson",
+        "Sally E. Hadden"
+    ],
+    "WORK_OF_ART": [
+        "Entwined Threads of Red and Black: The Hidden History of Indigenous Enslavement",
+        "Finding Value",
+        "The Carceral Landscape"
+    ]
+}

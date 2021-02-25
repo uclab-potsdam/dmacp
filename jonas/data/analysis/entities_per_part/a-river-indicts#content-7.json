@@ -1,0 +1,36 @@
+{
+    "DATE": [
+        "a pretty good year",
+        "the 1930s"
+    ],
+    "GPE": [
+        "New Mexico",
+        "New York",
+        "Tennessee",
+        "Georgia",
+        "Maine",
+        "China",
+        "Mississippi",
+        "USA",
+        "America",
+        "Minneapolis",
+        "Minnesota"
+    ],
+    "LOC": [
+        "Minnesota River",
+        "The Gulf of Mexico"
+    ],
+    "NORP": [
+        "American"
+    ],
+    "ORG": [
+        "the Fish and Wildlife Service"
+    ],
+    "PERSON": [
+        "David Boyd",
+        "Boyd"
+    ],
+    "WORK_OF_ART": [
+        "The Rights of Nature"
+    ]
+}

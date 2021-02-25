@@ -1,0 +1,63 @@
+{
+    "DATE": [
+        "hundred-year old",
+        "1923",
+        "15-years",
+        "2020",
+        "1956",
+        "1927",
+        "1965",
+        "2005",
+        "the 1960s"
+    ],
+    "EVENT": [
+        "Hurricane Katrina",
+        "Hurricane Betsy"
+    ],
+    "FAC": [
+        "the Industrial Canal",
+        "Lake Pontchartrain",
+        "Industrial Canal",
+        "The Industrial Canal",
+        "Florida Avenue",
+        "Canal"
+    ],
+    "GPE": [
+        "The United States Corps of Engineers",
+        "New Orleans",
+        "Mississippi",
+        "Orleans",
+        "St. Bernard Parishes",
+        "the Port of New Orleans",
+        "City",
+        "the United States",
+        "St. Bernard Parish",
+        "Lake Pontchartrain",
+        "Florida"
+    ],
+    "LOC": [
+        "the River and Lake Pontchartrain",
+        "the Mississippi River",
+        "the Mississippi River Gulf Outlet",
+        "the Gulf of Mexico",
+        "Lake Pontchartrain",
+        "North"
+    ],
+    "ORG": [
+        "Congress",
+        "Corps",
+        "the Inner Harbor Navigation Canal",
+        "IHNC",
+        "the Corps of Engineers",
+        "Congressional",
+        "MRGO",
+        "the Port of New Orleans",
+        "Port",
+        "Parish",
+        "Eastern",
+        "the Lower Ninth Ward"
+    ],
+    "PERSON": [
+        "St. Bernard Parish"
+    ]
+}

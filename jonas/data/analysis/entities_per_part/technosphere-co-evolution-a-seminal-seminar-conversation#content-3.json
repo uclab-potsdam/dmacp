@@ -1,0 +1,92 @@
+{
+    "DATE": [
+        "four and a half billion years old",
+        "today",
+        "roughly 200 years old",
+        "centuries",
+        "a year",
+        "one million years",
+        "the twentieth century",
+        "about several thousand years ago",
+        "roughly 600 years",
+        "roughly about 100,000 years ago",
+        "the seventeenth century",
+        "the nineteenth century",
+        "the last one hundred years",
+        "many years"
+    ],
+    "EVENT": [
+        "post-Fukushima",
+        "the Industrial Revolution"
+    ],
+    "GPE": [
+        "Anthroposphere",
+        "Japan",
+        "Australia",
+        "Hamburg",
+        "Morocco",
+        "US",
+        "China",
+        "Iran",
+        "Syria",
+        "Lebanon",
+        "New Guinea",
+        "France",
+        "Haiti",
+        "Britain",
+        "Barbados",
+        "Spain",
+        "Cuba",
+        "Florida",
+        "United States",
+        "\u2019s"
+    ],
+    "LOC": [
+        "Earth",
+        "Pacific",
+        "Pacific island",
+        "Africa",
+        "Europe",
+        "Equator"
+    ],
+    "NORP": [
+        "Darwinian",
+        "Tibetan",
+        "European",
+        "Hellenistic",
+        "Moroccan",
+        "Chinese",
+        "American",
+        "Islamic"
+    ],
+    "ORG": [
+        "iPhone",
+        "Hennig Brand",
+        "Lascaux",
+        "Understanding Media",
+        "Micronesian"
+    ],
+    "PERSON": [
+        "Jeremy Rifkin",
+        "Charles Perrow",
+        "Kant",
+        "Wolfgang Lutz",
+        "Julian Jaynes",
+        "Haber",
+        "Needham",
+        "Marshall McLuhan",
+        "McLuhan",
+        "Elizabeth Grosz",
+        "Darwin",
+        "Manfred"
+    ],
+    "TIME": [
+        "ten minutes later",
+        "an hour",
+        "ten minutes"
+    ],
+    "WORK_OF_ART": [
+        "The Mental Component of the Earth System",
+        "The Origin of Consciousness in the Breakdown of the Bicameral Mind"
+    ]
+}

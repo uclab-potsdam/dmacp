@@ -1,0 +1,37 @@
+{
+    "DATE": [
+        "epoch",
+        "Annual",
+        "2013",
+        "1897",
+        "sunny day",
+        "August"
+    ],
+    "FAC": [
+        "Melbourne Water"
+    ],
+    "GPE": [
+        "Melbourne",
+        "Australia"
+    ],
+    "LOC": [
+        "Werribee",
+        "Port Phillip Bay",
+        "Siberia"
+    ],
+    "ORG": [
+        "Review of Anthropology",
+        "the Western Treatment Plant",
+        "Disney World"
+    ],
+    "PERSON": [
+        "Brain Larkin\u2019s",
+        "Wathaurung"
+    ],
+    "PRODUCT": [
+        "A4"
+    ],
+    "WORK_OF_ART": [
+        "The Politics and Poetics of Infrastructure"
+    ]
+}

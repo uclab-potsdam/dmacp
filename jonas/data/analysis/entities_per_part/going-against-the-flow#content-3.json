@@ -1,0 +1,39 @@
+{
+    "DATE": [
+        "centuries"
+    ],
+    "FAC": [
+        "the Port of New Orleans"
+    ],
+    "GPE": [
+        "Baton Rouge",
+        "New Orleans",
+        "USA",
+        "Mississippi",
+        "Louisiana",
+        "Dixie",
+        "Texas",
+        "Oklahoma",
+        "Dakota",
+        "Alberta"
+    ],
+    "LOC": [
+        "Mississippi River",
+        "North America",
+        "Gulf",
+        "Midwest",
+        "the Gulf of Mexico"
+    ],
+    "ORG": [
+        "the Exxon Refinery",
+        "the US Army Corps of Engineers",
+        "Coastal",
+        "Colonial",
+        "the Bureau of Commodity Flows",
+        "ByWater Institute",
+        "Bureau of Commodity Flows"
+    ],
+    "PERSON": [
+        "Fritz Haber\u2019s"
+    ]
+}

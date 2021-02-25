@@ -1,0 +1,57 @@
+{
+    "DATE": [
+        "the late 1920s",
+        "the first years",
+        "the next week"
+    ],
+    "EVENT": [
+        "World War"
+    ],
+    "GPE": [
+        "Louisiana",
+        "New Orleans",
+        "U.S.",
+        "Mississippi",
+        "Formosa",
+        "Witco",
+        "Norco",
+        "Plaquemine"
+    ],
+    "LOC": [
+        "the Mississippi River",
+        "Delta",
+        "the Gulf of Mexico"
+    ],
+    "NORP": [
+        "Nazis",
+        "Shintech"
+    ],
+    "ORG": [
+        "Between Baton Rouge",
+        "I.G. Farben",
+        "the Catalysis Research Associates",
+        "CRA",
+        "Exxon",
+        "LaRoche",
+        "BASF",
+        "Shell",
+        "Rubicon",
+        "Air Liquide",
+        "Mexichem",
+        "Poly One",
+        "Mosaic",
+        "CF Industries",
+        "DowDuPont",
+        "Chevron",
+        "Epsilon",
+        "Nalco",
+        "Colonial Sugar",
+        "DSM Polymer",
+        "Geographically"
+    ],
+    "PERSON": [
+        "Praxair",
+        "Sid Richardson",
+        "Geismar"
+    ]
+}

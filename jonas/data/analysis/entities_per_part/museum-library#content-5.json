@@ -1,0 +1,74 @@
+{
+    "DATE": [
+        "1996",
+        "2005",
+        "2013",
+        "2008",
+        "2010",
+        "1995",
+        "2011",
+        "2000",
+        "2004"
+    ],
+    "GPE": [
+        "Albuquerque",
+        "Vancouver",
+        "Minneapolis",
+        "Buford",
+        "London",
+        "New York",
+        "Routledge",
+        "Ogden",
+        "Vitebsky",
+        "Boston",
+        "MA",
+        "Houghton Mifflin Harcourt"
+    ],
+    "LOC": [
+        "Hayward",
+        "Everglades",
+        "Siberia"
+    ],
+    "NORP": [
+        "Swamplife"
+    ],
+    "ORG": [
+        "University of New Mexico Press",
+        "UBC Press",
+        "University of Minnesota Press",
+        "Hutto",
+        "Guilford",
+        "Berkeley",
+        "University of California Press",
+        "Milkweed Editions"
+    ],
+    "PERSON": [
+        "Keith H.",
+        "Cruikshank",
+        "Julie",
+        "DiNovelli-Lang",
+        "Danielle",
+        "Donna",
+        "Eva",
+        "Joe",
+        "Flatwoods",
+        "Ingold",
+        "Tim",
+        "Kirksey",
+        "S.",
+        "Stefan Helmreich",
+        "Kohn",
+        "Eduardo",
+        "Laura A.",
+        "Ray",
+        "Deborah Bird",
+        "Tsing",
+        "Anna"
+    ],
+    "WORK_OF_ART": [
+        "The Return of the Animal: Posthumanism, indigeneity",
+        "FingeryEyes: Impressions of cup",
+        "The Emergence of Multispecies Ethnography",
+        "Unruly Edges: Mushrooms"
+    ]
+}

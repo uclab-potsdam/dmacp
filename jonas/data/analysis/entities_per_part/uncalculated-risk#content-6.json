@@ -1,0 +1,32 @@
+{
+    "DATE": [
+        "three years",
+        "more than a decade",
+        "the early 1920s"
+    ],
+    "FAC": [
+        "Galvez Street",
+        "the Claiborne Bridge",
+        "the Industrial Canal",
+        "the Chrysler Building"
+    ],
+    "GPE": [
+        "Orleans",
+        "St. Bernard Parishes",
+        "the City of New Orleans"
+    ],
+    "LOC": [
+        "Mississippi River",
+        "River",
+        "the Mississippi River"
+    ],
+    "ORG": [
+        "the Holy Cross-National Register Historic District",
+        "COE",
+        "the Lower Bywater",
+        "Holy Cross Neighborhoods",
+        "Corps",
+        "the Environmental Protection Agency",
+        "IHNC"
+    ]
+}

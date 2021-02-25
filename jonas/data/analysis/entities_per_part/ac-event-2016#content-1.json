@@ -1,0 +1,45 @@
+{
+    "DATE": [
+        "a few years",
+        "2010",
+        "the academic year",
+        "2017"
+    ],
+    "EVENT": [
+        "the Great Acceleration"
+    ],
+    "GPE": [
+        "Paris",
+        "Lyon"
+    ],
+    "LOC": [
+        "Sahara"
+    ],
+    "NORP": [
+        "Somali"
+    ],
+    "ORG": [
+        "ENS",
+        "Confluence Museum",
+        "Lyon",
+        "CNRS Paris",
+        "the Confluence Museum",
+        "Museum",
+        "Renaissance",
+        "the Michel Serres Institute",
+        "Contemporary Art Institute"
+    ],
+    "PERSON": [
+        "Jean-Fran\u00e7ois Pinton",
+        "H\u00e9l\u00e8ne Lafont-Couturier",
+        "Georges K\u00e9p\u00e9n\u00e9kian",
+        "Matthieu Calame",
+        "Nathalie Blanc",
+        "Jean-Michel Valantin",
+        "St\u00e9phane Grumbach",
+        "INRIA Lyon",
+        "Paul-Etienne Pini",
+        "Michael Madsen\u2019s",
+        "Ioan Negrutiu"
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "DATE": [
+        "1998",
+        "Today",
+        "the 1830s",
+        "Nearly two hundred years later",
+        "2015",
+        "today",
+        "150 years"
+    ],
+    "GPE": [
+        "Mississippi",
+        "Baton Rouge",
+        "Angola",
+        "the United States",
+        "Boston",
+        "Natchez",
+        "Athens"
+    ],
+    "LOC": [
+        "the Mississippi Gulf Coast",
+        "the Mississippi Delta"
+    ],
+    "NORP": [
+        "Mississippian"
+    ],
+    "ORG": [
+        "Forks of Road",
+        "Louisiana State Penitentiary",
+        "the Angola Plantation",
+        "MA",
+        "Beacon Press",
+        "Black Natchez",
+        "GA",
+        "University of Georgia Press",
+        "the Big House",
+        "Natchez African-American Museum",
+        "the Ealey Brothers"
+    ],
+    "PERSON": [
+        "Isaac Franklin",
+        "Michel-Rolph Trouillot",
+        "Jeremy",
+        "Natasha Trethewey",
+        "Natasha D. Trethewey",
+        "Clyde Woods",
+        "Papa Lightfoot",
+        "Richard Wright",
+        "Anne Moody",
+        "Wharlest Jackson"
+    ],
+    "PRODUCT": [
+        "Black"
+    ],
+    "WORK_OF_ART": [
+        "Jewel of the Mississippi"
+    ]
+}

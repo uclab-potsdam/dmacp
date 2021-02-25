@@ -1,0 +1,37 @@
+{
+    "DATE": [
+        "1932",
+        "2017",
+        "2005",
+        "fifty years",
+        "2067"
+    ],
+    "EVENT": [
+        "Hurricane Katrina"
+    ],
+    "GPE": [
+        "Louisiana",
+        "Monaco",
+        "Lousiana"
+    ],
+    "LOC": [
+        "Earth"
+    ],
+    "NORP": [
+        "American"
+    ],
+    "ORG": [
+        "State",
+        "CPRA",
+        "Coastal Protection and Restoration Authority",
+        "the Coastal Protection and Restoration Authority",
+        "the Authority.",
+        "Authority"
+    ],
+    "TIME": [
+        "every 100 minutes"
+    ],
+    "WORK_OF_ART": [
+        "Louisiana\u2019s Comprehensive Master Plan for a Sustainable Coast"
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "DATE": [
+        "2017",
+        "Yesterday",
+        "Tuesday",
+        "Today",
+        "tomorrow",
+        "tomorow"
+    ],
+    "GPE": [
+        "California"
+    ],
+    "ORG": [
+        "Cancer Alley"
+    ],
+    "PERSON": [
+        "Anthropocene Bodies::Disability"
+    ],
+    "TIME": [
+        "the afternoon"
+    ]
+}

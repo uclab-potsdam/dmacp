@@ -1,0 +1,90 @@
+{
+    "DATE": [
+        "decades",
+        "the 1970s",
+        "the beginning of the sixteenth century",
+        "2005",
+        "2014",
+        "today",
+        "many years ago",
+        "twelfth-century",
+        "that day",
+        "the previous day"
+    ],
+    "GPE": [
+        "Kogi",
+        "Colombia",
+        "Washington",
+        "Tayrona",
+        "Bogot\u00e1",
+        "Mexico",
+        "Antonio Velasco Pi\u00f1a",
+        "Antonio Velasco Pi\u00f1a\u2019s",
+        "Olmecs",
+        "Berlin",
+        "Peru"
+    ],
+    "LOC": [
+        "Earth",
+        "Phi",
+        "Nile",
+        "Europe"
+    ],
+    "NORP": [
+        "Western",
+        "Newtonian",
+        "Western\u00a0",
+        "Colombian",
+        "pre-Christian",
+        "Zapotec",
+        "Pi",
+        "Chinese"
+    ],
+    "ORG": [
+        "Wiwa",
+        "Sierra Nevada de Santa Marta",
+        "the Amazon Conservancy Team",
+        "the Colombian Ministry of Culture",
+        "Sierra",
+        "the Ministry of Culture",
+        "Mamos",
+        "the National Museum",
+        "Museum",
+        "Sierra Nevada de Santa Martawhose",
+        "Bukunkuisicon",
+        "Anthropocene Campus",
+        "HKW",
+        "the Sierra Nevada",
+        "the Holographic Sierra"
+    ],
+    "PERSON": [
+        "Arhuaco",
+        "Kankuamo",
+        "Kogis",
+        "Jaba Ta\u00f1iwashkaka",
+        "Wiwa Mamo",
+        "Wiwas",
+        "the Wiwa Mamo",
+        "Mamo Rom\u00e1n",
+        "Yanomami",
+        "Maya",
+        "Nahautl",
+        "Arhuacos",
+        "Velasco Pi\u00f1a",
+        "Tuma",
+        "Wiwa",
+        "Serancua",
+        "Haff",
+        "Marcahuasi"
+    ],
+    "PRODUCT": [
+        "Mamo",
+        "Zodiac"
+    ],
+    "TIME": [
+        "the night",
+        "a single afternoon",
+        "that night",
+        "the previous night"
+    ]
+}

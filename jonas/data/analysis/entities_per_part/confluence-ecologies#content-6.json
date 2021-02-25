@@ -1,0 +1,47 @@
+{
+    "DATE": [
+        "the 1950s"
+    ],
+    "EVENT": [
+        "the Great Depression of the 1930s",
+        "the Second World War"
+    ],
+    "GPE": [
+        "Ohio",
+        "Mississippi Rivers",
+        "Metropolis",
+        "Illinois",
+        "Austria",
+        "Mississippi"
+    ],
+    "LOC": [
+        "Tennessee River Basin",
+        "Earth",
+        "Mars",
+        "the Red Planet",
+        "the Blue Planet",
+        "Confluence",
+        "Danube"
+    ],
+    "NORP": [
+        "Midwestern",
+        "Martian",
+        "Asian",
+        "American"
+    ],
+    "PERSON": [
+        "Superman",
+        "Kim Stanley Robinson",
+        "Timeslips",
+        "Jay Alan Yim",
+        "Marlena Novak",
+        "Joslyn Willauer",
+        "William Blake",
+        "Jeremy Bolen",
+        "Jenny Kendler"
+    ],
+    "WORK_OF_ART": [
+        "EAT THE RIVER",
+        "Lounging through the Flood"
+    ]
+}

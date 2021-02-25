@@ -1,0 +1,51 @@
+{
+    "DATE": [
+        "October 26, 1998",
+        "1983",
+        "the twentieth century",
+        "June 1 1950",
+        "July 2015",
+        "the 1940s",
+        "forty years"
+    ],
+    "EVENT": [
+        "Cold Spring Harbour Laboratory"
+    ],
+    "GPE": [
+        "San Francisco",
+        "Mississippi",
+        "Upstate",
+        "New York"
+    ],
+    "LOC": [
+        "the Mississippi River Basin"
+    ],
+    "NORP": [
+        "Indian"
+    ],
+    "ORG": [
+        "New York Times Magazine",
+        "Big Agriculture",
+        "Keller",
+        "McClintock",
+        "the National Academy of Sciences",
+        "Cornell University"
+    ],
+    "PERSON": [
+        "Michael Pollan",
+        "\u201dMichael Pollan",
+        "https://www.nytimes.com/1998/10/25/magazine/playing-god-in-the-garden.html",
+        "Barbara McClintock",
+        "Evelyn Fox Keller\u2019s",
+        "McClintock",
+        "Evelyn Fox Keller",
+        "W. H. Freeman",
+        "Kathryn Yusoff",
+        "https://doi.org/10.1177/1474474014545301"
+    ],
+    "WORK_OF_ART": [
+        "Playing God in the Garden",
+        "The Origin and Behavior of Mutable Loci in Maize",
+        "Geologic Subjects: Nonhuman Origins"
+    ]
+}

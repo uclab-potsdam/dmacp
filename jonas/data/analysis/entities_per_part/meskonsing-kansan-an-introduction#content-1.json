@@ -1,0 +1,51 @@
+{
+    "DATE": [
+        "1832",
+        "today",
+        "2019",
+        "present-day"
+    ],
+    "EVENT": [
+        "Black Hawk War"
+    ],
+    "FAC": [
+        "the Ho-Chunk"
+    ],
+    "GPE": [
+        "Wisconsin",
+        "Iowa",
+        "Minnesota",
+        "Dakota Territory",
+        "Nebraska",
+        "Meskwaki",
+        "New York",
+        "Missouri",
+        "Mississippi Rivers",
+        "St. Louis",
+        "Cahokia",
+        "Kansas",
+        "Missouri Rivers"
+    ],
+    "LOC": [
+        "the Delaware River",
+        "the Mississippi River",
+        "the Wisconsin River",
+        "the Kickapoo River",
+        "Indian Lake"
+    ],
+    "NORP": [
+        "Indigenous"
+    ],
+    "ORG": [
+        "the Ho-Chunk",
+        "Kickapoo Nations",
+        "the Long Tradition of Indigenous Resistance",
+        "Iowa Point"
+    ],
+    "PERSON": [
+        "Meskonsing-Kansan",
+        "Kansan",
+        "Wisconsinan",
+        "Nick Estes"
+    ]
+}

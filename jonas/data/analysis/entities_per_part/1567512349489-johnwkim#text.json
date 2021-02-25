@@ -1,0 +1,40 @@
+{
+    "DATE": [
+        "August 27\u201329, 2019",
+        "2019"
+    ],
+    "GPE": [
+        "Dakota",
+        "Menominee",
+        "Potawatomi",
+        "Ottawa",
+        "Iowa",
+        "Miami",
+        "Peoria",
+        "Sauk",
+        "Mississippi",
+        "Lake Itasca"
+    ],
+    "LOC": [
+        "the Mississippi River",
+        "Anthropocene River"
+    ],
+    "NORP": [
+        "Ojibwe",
+        "Indigenous",
+        "European"
+    ],
+    "ORG": [
+        "Ho-Chunk",
+        "Meskwaki",
+        "Native Nations",
+        "Field Station 1",
+        "Field Station"
+    ],
+    "PERSON": [
+        "Anya Kaplan-Seem",
+        "John Kim",
+        "Dawn Goodwin",
+        "Jamie Gaither"
+    ]
+}

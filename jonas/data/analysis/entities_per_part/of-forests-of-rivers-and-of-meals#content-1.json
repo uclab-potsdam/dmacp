@@ -1,0 +1,41 @@
+{
+    "DATE": [
+        "Thirty years ago",
+        "Today"
+    ],
+    "GPE": [
+        "Ohio",
+        "Mississippi Rivers",
+        "Carbondale",
+        "Illinois",
+        "Mississippi",
+        "China",
+        "US"
+    ],
+    "LOC": [
+        "Southern Illinois",
+        "Earth",
+        "Mississippi",
+        "Anthropocene River"
+    ],
+    "NORP": [
+        "Asian",
+        "American"
+    ],
+    "ORG": [
+        "Shawnee National Forest",
+        "Trump",
+        "the North American Forest",
+        "Climate Movement",
+        "Climate Movement Convergence",
+        "Confluence Ecologies",
+        "Field Station 4",
+        "the Asian Carp Convivial Meal"
+    ],
+    "PERSON": [
+        "Andy Yang"
+    ],
+    "WORK_OF_ART": [
+        "Conflurgence"
+    ]
+}

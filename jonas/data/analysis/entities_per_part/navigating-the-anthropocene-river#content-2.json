@@ -1,0 +1,50 @@
+{
+    "DATE": [
+        "hundred-day",
+        "2015",
+        "2018",
+        "2021",
+        "Fall 2019",
+        "our day",
+        "Spring 2017",
+        "2019",
+        "2010"
+    ],
+    "EVENT": [
+        "the Sixth Extinction"
+    ],
+    "GPE": [
+        "Chthulucene",
+        "Cambridge"
+    ],
+    "LOC": [
+        "the Mississippi River",
+        "The Chicago River"
+    ],
+    "NORP": [
+        "American"
+    ],
+    "ORG": [
+        "the River Semester",
+        "Max Planck Institute",
+        "https://editions.lib.umn.edu/openrivers/article/what-we-learned-from-the-river/",
+        "MA",
+        "Harvard University Press",
+        "Berkeley",
+        "University of California Press"
+    ],
+    "PERSON": [
+        "dis)comforts",
+        "Alya Ansari",
+        "Joseph Underhill",
+        "Timothy Morton",
+        "Matt Edgeworth",
+        "Jeffrey Benjamin",
+        "Jason M. Kelley et"
+    ],
+    "WORK_OF_ART": [
+        "the \u201cAnthropocene River Journey",
+        "the Great Acceleration",
+        "What We Learned from the River"
+    ]
+}

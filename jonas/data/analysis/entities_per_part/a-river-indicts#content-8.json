@@ -1,0 +1,61 @@
+{
+    "DATE": [
+        "Today",
+        "some years",
+        "1996",
+        "1968",
+        "the Middle Ages"
+    ],
+    "FAC": [
+        "Cancer Alley"
+    ],
+    "GPE": [
+        "Mississippi",
+        "the United States",
+        "Louisiana",
+        "Australia",
+        "Donaldsonville",
+        "Baton Rouge",
+        "New Orleans",
+        "USA",
+        "Hamburg",
+        "Hanoi",
+        "Hurghada"
+    ],
+    "LOC": [
+        "the Mississippi basin",
+        "Gulf",
+        "Midwest",
+        "the Gulf of Mexico",
+        "Antarctic",
+        "Atlantic",
+        "Mississippi"
+    ],
+    "NORP": [
+        "Italian",
+        "Afro"
+    ],
+    "ORG": [
+        "CAFO",
+        "the State of",
+        "the International Criminal Court\u2019s",
+        "Ecological Defence Integrity",
+        "the Commons Farmers",
+        "Science"
+    ],
+    "PERSON": [
+        "Ecocide",
+        "Polly Higgins",
+        "Garrett Hardin",
+        "Elinor Ostrom",
+        "Ugo Mattei",
+        "Daniele Dell\u2019Agli"
+    ],
+    "PRODUCT": [
+        "Commons,&#8221"
+    ],
+    "WORK_OF_ART": [
+        "the Nobel Prize",
+        "Cancer Alley"
+    ]
+}

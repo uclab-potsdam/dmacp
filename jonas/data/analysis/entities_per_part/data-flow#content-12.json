@@ -1,0 +1,32 @@
+{
+    "DATE": [
+        "50 million years ago",
+        "only 9 million years ago",
+        "2018",
+        "a sunny day"
+    ],
+    "GPE": [
+        "US",
+        "Mexico",
+        "Guatemala",
+        "Honduras",
+        "Nicaragua",
+        "Wisconsin",
+        "Genoa"
+    ],
+    "LOC": [
+        "the Driftless Area of Wisconsin",
+        "Organic Valley",
+        "North America"
+    ],
+    "ORG": [
+        "Traceability",
+        "the Genoa National Fish Hatchery",
+        "Journal of Applied Ichthyology"
+    ],
+    "PERSON": [
+        "John Kim",
+        "T.J. Haxton",
+        "M.J. Friday"
+    ]
+}

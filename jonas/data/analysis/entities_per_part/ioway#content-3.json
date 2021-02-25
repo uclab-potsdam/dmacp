@@ -1,0 +1,72 @@
+{
+    "DATE": [
+        "a people ages ago",
+        "1999",
+        "the 1800s",
+        "1700",
+        "hundreds of years",
+        "1836"
+    ],
+    "FAC": [
+        "the Great Nation",
+        "the Ho-Chunk (Winnebago",
+        "this Middle Place",
+        "the Ho-Chunk"
+    ],
+    "GPE": [
+        "Iowa",
+        "Wisconsin",
+        "Minnesota",
+        "North Dakota",
+        "South Dakota",
+        "Kansas",
+        "Nebraska",
+        "Missouri",
+        "Manitoba",
+        "Montana",
+        "Ioway",
+        "Honga",
+        "Omaha",
+        "Ponca",
+        "Dakota",
+        "Yankton"
+    ],
+    "LOC": [
+        "the Great Lakes",
+        "the Great River",
+        "River",
+        "Dakotas"
+    ],
+    "NORP": [
+        "Indians"
+    ],
+    "ORG": [
+        "Tribal Historic Preservation",
+        "the Iowa Nation",
+        "Clans",
+        "Kansa",
+        "Madison: University of Wisconsin Press",
+        "Red Wing",
+        "Mahaska",
+        "White Cloud\u2019s"
+    ],
+    "PERSON": [
+        "Lance Foster Can",
+        "THPO",
+        "NAGPRA",
+        "I\u2019m",
+        "Otoe",
+        "Missouria",
+        "Quapaw",
+        "Tanji na Che\u201dLance M. Foster",
+        "Tanji na Che",
+        "Robert F. Sayre",
+        "Lake Pepin"
+    ],
+    "PRODUCT": [
+        "Apache"
+    ],
+    "WORK_OF_ART": [
+        "Recovering the Prairie"
+    ]
+}

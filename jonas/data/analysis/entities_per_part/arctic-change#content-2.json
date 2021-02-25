@@ -1,0 +1,45 @@
+{
+    "DATE": [
+        "December 2014",
+        "2011",
+        "2007",
+        "2010",
+        "the summer of 2012"
+    ],
+    "EVENT": [
+        "Cold War"
+    ],
+    "GPE": [
+        "Canada",
+        "Denmark",
+        "Greenland",
+        "the Faroe Islands",
+        "Russia",
+        "Norway",
+        "the United States",
+        "Alaska",
+        "the Kingdom of Denmark",
+        "Kingdom of Denmark",
+        "Copenhagen",
+        "Nuuk",
+        "Hamburg"
+    ],
+    "LOC": [
+        "The North Pole",
+        "North",
+        "the North Pole",
+        "Arctic",
+        "North Pole"
+    ],
+    "ORG": [
+        "the United Nations Convention",
+        "the United Nations",
+        "Department of Foreign Affairs",
+        "Ministry of Foreign Affairs",
+        "World Ocean Review",
+        "Maribus"
+    ],
+    "PERSON": [
+        "Moritz Bollmann et al."
+    ]
+}

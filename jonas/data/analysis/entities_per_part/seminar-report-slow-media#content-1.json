@@ -1,0 +1,42 @@
+{
+    "DATE": [
+        "today",
+        "2011"
+    ],
+    "GPE": [
+        "Cambridge",
+        "Paz Guevera"
+    ],
+    "ORG": [
+        "Slow Media",
+        "Slow Food",
+        "MA",
+        "Harvard University Press",
+        "the Fair Weather Foundation"
+    ],
+    "PERSON": [
+        "Rob Nixon",
+        "Libby Robin",
+        "Ellie Irons\u2019",
+        "Ally Bisshop",
+        "Yesenia Thibault-Picazo\u2019s",
+        "Soren Dahlgaard",
+        "Judith Dobler",
+        "John Moran",
+        "Isabel P\u00e9rez",
+        "Hugo Reinert",
+        "Stella Veciana",
+        "Anna \u00c5berg",
+        "Hugo Almeida",
+        "Helmuth Trischler\u2019s"
+    ],
+    "WORK_OF_ART": [
+        "A Slobjects Exercise",
+        "Mapping: An Exercise on Cartography",
+        "Deconstructing Fences",
+        "Alternatives to Global Challenges",
+        "Comics and Graphic Novels",
+        "Inside the Museum: A Curator\u2019s View on the History of the Anthropocene",
+        "Anti Cyclones"
+    ]
+}
