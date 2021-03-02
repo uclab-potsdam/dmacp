@@ -1,3 +1,5 @@
+## Running notebooks via Docker
+
 To run the notebook from a docker image, first install docker, e.g., via homebrew
 
 `brew install --cask docker` 
@@ -9,5 +11,10 @@ Next, we build a docker image from the `Dockerfile` from within this directory:
 `docker build --rm -t jupyter/datascience-notebook-dmacp .`
 
 Start the image:
-docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v "$PWD":/home/jovyan/work jupyter/datascience-notebook-dmacp
-``
+`docker run -p 8888:8888 -e JUPYTER_ENABLE_LAB=yes -v "$PWD":/home/jovyan/work jupyter/datascience-notebook-dmacp`
+
+## Mapping AC contributions by similarity
+
+View as
+- [Static webpage](http://uclab.fh-potsdam.de/dmacp/umap_dmacp.html)
+- [Jupyter notebook](https://github.com/uclab-potsdam/dmacp/blob/main/marian/umap_dmacp.ipynb)
