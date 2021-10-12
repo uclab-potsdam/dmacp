@@ -1,0 +1,27 @@
+<document>
+    <span resource="#n1" typeof="ac:Narration">
+        <meta property= "ac:narrationTime" content= "simultaneous" />
+        And archaeology,
+    </span>
+    <span resource= "#n2" typeof= "ac:Narration">
+        <meta property= "ac:narrationTime" content= "retrospective" />
+        while traditionally tasked with exploring the human world of the past—from ancient times prior to literacy up to historical times—
+    </span>
+    <span resource= "#n3" typeof= "ac:Narration">
+        <meta property= "ac:narrationTime" content= "simultaneous" />
+        now looks inscreasingly at the
+        <span resource= "#d1" typeof= "time:Interval">
+            <meta property= "time:intervalDuring" resource= "#p1" />
+            contemporary past
+        </span>
+        , when the scale, speed, and nature of
+        <span resource= "#p1" typeof= "ac:Process time:Interval">
+            <meta property= "ac:transformationDimension" content= "scale" />
+            <meta property= "ac:transformationDimension" content= "speed" />
+            <meta property= "ac:transformationDimension" content= "nature" />
+            <meta property= "ac:transformationType" content= "accelerate" />
+            anthropogenic change
+        </span>
+        accelerated.
+    </span>
+</document>
