@@ -10,21 +10,62 @@
                 The long career of fire
             </h3>
         </div>
-        <div id="EssayBody">
+        <div id="EssayBody" prefix="time: http://www.w3.org/2006/time# ac: http://anthropocene-curriculum.org/tbd">
             <p id="P1">
                 <span id="P1E1">
-                    Since the oxygenation of the atmosphere some two billion years ago, and the evolution of terrestrial 
-                    vegetation roughly half a billion years ago
+                    Since
+                    <span resource="#i1" typeof="time:Instant">
+                        <span property="time:inTimePosition" typeof="time:TimePosition">
+                                <meta property="time:hasTRS" content="ac:BYA" />
+                                <meta property="time:numericPosition" content="2" />
+                                <meta property="ac:hasIndefiniteness" content="0.5" />
+                        </span>
+                        the oxygenation of the atmosphere some two billion years ago, 
+                    </span>
+                </span>
+                <span resource="#i2" typeof="time:Instant">
+                    <span property="time:inTimePosition" typeof="time:TimePosition">
+                        <meta property="time:hasTRS" content="ac:BYA" />
+                        <meta property="time:numericPosition" content="0.5" />
+                        <meta property="ac:hasIndefiniteness" content="0.5" />
+                    </span>
+                    and the evolution of terrestrial vegetation roughly half a billion years ago
                 </span>
                 , Earth has been a fiery planet. 
                 <span id="P1E2">
-                    For the last half million years or more, a growing
-                    proportion of fire on Earth has been caused by species of the genus Homo, in most cases Homo sapiens
-                </span>. 
-                Of that anthropogenic fire, much has been accidental, but a growing proportion has served specific human ends. 
+                    <span resource="#d1" typeof="time:Interval">
+                        <span property="time:hasBeginning" typeof="time:Instant">
+                            <span property="time:inTimePosition" typeof="time:TimePosition">
+                                <meta property="time:hasTRS" content="ac:MYA" />
+                                <meta property="time:numericPosition" content="0.5" />
+                                <meta property="time:hasIndefiniteness" content="0.5" />
+                            </span>
+                        </span>
+                        <span property="time:hasEnd" typeof="time:Instant">
+                            <meta property="time:inXSDgYear" content="2021" />
+                        </span>
+                        For the last half million years or more, a growing proportion of fire on Earth has been caused by species of the genus Homo, in most cases Homo sapiens.
+                    </span>
+                </span> 
+                    Of that anthropogenic fire, much has been accidental, but a growing proportion has served specific human ends. 
                 <span id="P1E3">
-                    The date of hominin harnessing of fire is uncertain but probably lies between 1.5 and 0.5 million 
-                    years Before Present (BP).
+                    <span resource="#d2" typeof="time:Interval">
+                        <span property="time:hasBeginning" typeof="time:Instant">
+                            <span property="time:inTimePosition" typeof="time:TimePosition">
+                                <meta property="time:hasTRS" content="ac:MYA" />
+                                <meta property="time:numericPosition" content="1.5" />
+                            </span>
+                        </span>
+                        <span property="time:hasEnd" typeof="time:Instant">
+                            <span property="time:inTimePosition" typeof="time:TimePosition">
+                                <meta property="time:hasTRS" content="ac:MYA" />
+                                <meta property="time:numericPosition" content="0.5" />
+                            </span>
+                        </span>
+                        <meta property="ac:hasIndefiniteness" content="0.5" />
+                        The date of hominin harnessing of fire is uncertain but probably lies between 1.5 and 0.5 million 
+                        years Before Present (BP).
+                    </span>
                 </span>
                 According to one influential hypothesis, it might have happened early enough to help make our ancestors into
                 big-brained humans (Wrangham 2019): cooking expanded the repertory of digestible foods, including high-quality
@@ -33,8 +74,20 @@
                 purpose to which early humans put fire was landscape and ecosystem modification. Burning encouraged the growth of
                 fresh grass and shoots, creating landscapes conducive to large herbivore herds, and thus to human hunting. 
                 <span id="P1E4">
-                    The use of combustion for these purposes began in Africa but travelled with humans as they colonized 
-                    the globe after about 100,000 years BP. 
+                    <span resource="#d3" typeof="time:Interval">
+                        <meta property="time:intervalBefore" resource="#d4" />
+                        The use of combustion for these purposes began in Africa
+                    </span>
+                    <span resource="#d4" typeof="time:Interval">
+                        <span property="time:hasBeginning" typeof="time:Instant">
+                            <span property="time:inTimePosition" typeof="time:TimePosition">
+                                <meta property="time:hasTRS" content="ac:TYA" />
+                                <meta property="time:numericPosition" content="100" />
+                                <meta property="ac:hasIndefiniteness" content="0.5" />
+                            </span>
+                        </span>
+                        but travelled with humans as they colonized the globe after about 100,000 years BP.
+                    </span>
                 </span>
                 In arid Australia, indigenous Australians (Aboriginals) relied on controlled fire known as
                 &ldquo;firestick farming&rdquo; not only to boost populations of kangaroo and wallaby, but also of edible plants
@@ -42,8 +95,26 @@
                 where fire&rsquo;s warmth allowed Pleistocene humans to survive in Siberia and northern North America. The extent of
                 these ancient uses of anthropogenic fire varied with climate, population size, and distribution. 
                 <span id="P1E5">
-                    Sedentary societies around the world developed pottery, the oldest of which dates from East Asia some 20,000 years BP. 
-                    Kiln-fired pottery, using wood and charcoal for fuel, appeared on a small scale about 8,000 years BP in Southwest Asia. 
+                    <span resource="#d5" typeof="time:Interval">
+                        <span property="time:hasBeginning" typeof="time:Instant">
+                            <span property="time:inTimePosition" typeof="time:TimePosition">
+                                <meta property="time:hasTRS" content="ac:TYA" />
+                                <meta property="time:numericPosition" content="20" />
+                                <meta property="ac:hasIndefiniteness" content="0.5" />
+                            </span>
+                        </span>
+                        Sedentary societies around the world developed pottery, the oldest of which dates from East Asia some 20,000 years BP.
+                    </span>
+                    <span resource="#d6" typeof="time:Interval">
+                        <span property="time:hasBeginning" typeof="time:Instant">
+                            <span property="time:inTimePosition" typeof="time:TimePosition">
+                                <meta property="time:hasTRS" content="ac:TYA" />
+                                <meta property="time:numericPosition" content="8" />
+                                <meta property="ac:hasIndefiniteness" content="0.5" />
+                            </span>
+                        </span>
+                        Kiln-fired pottery, using wood and charcoal for fuel, appeared on a small scale about 8,000 years BP in Southwest Asia.
+                    </span> 
                 </span>
                 Burnt remains in the archaeological record indicate a range of social, foodstuff, and technological complexities.
                 Stratigraphic evidence of combustion occurs as a range of prepared structures or features (hearths), stratified
