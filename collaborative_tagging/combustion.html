@@ -10,18 +10,44 @@
                 The long career of fire
             </h3>
         </div>
-        <div id="EssayBody">
+        <div id="EssayBody" prefix="time: http://www.w3.org/2006/time# ac: http://anthropocene-curriculum.org/tbd">
             <p id="P1">
                 <span id="P1E1">
-                    Since the oxygenation of the atmosphere some two billion years ago, and the evolution of terrestrial 
-                    vegetation roughly half a billion years ago
+                    Since
+                    <span resource="#i1" typeof="time:Instant">
+                        <span property="time:inTimePosition" typeof="time:TimePosition">
+                                <meta property="time:hasTRS" content="ac:BYA" />
+                                <meta property="time:numericPosition" content="2" />
+                                <meta property="ac:hasIndefiniteness" content="0.5" />
+                        </span>
+                        the oxygenation of the atmosphere some two billion years ago, 
+                    </span>
+                </span>
+                <span resource="#i2" typeof="time:Instant">
+                    <span property="time:inTimePosition" typeof="time:TimePosition">
+                        <meta property="time:hasTRS" content="ac:BYA" />
+                        <meta property="time:numericPosition" content="0.5" />
+                        <meta property="ac:hasIndefiniteness" content="0.5" />
+                    </span>
+                    and the evolution of terrestrial vegetation roughly half a billion years ago
                 </span>
                 , Earth has been a fiery planet. 
                 <span id="P1E2">
-                    For the last half million years or more, a growing
-                    proportion of fire on Earth has been caused by species of the genus Homo, in most cases Homo sapiens
-                </span>. 
-                Of that anthropogenic fire, much has been accidental, but a growing proportion has served specific human ends. 
+                    <span resource="#d1" typeof="time:Interval">
+                        <span property="time:hasBeginning" typeof="time:Instant">
+                            <span property="time:inTimePosition" typeof="time:TimePosition">
+                                <meta property="time:hasTRS" content="ac:MYA" />
+                                <meta property="time:numericPosition" content="0.5" />
+                                <meta property="time:hasIndefiniteness" content="0.5" />
+                            </span>
+                        </span>
+                        <span property="time:hasEnd" typeof="time:Instant">
+                            <meta property="time:inXSDgYear" content="2021" />
+                        </span>
+                        For the last half million years or more, a growing proportion of fire on Earth has been caused by species of the genus Homo, in most cases Homo sapiens.
+                    </span>
+                </span> 
+                    Of that anthropogenic fire, much has been accidental, but a growing proportion has served specific human ends. 
                 <span id="P1E3">
                     The date of hominin harnessing of fire is uncertain but probably lies between 1.5 and 0.5 million 
                     years Before Present (BP).
