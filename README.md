@@ -7,13 +7,8 @@ In general, we use for tagging this time specific ontology: https://www.w3.org/T
 We use a combination of standard and non-standard classes to be able to encode causality within individual temporal entities.
 So far we consider a narration an ensable of time entities. An essay can have multiple narration and one narration can have several temporal entities.
 
------
-
 ## Narration(s)
 A narration is a portion of the essay which has variable length. Usually we mark a paragraph as a narration unit. By having multiple narrations within an essay we can construct a TRS local to itself. We still don't know how to relate this local TRS with the standard temporal axis.
-
------
-
 
 ## Difference between Instant and Interval
 
@@ -45,7 +40,7 @@ Instant (temporal entity): A temporal entity with zero extent or duration. It ma
 -----
 
 ### Interval
-
+A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different [standard]
 
 ```
 <span resource="#d16" typeof="time:Interval">
@@ -61,3 +56,14 @@ Instant (temporal entity): A temporal entity with zero extent or duration. It ma
     Newcomen&rsquo;s pumping engine in the UK in the late eighteenth century.
 </span>
 ```
+
+#### Label → [time:ProperInterval](https://www.w3.org/TR/2020/CR-owl-time-20200326/#time:ProperInterval)
+- `Properties` →
+    - `URI` [standard]: unique identifier for the entity
+- `hasBeginning` [standard]: 
+    - Parameter: Reference to instant recognized as the beginning of the interval. See interval for all possible properties and parameters.
+- `hasEnd` [standard]: 
+    - Parameter: Reference to instant recognized as the end of the interval. See interval for all possible properties and parameters.
+- `Uncertain` [non standard]:
+    - Parameter: Float from 0 to 1 which expresses the degree of uncertainty connected to an instant or an interval. 0 has no uncertainty, 1 has uncertainty.
+- `HasTemporalDuration` [standard]
