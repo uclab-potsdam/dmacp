@@ -8,7 +8,8 @@
 
 			essay = [].map.call(essay.querySelectorAll("p"), (narration) => {
 
-				narration = [].map.call(narration.querySelectorAll("span"), (entity) => {
+				narration = [].map.call(narration.querySelectorAll('[resource]'), (entity) => {
+					console.log(entity)
 					return entity
 				})
 				return narration
