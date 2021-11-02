@@ -1,27 +1,16 @@
 <script>
-	import * as d3 from 'd3';
 	import { onMount } from "svelte";
+	import loadData from './loadData.js';
+	// import { init } from 'svelte/internal';
 	
 	let essayData = [];
 	onMount(async () => {
-		const data = await d3.html("./static/data/combustion.html").then(function (essay) {
-
-			essay = [].map.call(essay.querySelectorAll("p"), (narration) => {
-
-				narration = [].map.call(narration.querySelectorAll('[resource]'), (entity) => {
-					console.log(entity)
-					return entity
-				})
-				return narration
-			})
-			return essay
-		});
-		essayData = data
+		essayData = await loadData("./static/data/combustion.html")
 	})
 </script>
 
 <main>
-	<h1>Hello!</h1>
+	<!-- <h1>Hello!</h1> -->
 	<p>{ essayData }</p>
 </main>
 
