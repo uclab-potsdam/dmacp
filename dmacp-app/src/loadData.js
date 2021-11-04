@@ -9,16 +9,27 @@ export default async function loadData (dataPath) {
                 globalY = globalY + 1
                 const isInstant = entity.querySelector('[typeof="time:Instant"]') !== null
 
-                const entityTimePosition = [].map.call(entity.querySelectorAll('meta'), (unit) => {
+                const arrayOfUnits = Array.from(entity.querySelectorAll('meta'))
+                const entityTimePosition = [].map.call(entity.querySelectorAll('meta'), (unit, u) => {
+
+                    const followingElement =  arrayOfUnits[u + 1]
+                    let label = u + 1 < arrayOfUnits.length ? followingElement.getAttribute('content') : null
+
+                    let obj = {}
+                    console.log(globalY, label)
                     const hasYear = unit.getAttribute('property') === 'time:inXSDgYear'
 
                     if (hasYear) {
-                        return {
+                        obj = {
                             x: +unit.getAttribute('content'),
-                            y: globalY
+                            y: globalY,
+                            label
                         }
                     }
-                }).filter(element => element !== undefined)
+                    
+                    return obj
+
+                }).filter(element => Object.keys(element).length !== 0)
 
                 return {
                     resource: entity.getAttribute('resource'),
