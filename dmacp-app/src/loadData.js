@@ -16,7 +16,6 @@ export default async function loadData (dataPath) {
                     let label = u + 1 < arrayOfUnits.length ? followingElement.getAttribute('content') : null
 
                     let obj = {}
-                    console.log(globalY, label)
                     const hasYear = unit.getAttribute('property') === 'time:inXSDgYear'
 
                     if (hasYear) {
@@ -37,7 +36,6 @@ export default async function loadData (dataPath) {
                     entityTimePosition
                 }
             })
-            console.log(narration)
             return narration
         })
         return essay

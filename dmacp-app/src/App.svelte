@@ -1,23 +1,32 @@
 <script>
-	import { pointers } from "d3-selection";
+import Visualization from './components/Visualization.svelte';
 import { onMount } from "svelte";
-	import loadData from './loadData.js';
+import loadData from './loadData.js';
 	// import { init } from 'svelte/internal';
 	
-	let essayData = [];
+	export let essayData = [];
+	let promise = loadData("./static/data/combustion.html");
+	const error = 'uh oh!'
 	onMount(async () => {
 		essayData = await loadData("./static/data/combustion.html")
 	})
 </script>
 
 <main>
-	<!-- <h1>Hello!</h1> -->
 	<div>
+		{#await promise}
+			<p>Loading</p>
+		{:then data}
+			<Visualization data='{ data }' />
+		{:catch error}
+			<p>{ error }</p>
+		{/await}
+		<h1 class='main-title'>Combustion Essay</h1>
 		{#each essayData as narration, n}
 			<h1 class='narration-header'>Narration { n }</h1>
 			<div class='entity'>
 				{#each narration as entity, e}
-						<div class='entity-specs'>
+						<div class='entity-specs { entity.type }'>
 							<div>{ entity.resource }, {entity.type}</div>
 						{#each entity.entityTimePosition as point, p}
 							<div class='entity-information'>
@@ -41,13 +50,17 @@ import { onMount } from "svelte";
 	}
 
 	h1 {
-		color: blue;
+		color: red;
 		font-size: 2em;
 		font-weight: 100;
 	}
 
+	.main-title {
+		color: black;
+	}
+
 	.narration-header{
-		border-top: 1px solid blue;
+		border-top: 1px solid red;
 		padding-top: 20px;
 	}
 
@@ -59,16 +72,24 @@ import { onMount } from "svelte";
 
 	.entity-specs {
 		min-width: 20%;
-		border: 1px solid blue;
 		margin: 2% 1%;
 		padding: 5px 10px;
 		border-radius: 10px;
-		background-color: rgb(229, 223, 255);
 		
 	}
 
+	.interval {
+		background-color: rgb(229, 223, 255);
+		border: 1px solid blue;
+	}
+
+	.instant {
+		background-color: rgb(255, 223, 164);
+		border: 1px solid rgb(158, 103, 19);
+	}
+
 	.entity-information {
-		margin: 5% 2%;
+		margin: 0 2%;
 	}
 
 	.info {
