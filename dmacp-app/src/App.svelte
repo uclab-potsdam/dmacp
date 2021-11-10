@@ -21,7 +21,7 @@ import loadData from './loadData.js';
 		{:catch error}
 			<p>{ error }</p>
 		{/await}
-		<h1 class='main-title'>Combustion Essay</h1>
+		<!-- <h1 class='main-title'>Combustion Essay</h1>
 		{#each essayData as narration, n}
 			<h1 class='narration-header'>Narration { n }</h1>
 			<div class='entity'>
@@ -37,7 +37,7 @@ import loadData from './loadData.js';
 						</div>
 				{/each}
 			</div>
-		{/each}
+		{/each} -->
 	</div>
 </main>
 
