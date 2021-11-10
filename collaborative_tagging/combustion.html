@@ -95,7 +95,11 @@
                 <meta property="time:inXSDgYear" content="-8000" />
                 <meta property="rdfs:label" content="8,000 Years BCE" />
                 <!-- Proposal for establishing relation between entities -->
-                <meta property="ac:hasConnection" content="influences" resource="#i5" weight="0.5"/>
+                <!--<meta property="ac:hasConnection" content="influences" resource="#i5" weight="0.5"/>-->
+                <!-- I think we would need one tag per attribute, like so... -->
+                <meta property="ac:hasConnection" resource="#i5" />
+                <meta property="ac:connectionType" content="influences" />
+                <meta property="ac:connectionWeight" content="0.5" />
                 <meta property="ac:hasIndefiniteness" content="0.5" />
                 Kiln-fired pottery, using wood and charcoal for fuel, appeared on a small scale about 8,000 years BP in
                 Southwest Asia.
