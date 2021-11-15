@@ -20,6 +20,7 @@
             <span resource="#i1" typeof="time:Instant">
                 <meta property="time:inXSDgYear" content="-1999997978" />
                 <meta property="rdfs:label" content="Two Billion Years Ago" />
+                <meta property="ac:hasIndefiniteness" content="0.5" />
                 the oxygenation of the atmosphere some two billion years ago,
             </span>
             <span resource="#i2" typeof="time:Instant">
@@ -32,6 +33,7 @@
                     <span property="time:hasBeginning" typeof="time:Instant">
                         <meta property="time:inXSDgYear" content="-497978" />
                         <meta property="rdfs:label" content="Half Million Years Ago" />
+                        <meta property="ac:hasIndefiniteness" content="0.5" />
                     </span>
                     <span property="time:hasEnd" typeof="time:Instant">
                         <meta property="time:inXSDgYear" content="2022" />
@@ -41,6 +43,7 @@
                 </span>
             Of that anthropogenic fire, much has been accidental, but a growing proportion has served specific human ends.
             <span resource="#d2" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" content="contributes" resource="#d1" weight="0.5" />
                 <span property="time:hasBeginning" typeof="time:Instant">
                     <meta property="time:inXSDgYear" content="-1500000" />
                     <meta property="rdfs:label" content="1.5 Million Years BCE" />
@@ -58,10 +61,12 @@
         <p id="P2">
             Aside from cooking, which involved tiny amounts of biomass fuel, the main purpose to which early humans put fire was landscape and ecosystem modification. Burning encouraged the growth of fresh grass and shoots, creating landscapes conducive to large herbivore herds, and thus to human hunting.
             <span resource="#d3" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" content="contributes" resource="#d1" weight="0.5" />
                 <meta property="time:intervalBefore" resource="#d4" />
                 The use of combustion for these purposes began in Africa
             </span>
             <span resource="#d4" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" content="contributes" resource="#d1" weight="0.5" />
                 <span property="time:hasBeginning" typeof="time:Instant">
                     <meta property="time:inXSDgYear" content="-100000" />
                     <meta property="rdfs:label" content="100,000 Years BCE" />
