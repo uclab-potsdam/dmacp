@@ -66,7 +66,7 @@ A temporal entity with non-zero extent or duration, i.e. for which the value of 
 
 #### Label → [time:ProperInterval](https://www.w3.org/TR/2020/CR-owl-time-20200326/#time:ProperInterval)
 #### Properties →
-    - `URI` [standard]: unique identifier for the entity starts with d
+- `URI` [standard]: unique identifier for the entity starts with d
 - `hasBeginning` [standard]: 
     - Parameter: Reference to instant recognized as the beginning of the interval or an anonymous instant. See interval for all possible properties and parameters.
 - `hasEnd` [standard]: 
