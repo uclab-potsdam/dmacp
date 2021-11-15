@@ -28,7 +28,6 @@
                 and the evolution of terrestrial vegetation roughly half a billion years ago,
             </span>
             Earth has been a fiery planet.
-            <span>
                 <span resource="#d1" typeof="time:ProperInterval">
                     <span property="time:hasBeginning" typeof="time:Instant">
                         <meta property="time:inXSDgYear" content="-497978" />
@@ -41,7 +40,6 @@
                     For the last half million years or more, a growing proportion of fire on Earth has been caused by
                     species of the genus Homo, in most cases <em>Homo sapiens.</em>
                 </span>
-            </span>
             Of that anthropogenic fire, much has been accidental, but a growing proportion has served specific human
             ends.
             <span resource="#d2" typeof="time:ProperInterval">
@@ -95,11 +93,7 @@
                 <meta property="time:inXSDgYear" content="-8000" />
                 <meta property="rdfs:label" content="8,000 Years BCE" />
                 <!-- Proposal for establishing relation between entities -->
-                <!--<meta property="ac:hasConnection" content="influences" resource="#i5" weight="0.5"/>-->
-                <!-- I think we would need one tag per attribute, like so... -->
-                <meta property="ac:hasConnection" resource="#i5" />
-                <meta property="ac:connectionType" content="influences" />
-                <meta property="ac:connectionWeight" content="0.5" />
+                <meta property="ac:hasConnection" content="influences" resource="#i5" weight="0.5"/>
                 <meta property="ac:hasIndefiniteness" content="0.5" />
                 Kiln-fired pottery, using wood and charcoal for fuel, appeared on a small scale about 8,000 years BP in
                 Southwest Asia.
@@ -306,7 +300,6 @@
             </span>
             <span resource="#d18" typeof="time:ProperInterval">
                 <meta property="time:hasBeginning" resource="#i10" />
-                <!-- changed this to property time:hasBeginning because time:intervalStartedBy only works when two intervals are involved -->
                 <span property="time:hasEnd" typeof="time:Instant">
                     <meta property="time:inXSDgYear" content="1799" />
                     <!-- this interval is impossible, it ends before it begins. Maybe it should not even have an end? Since the text says "continues to be". -->
