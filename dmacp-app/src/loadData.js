@@ -17,7 +17,8 @@ export default async function loadData (dataPath) {
 
                     let obj = {}
                     const hasYear = unit.getAttribute('property') === 'time:inXSDgYear'
-
+                    // It needs to be some way of mapping indefinite beginnings and indefinite ends, at the moment I am doing it into the vis
+                    // something like: getting the content for the tag and then setting a boolean that can be reused later?
                     if (hasYear) {
                         obj = {
                             x: +unit.getAttribute('content'),
