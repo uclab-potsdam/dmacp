@@ -164,6 +164,9 @@
             The first genuinely 
             <span resource="#industrial_use_of_fire" typeof="time:ProperInterval">
                 <meta property="ac:hasConnection" resource="#metallurgy" />
+                <meta property="ac:hasConnection" resource="#other_traditional_industries" />
+                <meta property="ac:hasConnection" resource="#scale_increase_industrial_combustion" />
+                <meta property="ac:hasConnection" resource="#industrial_revolution" />
                 <span property="time:hasBeginning" typeof="time:Instant">
                     <meta property="time:inXSDgYear" content="-6000" />
                     <meta property="rdfs:label" content="6th Millenium BCE" />
@@ -179,6 +182,7 @@
                 <meta property="ac:hasConnection" resource="#bronze" />
                 <meta property="ac:hasConnection" resource="#iron" />
                 <meta property="ac:hasConnection" resource="#american_metal_production" />
+                <meta property="ac:hasConnection" resource="#surge_in_metal_production" />
                 <span property="time:hasBeginning" typeof="time:Instant">
                     <meta property="time:inXSDgYear" content="-6000" />
                     <meta property="rdfs:label" content="6th Millenium BCE" />
@@ -242,6 +246,7 @@
                 <meta property="ac:hasConnection" resource="#charcoal" />
                 <meta property="ac:hasConnection" resource="#large_scale_iron-making" />
                 <meta property="ac:hasConnection" resource="#blast_furnaces" />
+                <meta property="ac:hasConnection" resource="#surge_in_metal_production" />
                 <span property="time:hasBeginning" typeof="time:Instant">
                     <meta property="time:inXSDgYear" content="-2000" />
                     <meta property="rdfs:label" content="2000 BCE" />
@@ -282,7 +287,7 @@
                 </span>
                 <span property="time:hasEnd" typeof="time:Instant">
                     <meta property="time:inXSDgYear" content="1775" />
-                    <meta property="rdfs:label" content="Late 18th Century" />
+                    <meta property="rdfs:label" content="Late 18th Century CE" />
                     <meta property="ac:hasIndefiniteness" content="1" />
                 </span>
                 Charcoal
@@ -312,31 +317,293 @@
                 metallurgy
             </span>
             , combustion formed an essential step in generating heat in several 
-            <span>
+            <span resource="#other_traditional_industries" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" resource="#lime" />
+                <meta property="ac:hasConnection" resource="#brickmaking" />
+                <meta property="ac:hasConnection" resource="#glassmaking" />
                 other traditional industries
             </span>
             . 
-            <span>
+            <span resource="#lime" typeof="time:ProperInterval">
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="-8000" />
+                    <meta property="rdfs:label" content="8th Millenium BCE" />
+                </span>
                 Lime
             </span>
             , made by heating limestone to 1,000 degrees Celsius, was used in plaster by the eighth millennium BCE in what is now Jordan; eventually it was used in mortar, cement, tanning, and fertilizer. 
-            <span>
+            <span resource="#brickmaking" typeof="time:ProperInterval">
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="-5000" />
+                    <meta property="rdfs:label" content="5th Millenium BCE" />
+                    <meta property="ac:hasIndefiniteness" content="1" />
+                </span>
                 Brickmaking 
             </span>
             with fire developed in China, India, and Mesopotamia in the fifth and fourth millennia BCE. 
-            <span>
+            <span resource="#glassmaking" typeof="time:ProperInterval">
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="-3000" />
+                    <meta property="rdfs:label" content="3rd Millenium BCE" />
+                </span>
                 Glassmaking 
             </span>
-            dates to the third millennium BCE. Sugar-refining, salt-making, and several other ancient industries also made use of combustion (McCray 2007). The scale of combustion for industrial purposes greatly increased during the era of the Roman and Han Chinese empires in the second century BCE to the second century CE. Airborne pollution from Roman lead smelting found in Greenland ice cores and lake sediment cores across Europe indicates that Roman production, and presumably combustion, peaked in the first and second centuries BCE. A surge in iron and other metal production took place under China&rsquo;s Song dynasty in the tenth and eleventh centuries CE. Here, coal was used for the first time on a large scale.
+            dates to the third millennium BCE. Sugar-refining, salt-making, and several other ancient industries also made use of combustion (McCray 2007). The 
+            <span resource="#scale_increase_industrial_combustion" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" resource="#roman_combustion_peak" />
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="-200" />
+                    <meta property="rdfs:label" content="2nd Century BCE" />
+                </span>
+                <span property="time:hasEnd" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="200" />
+                    <meta property="rdfs:label" content="2nd Century CE" />
+                </span>
+                scale of combustion for industrial purposes greatly increased 
+            </span>
+            during the era of the Roman and Han Chinese empires in the second century BCE to the second century CE. Airborne pollution from Roman lead smelting found in Greenland ice cores and lake sediment cores across Europe indicates that 
+            <span resource="#roman_combustion_peak" typeof="time:ProperInterval">
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="-200" />
+                    <meta property="rdfs:label" content="2nd Century BCE" />
+                </span>
+                <span property="time:hasEnd" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="0" />
+                    <meta property="rdfs:label" content="1st Century BCE" />
+                </span>
+                Roman production, and presumably combustion, peaked 
+            </span>
+            in the first and second centuries BCE. A 
+            <span resource="#surge_in_metal_production" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" resource="#coal" />
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="901" />
+                    <meta property="rdfs:label" content="10th Century CE" />
+                </span>
+                <span property="time:hasEnd" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1100" />
+                    <meta property="rdfs:label" content="11th Century CE" />
+                </span>
+                surge in iron and other metal production 
+            </span>
+            took place under China&rsquo;s Song dynasty in the tenth and eleventh centuries CE. Here, 
+            <span resource="#coal" typeof="time:ProperInterval">
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="901" />
+                    <meta property="rdfs:label" content="10th Century CE" />
+                </span>
+                coal 
+            <span>
+            was used for the first time on a large scale.
         </p>
         <p id="P5">
-            Coal became the primary fuel for industrial purposes following James Watt&rsquo;s developments of Thomas Newcomen&rsquo;s pumping engine in the UK in the late eighteenth century. This inaugurated a new phase in the history of combustion, although the resulting &ldquo;Industrial Revolution&rdquo; took almost two hundred years to develop around the globe. Before coal&rsquo;s widespread use, combustion had left its mark in strata primarily in the form of char. After about 1900, when global coal use surpassed that of biomass, anthropogenic combustion left its mark increasingly in the form of soot (Han et al. 2018). A further key step for coal combustion occurred in London in 1882, when the first power plant generating electricity for public lighting came into operation. Electricity generation became, and continues to be, a major use of coal combustion. Following World War II, the demand for electricity escalated, resulting in the massive expansion of industrial coal burning, supplemented by the combustion of fuel-oils and natural gas. This period, termed &ldquo;the Great Acceleration,&rdquo; which marks the start of the proposed Anthropocene Epoch, saw an extraordinary increase in human energy use (Syvitski et al. 2020). This increase was not only for electricity generation and other industrial processes, but also from a massive increase in transport involving the combustion of gasoline, diesel, and aviation fuels.
+            <span resource="#coal">
+                Coal 
+            </span>
+            became the primary fuel for industrial purposes following James Watt&rsquo;s developments of Thomas Newcomen&rsquo;s 
+            <span resource="#pumping_engine" typeof="time:Instant">
+                <meta property="ac:hasConnection" resource="#coal" />
+                <meta property="time:inXSDgYear" content="1775" />
+                <meta property="rdfs:label" content="Late 18th Century CE" />
+                <meta property="ac:hasIndefiniteness" content="1" />
+                pumping engine 
+            </span>
+            in the UK in the late eighteenth century. This inaugurated a new phase in the history of combustion, although the resulting 
+            <span resource="#industrial_revolution" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" resource="#pumping_engine" />
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1775" />
+                    <meta property="rdfs:label" content="Late 18th Century CE" />
+                </span>
+                <span property="time:hasEnd" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1900" />
+                    <meta property="rdfs:label" content="1900 CE" />
+                    <meta property="ac:hasIndefiniteness" content="1" />
+                </span>
+                &ldquo;Industrial Revolution&rdquo; 
+            </span>
+            took almost two hundred years to develop around the globe. Before 
+            <span resource="#coal">
+                coal&rsquo;s widespread use
+            </span>
+            , combustion had left its mark in strata primarily in the form of char. After about 1900, when 
+            <span resource="#coal_surpasses_biomass" typeof="time:Instant">
+                <meta property="ac:hasConnection" resource="#coal" />
+                <meta property="ac:hasConnection" resource="#biomass" />
+                <meta property="time:inXSDgYear" content="1900" />
+                <meta property="rdfs:label" content="1900 CE" />
+                <meta property="ac:hasIndefiniteness" content="1" />
+                global coal use surpassed that of biomass
+            </span>, 
+            <span resource="#anthropogenic_fire">
+                anthropogenic combustion 
+            </span>
+            left its mark increasingly in the form of soot (Han et al. 2018). A further key step for 
+            <span resource="#coal">
+                coal 
+            </span>
+            combustion occurred in London in 1882, when the 
+            <span resource="#first_power_plant" typeof="time:Instant">
+                <meta property="time:inXSDgYear" content="1882" />
+                <meta property="rdfs:label" content="1882 CE" />
+                first power plant 
+            </span>
+            generating 
+            <span resource="#electricity" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" resource="#first_power_plant" />
+                <meta property="ac:hasConnection" resource="#public_lighting" />
+                <meta property="ac:hasConnection" resource="#electricity_demand_escalation" />
+                <meta property="ac:hasConnection" resource="#coal" />
+                <meta property="ac:hasConnection" resource="#fuel-oils" />
+                <meta property="ac:hasConnection" resource="#natural_gas" />
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1882" />
+                    <meta property="rdfs:label" content="1882 CE" />
+                </span>
+                electricity 
+            </span>
+            for 
+            <span resource="#public_lighting" typeof="time:ProperInterval">
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1882" />
+                    <meta property="rdfs:label" content="1882 CE" />
+                </span>
+                public lighting 
+            </span>
+            came into operation. 
+            <span resource="#electricity">
+                Electricity generation 
+            </span>
+            became, and continues to be, a major use of 
+            <span resource="#coal">
+                coal 
+            </span>combustion. Following World War II, the 
+            <span resource="#electricity_demand_escalation" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" resource="#massive_coal_combustion_expansion" />
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1945" />
+                    <meta property="rdfs:label" content="Following World War II" />
+                </span>
+                demand for electricity escalated
+            </span>
+            , resulting in the 
+            <span resource="#massive_coal_combustion_expansion" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" resource="#coal" />
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1945" />
+                    <meta property="rdfs:label" content="Following World War II" />
+                </span>
+                massive expansion of industrial coal burning
+            </span>, supplemented by the combustion of 
+            <span resource="#fuel-oils" typeof="time:ProperInterval">
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1945" />
+                    <meta property="rdfs:label" content="Following World War II" />
+                </span>
+                fuel-oils 
+            </span>and 
+            <span resource="#natural_gas" typeof="time:ProperInterval">
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1945" />
+                    <meta property="rdfs:label" content="Following World War II" />
+                </span>
+                natural gas
+            </span>
+            . This period, termed 
+            <span resource="#great_acceleration" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" resource="#anthropocene" />
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1945" />
+                    <meta property="rdfs:label" content="Following World War II" />
+                </span>
+                &ldquo;the Great Acceleration,&rdquo; 
+            </span>
+            which marks the start of the proposed 
+            <span resource="#anthropocene" typeof="time:ProperInterval">
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1945" />
+                    <meta property="rdfs:label" content="Following World War II" />
+                </span>
+                Anthropocene Epoch
+            </span>
+            , saw an extraordinary increase in 
+            <span resource="#human_energy_use" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" resource="#great_acceleration" />
+                <meta property="ac:hasConnection" resource="#electricity" />
+                <meta property="ac:hasConnection" resource="#transport" />
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1945" />
+                    <meta property="rdfs:label" content="Following World War II" />
+                </span>
+                human energy use 
+            </span>
+            (Syvitski et al. 2020). This increase was not only for 
+            <span resource="#electricity">
+                electricity generation 
+            </span>and other 
+            <span resource="#industrial_use_of_fire">
+                industrial processes
+            </span>
+            , but also from a massive increase in 
+            <span resource="#transport" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" resource="#gasoline" />
+                <meta property="ac:hasConnection" resource="#diesel" />
+                <meta property="ac:hasConnection" resource="#aviation_fuels" />
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1945" />
+                    <meta property="rdfs:label" content="Following World War II" />
+                </span>
+                transport 
+            </span>
+            involving the combustion of 
+            <span resource="#gasoline" typeof="time:ProperInterval">
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1945" />
+                    <meta property="rdfs:label" content="Following World War II" />
+                </span>
+                gasoline
+            </span>, 
+            <span resource="#diesel" typeof="time:ProperInterval">
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1945" />
+                    <meta property="rdfs:label" content="Following World War II" />
+                </span>
+                diesel
+            </span>
+            , and 
+            <span resource="#aviation_fuels" typeof="time:ProperInterval">
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="1945" />
+                    <meta property="rdfs:label" content="Following World War II" />
+                </span>
+                aviation fuels
+            </span>
+            .
         </p>
         <h3>
             Combustion markers
         </h3>
         <p id="P6">
-            The combustion of fossil fuels and biomass is a major driving force behind many observed impacts of the Anthropocene, and these fuels give rise to a range of particulate and gaseous products which may potentially be used as global markers. Many combustion products have been used as markers for historical reconstruction; black carbon (BC) is the most common. BC is a collective term that includes all thermally-altered carbonaceous materials generated from the burning of fossil fuels or biomass. From charred biomass to charcoal, industrial fly-ash to highly refractory &ldquo;soot,&rdquo; these materials together make up the BC &ldquo;combustion continuum&rdquo; (Masiello 2004). As there is no universally accepted definition for the term BC, many synonyms such as elemental carbon (EC), graphitic carbon, charcoal, char, SCPs, fly-ash, carbon black, and soot are also widely used. Here, we provide a summary of these terms:
+            The combustion of 
+            <span resource="#fossil_fuels" typeof="time:ProperInterval">
+                <meta property="ac:hasConnection" resource="#coal" />
+                <meta property="ac:hasConnection" resource="#fuel-oils" />
+                <meta property="ac:hasConnection" resource="#natural_gas" />
+                <meta property="ac:hasConnection" resource="#gasoline" />
+                <meta property="ac:hasConnection" resource="#diesel" />
+                <meta property="ac:hasConnection" resource="#aviation_fuels" />
+                <span property="time:hasBeginning" typeof="time:Instant">
+                    <meta property="time:inXSDgYear" content="901" />
+                    <meta property="rdfs:label" content="10th Century CE" />
+                </span>
+                fossil fuels 
+            </span>and 
+            <span resource="#biomass">
+                biomass 
+            </span>is a major driving force behind many observed impacts of the 
+            <span resource="#anthropocene">
+                Anthropocene
+            </span>, and these fuels give rise to a range of particulate and gaseous products which may potentially be used as global markers. Many combustion products have been used as markers for historical reconstruction; black carbon (BC) is the most common. BC is a collective term that includes all thermally-altered carbonaceous materials generated from the burning of fossil fuels or biomass. From charred biomass to charcoal, industrial fly-ash to highly refractory &ldquo;soot,&rdquo; these materials together make up the BC &ldquo;combustion continuum&rdquo; (Masiello 2004). As there is no universally accepted definition for the term BC, many synonyms such as elemental carbon (EC), graphitic carbon, charcoal, char, SCPs, fly-ash, carbon black, and soot are also widely used. Here, we provide a summary of these terms:
         </p>
         <p id="P7">
             <strong>Soot</strong> (Figure 1) is a combustion condensate formed via gas-to-particle conversion at high temperatures. It is a secondary aerosol with a fine (sub-micron) grape-like morphology and can indicate combustion at a regional to continental scale.
