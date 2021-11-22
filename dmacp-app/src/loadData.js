@@ -3,44 +3,99 @@ import * as d3 from 'd3';
 export default async function loadData (dataPath) {
     const data = await d3.html(dataPath).then(function (essay) {
         let globalY = 0
-        essay = [].map.call(essay.querySelectorAll("p"), (narration) => {
+        essay = [].map.call(essay.querySelectorAll("p"), (narration, n) => {
+            // First layer: I am looping over separate paragraphs within the essay. Each paragraph contains many or no entities.
+            // console.log('looping over narration', n)
 
-            narration = [].map.call(narration.querySelectorAll('[typeof][resource]'), (entity) => {
+            narration = [].map.call(narration.querySelectorAll('[typeof][resource]'), (entity, e) => {
+                // This is one single entity. I am creating an array with its properties so it becomes iterable
+                // console.log('entity', e, entity.getAttribute('resource'), entity.getAttribute('typeof'))
+                const entityTimePosition = []
+                const isInstant = entity.getAttribute('typeof') === 'time:ProperInterval' ? false : true
+                const arrayOfProperties = Array.from(entity.querySelectorAll('meta'))
+                const arrayofParentEntities = Array.from(entity.querySelectorAll('span'))
+                
+                let intervalPointsCount = 0
+                let singleEntity = {}
+                let connections = []
+                let intervalContext = null
+
                 globalY = globalY + 1
-                const isInstant = entity.querySelector('[typeof="time:Instant"]') !== null
 
-                const arrayOfUnits = Array.from(entity.querySelectorAll('meta'))
-                const entityTimePosition = [].map.call(entity.querySelectorAll('meta'), (unit, u) => {
+                arrayOfProperties.forEach((unit, u) => {
+                    const followingElement = arrayOfProperties[u + 1]
+                    let label = u + 1 < arrayOfProperties.length ? followingElement.getAttribute('content') : null
 
-                    const followingElement =  arrayOfUnits[u + 1]
-                    let label = u + 1 < arrayOfUnits.length ? followingElement.getAttribute('content') : null
-
-                    let obj = {}
                     const hasYear = unit.getAttribute('property') === 'time:inXSDgYear'
-                    // It needs to be some way of mapping indefinite beginnings and indefinite ends, at the moment I am doing it into the vis
-                    // something like: getting the content for the tag and then setting a boolean that can be reused later?
-                    if (hasYear) {
-                        obj = {
+                    const hasConnection = unit.getAttribute('property') === 'ac:hasConnection'
+                    const hasIndefinetness = unit.getAttribute('property') === 'ac:hasIndefiniteness'
+                    
+                    // Assign position to element if present
+                    if (hasYear & intervalPointsCount === 0) {
+                        singleEntity.x = +unit.getAttribute('content')
+                        singleEntity.y = globalY
+                        singleEntity.label = label
+
+                        intervalPointsCount = intervalPointsCount + 1
+
+                    } else if (hasYear & intervalPointsCount > 0) {
+                        // If more than one meta property has time pushes an additional object with essential data
+                        entityTimePosition.push({
                             x: +unit.getAttribute('content'),
                             y: globalY,
                             label
+                        })
+                    }
+
+                    // Assign connection(s) to parent if present
+                    if (hasConnection) {
+                        singleEntity.target = unit.getAttribute('resource').substring(1)
+                        const connection = unit.getAttribute('resource').substring(1)
+                        connections.push(connection)
+                    }
+
+                    // Assign indefineteness to element if present
+                    if (hasIndefinetness) {
+                        singleEntity.indefinitness = +unit.getAttribute('content')
+                    }
+
+                })
+
+                entityTimePosition.push(singleEntity)
+
+                // Separate loop to determine whether one of the interval's end is undefined.
+                arrayofParentEntities.forEach((ent) => {
+                    if(ent.hasAttributes()) {
+                        const hasEnd = ent.getAttribute('property') === 'time:hasEnd'
+                        const hasBeginning = ent.getAttribute('property') === 'time:hasBeginning'
+
+                        if (!isInstant & arrayofParentEntities.length === 1) {
+                            if (hasBeginning & !hasEnd) {
+                                intervalContext = 'is-beginning'
+                            } else if (!hasBeginning & hasEnd) {
+                                intervalContext = 'is-end'
+                            }
                         }
                     }
-                    
-                    return obj
+                })
 
-                }).filter(element => Object.keys(element).length !== 0)
+                console.log(entityTimePosition)
+
+                console.log(entityTimePosition.map(el => {return el.label}))
+                // entityTimePosition = entityTimePosition.filter(d => d.label === undefined)
 
                 return {
-                    resource: entity.getAttribute('resource'),
-                    type: !isInstant ? 'instant' : 'interval',
-                    entityTimePosition
+                    resource: entity.getAttribute('resource').substring(1),
+                    type: isInstant ? 'instant' : 'interval',
+                    targets: connections,
+                    entityTimePosition: entityTimePosition.filter(el => el.label === 'undefined'),
+                    intervalContext
                 }
             })
             return narration
         })
         return essay
     });
-    // console.log(data)
+    console.log(data)
     return data
 };

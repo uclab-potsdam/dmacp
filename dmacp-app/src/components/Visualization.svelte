@@ -15,7 +15,7 @@ import { onMount } from 'svelte';
     // Come up with a temporal scale that maps to pixels and then remap for log? See: https://stackoverflow.com/questions/30672392/logarithmic-time-scale
     const xValues = data.map(essay => essay.map(narration => narration.entityTimePosition.map( entity => entity.x ))).flat(2)
     const yValues = data.map(essay => essay.map(narration => narration.entityTimePosition.map( entity => entity.y ))).flat(2)
-    const narrationValues = data.map((essay , e) => e)
+    // const narrationValues = data.map((essay , e) => e)
 
     onMount(async () => {
         width = document.getElementById("container").clientWidth
@@ -34,13 +34,14 @@ import { onMount } from 'svelte';
                         textualLabel: entity.label,
                         cx: xScale(entity.x),
                         cy: yScale(entity.y),
-                        type: narration.type
+                        type: narration.type,
+                        context: narration.intervalContext
                     }
                 } )
             })
-        }).flat(2)
-        console.log(scaledEntities)
+        }).flat(2)   
         
+        console.log(scaledEntities)
 
         scaledIntervals = data.map((essay, e) => {
         return essay.map((narration) => {
@@ -51,6 +52,7 @@ import { onMount } from 'svelte';
                 x1 = xScale(narration.entityTimePosition[0].x)
                 x2 = entityLength < 2 ? xScale(d3.max(xTicks.map(d => { return d }))) : xScale(narration.entityTimePosition[entityLength - 1].x)
             }
+
             return narration.entityTimePosition.map( (entity) => {
                 const y = yScale(entity.y);
                 return {
@@ -59,7 +61,8 @@ import { onMount } from 'svelte';
                         x2,
                         y1: y,
                         type: narration.type,
-                        indefinite: x2 === xScale(d3.max(xTicks.map(d => { return d }))) ? 'indefinite' : 'finite'
+                        indefinite: x2 === xScale(d3.max(xTicks.map(d => { return d }))) ? 'indefinite' : 'finite',
+                        context: narration.intervalContext
                     }
                 }).filter(entity => entity.type === 'interval')
             })
@@ -71,7 +74,11 @@ import { onMount } from 'svelte';
     <div id="container">
         <svg width="{ width }" height="{ height }">
             <defs>
-                <linearGradient id="linear-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <linearGradient id="begin-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style="stop-color:rgb(13, 113, 158);stop-opacity:1"/>
+                    <stop offset="50%" style="stop-color:rgb(255,255,255);stop-opacity:0" />
+                </linearGradient>
+                <linearGradient id="end-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" style="stop-color:rgb(113, 113, 158);stop-opacity:1"/>
                     <stop offset="50%" style="stop-color:rgb(255,255,255);stop-opacity:0" />
                 </linearGradient>
@@ -91,8 +98,8 @@ import { onMount } from 'svelte';
                 {/each}
             </g>
             {#each scaledIntervals as value}
-                {#if value.indefinite === 'indefinite'}
-                    <rect x="{ value.x1 }" width="{ value.x2 }" y="{ value.y1 - 5 }" height="10" class="{ value.indefinite }"/>
+                {#if value.indefinite === 'indefinite' }
+                    <rect x="{ value.x1 }" width="{ value.x2 }" y="{ value.y1 - 5 }" height="10" class="{ value.context }"/>
                 {:else}
                     <line x1="{ value.x1 }" x2="{ value.x2 }" y1="{ value.y1 }" y2="{ value.y1 }" class="{ value.indefinite }"/>
                 {/if}
@@ -149,8 +156,12 @@ import { onMount } from 'svelte';
         fill: rgb(58, 58, 99);
     }
 
-    .indefinite {
-        fill: url(#linear-grad);
+    .is-end {
+        fill: url(#end-grad);
+    }
+
+    .is-beginning {
+        fill: url(#begin-grad);
     }
 
     .finite {

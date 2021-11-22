@@ -9,6 +9,7 @@ import loadData from './loadData.js';
 	const error = 'uh oh!'
 	onMount(async () => {
 		essayData = await loadData("./static/data/combustion.html")
+		// console.log(essayData)
 	})
 </script>
 
@@ -21,13 +22,14 @@ import loadData from './loadData.js';
 		{:catch error}
 			<p>{ error }</p>
 		{/await}
-		<!-- <h1 class='main-title'>Combustion Essay</h1>
+		<h1 class='main-title'>Combustion Essay</h1>
 		{#each essayData as narration, n}
 			<h1 class='narration-header'>Narration { n }</h1>
 			<div class='entity'>
 				{#each narration as entity, e}
-						<div class='entity-specs { entity.type }'>
+						<div class='entity-specs { entity.type }' id="{entity.resource}">
 							<div>{ entity.resource }, {entity.type}</div>
+							<div on:click={'./' + entity.target}>{ entity.target }</div>
 						{#each entity.entityTimePosition as point, p}
 							<div class='entity-information'>
 								<p class='info'>{ point.x } , { point.y }</p>
@@ -37,7 +39,7 @@ import loadData from './loadData.js';
 						</div>
 				{/each}
 			</div>
-		{/each} -->
+		{/each}
 	</div>
 </main>
 
