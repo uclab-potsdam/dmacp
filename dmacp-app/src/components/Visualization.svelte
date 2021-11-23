@@ -1,6 +1,8 @@
 <script>
 import * as d3 from 'd3';
 import { onMount } from 'svelte';
+import Curves from './Curves.svelte';
+
 
     export let data;
 
@@ -24,18 +26,21 @@ import { onMount } from 'svelte';
         xScale = d3.scaleSymlog().domain(d3.extent(xValues.map(d => { return d }))).constant(1).range([100, width]).nice()
         yScale = d3.scaleLinear().domain(d3.extent(yValues.map(d => { return d }))).range([30, height - 30])
 
-        xTicks = xScale.ticks()
+        xTicks = xScale.ticks(5)
 
         scaledEntities = data.map((essay, e) => {
         return essay.map((narration) => {
+            // console.log(narration)
             return narration.entityTimePosition.map( (entity) => {
                 return {
                         narration: e,
+                        id: narration.resource,
                         textualLabel: entity.label,
                         cx: xScale(entity.x),
                         cy: yScale(entity.y),
                         type: narration.type,
-                        context: narration.intervalContext
+                        context: narration.intervalContext,
+                        targets: narration.targets
                     }
                 } )
             })
@@ -75,11 +80,11 @@ import { onMount } from 'svelte';
         <svg width="{ width }" height="{ height }">
             <defs>
                 <linearGradient id="begin-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:rgb(13, 113, 158);stop-opacity:1"/>
+                    <stop offset="0%" style="stop-color:#d8d8d8;stop-opacity:1"/>
                     <stop offset="50%" style="stop-color:rgb(255,255,255);stop-opacity:0" />
                 </linearGradient>
                 <linearGradient id="end-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset="0%" style="stop-color:rgb(113, 113, 158);stop-opacity:1"/>
+                    <stop offset="100%" style="stop-color:#d8d8d8;stop-opacity:1"/>
                     <stop offset="50%" style="stop-color:rgb(255,255,255);stop-opacity:0" />
                 </linearGradient>
             </defs>
@@ -90,7 +95,7 @@ import { onMount } from 'svelte';
                 </g>
                 {#each xTicks as tick}
                     <g transform="translate({ xScale(tick) }, 0)" class="tick">
-                        <text x="5" y="15">{ tick }</text>
+                        <text x="650" y="-2" transform="rotate(90)">{ Math.round(tick / 1000000) } Mld/years</text>
                         <line x1="0" x2="0" y1="0" y2="{ height }" stroke="black"/>
                     </g>
                 {:else}
@@ -99,16 +104,19 @@ import { onMount } from 'svelte';
             </g>
             {#each scaledIntervals as value}
                 {#if value.indefinite === 'indefinite' }
-                    <rect x="{ value.x1 }" width="{ value.x2 }" y="{ value.y1 - 5 }" height="10" class="{ value.context }"/>
+                    <rect x="{ value.x1 }" width="{ value.x2 }" y="{ value.y1 - 1 }" height="2" class="{ value.context }"/>
                 {:else}
                     <line x1="{ value.x1 }" x2="{ value.x2 }" y1="{ value.y1 }" y2="{ value.y1 }" class="{ value.indefinite }"/>
                 {/if}
             {:else}
                 <text>loading</text>
             {/each}
+            {#if scaledEntities.length !== 0}
+                <Curves scaledEntities='{scaledEntities}'/>
+            {/if}
             {#each scaledEntities as value}
             <g class="entity">
-                <circle cx="{ value.cx }" cy="{ value.cy }" r="5"/>
+                <circle cx="{ value.cx }" cy="{ value.cy }" r="2"/>
                 <g transform="translate(10, 0)" class="label">
                     <text x="{ value.cx }" y="{ value.cy }">{ value.textualLabel }</text>
                 </g>
@@ -139,6 +147,10 @@ import { onMount } from 'svelte';
         fill: red;
     }
 
+    .tick text {
+        font-size: 8px;
+    }
+
     svg circle {
         fill: white;
         stroke: black;
@@ -153,11 +165,12 @@ import { onMount } from 'svelte';
     }
 
     .entity:hover circle {
-        fill: rgb(58, 58, 99);
+        fill: rgb(29, 29, 29);
     }
 
     .is-end {
         fill: url(#end-grad);
+        transform: translate(-100%, 0)
     }
 
     .is-beginning {
@@ -165,8 +178,8 @@ import { onMount } from 'svelte';
     }
 
     .finite {
-        stroke: rgb(198, 198, 247);
-        stroke-width: 10;
+        stroke: rgb(128, 128, 128);
+        stroke-width: 2;
     }
 
     svg text {
