@@ -41,8 +41,6 @@ import { onMount } from 'svelte';
             })
         }).flat(2)   
         
-        console.log(scaledEntities)
-
         scaledIntervals = data.map((essay, e) => {
         return essay.map((narration) => {
             let x1 = 0;
@@ -54,6 +52,7 @@ import { onMount } from 'svelte';
             }
 
             return narration.entityTimePosition.map( (entity) => {
+                const definitionOfInterval = x2 === xScale(d3.max(xTicks.map(d => { return d }))) ? 'indefinite' : 'finite'
                 const y = yScale(entity.y);
                 return {
                         narration: e,
@@ -61,12 +60,13 @@ import { onMount } from 'svelte';
                         x2,
                         y1: y,
                         type: narration.type,
-                        indefinite: x2 === xScale(d3.max(xTicks.map(d => { return d }))) ? 'indefinite' : 'finite',
+                        indefinite: definitionOfInterval,
                         context: narration.intervalContext
                     }
                 }).filter(entity => entity.type === 'interval')
             })
         }).flat(2)
+
     })
 
 </script>

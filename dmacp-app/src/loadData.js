@@ -79,16 +79,12 @@ export default async function loadData (dataPath) {
                     }
                 })
 
-                console.log(entityTimePosition)
-
-                console.log(entityTimePosition.map(el => {return el.label}))
-                // entityTimePosition = entityTimePosition.filter(d => d.label === undefined)
 
                 return {
                     resource: entity.getAttribute('resource').substring(1),
                     type: isInstant ? 'instant' : 'interval',
                     targets: connections,
-                    entityTimePosition: entityTimePosition.filter(el => el.label === 'undefined'),
+                    entityTimePosition: entityTimePosition.filter(d => { return d.label !== undefined }),
                     intervalContext
                 }
             })
@@ -96,6 +92,5 @@ export default async function loadData (dataPath) {
         })
         return essay
     });
-    console.log(data)
     return data
 };
