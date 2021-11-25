@@ -10,10 +10,7 @@ import Curves from './Curves.svelte';
     let height;
     let xScale = () => {};
     let xTicks = [];
-    let allTicks = [];
-    let xPositiveTicks = [];
     let yScale = () => {};
-    let xPositiveScale = () => {};
     let scaledEntities = [];
     let scaledIntervals = [];
 
@@ -28,14 +25,8 @@ import Curves from './Curves.svelte';
 
         xScale = d3.scaleSymlog().domain(d3.extent(xValues.map(d => { return d }))).constant(1).range([100, width]).nice()
         yScale = d3.scaleLinear().domain(d3.extent(yValues.map(d => { return d }))).range([30, height - 30])
-        xPositiveScale = d3.scaleLinear().domain([1500, d3.max(xValues.map(d => { return d }))]).range([width / 2 + width / 10, width - 150]).nice()
 
         xTicks = xScale.ticks(5)
-        xPositiveTicks = xPositiveScale.ticks(5)
-
-        allTicks = xTicks.concat(xPositiveTicks)
-
-        console.log(allTicks)
 
         scaledEntities = data.map((essay, e) => {
         return essay.map((narration) => {
@@ -45,7 +36,7 @@ import Curves from './Curves.svelte';
                         narration: e,
                         id: narration.resource,
                         textualLabel: entity.label,
-                        cx: entity.x > 1500 ? xPositiveScale(entity.x) : xScale(entity.x),
+                        cx: xScale(entity.x),
                         cy: yScale(entity.y),
                         type: narration.type,
                         context: narration.intervalContext,
@@ -62,8 +53,7 @@ import Curves from './Curves.svelte';
             const entityLength = narration.entityTimePosition.length
             if (entityLength > 0) {
                 x1 = xScale(narration.entityTimePosition[0].x)
-                const newXValue = narration.entityTimePosition[entityLength - 1].x > 1500 ? xPositiveScale(narration.entityTimePosition[entityLength - 1].x) : xScale(narration.entityTimePosition[entityLength - 1].x)
-                x2 = entityLength < 2 ? xScale(d3.max(xTicks.map(d => { return d }))) : newXValue
+                x2 = entityLength < 2 ? xScale(d3.max(xTicks.map(d => { return d }))) : xScale(narration.entityTimePosition[entityLength - 1].x)
             }
 
             return narration.entityTimePosition.map( (entity) => {
@@ -99,12 +89,12 @@ import Curves from './Curves.svelte';
                 </linearGradient>
             </defs>
             <g>
-                <g transform="translate({ xPositiveScale(2021) }, 0)" class="now-tick">
+                <g transform="translate({ xScale(2021) }, 0)" class="now-tick">
                     <line x1="0" x2="0" y1="0" y2="{ height }" stroke="black"/>
                     <text x="5" y="15">Now</text>
                 </g>
-                {#each allTicks as tick}
-                    <g transform="translate({ tick > 0 ? xPositiveScale(tick) : xScale(tick) }, 0)" class="tick">
+                {#each xTicks as tick}
+                    <g transform="translate({ xScale(tick) }, 0)" class="tick">
                         <text x="880" y="-5" transform="rotate(90)" text-anchor="end">{ tick }</text>
                         <line x1="0" x2="0" y1="0" y2="{ height }" stroke="black"/>
                     </g>
