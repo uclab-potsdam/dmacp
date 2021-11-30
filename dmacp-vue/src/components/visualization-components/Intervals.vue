@@ -2,12 +2,12 @@
     <g class="intervals">
         <defs>
             <linearGradient id="begin-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" style="stop-color:#d8d8d8;stop-opacity:1"/>
+                <stop offset="0%" style="stop-color:rgba(255, 255, 255, 0.438);stop-opacity:1"/>
                 <stop offset="50%" style="stop-color:rgb(255,255,255);stop-opacity:0" />
             </linearGradient>
-            <linearGradient id="end-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="100%" style="stop-color:#d8d8d8;stop-opacity:1"/>
-                <stop offset="50%" style="stop-color:rgb(255,255,255);stop-opacity:0" />
+            <linearGradient id="end-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" style="stop-color:rgba(255, 255, 255);stop-opacity:0"/>
+                <stop offset="100%" style="stop-color:rgba(255, 255, 255, 0.438);stop-opacity:1" />
             </linearGradient>
         </defs>
         <g v-for="(interval, i) in scaledIntervals" :key="`${i}-interval-key`">

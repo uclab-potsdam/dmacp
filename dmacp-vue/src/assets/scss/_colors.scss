@@ -1,3 +1,8 @@
+body,
+.visualization-container {
+    background-color: #191919;
+}
+
 h3 {
     color: #42b983;
 }
@@ -6,16 +11,16 @@ a {
     color: #42b983;
 }
 
-.visualization-container {
-    background-color: none;
-    border: 1px solid black;
-}
-
-
 svg {
     circle {
         fill: white;
         stroke: black;
+    }
+
+    .axis {
+        stroke: white;
+        stroke-dasharray: 4 4;
+        stroke-width: 0.5;
     }
 
     path {
@@ -25,7 +30,7 @@ svg {
 
     .is-end {
         fill: url(#end-grad);
-        transform: translate(-100%, 0)
+        transform: translate(-50%, 0)
     }
 
     .is-beginning {
@@ -33,7 +38,7 @@ svg {
     }
 
     .finite {
-        stroke: rgb(128, 128, 128);
+        stroke: rgba(255, 255, 255, 0.438);
         stroke-width: 2;
     }
 }

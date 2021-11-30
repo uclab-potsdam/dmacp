@@ -1,6 +1,9 @@
 <template>
   <div class="visualization-container" ref="visualization">
     <svg :width="sizes.width" :height="sizes.height">
+      <g v-for="(tick, t) in xTicks" :key="`${t}-tick`" :transform="`translate(${xScale(tick)}, 0)`">
+        <line x1="0" x2="0" y1="0" :y2="sizes.height" class="axis" />
+      </g>
       <Intervals :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
       <Dots :data="data" :scales="{ xScale, yScale }" />
     </svg>
