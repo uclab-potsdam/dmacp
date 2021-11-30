@@ -17,4 +17,23 @@ svg {
         fill: white;
         stroke: black;
     }
+
+    path {
+        stroke: red; 
+        fill: none;
+    }
+
+    .is-end {
+        fill: url(#end-grad);
+        transform: translate(-100%, 0)
+    }
+
+    .is-beginning {
+        fill: url(#begin-grad);
+    }
+
+    .finite {
+        stroke: rgb(128, 128, 128);
+        stroke-width: 2;
+    }
 }

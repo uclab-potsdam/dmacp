@@ -2,10 +2,8 @@
   <div class="visualization-container" ref="visualization">
     <!-- <p> {{ xScale(xValues[0]) }}, {{ yValues }}</p> -->
     <svg :width="sizes.width" :height="sizes.height">
-      <Dots :data="data" :scales="{ xScale, yScale }"/>
-      <g v-for="(entity, e) in scaledEntities" :key="`${e}-key`">
-        <circle :cx="entity.cx" :cy="entity.cy" r="2"/>
-      </g>
+      <Intervals :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
+      <Dots :data="data" :scales="{ xScale, yScale }" />
     </svg>
   </div>
 </template>
@@ -15,15 +13,19 @@ import { mapState } from 'vuex'
 import { scaleSymlog, scaleLinear } from 'd3-scale'
 import { extent } from 'd3-array'
 import Dots from './visualization-components/Dots.vue'
+import Intervals from './visualization-components/Intervals.vue'
+
 
 export default {
   name: 'Visualization',
   components: {
-    Dots
+    Dots,
+    Intervals
   },
   data () {
     return {
-      sizes: { height: 0, width: 0 }
+      sizes: { height: 0, width: 0 },
+      xTicks: []
     }
   },
   computed: {
@@ -39,6 +41,8 @@ export default {
                         .clamp(false)
                         .nice()
 
+      this.storeRealScale(xScale_)
+
       return (x) => { return xScale_(x-1945) }
     },
     yScale () {
@@ -51,7 +55,7 @@ export default {
   },
   mounted () {
     this.calcContainerSize()
-    console.log(this.scaledEntities)
+    // console.log(this.xTicks)
   },
   methods: {
         calcContainerSize () {
@@ -61,12 +65,10 @@ export default {
 
           this.sizes.height = cHeight
           this.sizes.width = cWidth
+    },
+    storeRealScale (scale) {
+      this.xTicks = scale.ticks(5)
     }
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-
-</style>
