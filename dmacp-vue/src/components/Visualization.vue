@@ -1,6 +1,5 @@
 <template>
   <div class="visualization-container" ref="visualization">
-    <!-- <p> {{ xScale(xValues[0]) }}, {{ yValues }}</p> -->
     <svg :width="sizes.width" :height="sizes.height">
       <Intervals :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
       <Dots :data="data" :scales="{ xScale, yScale }" />
@@ -11,7 +10,7 @@
 <script>
 import { mapState } from 'vuex'
 import { scaleSymlog, scaleLinear } from 'd3-scale'
-import { extent } from 'd3-array'
+import { extent, mode } from 'd3-array'
 import Dots from './visualization-components/Dots.vue'
 import Intervals from './visualization-components/Intervals.vue'
 
@@ -32,9 +31,10 @@ export default {
     ...mapState(['data']),
     xValues () { return this.data.map(essay => essay.map(narration => narration.entityTimePosition.map( entity => entity.x ))).flat(2) },
     yValues () { return this.data.map(essay => essay.map(narration => narration.entityTimePosition.map( entity => entity.y ))).flat(2) },
+    xValuesMode () { return mode(this.xValues) }, 
     xScale () {
       const width = this.sizes.width
-      const { xValues } = this
+      const { xValues, xValuesMode } = this
       const xScale_ = scaleSymlog()
                         .domain(extent(xValues.map(d => { return d})))
                         .constant(1).range([100, 1.33*width])
@@ -43,7 +43,7 @@ export default {
 
       this.storeRealScale(xScale_)
 
-      return (x) => { return xScale_(x-1945) }
+      return (x) => { return xScale_(x-xValuesMode) }
     },
     yScale () {
       const height = this.sizes.height
@@ -55,8 +55,7 @@ export default {
   },
   mounted () {
     this.calcContainerSize()
-    // console.log(this.xTicks)
-  },
+ },
   methods: {
         calcContainerSize () {
           const { visualization } = this.$refs
