@@ -18,11 +18,11 @@ export default {
     ...mapState(['data'])
   },
   mounted () {
-    this.loadData()
+    this.loadingData()
     console.log(this.data)
   },
   methods: {
-    ...mapActions(['loadData'])
+    ...mapActions(['loadingData'])
   }
 }
 </script>

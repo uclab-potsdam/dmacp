@@ -32,10 +32,18 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  computed: {
+    ...mapState(['data'])
+  },
+  mounted () {
+    console.log(this.data)
   }
 }
 </script>
