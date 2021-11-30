@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="main-container">
-      <Visualization />
+      <Visualization v-if="dataAreLoaded"/>
     </div>
   </div>
 </template>
@@ -14,6 +14,17 @@ export default {
   name: 'App',
   components: {
     Visualization
+  },
+  computed: {
+      ...mapState({
+      dataStatus: state => state.status
+    }),
+    dataAreLoaded () {
+      // without this the code will break!
+      const { dataStatus } = this
+      console.log(dataStatus)
+      return dataStatus === "Loaded"
+    }
   },
   mounted () {
     this.loadingData()
