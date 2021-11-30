@@ -1,25 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="main-container">
+      <Visualization />
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Visualization from './components/Visualization.vue'
 import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  },
-  computed: {
-    ...mapState(['data'])
+    Visualization
   },
   mounted () {
     this.loadingData()
-    console.log(this.data)
   },
   methods: {
     ...mapActions(['loadingData'])
@@ -28,12 +25,5 @@ export default {
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+// @import "@/assets/scss/_main.scss";
 </style>

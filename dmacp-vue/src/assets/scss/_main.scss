@@ -1,0 +1,18 @@
+@import 'typography';
+@import 'sizes';
+
+#app {
+    // margin-top: 60px;
+    // min-height: 95vh;
+    background-color: beige;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin: 0 10px;
+}

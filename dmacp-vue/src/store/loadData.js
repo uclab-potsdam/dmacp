@@ -2,7 +2,6 @@ import * as d3 from 'd3';
 
 export default async function loadData(dataPath) {
     const data = await d3.html(dataPath).then(function (essay) {
-        console.log(essay)
         let globalY = 0
         essay = [].map.call(essay.querySelectorAll("p"), (narration, n) => {
             // First layer: I am looping over separate paragraphs within the essay. Each paragraph contains many or no entities.

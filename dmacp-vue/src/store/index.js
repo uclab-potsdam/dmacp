@@ -13,7 +13,7 @@ export default new Vuex.Store({
     MUTATE_DATA(state, { status, response}) {
       if (status == "Loaded") {
         state.data = response
-        console.log('state', state.data)
+        // console.log('state', state.data)
       }
     }
   },
@@ -24,7 +24,7 @@ export default new Vuex.Store({
       await loadData('../data/combustion.html')
         .then((response) => { 
           // const data = loadData('@/assets/data/combustion.html')
-          console.log('response', response)
+          // console.log('response', response)
           const status = "Loaded"
           commit('MUTATE_DATA', {status, response}) 
         })
