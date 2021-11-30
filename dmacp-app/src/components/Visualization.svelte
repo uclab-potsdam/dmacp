@@ -23,10 +23,12 @@ import Curves from './Curves.svelte';
         width = document.getElementById("container").clientWidth
         height = document.getElementById("container").clientHeight
 
-        xScale = d3.scaleSymlog().domain(d3.extent(xValues.map(d => { return d }))).constant(1).range([100, width]).nice()
+        let xScale_ = d3.scaleSymlog().domain(d3.extent(xValues.map(d => { return d}))).constant(1).range([100, 1.33*width]).clamp(false).nice()
         yScale = d3.scaleLinear().domain(d3.extent(yValues.map(d => { return d }))).range([30, height - 30])
-
-        xTicks = xScale.ticks(5)
+				
+				// overwrite scale function and shift cener to 1945
+				xScale = function(x) { return xScale_(x-1945) }			
+        xTicks = xScale_.ticks(5)
 
         scaledEntities = data.map((essay, e) => {
         return essay.map((narration) => {
