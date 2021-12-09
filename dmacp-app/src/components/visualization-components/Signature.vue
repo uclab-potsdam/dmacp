@@ -16,8 +16,7 @@ export default {
   },
   data () {
       return {
-          orderedData: [],
-          colors: ["red", "blue", "pink", "green", "white", "aqua", "orange", "violet", "goldenrod"]
+          orderedData: []
       }
   },
   computed: {
@@ -27,38 +26,9 @@ export default {
             return entity.targets.length !== 0
         })
       },
-    //   DataOrderedByRel () {
-
-    //     },
-    //   UniqueRelationsIDs () {
-    //     const IDsArray = []
-    //     this.onlyRelationalEntities.forEach((relation, r) => {
-    //         const lastElementOfIDsArray = IDsArray.slice(-1)
-    //                     if (r == 0) {
-    //             IDsArray.push(relation.id)
-    //         }
-    //         IDsArray.push(relation.id)
-    //         if (relation.targets.length > 1) {
-    //             relation.targets.forEach(target => {
-    //                 IDsArray.push(relation.id)
-    //                 // if (relation.id !== lastElementOfIDsArray[0]) {
-    //                     IDsArray.push(target)
-    //                 //}
-    //             }) 
-    //         } else {
-    //             IDsArray.push(relation.targets[0])
-    //         }
-    //         // IDsArray.push(relation.targets)
-
-    //         // console.log("end----")
-    //     })
-        
-    //     return IDsArray
-    // },
     PathCoordinates () {
         const scaledEntities = this.data
         const coordinates = []
-        // console.log(this.UniqueRelationsIDs)
         this.orderedData.forEach((arrayOfRelations, r) => {
             const subArrayofCoords = []
             arrayOfRelations.forEach((relation) => {
@@ -70,14 +40,12 @@ export default {
 
             coordinates.push(subArrayofCoords)
         })
-        //console.log(coordinates)
         return coordinates
     },
     signatureGenerator () {
         return line()
                 .x((d) => d.coords[0])
                 .y((d) => d.coords[1])
-                // .curve(curveNatural)
                 .curve(curveCatmullRom.alpha(0.5));
     },
     signaturePath () {
@@ -89,39 +57,35 @@ export default {
   },
   mounted () {
       this.orderedData = this.createPathsArrays(this.data)
-      //console.log("paths", this.signaturePath)
   },
   methods: {
       createPathsArrays (data) {
         const orderedIDs = []
-        // console.log(this.data)
         data.forEach((entity, e) => {
 
             const singleRelationalityArray = []
 
             let hasRelations = entity.targets.length !== 0
             let currentRelation = entity
-            // console.log(currentRelation)
 
-                while (hasRelations) {   
-                    // console.log("!")
-                    console.log(currentRelation)
+                while (hasRelations) { 
+                    // Looping through entities until there are targets to be followed
+                    // The source id is pushed in the array  
                     singleRelationalityArray.push(currentRelation.id)
-                    console.log(currentRelation.id, currentRelation.targets)
-
+                    // Each target is pushed in the array as well
                     currentRelation.targets.forEach(t => singleRelationalityArray.push(t))
-                    //singleRelationalityArray.push(currentRelation.targets)
 
-                    const lastTarget = currentRelation.targets.splice(-1)
-                    const stringLastTarget = lastTarget[0]
-
+                    // const lastTarget = currentRelation.targets.splice(-1)
+                    // const stringLastTarget = lastTarget[0]
+                    
+                    // Updating value for variable holding the relation under scrutiny (needs to check if it's fetching the correct entities)
                     currentRelation = data.find(obj => { return obj.targets === currentRelation.targets })
+                    // Updating variable to decide if keep looping or break out and start with the new entity
                     hasRelations = currentRelation.targets.length !== 0 
-
                 }
 
+            // Pushing individual array in parent array for visualization
             orderedIDs.push(singleRelationalityArray)
-            // console.log("array preview", orderedIDs)
             })
 
             return orderedIDs.filter(n => n.length !== 0)
