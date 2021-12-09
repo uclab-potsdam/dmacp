@@ -1,6 +1,7 @@
 <template>
   <div class="visualization-container" ref="visualization">
     <svg :width="sizes.width" :height="sizes.height">
+      <Filters :sizes="sizes"/>
       <g v-for="(tick, t) in xTicks" :key="`${t}-tick`" :transform="`translate(${xScale(tick)}, 0)`">
         <line x1="0" x2="0" y1="0" :y2="sizes.height" class="axis" />
       </g>
@@ -16,13 +17,15 @@ import { scaleSymlog, scaleLinear } from 'd3-scale'
 import { extent, mode } from 'd3-array'
 import Dots from './visualization-components/Dots.vue'
 import Intervals from './visualization-components/Intervals.vue'
+import Filters from './visualization-components/SvgFilters.vue'
 
 
 export default {
   name: 'Visualization',
   components: {
     Dots,
-    Intervals
+    Intervals,
+    Filters
   },
   data () {
     return {

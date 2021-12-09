@@ -1,12 +1,19 @@
 <template>
     <g>
+        <g class="dots">
+            <g v-for="(entity, e) in scaledEntities" :key="`${e}-key`">
+                <g class="marker-density">
+                    <circle v-show="entity.radius > 3" :cx="entity.cx" :cy="entity.cy" :r="entity.radius"/>
+                </g>
+            <circle class="entity-marker" :cx="entity.cx" :cy="entity.cy" r="2"/>
+            <text v-show="entity.radius > 3" :x="entity.cx + 10" :y="entity.cy">{{e}}, {{ entity.id }}</text>
+            </g>
+        </g>
         <g class="curves">
             <Signature :data="scaledEntities" />
         </g>
-        <g class="dots">
-            <g v-for="(entity, e) in scaledEntities" :key="`${e}-key`">
-            <circle :cx="entity.cx" :cy="entity.cy" r="2"/>
-            </g>
+        <g class="links">
+            <Links :data="scaledEntities"/>
         </g>
     </g>
 </template>
@@ -38,6 +45,7 @@ export default {
                             textualLabel: entity.label,
                             cx: xScale(entity.x),
                             cy: yScale(entity.y),
+                            radius: 2 + 1 * narration.targets.length,
                             type: narration.type,
                             context: narration.intervalContext,
                             targets: narration.targets
@@ -49,8 +57,3 @@ export default {
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-
-</style>

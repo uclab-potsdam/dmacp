@@ -21,8 +21,32 @@ export default {
       },
       UniqueRelationsIDs () {
         const IDsArray = []
-        this.onlyRelationalEntities.forEach((relation) => {
-            IDsArray.push(relation.targets[0])
+        this.onlyRelationalEntities.forEach((relation, r) => {
+            const lastElementOfIDsArray = IDsArray.slice(-1)
+            
+            //const nextRelation = this.onlyRelationalEntities[nextElement]
+
+            // First element get pushed at the beginning
+            if (r == 0) {
+                IDsArray.push(relation.id)
+            }
+            console.log("beginning----")
+            console.log("current element id:", relation.id, "last Element in array of ids:", lastElementOfIDsArray[0])
+            console.log(relation.targets)
+
+            if (relation.targets.length > 1) {
+                relation.targets.forEach(target => {
+                    // if (relation.id !== lastElementOfIDsArray[0]) {
+                        IDsArray.push(relation.id)
+                        IDsArray.push(target)
+                    //}
+                }) 
+            } else {
+                IDsArray.push(relation.targets[0])
+            }
+            // IDsArray.push(relation.targets)
+
+            console.log("end----")
         })
         
         return IDsArray
@@ -30,12 +54,12 @@ export default {
     PathCoordinates () {
         const scaledEntities = this.data
         const coordinates = []
+        console.log(this.UniqueRelationsIDs)
         this.UniqueRelationsIDs.forEach((relation, r) => {
-            // Needs to build in a way to go back to previous point if more than 1
-            // relation si presente
             const relationalEntity = scaledEntities.find(el => el.id === relation)
-            const totalTargets = relationalEntity.targets
-            coordinates.push({ coords: [ relationalEntity.cx, relationalEntity.cy ]})
+            if (relationalEntity !== undefined) {
+                coordinates.push({ coords: [ relationalEntity.cx, relationalEntity.cy ]})
+            }
         })
 
         return coordinates
@@ -44,7 +68,8 @@ export default {
         return line()
                 .x((d) => d.coords[0])
                 .y((d) => d.coords[1])
-                .curve(curveCatmullRom.alpha(1));
+                // .curve(curveNatural)
+                .curve(curveCatmullRom.alpha(0.5));
     },
     signaturePath () {
         return this.signatureGenerator(this.PathCoordinates)

@@ -12,9 +12,20 @@ a {
 }
 
 svg {
-    circle {
+    .entity-marker {
         fill: white;
-        stroke: black;
+        // stroke: black;
+    }
+
+    .marker-density {
+        fill: white;
+        stroke: none;
+        fill-opacity: 0.5;
+        filter: url(#f1);
+    }
+
+    text {
+        fill: white;
     }
 
     .axis {
