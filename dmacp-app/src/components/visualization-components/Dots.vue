@@ -1,5 +1,11 @@
 <template>
     <g>
+        <g class="curves">
+            <Signature :data="scaledEntities" />
+        </g>
+        <g class="links">
+            <Links :data="scaledEntities"/>
+        </g>
         <g class="dots">
             <g v-for="(entity, e) in scaledEntities" :key="`${e}-key`">
                 <g class="marker-density">
@@ -8,12 +14,6 @@
             <circle class="entity-marker" :cx="entity.cx" :cy="entity.cy" r="2"/>
             <text v-show="entity.radius > 3" :x="entity.cx + 10" :y="entity.cy">{{e}}, {{ entity.id }}</text>
             </g>
-        </g>
-        <g class="curves">
-            <Signature :data="scaledEntities" />
-        </g>
-        <g class="links">
-            <Links :data="scaledEntities"/>
         </g>
     </g>
 </template>
