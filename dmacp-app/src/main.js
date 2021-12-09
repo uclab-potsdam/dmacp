@@ -1,10 +1,10 @@
-import App from './App.svelte';
+import Vue from 'vue'
+import App from './App.vue'
+import store from './store'
 
-const app = new App({
-	target: document.body,
-	// props: {
-	// 	name: 'dmacp'
-	// }
-});
+Vue.config.productionTip = false
 
-export default app;
+new Vue({
+  store,
+  render: h => h(App)
+}).$mount('#app')

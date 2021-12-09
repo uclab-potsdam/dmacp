@@ -5,5 +5,8 @@ __pycache__
 /dmacp-app/node_modules
 /dmacp-app/public/build/
 /dmacp-app/.DS_Store
+/dmacp-svelte-legacy/node_modules
+/dmacp-svelte-legacy/public/build/
+/dmacp-svelte-legacy/.DS_Store
 
 .vscode
