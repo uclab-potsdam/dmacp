@@ -1,7 +1,12 @@
 <template>
-    <g v-if="isMounted">
-        <g class="curves">
-            <Signature :relational-data="scaledEntities" />
+    <g>
+        <g class="relations" v-if="isMounted">
+            <g class="curves">
+                <Signature :data="scaledEntities" />
+            </g>
+            <g class="links">
+                <Links :links-data="scaledEntities" />
+            </g>
         </g>
         <g class="dots">
             <g v-for="(entity, e) in scaledEntities" :key="`${e}-key`">
@@ -17,11 +22,13 @@
 
 <script>
 import Signature from './Signature.vue';
+import Links from './Links.vue';
 
 export default {
   name: 'Dots',
   components: {
-      Signature  
+      Signature,
+      Links 
     },
   props: {
       data: Array,
@@ -59,7 +66,7 @@ export default {
   },
   mounted () {
       this.isMounted = true
-      console.log(this.$options.name, 'is mounted')
+    //   console.log(this.$options.name, 'is mounted')
   }
 }
 </script>

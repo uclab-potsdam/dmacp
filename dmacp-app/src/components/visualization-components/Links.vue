@@ -1,6 +1,5 @@
 <template>
     <g class="individual-links">
-        <path />
     </g>
 </template>
 
@@ -9,7 +8,10 @@
 export default {
   name: 'Links',
     props: {
-      data: Array
+      linksData: Array
+  },
+  mounted () {
+    console.log(this.linksData)
   }
 }
 </script>

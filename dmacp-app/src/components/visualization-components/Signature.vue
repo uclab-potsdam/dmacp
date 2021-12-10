@@ -1,7 +1,7 @@
 <template>
     <g class="continuous-curve">
         <g v-for="(signature, s) in signaturePath" :key="s">
-            <path :d="signature" :stroke="getRandomColor()"/>
+            <path :d="signature" />
         </g>
     </g>
 </template>
@@ -13,7 +13,7 @@ import { createRelationalArrays } from '../../assets/js/utils.js'
 export default {
   name: 'Signature',
   props: {
-      relationalData: Array
+      data: Array
   },
   data () {
       return {
@@ -24,14 +24,14 @@ export default {
   computed: {
     PathCoordinates () {
         // console.log('ordered data in path coordinates', this.orderedData)
-        const relationalData = this.relationalData
+        const data = this.data
         const coordinates = []
 
         this.orderedData.forEach((arrayOfRelations, r) => {
             const subArrayofCoords = []
 
             arrayOfRelations.forEach((relation) => {
-            const relationalEntity = relationalData.find(el => el.id === relation)
+            const relationalEntity = data.find(el => el.id === relation)
 
             if (relationalEntity !== undefined) {
                     subArrayofCoords.push(
@@ -57,9 +57,8 @@ export default {
     }
   },
   mounted () {
-      console.log(this.$options.name, 'is mounted')
-
-      this.orderedData = createRelationalArrays(this.relationalData, this.relationalityMode)
+      const data = this.data
+      this.orderedData = createRelationalArrays(data, this.relationalityMode)
   },
   methods: {
     getRandomColor() {
