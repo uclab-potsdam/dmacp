@@ -20,8 +20,9 @@ export default new Vuex.Store({
   },
   actions: {
     async loadingData ({commit}) {
-      await loadData('../data/combustion.html')
+      await loadData('./data/combustion.html')
         .then((response) => { 
+          console.log(response)
           const status = "Loaded"
           commit('MUTATE_DATA', {status, response}) 
         })

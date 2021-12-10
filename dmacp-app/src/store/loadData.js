@@ -17,7 +17,7 @@ export default async function loadData(dataPath) {
 
                 let intervalPointsCount = 0
                 let singleEntity = {}
-                let connections = []
+                const targets = []
                 let intervalContext = null
 
                 globalY = globalY + 1
@@ -51,7 +51,7 @@ export default async function loadData(dataPath) {
                     if (hasConnection) {
                         singleEntity.target = unit.getAttribute('resource').substring(1)
                         const connection = unit.getAttribute('resource').substring(1)
-                        connections.push(connection)
+                        targets.push(connection)
                     }
 
                     // Assign indefineteness to element if present
@@ -60,6 +60,8 @@ export default async function loadData(dataPath) {
                     }
 
                 })
+
+                //console.log(singleEntity)
 
                 entityTimePosition.push(singleEntity)
 
@@ -79,15 +81,15 @@ export default async function loadData(dataPath) {
                     }
                 })
 
-
                 return {
                     resource: entity.getAttribute('resource').substring(1),
                     type: isInstant ? 'instant' : 'interval',
-                    targets: connections,
+                    targets,
                     entityTimePosition: entityTimePosition.filter(d => { return d.label !== undefined }),
                     intervalContext
                 }
             })
+
             return narration
         })
         return essay

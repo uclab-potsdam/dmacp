@@ -1,5 +1,5 @@
 <template>
-    <g class="continuous-curve">
+    <g class="individual-links">
         <path />
     </g>
 </template>
