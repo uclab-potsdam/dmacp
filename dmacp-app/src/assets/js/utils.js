@@ -1,6 +1,8 @@
 export const createRelationalArrays = function (relData, mode) {
+    console.log('!')
+    const copy = relData.map(object => ({ ...object }))
     const orderedIDs = []
-    relData.forEach((entity) => {
+    copy.forEach((entity) => {
 
         const singleRelationalityArray = []
         
@@ -46,4 +48,14 @@ export const createRelationalArrays = function (relData, mode) {
     })
 
     return orderedIDs.filter(n => n.length !== 0)
+}
+
+
+export const getRandomColor = function() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }

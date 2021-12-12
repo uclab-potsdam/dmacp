@@ -2,18 +2,21 @@
   <div id="app">
     <div class="main-container">
       <Visualization v-if="dataAreLoaded"/>
+      <Controls />
     </div>
   </div>
 </template>
 
 <script>
 import Visualization from './components/Visualization.vue'
+import Controls from './components/Controls.vue'
 import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'App',
   components: {
-    Visualization
+    Visualization,
+    Controls
   },
   computed: {
       ...mapState({

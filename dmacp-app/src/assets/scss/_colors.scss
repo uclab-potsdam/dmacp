@@ -30,12 +30,17 @@ svg {
 
     .axis {
         stroke: white;
-        stroke-dasharray: 4 4;
+        stroke-dasharray: 5 2;
         stroke-width: 0.5;
     }
 
-    path {
-        stroke: red; 
+    path.signature {
+        // stroke: red; 
+        fill: none;
+    }
+
+    path.link {
+        //stroke: goldenrod;
         fill: none;
     }
 

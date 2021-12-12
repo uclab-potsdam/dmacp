@@ -1,10 +1,10 @@
 <template>
     <g>
         <g class="relations" v-if="isMounted">
-            <g class="curves">
-                <Signature :data="scaledEntities" />
+            <g class="curves" v-if="createSignature">
+                <Signature :relations-data="scaledEntities" />
             </g>
-            <g class="links">
+            <g class="links" v-if="createLinks">
                 <Links :links-data="scaledEntities" />
             </g>
         </g>
@@ -31,42 +31,20 @@ export default {
       Links 
     },
   props: {
-      data: Array,
+      scaledEntities: Array,
       scales: Object
   },
   data () {
       return {
-          isMounted: false
+          isMounted: false,
+          createSignature: true,
+          createLinks: false
       }
-  },
-  computed: {
-    scaledEntities () {
-    const xScale = this.scales.xScale
-    const yScale = this.scales.yScale
-    const data = this.data
-
-    return data.map((essay, e) => {
-        return essay.map((narration) => {
-            return narration.entityTimePosition.map((entity) => {
-                return {
-                        narration: e,
-                        id: narration.resource,
-                        textualLabel: entity.label,
-                        cx: xScale(entity.x),
-                        cy: yScale(entity.y),
-                        radius: 2 + 1 * narration.targets.length,
-                        type: narration.type,
-                        context: narration.intervalContext,
-                        targets: narration.targets
-                    }
-                } )
-            })
-        }).flat(2)
-    }
   },
   mounted () {
       this.isMounted = true
-    //   console.log(this.$options.name, 'is mounted')
+      //console.log(this.$options.name, 'is mounted')
+      //console.log(this.scaledEntities)
   }
 }
 </script>

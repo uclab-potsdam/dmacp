@@ -21,15 +21,15 @@ const Template = (args, { argTypes }) => ({
   template: '<my-button @onClick="onClick" v-bind="$props" />',
 });
 
-export const Primary = Template.bind({});
+export const Active = Template.bind({});
 // More on args: https://storybook.js.org/docs/vue/writing-stories/args
-Primary.args = {
-  primary: true,
+Active.args = {
+  active: true,
   label: 'Button',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
+export const Inactive = Template.bind({});
+Inactive.args = {
   label: 'Button',
 };
 

@@ -13,7 +13,7 @@ export default {
       type: String,
       required: true,
     },
-    primary: {
+    active: {
       type: Boolean,
       default: false,
     },
@@ -33,8 +33,8 @@ export default {
     classes() {
       return {
         'storybook-button': true,
-        'storybook-button--primary': this.primary,
-        'storybook-button--secondary': !this.primary,
+        'storybook-button--active': this.active,
+        'storybook-button--inactive': !this.active,
         [`storybook-button--${this.size}`]: true,
       };
     },

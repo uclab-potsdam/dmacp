@@ -1,19 +1,19 @@
 <template>
     <g class="continuous-curve">
         <g v-for="(signature, s) in signaturePath" :key="s">
-            <path :d="signature" />
+            <path class="signature" :d="signature.d" :stroke="signature.color"/>
         </g>
     </g>
 </template>
 
 <script>
 import { line, curveCatmullRom } from 'd3-shape'
-import { createRelationalArrays } from '../../assets/js/utils.js'
+import { createRelationalArrays, getRandomColor } from '../../assets/js/utils.js'
 
 export default {
   name: 'Signature',
   props: {
-      data: Array
+      relationsData: Array
   },
   data () {
       return {
@@ -24,7 +24,7 @@ export default {
   computed: {
     PathCoordinates () {
         // console.log('ordered data in path coordinates', this.orderedData)
-        const data = this.data
+        const data = this.relationsData
         const coordinates = []
 
         this.orderedData.forEach((arrayOfRelations, r) => {
@@ -48,27 +48,21 @@ export default {
         return line()
                 .x((d) => d.coords[0])
                 .y((d) => d.coords[1])
-                .curve(curveCatmullRom.alpha(0.5));
+                .curve(curveCatmullRom.alpha(1));
+                //.curve(curveNatural);
     },
     signaturePath () {
         return this.PathCoordinates.map((signature, s) => {
-            return this.signatureGenerator(signature)
+            return {
+                    d: this.signatureGenerator(signature),
+                    color: getRandomColor()
+                }
         })
     }
   },
   mounted () {
-      const data = this.data
-      this.orderedData = createRelationalArrays(data, this.relationalityMode)
-  },
-  methods: {
-    getRandomColor() {
-        var letters = '0123456789ABCDEF';
-        var color = '#';
-        for (var i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    }
+      const relationsData = this.relationsData
+      this.orderedData = createRelationalArrays(relationsData, this.relationalityMode)
   }
 }
 </script>

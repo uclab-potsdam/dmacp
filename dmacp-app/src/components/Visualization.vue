@@ -6,7 +6,7 @@
         <line x1="0" x2="0" y1="0" :y2="sizes.height" class="axis" />
       </g>
       <Intervals :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
-      <Dots :data="data" :scales="{ xScale, yScale }" />
+      <Dots :scaled-entities="scaledEntities" :scales="{ xScale, yScale }" />
     </svg>
   </div>
 </template>
@@ -30,7 +30,8 @@ export default {
   data () {
     return {
       sizes: { height: 0, width: 0 },
-      xTicks: []
+      xTicks: [],
+      compress: false
     }
   },
   computed: {
@@ -57,10 +58,36 @@ export default {
       return scaleLinear()
                 .domain(extent(yValues.map(d => { return d })))
                 .range([30, height - 30])
+    },
+    scaledEntities () {
+    const xScale = this.xScale
+    const yScale = this.yScale
+    const data = this.data
+    // Problem with calculation of this property: it gets computed three times 
+    // apparently no reason. Needs to be solved as data change (?) on update
+    return data.map((essay, e) => {
+        return essay.map((narration, n) => {
+            return narration.entityTimePosition.map((entity, index) => {
+                const targets = narration.targets
+                return {
+                        narration: e,
+                        id: narration.resource,
+                        textualLabel: entity.label,
+                        cx: xScale(entity.x),
+                        cy: this.compress ? this.sizes.height / 2 : yScale(entity.y),
+                        radius: 2 + 1 * narration.targets.length,
+                        type: narration.type,
+                        context: narration.intervalContext,
+                        targets
+                    }
+                } )
+            })
+        }).flat(2)
     }
   },
   mounted () {
     this.calcContainerSize()
+    window.addEventListener('resize', this.calcContainerSize, false)
  },
   methods: {
         calcContainerSize () {
@@ -72,8 +99,16 @@ export default {
           this.sizes.width = cWidth
     },
     storeRealScale (scale) {
-      this.xTicks = scale.ticks(5)
+      const logScaleTicks = scale.ticks(5)
+      logScaleTicks.push(this.xValuesMode)
+      this.xTicks = logScaleTicks
     }
+  },
+  updated () {
+    this.calcContainerSize()
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.calcContainerSize, false)
   }
 }
 </script>
