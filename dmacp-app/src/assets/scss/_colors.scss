@@ -29,7 +29,7 @@ svg {
     }
 
     .axis {
-        stroke: white;
+        stroke: rgba(255, 255, 255, 0.5);
         stroke-dasharray: 5 2;
         stroke-width: 0.5;
     }
@@ -46,7 +46,7 @@ svg {
 
     .is-end {
         fill: url(#end-grad);
-        transform: translate(-50%, 0)
+        transform: translate(-74%, 0)
     }
 
     .is-beginning {

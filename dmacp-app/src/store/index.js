@@ -8,7 +8,10 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     data: [],
-    status: "Waiting"
+    status: "Waiting",
+    compress: false,
+    events: true,
+    relations: 'signature'
   },
   mutations: {
     MUTATE_DATA(state, { status, response}) {

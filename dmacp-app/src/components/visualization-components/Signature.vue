@@ -1,7 +1,7 @@
 <template>
     <g class="continuous-curve">
         <g v-for="(signature, s) in signaturePath" :key="s">
-            <path class="signature" :d="signature.d" :stroke="signature.color"/>
+            <path class="signature" :d="signature.d" stroke="red"/>
         </g>
     </g>
 </template>
