@@ -2,8 +2,13 @@
   <div class="visualization-container" ref="visualization">
     <svg :width="sizes.width" :height="sizes.height">
       <Filters :sizes="sizes"/>
-      <g v-for="(tick, t) in xTicks" :key="`${t}-tick`" :transform="`translate(${xScale(tick)}, 0)`">
-        <line x1="0" x2="0" y1="0" :y2="sizes.height" class="axis" />
+      <g class="ticks">
+        <g v-for="(tick, t) in xTicks" :key="`${t}-tickX`" :transform="`translate(${xScale(tick)}, 0)`">
+          <line x1="0" x2="0" y1="0" :y2="sizes.height" class="axis" />
+        </g>
+        <g v-for="(tick, t) in yTicks" :key="`${t}-tickY`" :transform="`translate(0, ${yScale(tick)})`">
+          <line y1="0" y2="0" x1="0" :x2="sizes.width" class="axis" />
+        </g>
       </g>
       <Intervals :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
       <Dots :scaled-entities="scaledEntities" :scales="{ xScale, yScale }" />
@@ -59,12 +64,13 @@ export default {
                 .domain(extent(yValues.map(d => { return d })))
                 .range([30, height - 30])
     },
+    yTicks () {
+      return this.yScale.ticks()
+    },
     scaledEntities () {
     const xScale = this.xScale
     const yScale = this.yScale
     const data = this.data
-    // Problem with calculation of this property: it gets computed three times 
-    // apparently no reason. Needs to be solved as data change (?) on update
     return data.map((essay, e) => {
         return essay.map((narration, n) => {
             return narration.entityTimePosition.map((entity, index) => {
