@@ -1,10 +1,10 @@
 <template>
     <g>
         <g class="relations" v-if="isMounted">
-            <g class="curves" v-if="createSignature">
+            <g class="curves" v-if="relations === 'signature'">
                 <Signature :relations-data="scaledEntities" />
             </g>
-            <g class="links" v-if="createLinks">
+            <g class="links" v-if="relations === 'links'">
                 <Links :links-data="scaledEntities" />
             </g>
         </g>
@@ -23,6 +23,7 @@
 <script>
 import Signature from './Signature.vue';
 import Links from './Links.vue';
+import { mapState } from 'vuex';
 
 export default {
   name: 'Dots',
@@ -41,8 +42,12 @@ export default {
           createLinks: false
       }
   },
+  computed: {
+      ...mapState(['relations'])
+  },
   mounted () {
       this.isMounted = true
+      console.log(this.relations)
       //console.log(this.$options.name, 'is mounted')
       //console.log(this.scaledEntities)
   }

@@ -11,13 +11,23 @@ export default new Vuex.Store({
     status: "Waiting",
     compress: false,
     events: true,
-    relations: 'signature'
+    relations: 'links'
   },
   mutations: {
     MUTATE_DATA(state, { status, response}) {
       if (status == "Loaded") {
         state.data = response
         state.status = status
+      }
+    },
+    MUTATE_VIS_PROPERTY (state, label) {
+      if (label === 'Links' || label === 'Signature') {
+        state.relations = state.relations === 'signature' ? 'links' : 'signature'
+      } else {
+        state[label] = !state[label]
+        if (label === 'compress') {
+          state.relations = 'links'
+        }
       }
     }
   },
@@ -28,7 +38,11 @@ export default new Vuex.Store({
           const status = "Loaded"
           commit('MUTATE_DATA', {status, response}) 
         })
-      
+    },
+    changeVisStatus ({commit, dispatch}, label) {
+      // Re-running action that loads data.
+      dispatch('loadingData')
+      commit('MUTATE_VIS_PROPERTY', label)
     }
   },
   modules: {

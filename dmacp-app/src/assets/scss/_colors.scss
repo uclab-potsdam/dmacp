@@ -15,6 +15,7 @@ svg {
     .entity-marker {
         fill: white;
         // stroke: black;
+        transition: all 0.2s;
     }
 
     .marker-density {

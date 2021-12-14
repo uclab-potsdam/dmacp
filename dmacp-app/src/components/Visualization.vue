@@ -6,11 +6,13 @@
         <g v-for="(tick, t) in xTicks" :key="`${t}-tickX`" :transform="`translate(${xScale(tick)}, 0)`">
           <line x1="0" x2="0" y1="0" :y2="sizes.height" class="axis" />
         </g>
-        <g v-for="(tick, t) in yTicks" :key="`${t}-tickY`" :transform="`translate(0, ${yScale(tick)})`">
-          <line y1="0" y2="0" x1="0" :x2="sizes.width" class="axis" />
+        <g v-if="compress === false">
+          <g v-for="(tick, t) in yTicks" :key="`${t}-tickY`" :transform="`translate(0, ${yScale(tick)})`">
+            <line y1="0" y2="0" x1="0" :x2="sizes.width" class="axis" />
+          </g>
         </g>
       </g>
-      <Intervals :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
+      <Intervals v-if="compress === false" :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
       <Dots :scaled-entities="scaledEntities" :scales="{ xScale, yScale }" />
     </svg>
   </div>
@@ -35,12 +37,12 @@ export default {
   data () {
     return {
       sizes: { height: 0, width: 0 },
-      xTicks: [],
-      compress: false
+      xTicks: []
+      //compress: false
     }
   },
   computed: {
-    ...mapState(['data']),
+    ...mapState(['data', 'compress']),
     xValues () { return this.data.map(essay => essay.map(narration => narration.entityTimePosition.map( entity => entity.x ))).flat(2) },
     yValues () { return this.data.map(essay => essay.map(narration => narration.entityTimePosition.map( entity => entity.y ))).flat(2) },
     xValuesMode () { return mode(this.xValues) }, 

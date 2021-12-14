@@ -4,6 +4,7 @@
 
 <script>
 import './button.css';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'my-button',
@@ -30,6 +31,7 @@ export default {
   },
 
   computed: {
+    ...mapState(['compress', 'events', 'relations']),
     classes() {
       return {
         'storybook-button': true,
@@ -44,7 +46,6 @@ export default {
       };
     },
   },
-
   methods: {
     onClick() {
       this.$emit('onClick');
