@@ -42,11 +42,12 @@ export default {
             newObj["source-position"] = searchForIndex(entity.id)
 
             if (currentEntity !== undefined) {
-             newObj["target"] =  [currentEntity.cx, currentEntity.cy]
-             newObj["target-position"] = searchForIndex(currentEntity.id)
-             
-             const position = newObj["target-position"] > newObj["source-position"] ? 'follows' : 'precedes'
-             newObj["position"] = position
+              newObj["target-position"] = searchForIndex(currentEntity.id)
+              const position = newObj["target-position"] > newObj["source-position"] 
+                ? 'follows' : 'precedes'
+              
+              newObj["target"] =  [currentEntity.cx, currentEntity.cy]
+              newObj["position"] = position
             } else {
               // If no coordinates for target node are found, source is fed again.
               newObj["target"] = newObj["source"]
@@ -54,7 +55,6 @@ export default {
             sourcesAndTargetsData.push(newObj)
           }
       })
-      console.log(sourcesAndTargetsData)
       return sourcesAndTargetsData
     },
     arrayOfColors () {
@@ -69,7 +69,6 @@ export default {
     curvesPaths () {
       //console.log(this.arrayOfColors)
       return this.sourcesAndTargets.map((d, i) => {
-        console.log(d.position)
         return {
             id: d.id,
             color: d.position === 'follows' ? 'red' : 'blue',
@@ -79,7 +78,7 @@ export default {
     } 
   },
   mounted () {
-    console.log(this.curvesPaths)
+    // console.log(this.curvesPaths)
   },
   methods: {
     generateDforArc (d) {
@@ -93,8 +92,9 @@ export default {
       const startingPoint = d.source[0] > d.target[0] ? [d.target[0], d.target[1]] : [d.source[0], d.source[1]]
       const endPoint = d.source[0] > d.target[0] ?  [d.source[0], d.source[1]] : [d.target[0], d.target[1]]
       
-      const path = "M" + startingPoint[0] + "," + startingPoint[1] + "A" + dr + "," + dr + " 0 0," + position + " " + endPoint[0] + "," + endPoint[1]
-      return path
+      return "M" + startingPoint[0] + "," + startingPoint[1] 
+        + "A" + dr + "," + dr + 
+        " 0 0," + position + " " + endPoint[0] + "," + endPoint[1]
     }
   }
 }

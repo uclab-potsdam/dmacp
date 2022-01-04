@@ -77,6 +77,7 @@ export default {
         return essay.map((narration, n) => {
             return narration.entityTimePosition.map((entity, index) => {
                 const targets = narration.targets
+                console.log(entity)
                 return {
                         narration: e,
                         id: narration.resource,

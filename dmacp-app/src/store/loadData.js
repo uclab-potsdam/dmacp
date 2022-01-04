@@ -14,6 +14,8 @@ export default async function loadData(dataPath) {
                 const isInstant = entity.getAttribute('typeof') === 'time:ProperInterval' ? false : true
                 const arrayOfProperties = Array.from(entity.querySelectorAll('meta'))
                 const arrayofParentEntities = Array.from(entity.querySelectorAll('span'))
+                const rawInnerText = entity.innerText
+                const cleanInnerText = rawInnerText.replace(/  |\n/g, "")
 
                 let intervalPointsCount = 0
                 let singleEntity = {}
@@ -35,6 +37,7 @@ export default async function loadData(dataPath) {
                         singleEntity.x = +unit.getAttribute('content')
                         singleEntity.y = globalY
                         singleEntity.label = label
+                        singleEntity.innerText = cleanInnerText
 
                         intervalPointsCount = intervalPointsCount + 1
 
