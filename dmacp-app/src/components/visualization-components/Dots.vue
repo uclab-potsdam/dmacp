@@ -14,7 +14,9 @@
                     <circle :cx="entity.cx" :cy="entity.cy" :r="entity.radius"/>
                 </g>
                 <circle class="entity-marker" :cx="entity.cx" :cy="entity.cy" r="2"/>
+                <g class="marker-event" v-if="events">
                 <text v-show="entity.radius > 3" :x="entity.cx + 10" :y="entity.cy">{{e}}, {{ entity.id }}</text>
+                </g>
             </g>
         </g>
     </g>
@@ -43,7 +45,7 @@ export default {
       }
   },
   computed: {
-      ...mapState(['relations'])
+      ...mapState(['relations', 'events'])
   },
   mounted () {
       this.isMounted = true

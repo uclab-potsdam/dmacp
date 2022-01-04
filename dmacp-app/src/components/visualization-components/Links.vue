@@ -20,7 +20,13 @@ export default {
     },
     sourcesAndTargets () {
         const sourcesAndTargetsData = []
-        this.onlyRelationalEntities.forEach((entity, e) => {
+        const { onlyRelationalEntities } = this
+        
+        const searchForIndex = function (identifier) {
+          return onlyRelationalEntities.findIndex((e) => { return e.id === identifier})
+        }
+
+        onlyRelationalEntities.forEach((entity, e) => {
   
           const targets = entity.targets
           const lengthOfTargets = targets.length
@@ -28,14 +34,19 @@ export default {
           for (let index = 0; index < lengthOfTargets; index++) {
 
             const newObj = {}
-            newObj["source"] = [entity.cx, entity.cy]
-            newObj["id"] = entity.id
-            console.log(entity.id)
             const currentTarget = targets[index]
             const currentEntity = this.linksData.find(obj => { return obj.id === currentTarget})
 
+            newObj["source"] = [entity.cx, entity.cy]
+            newObj["id"] = entity.id
+            newObj["source-position"] = searchForIndex(entity.id)
+
             if (currentEntity !== undefined) {
              newObj["target"] =  [currentEntity.cx, currentEntity.cy]
+             newObj["target-position"] = searchForIndex(currentEntity.id)
+             
+             const position = newObj["target-position"] > newObj["source-position"] ? 'follows' : 'precedes'
+             newObj["position"] = position
             } else {
               // If no coordinates for target node are found, source is fed again.
               newObj["target"] = newObj["source"]
@@ -43,7 +54,7 @@ export default {
             sourcesAndTargetsData.push(newObj)
           }
       })
-
+      console.log(sourcesAndTargetsData)
       return sourcesAndTargetsData
     },
     arrayOfColors () {
@@ -58,9 +69,10 @@ export default {
     curvesPaths () {
       //console.log(this.arrayOfColors)
       return this.sourcesAndTargets.map((d, i) => {
+        console.log(d.position)
         return {
             id: d.id,
-            color: this.arrayOfColors[d.id],
+            color: d.position === 'follows' ? 'red' : 'blue',
             d: this.generateDforArc(d)
           }
       })
@@ -75,8 +87,13 @@ export default {
       const dy = d.target[1] - d.source[1]
       const dr = Math.sqrt(dx + dy * dy + dx)
 
-      const path = "M" + d.source[0] + "," + d.source[1] + "A" + dr + "," + dr + " 0 0,1 " + d.target[0] + "," + d.target[1]
-
+      // Achieve consistency for arc sweep-flag by forcing smaller 
+      // value to always be first in generating the curve
+      const position = d.position === 'follows' ? 0 : 1
+      const startingPoint = d.source[0] > d.target[0] ? [d.target[0], d.target[1]] : [d.source[0], d.source[1]]
+      const endPoint = d.source[0] > d.target[0] ?  [d.source[0], d.source[1]] : [d.target[0], d.target[1]]
+      
+      const path = "M" + startingPoint[0] + "," + startingPoint[1] + "A" + dr + "," + dr + " 0 0," + position + " " + endPoint[0] + "," + endPoint[1]
       return path
     }
   }
