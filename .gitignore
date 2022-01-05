@@ -9,3 +9,4 @@ __pycache__
 /dmacp-svelte-legacy/public/build/
 /dmacp-svelte-legacy/.DS_Store
 .vscode
+dmacp-app/package-lock.json
