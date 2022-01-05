@@ -1,6 +1,6 @@
 <template>
     <g>
-        <g class="relations" v-if="isMounted">
+        <g class="relations" v-show="isMounted">
             <g class="curves" v-if="relations === 'signature'">
                 <Signature :relations-data="scaledEntities" />
             </g>
@@ -10,13 +10,14 @@
         </g>
         <g class="dots">
             <g v-for="(entity, e) in scaledEntities" :key="`${e}-key`">
-                <g class="marker-density">
-                    <circle :cx="entity.cx" :cy="entity.cy" :r="entity.radius"/>
+                <g class="marker">
+                    <g v-if="entity.uncertaintyScore !== undefined" class="marker-density" :class="entity.id">
+                        <circle class="marker-halo" :cx="entity.cx" :cy="entity.cy" :r="entity.radius"/>
+                        <circle class="marker-stroke" :cx="entity.cx" :cy="entity.cy" r="2"/>
+                    </g>
+                    <circle v-else class="entity-marker" :cx="entity.cx" :cy="entity.cy" :r="entity.radius" />
                 </g>
-                <circle class="entity-marker" :cx="entity.cx" :cy="entity.cy" r="2"/>
-                <g class="marker-event" v-if="events">
-                <text v-show="entity.radius > 3" :x="entity.cx + 10" :y="entity.cy">{{e}}, {{ entity.id }}</text>
-                </g>
+                <Labels :entity="entity" :e="e" v-if="events"/>
             </g>
         </g>
     </g>
@@ -25,13 +26,15 @@
 <script>
 import Signature from './Signature.vue';
 import Links from './Links.vue';
+import Labels from './Labels.vue';
 import { mapState } from 'vuex';
 
 export default {
   name: 'Dots',
   components: {
       Signature,
-      Links 
+      Links,
+      Labels
     },
   props: {
       scaledEntities: Array,
@@ -48,10 +51,7 @@ export default {
       ...mapState(['relations', 'events'])
   },
   mounted () {
-      this.isMounted = true
-      console.log(this.relations)
-      //console.log(this.$options.name, 'is mounted')
-      //console.log(this.scaledEntities)
+        this.isMounted = true
   }
 }
 </script>

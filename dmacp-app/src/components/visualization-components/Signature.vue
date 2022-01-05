@@ -1,7 +1,7 @@
 <template>
     <g class="continuous-curve">
         <g v-for="(signature, s) in signaturePath" :key="s">
-            <path class="signature" :d="signature.d" stroke="red"/>
+            <path class="signature" :d="signature.d" stroke="goldenrod"/>
         </g>
     </g>
 </template>
@@ -18,7 +18,7 @@ export default {
   data () {
       return {
           orderedData: [],
-          relationalityMode: 'last-relation' // can be changed to 'last-relation' or to 'network'
+          relationalityMode: 'network' // can be changed to 'last-relation' or to 'network'
       }
   },
   computed: {

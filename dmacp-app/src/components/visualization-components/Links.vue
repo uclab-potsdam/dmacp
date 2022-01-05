@@ -20,11 +20,7 @@ export default {
     },
     sourcesAndTargets () {
         const sourcesAndTargetsData = []
-        const { onlyRelationalEntities } = this
-        
-        const searchForIndex = function (identifier) {
-          return onlyRelationalEntities.findIndex((e) => { return e.id === identifier})
-        }
+        const { onlyRelationalEntities, searchForIndex  } = this
 
         onlyRelationalEntities.forEach((entity, e) => {
   
@@ -39,15 +35,13 @@ export default {
 
             newObj["source"] = [entity.cx, entity.cy]
             newObj["id"] = entity.id
-            newObj["source-position"] = searchForIndex(entity.id)
+            newObj["source-position"] = searchForIndex(onlyRelationalEntities, entity.id)
 
             if (currentEntity !== undefined) {
-              newObj["target-position"] = searchForIndex(currentEntity.id)
-              const position = newObj["target-position"] > newObj["source-position"] 
-                ? 'follows' : 'precedes'
-              
+              newObj["target-position"] = searchForIndex(onlyRelationalEntities, currentEntity.id)
               newObj["target"] =  [currentEntity.cx, currentEntity.cy]
-              newObj["position"] = position
+              newObj["position"] = newObj["target-position"] > newObj["source-position"] 
+                ? 'follows' : 'precedes'
             } else {
               // If no coordinates for target node are found, source is fed again.
               newObj["target"] = newObj["source"]
@@ -67,11 +61,12 @@ export default {
       return newObj
     },
     curvesPaths () {
-      //console.log(this.arrayOfColors)
       return this.sourcesAndTargets.map((d, i) => {
         return {
             id: d.id,
-            color: d.position === 'follows' ? 'red' : 'blue',
+            //color: this.arrayOfColors[d.id],
+            color: '#8482FF',
+            //color: d.position === 'follows' ? 'blue' : 'red',
             d: this.generateDforArc(d)
           }
       })
@@ -81,6 +76,9 @@ export default {
     // console.log(this.curvesPaths)
   },
   methods: {
+    searchForIndex (array, identifier) {
+      return array.findIndex((e) => { return e.id === identifier})
+    },
     generateDforArc (d) {
       const dx = d.target[0] - d.source[0]
       const dy = d.target[1] - d.source[1]

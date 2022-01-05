@@ -4,17 +4,18 @@
       <feGaussianBlur in="SourceGraphic" stdDeviation="1" edgeMode="wrap"/>
     </filter>
     <linearGradient id="begin-grad" x1="0%" y1="0%" x2="30%" y2="0%">
-      <stop offset="0%" style="stop-color:rgba(255, 255, 255, 0.438);stop-opacity:1"/>
-      <stop offset="50%" style="stop-color:rgb(255,255,255);stop-opacity:0" />
+      <stop offset="0%" style="stop-color:rgb(78, 86, 94, 0.438);stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:rgb(78, 86, 94);stop-opacity:0" />
     </linearGradient>
     <linearGradient id="end-grad" x1="0%" y1="100%" x2="0%" y2="0%">
-      <stop offset="0%" style="stop-color:rgba(255, 255, 255);stop-opacity:0"/>
-      <stop offset="100%" style="stop-color:rgba(255, 255, 255, 0.438);stop-opacity:1" />
+      <stop offset="0%" style="stop-color:rgb(78, 86, 94);stop-opacity:0"/>
+      <stop offset="100%" style="stop-color:rgb(78, 86, 94, 0.438);stop-opacity:1" />
     </linearGradient>
   </defs>
 </template>
 
 <script>
+// TO DO: Create gaussian blurs for all stages of uncertainty, range 0 to 1
 export default {
   name: 'Filters',
   props: {

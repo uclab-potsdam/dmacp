@@ -1,6 +1,6 @@
 body,
 .visualization-container {
-    background-color: #191919;
+    background-color: #C4C4C4;
 }
 
 h3 {
@@ -13,24 +13,33 @@ a {
 
 svg {
     .entity-marker {
-        fill: white;
+        fill: black;
         // stroke: black;
         transition: all 0.2s;
     }
 
     .marker-density {
-        fill: white;
-        stroke: none;
-        fill-opacity: 0.5;
-        filter: url(#f1);
+
+        .marker-halo {
+            fill: rgb(78, 86, 94);
+            stroke: none;
+            fill-opacity: 0.5;
+            filter: url(#f1);
+        }
+
+        .marker-stroke {
+            fill: rgb(78, 86, 94);
+            stroke-width: 0.5;
+            //fill: none;
+        }
     }
 
     text {
-        fill: white;
+        fill: black;
     }
 
     .axis {
-        stroke: rgba(255, 255, 255, 0.5);
+        stroke: rgba(0, 0, 0, 0.5);
         stroke-dasharray: 5 2;
         stroke-width: 0.5;
     }
@@ -55,7 +64,7 @@ svg {
     }
 
     .finite {
-        stroke: rgba(255, 255, 255, 0.438);
+        stroke: rgba(78, 86, 94, 0.5);
         stroke-width: 2;
     }
 }

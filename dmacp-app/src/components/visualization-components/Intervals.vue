@@ -2,8 +2,8 @@
     <g class="intervals">
         <g v-for="(interval, i) in scaledIntervals" :key="`${i}-interval-key`">
             <rect 
-                v-if="interval.indefinite == 'indefinite'"
-                :class="interval.context"
+                v-if="interval.indefinite == 'indefinite' && interval.context !== null"
+                :class="[interval.context, interval.indefinite]"
                 :x="interval.x1"
                 :y="interval.y1 - 1"
                 :width="interval.x2"
@@ -39,7 +39,7 @@ export default {
         const yScale = this.scales.yScale
 
         return data.map((essay, e) => {
-        return essay.map((narration) => {
+        return essay.map((narration, n) => {
             let x1 = 0;
             let x2 = 0;
             const entityLength = narration.entityTimePosition.length
@@ -64,6 +64,9 @@ export default {
             })
     }).flat(2)
     }
+  },
+  mounted() {
+    //   console.log(this.scaledIntervals.map(d => d.context))
   }
 }
 </script>

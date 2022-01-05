@@ -9,7 +9,11 @@
         <g v-if="compress === false">
           <g v-for="(tick, t) in yTicks" :key="`${t}-tickY`" :transform="`translate(0, ${yScale(tick)})`">
             <line y1="0" y2="0" x1="0" :x2="sizes.width" class="axis" />
+            <text x="10" y="-10">{{tick}}</text>
           </g>
+        </g>
+        <g v-else>
+          <line :y1="sizes.height / 2" :y2="sizes.height / 2" x1="0" :x2="sizes.width" class="axis" />
         </g>
       </g>
       <Intervals v-if="compress === false" :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
@@ -75,9 +79,8 @@ export default {
     const data = this.data
     return data.map((essay, e) => {
         return essay.map((narration, n) => {
-            return narration.entityTimePosition.map((entity, index) => {
+            return narration.entityTimePosition.map((entity) => {
                 const targets = narration.targets
-                console.log(entity)
                 return {
                         narration: e,
                         id: narration.resource,
@@ -87,6 +90,8 @@ export default {
                         radius: 2 + 1 * narration.targets.length,
                         type: narration.type,
                         context: narration.intervalContext,
+                        innerText: entity.innerText,
+                        uncertaintyScore: entity.indefinitness,
                         targets
                     }
                 } )

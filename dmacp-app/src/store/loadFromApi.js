@@ -1,16 +1,17 @@
-import * as d3 from 'd3';
+export default async function loadFromApi(data) {
+    const arraysOfText = data.acf._content.content
+    const arrayOfData = []
+    let globalY = 0
+    arraysOfText.forEach((content) => {
+        const el = document.createElement('html')
+        el.innerHTML = content.text
+        const htmlBody = el.getElementsByTagName('body')
 
-export default async function loadData(dataPath) {
-    const data = await d3.html(dataPath).then(function (essay) {
-        // console.log(essay)
-        let globalY = 0
-        essay = [].map.call(essay.querySelectorAll("p"), (narration, n) => {
-                // console.log(narration)
+        const essay = [].map.call(htmlBody[0].querySelectorAll("p"), (narration, n) => {
             // First layer: I am looping over separate paragraphs within the essay. Each paragraph contains many or no entities.
             // console.log('looping over narration', n)
 
             narration = [].map.call(narration.querySelectorAll('[typeof][resource]'), (entity, e) => {
-                // console.log(entity)
                 // This is one single entity. I am creating an array with its properties so it becomes iterable
                 // console.log('entity', e, entity.getAttribute('resource'), entity.getAttribute('typeof'))
                 const entityTimePosition = []
@@ -67,8 +68,6 @@ export default async function loadData(dataPath) {
 
                 })
 
-                //console.log(singleEntity)
-
                 entityTimePosition.push(singleEntity)
 
                 // Separate loop to determine whether one of the interval's end is undefined.
@@ -98,8 +97,9 @@ export default async function loadData(dataPath) {
 
             return narration
         })
-        return essay
-    });
-    // console.log(data)
-    return data
+        arrayOfData.push(essay[0])
+    })
+
+    //console.log(arrayOfData)
+    return arrayOfData
 };

@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios';
 import loadData from './loadData.js';
+import loadFromApi from './loadFromApi.js';
 
 Vue.use(Vuex)
 
@@ -14,9 +16,10 @@ export default new Vuex.Store({
     relations: 'links'
   },
   mutations: {
-    MUTATE_DATA(state, { status, response}) {
+    MUTATE_DATA(state, { status, parsedData}) {
       if (status == "Loaded") {
-        state.data = response
+        //console.log('in mutate', parsedData)
+        state.data = parsedData
         state.status = status
       }
     },
@@ -32,11 +35,25 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async loadingData ({commit}) {
-      await loadData('./data/combustion.html')
-        .then((response) => { 
+    loadingData ({commit}) {
+      // loadData('./data/combustion.html')
+      //   .then((parsedData) => {
+      //     const status = "Loaded"
+      //     console.log('!', parsedData)
+      //     //commit('MUTATE_DATA', {status, parsedData})
+      //   })
+
+      const essayUrl = 'https://content-dev.anthropocene-curriculum.org/wp-json/wp/v2/contribution?slug=combustion-products-as-markers-for-the-anthropocene'
+
+      axios.get(essayUrl)
+        .then((response) => {
+          let parsedData = []
           const status = "Loaded"
-          commit('MUTATE_DATA', {status, response}) 
+          loadFromApi(response.data[0])
+            .then(value => {
+              parsedData = value
+              commit('MUTATE_DATA', { status, parsedData }) 
+            });
         })
     },
     changeVisStatus ({commit, dispatch}, label) {
