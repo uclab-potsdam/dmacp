@@ -17,7 +17,7 @@
         </g>
       </g>
       <Intervals v-if="compress === false" :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
-      <Dots :scaled-entities="scaledEntities" :scales="{ xScale, yScale }" />
+      <Dots :scaled-entities="scaledEntities" :scales="{ xScale, yScale }"/>
     </svg>
   </div>
 </template>

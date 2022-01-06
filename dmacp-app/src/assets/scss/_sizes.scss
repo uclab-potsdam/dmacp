@@ -22,7 +22,35 @@
 }
 
 svg {
+    text {
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+    }
+
     .marker-event text {
         font-size: 16px;
+    }
+
+    foreignObject {
+        transition: all 0.2s;
+        pointer-events: none;
+    }
+
+    p {
+        margin: 0;
+        text-align: left;
+        line-height: 1;
+        padding: 5px;
+        font-size: 10px;
+        transition: all 0.2s;
+    }
+
+    .selected p {
+        font-size: 20px;
+    }
+
+    .not-selected p {
+        opacity: 0;
+        font-size: 10px;
     }
 }

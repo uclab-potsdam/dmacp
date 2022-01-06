@@ -1,7 +1,7 @@
 <template>
     <g class="individual-links">
-      <g v-for="(link, l) in curvesPaths" :key="l">
-        <path :class="`link ${link.id}`" :d="link.d" :stroke="link.color" />
+      <g v-for="(link, l) in curvesPaths" :key="l" :class="{'not-selected' : selectedMarker !== link.id && selectedMarker !== null}">
+        <path :class="[`link ${link.id}`, link.position]" :d="link.d" :stroke="link.color" />
       </g>
     </g>
 </template>
@@ -12,7 +12,8 @@ import { getRandomColor } from '../../assets/js/utils.js'
 export default {
   name: 'Links',
     props: {
-      linksData: Array
+      linksData: Array,
+      selectedMarker: String
   },
   computed: {
     onlyRelationalEntities () {
@@ -67,7 +68,8 @@ export default {
             //color: this.arrayOfColors[d.id],
             color: '#8482FF',
             //color: d.position === 'follows' ? 'blue' : 'red',
-            d: this.generateDforArc(d)
+            d: this.generateDforArc(d),
+            position: d.position
           }
       })
     } 

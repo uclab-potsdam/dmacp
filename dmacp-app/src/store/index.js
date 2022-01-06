@@ -36,16 +36,20 @@ export default new Vuex.Store({
   },
   actions: {
     loadingData ({commit}) {
-      // loadData('./data/combustion.html')
-      //   .then((parsedData) => {
-      //     const status = "Loaded"
-      //     console.log('!', parsedData)
-      //     //commit('MUTATE_DATA', {status, parsedData})
-      //   })
 
       const essayUrl = 'https://content-dev.anthropocene-curriculum.org/wp-json/wp/v2/contribution?slug=combustion-products-as-markers-for-the-anthropocene'
 
       axios.get(essayUrl)
+        .catch(function(error) {
+          console.log('Error', error.message)
+          if (!error.response) {}
+          loadData('./data/combustion.html')
+            .then((parsedData) => {
+              const status = "Loaded"
+              console.log('loading from local', parsedData)
+              commit('MUTATE_DATA', {status, parsedData})
+            })
+        })
         .then((response) => {
           let parsedData = []
           const status = "Loaded"

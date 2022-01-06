@@ -18,7 +18,7 @@ export default {
   data () {
       return {
           orderedData: [],
-          relationalityMode: 'network' // can be changed to 'last-relation' or to 'network'
+          relationalityMode: 'last-relation' // can be changed to 'last-relation' or to 'network'
       }
   },
   computed: {

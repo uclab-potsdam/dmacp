@@ -3,18 +3,13 @@ body,
     background-color: #C4C4C4;
 }
 
-h3 {
-    color: #42b983;
-}
-
-a {
-    color: #42b983;
-}
-
 svg {
     .entity-marker {
-        fill: black;
-        // stroke: black;
+        fill: #e0e0e0;
+        stroke: black;
+        stroke-dasharray: 2 1;
+        stroke-dashoffset: 5px;
+        stroke-width: 0.5;
         transition: all 0.2s;
     }
 
@@ -28,7 +23,10 @@ svg {
         }
 
         .marker-stroke {
-            fill: rgb(78, 86, 94);
+            fill: #e0e0e0;
+            stroke: black;
+            stroke-dasharray: 1 1;
+            stroke-dashoffset: 5px;
             stroke-width: 0.5;
             //fill: none;
         }
@@ -66,5 +64,23 @@ svg {
     .finite {
         stroke: rgba(78, 86, 94, 0.5);
         stroke-width: 2;
+    }
+
+    .individual-links {
+        .not-selected {
+            path {
+                stroke: #acacac !important;
+            }
+        }
+
+        g {
+            .precedes {
+                stroke: url(#precedes-grad);
+            }
+
+            .follows {
+                stroke: url(#follows-grad);
+            }
+        }
     }
 }
