@@ -13,10 +13,28 @@ svg {
         transition: all 0.2s;
     }
 
+    .limited-visibility {
+        circle {
+        fill: #C4C4C4;
+        stroke: rgb(117, 117, 117);
+        stroke-dasharray: none;
+        }
+
+        .marker-halo {
+            opacity: 0;
+        }
+
+        .marker-stroke {
+            fill: #C4C4C4;
+            stroke: black;
+            stroke-dasharray: none;
+        }
+    }
+
     .marker-density {
 
         .marker-halo {
-            fill: rgb(78, 86, 94);
+            fill: #e0e0e0;
             stroke: none;
             fill-opacity: 0.5;
             filter: url(#f1);
@@ -30,6 +48,24 @@ svg {
             stroke-width: 0.5;
             //fill: none;
         }
+    }
+
+    .marker-event {
+        foreignObject {
+            z-index: 0;
+
+            p {
+                text-shadow: -2px 0 rgba(255, 255, 255, 0.3),
+                0 2px rgba(255, 255, 255, 0.3),
+                2px 0 rgba(255, 255, 255, 0.3),
+                0 -2px rgba(255, 255, 255, 0.3);
+            }
+        }
+
+        .limited-visibility {
+            opacity: 0;
+        }
+        
     }
 
     text {
@@ -70,6 +106,7 @@ svg {
         .not-selected {
             path {
                 stroke: #acacac !important;
+                mix-blend-mode: luminosity;
             }
         }
 

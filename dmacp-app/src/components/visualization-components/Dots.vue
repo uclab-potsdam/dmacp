@@ -8,10 +8,14 @@
                 <Links :links-data="scaledEntities" :selected-marker="selectedMarker"/>
             </g>
         </g>
-        <g class="dots">
+        <g class="dots labels-container">
             <g v-for="(entity, e) in scaledEntities" :key="`${e}-key`">
-                <g class="marker" @click="selectedMarker = entity.id">
-                    <g v-if="entity.uncertaintyScore !== undefined" class="marker-density" :class="entity.id">
+                <g 
+                class="marker" 
+                @click="changeSelectedMarker(entity.id)" 
+                :class="{'limited-visibility': selectedMarker !== entity.id && selectedMarker !== null}"
+                >
+                    <g v-if="entity.uncertaintyScore !== undefined" class="marker-density" :class="[entity.id]">
                         <circle class="marker-halo" :cx="entity.cx" :cy="entity.cy" :r="entity.radius"/>
                         <circle class="marker-stroke" :cx="entity.cx" :cy="entity.cy" r="2"/>
                     </g>
@@ -33,7 +37,7 @@
 import Signature from './Signature.vue';
 import Links from './Links.vue';
 import Labels from './Labels.vue';
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'Dots',
@@ -50,15 +54,17 @@ export default {
       return {
           isMounted: false,
           createSignature: true,
-          createLinks: false,
-          selectedMarker: null
+          createLinks: false
       }
   },
   computed: {
-      ...mapState(['relations', 'events'])
+      ...mapState(['relations', 'events', 'selectedMarker'])
   },
   mounted () {
         this.isMounted = true
+  },
+  methods: {
+        ...mapActions(['changeSelectedMarker'])
   }
 }
 </script>

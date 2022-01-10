@@ -1,9 +1,12 @@
 <template>
     <g class="marker-event" :class="{'selected': selectedMarker === entity.id}" :transform="`translate(${entity.cx}, ${entity.cy})`">
-        <foreignObject x="10" :y="y" :width="labelWidth" height="100" v-show="entity.radius > 3 || selectedMarker === entity.id">
+        <foreignObject x="10" y="-15" :width="labelWidth" height="100" v-show="entity.radius > 3 || selectedMarker === entity.id">
             <div class="label" ref="label">
                 <p>
-                    {{e}}. {{ entity.innerText }}
+                    {{e}}. 
+                    <span :class="{'limited-visibility': selectedMarker !== entity.id && selectedMarker !== null}">
+                        {{ entity.innerText }}
+                    </span>
                 </p>
             </div>
         </foreignObject>
@@ -37,11 +40,11 @@ export default {
       }
   },
   mounted () {
-        if (this.timeoutContainer) { clearTimeout(this.timeoutContainer) }
-        this.timeoutContainer = setTimeout(() => { 
-            this.calcLabelXPosition() 
-            this.calcLabelYPosition() 
-        }, 500)
+        // if (this.timeoutContainer) { clearTimeout(this.timeoutContainer) }
+        // this.timeoutContainer = setTimeout(() => { 
+        //     this.calcLabelXPosition() 
+        //     this.calcLabelYPosition() 
+        // }, 500)
   },
   methods: {
       coordinatesofObject (obj) {
@@ -102,8 +105,6 @@ export default {
             // console.log(currentLabelPos.left > centerOfPaths)
             if (currentLabelPos.left < centerOfPaths) {
                 // console.log(rightPosLabel)
-                //currentX = Math.min(...overlappingEls) - rightPosLabel - 10
-
                 currentX = leftPosLabel - rightPosLabel - 10
                 this.textAnchor = 'right'
             }

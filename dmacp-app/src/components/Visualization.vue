@@ -1,6 +1,7 @@
 <template>
   <div class="visualization-container" ref="visualization">
     <svg :width="sizes.width" :height="sizes.height">
+      <rect :width="sizes.width" :height="sizes.height" x="0" y="0" fill="#C4C4C4" @click="changeSelectedMarker(null)"/>
       <Filters :sizes="sizes"/>
       <g class="ticks">
         <g v-for="(tick, t) in xTicks" :key="`${t}-tickX`" :transform="`translate(${xScale(tick)}, 0)`">
@@ -23,7 +24,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 import { scaleSymlog, scaleLinear } from 'd3-scale'
 import { extent, mode } from 'd3-array'
 import Dots from './visualization-components/Dots.vue'
@@ -104,13 +105,14 @@ export default {
     window.addEventListener('resize', this.calcContainerSize, false)
  },
   methods: {
-        calcContainerSize () {
-          const { visualization } = this.$refs
-          let cHeight = visualization.clientHeight
-          let cWidth = visualization.clientWidth
+    ...mapActions(['changeSelectedMarker']),
+    calcContainerSize () {
+      const { visualization } = this.$refs
+      let cHeight = visualization.clientHeight
+      let cWidth = visualization.clientWidth
 
-          this.sizes.height = cHeight
-          this.sizes.width = cWidth
+      this.sizes.height = cHeight
+      this.sizes.width = cWidth
     },
     storeRealScale (scale) {
       const logScaleTicks = scale.ticks(5)

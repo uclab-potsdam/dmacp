@@ -13,7 +13,8 @@ export default new Vuex.Store({
     status: "Waiting",
     compress: false,
     events: true,
-    relations: 'links'
+    relations: 'links',
+    selectedMarker: null
   },
   mutations: {
     MUTATE_DATA(state, { status, parsedData}) {
@@ -32,6 +33,9 @@ export default new Vuex.Store({
           state.relations = 'links'
         }
       }
+    },
+    MUTATE_SELECTED_MARKER(state, markerString) {
+      state.selectedMarker = markerString
     }
   },
   actions: {
@@ -64,6 +68,10 @@ export default new Vuex.Store({
       // Re-running action that loads data.
       dispatch('loadingData')
       commit('MUTATE_VIS_PROPERTY', label)
+    },
+    changeSelectedMarker({commit}, markerString) {
+      console.log('!')
+      commit('MUTATE_SELECTED_MARKER', markerString)
     }
   },
   modules: {
