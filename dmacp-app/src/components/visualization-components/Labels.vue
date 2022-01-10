@@ -1,6 +1,6 @@
 <template>
     <g class="marker-event" :class="{'selected': selectedMarker === entity.id}" :transform="`translate(${entity.cx}, ${entity.cy})`">
-        <foreignObject x="10" y="-15" :width="labelWidth" height="100" v-show="entity.radius > 3 || selectedMarker === entity.id">
+        <foreignObject x="5" y="-18" :width="labelWidth" height="100" v-show="entity.radius > 3 || selectedMarker === entity.id">
             <div class="label" ref="label">
                 <p>
                     {{e}}. 
@@ -40,11 +40,11 @@ export default {
       }
   },
   mounted () {
-        // if (this.timeoutContainer) { clearTimeout(this.timeoutContainer) }
-        // this.timeoutContainer = setTimeout(() => { 
-        //     this.calcLabelXPosition() 
-        //     this.calcLabelYPosition() 
-        // }, 500)
+        if (this.timeoutContainer) { clearTimeout(this.timeoutContainer) }
+        this.timeoutContainer = setTimeout(() => { 
+            //this.calcLabelXPosition() 
+            this.calcLabelYPosition() 
+        }, 500)
   },
   methods: {
       coordinatesofObject (obj) {
@@ -59,58 +59,6 @@ export default {
             top: topPos(obj),
             bottom: btmPos(obj)
         }
-      },
-      calcLabelXPosition () {
-        // adjusting horizontal position of labels
-        let currentX = 10
-        const overlappingEls = []
-        const pathsGroup = document.getElementById('relations')
-        const pathsBBox = pathsGroup.getBoundingClientRect()
-        const centerOfPaths = pathsBBox.left + pathsBBox.width / 2
-
-        // calc current bbox of label
-        const currentLabel = this.$refs.label
-        const currentLabelPos = currentLabel.getBoundingClientRect();
-        const rightPosLabel = currentLabelPos.right
-        const leftPosLabel = currentLabelPos.left
-        const btmPosLabel = currentLabelPos.bottom
-        const topPosLabel = currentLabelPos.top
-        
-        // get all path elements present
-        const svgElements = document.querySelectorAll('path')
-
-        // if label is positioned and visible
-        if (currentLabelPos.top !== 0) {
-
-            // loops over elements and determine if label overlaps (both vert and hor)
-            for (let i = 0; i < svgElements.length; i++) {
-                const coordinates = this.coordinatesofObject(svgElements[i])
-                let isOverlapping = !(
-                    coordinates.right < rightPosLabel ||
-                    coordinates.left > leftPosLabel ||
-                    coordinates.bottom < btmPosLabel ||
-                    coordinates.top > topPosLabel
-                );
-
-                // if true pushes right pos of element in array
-                if (isOverlapping) {
-                    overlappingEls.push(coordinates.right)
-               }
-            }
-
-        }
-
-        // if array has elements determine new X for label
-        if (overlappingEls.length !== 0) {
-            // console.log(currentLabelPos.left > centerOfPaths)
-            if (currentLabelPos.left < centerOfPaths) {
-                // console.log(rightPosLabel)
-                currentX = leftPosLabel - rightPosLabel - 10
-                this.textAnchor = 'right'
-            }
-        }
-        
-        this.x = currentX
       },
       calcLabelYPosition () {
         let currentY = 0
