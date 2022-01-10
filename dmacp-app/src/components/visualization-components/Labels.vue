@@ -1,6 +1,6 @@
 <template>
     <g class="marker-event" :class="{'selected': selectedMarker === entity.id}" :transform="`translate(${entity.cx}, ${entity.cy})`">
-        <foreignObject x="5" y="-18" :width="labelWidth" height="100" v-show="entity.radius > 3 || selectedMarker === entity.id">
+        <foreignObject x="5" y="0" :width="labelWidth" height="100" v-show="entity.radius > 3 || selectedMarker === entity.id">
             <div class="label" ref="label">
                 <p>
                     {{e}}. 
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 
 export default {
   name: 'Labels',
@@ -35,16 +36,18 @@ export default {
       }
   },
   computed: {
+      ...mapState(['compress']),
       labelWidth () {
+          //console.log(this.relations)
           return this.selectedMarker === this.entity.id ? 200 : 200
       }
   },
   mounted () {
-        if (this.timeoutContainer) { clearTimeout(this.timeoutContainer) }
-        this.timeoutContainer = setTimeout(() => { 
-            //this.calcLabelXPosition() 
-            this.calcLabelYPosition() 
-        }, 500)
+        // if (this.timeoutContainer) { clearTimeout(this.timeoutContainer) }
+        // this.timeoutContainer = setTimeout(() => { 
+        //     //this.calcLabelXPosition() 
+        //     this.calcLabelYPosition() 
+        // }, 500)
   },
   methods: {
       coordinatesofObject (obj) {
@@ -61,43 +64,41 @@ export default {
         }
       },
       calcLabelYPosition () {
-        let currentY = 0
-        let overlappingLabel = null
+
+        console.log(this.compress)
 
         // calc current bbox of label
-        const currentLabel = this.$refs.label
-        const currentLabelPos = currentLabel.getBoundingClientRect();
-        const rightPosLabel = currentLabelPos.right
-        const leftPosLabel = currentLabelPos.left
-        const btmPosLabel = currentLabelPos.bottom
-        const topPosLabel = currentLabelPos.top
+        // const bottomPosLabel = currentLabelPos.bottom
+        // const leftPosLabel = currentLabelPos.bottom
+        // const rightPosLabel = currentLabelPos.bottom
 
         // get all labels
         const existingLabels = document.getElementsByClassName('label')
+        const currentLabel = this.$refs.label
+        const currentLabelBBox = currentLabel.getBoundingClientRect()
+        //console.log(existingLabels)
+        const y = currentLabelBBox.y
+        
+        for (let index = 0; index < existingLabels.length; index++) {
 
-        for(let i = 0; i < existingLabels.length; i ++) {
-            const previousLabel = i === 0 ? i : i - 1
-            const coordinates = this.coordinatesofObject(existingLabels[previousLabel])
-            
-            let isOverlapping = !(
-                coordinates.bottom < btmPosLabel ||
-                coordinates.top > topPosLabel
-            );
-
-            if (isOverlapping) {
-                overlappingLabel = coordinates.bottom
-                console.log('overlaps', this.entity.innerText)
+            if(y > 0) {
+                //const y = bbox.y
+                console.log(y)
+                //left = left === '150px' ? 0 : '150px';
+                document.getElementsByTagName("foreignObject")[index].style.y = y + 1 + 'px';
+                console.log(document.getElementsByTagName("foreignObject")[index].style.y)
             }
         }
+        
+      }
+  },
+  watch: {
+      compress: function (current) {
 
-        if (overlappingLabel !== null) {
-            const difference = overlappingLabel - topPosLabel
-            while (currentY <= difference) {
-                currentY = currentY + 1
-            }
-            this.y = -currentY
-        }
-
+          if (current) {
+            this.calcLabelYPosition()
+          }
+          //console.log(newRelation)
       }
   }
 }
