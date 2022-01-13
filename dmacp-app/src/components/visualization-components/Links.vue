@@ -1,6 +1,6 @@
 <template>
     <g class="individual-links">
-      <g v-for="(link, l) in curvesPaths" :key="l" :class="{'not-selected' : selectedMarker !== link.id && selectedMarker !== null}">
+      <g v-for="(link, l) in curvesPaths" :key="l" :class="{'not-selected' : selectedMarker.id !== link.id && selectedMarker.id !== null}">
         <path :class="[`link ${link.id}`, link.position]" :d="link.d" :stroke="link.color" />
       </g>
     </g>
@@ -13,7 +13,7 @@ export default {
   name: 'Links',
     props: {
       linksData: Array,
-      selectedMarker: String
+      selectedMarker: Object
   },
   computed: {
     onlyRelationalEntities () {

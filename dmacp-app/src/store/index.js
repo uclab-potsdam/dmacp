@@ -11,10 +11,10 @@ export default new Vuex.Store({
   state: {
     data: [],
     status: "Waiting",
-    compress: false,
+    compress: true,
     events: true,
     relations: 'links',
-    selectedMarker: null
+    selectedMarker: {id: null, type: null}
   },
   mutations: {
     MUTATE_DATA(state, { status, parsedData}) {
@@ -34,8 +34,10 @@ export default new Vuex.Store({
         }
       }
     },
-    MUTATE_SELECTED_MARKER(state, markerString) {
-      state.selectedMarker = markerString
+    MUTATE_SELECTED_MARKER(state, marker) {
+      state.selectedMarker.id = marker.id
+      state.selectedMarker.type = marker.type
+      //state.selectedMarker.y = marker.cy
     }
   },
   actions: {
@@ -69,9 +71,9 @@ export default new Vuex.Store({
       dispatch('loadingData')
       commit('MUTATE_VIS_PROPERTY', label)
     },
-    changeSelectedMarker({commit}, markerString) {
+    changeSelectedMarker({commit}, marker) {
       console.log('!')
-      commit('MUTATE_SELECTED_MARKER', markerString)
+      commit('MUTATE_SELECTED_MARKER', marker)
     }
   },
   modules: {

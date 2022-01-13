@@ -12,19 +12,27 @@
             <g v-for="(entity, e) in scaledEntities" :key="`${e}-key`">
                 <g 
                 class="marker" 
-                @click="changeSelectedMarker(entity.id)" 
-                :class="{'limited-visibility': selectedMarker !== entity.id && selectedMarker !== null}"
+                @click="changeSelectedMarker(entity)" 
+                :class="[
+                    {'limited-visibility': selectedMarker.id !== entity.id && selectedMarker.id !== null},
+                    {'disabled-on-compress': entity.radius < 3 && compress}
+                ]"
                 >
                     <g v-if="entity.uncertaintyScore !== undefined" class="marker-density" :class="[entity.id]">
                         <circle class="marker-halo" :cx="entity.cx" :cy="entity.cy" :r="entity.radius"/>
                         <circle class="marker-stroke" :cx="entity.cx" :cy="entity.cy" r="2"/>
                     </g>
                     <circle v-else class="entity-marker" :cx="entity.cx" :cy="entity.cy" :r="entity.radius" />
+                    <circle v-if="selectedMarker.id === entity.id" class="entity-selected" :cx="entity.cx" :cy="entity.cy" :r="entity.radius * 2" />
                 </g>
+
+            </g>
+            <g v-for="(entity, e) in scaledEntities" :key="`${e}-key-label`">
                 <Labels 
                     :selected-marker="selectedMarker" 
                     :entity="entity" 
-                    :e="e" 
+                    :e="e"
+                    :y="defaultYPosition"
                     v-show="events" 
                     :previous-entity="scaledEntities[e - 1]"
                 />
@@ -38,6 +46,7 @@ import Signature from './Signature.vue';
 import Links from './Links.vue';
 import Labels from './Labels.vue';
 import { mapState, mapActions } from 'vuex';
+import { changeYPosition } from '../../assets/js/utils.js'
 
 export default {
   name: 'Dots',
@@ -52,19 +61,34 @@ export default {
   },
   data () {
       return {
-          isMounted: false,
-          createSignature: true,
-          createLinks: false
+            isMounted: false,
+            createSignature: true,
+            createLinks: false,
+            timeoutContainer: null,
+            defaultYPosition: 5
       }
   },
   computed: {
-      ...mapState(['relations', 'events', 'selectedMarker'])
+      ...mapState(['relations', 'events', 'selectedMarker', 'compress'])
   },
   mounted () {
         this.isMounted = true
+        if (this.compress) {
+            console.log('!')
+            if (this.timeoutContainer) { clearTimeout(this.timeoutContainer) }
+            this.timeoutContainer = setTimeout(() => { 
+                changeYPosition(this.compress, this.defaultYPosition, 'label-container') 
+            }, 500)
+        }
   },
   methods: {
         ...mapActions(['changeSelectedMarker'])
+  },
+    watch: {
+      compress: function (current) {
+            console.log(current)
+            changeYPosition(this.compress, this.defaultYPosition, 'label-container') 
+      }
   }
 }
 </script>
