@@ -68,7 +68,6 @@ export const changeYPosition = function (compressState, defaultYPosition, elemen
         for (let index = 0; index < labelsBoundingBox.length; index++) {
 
             if (compressState) {
-                console.log('!')
                 if (index < labelsBoundingBox.length - 1) {
                     const element = labelsBoundingBox[index];
                     const nextElement = labelsBoundingBox[index + 1]
