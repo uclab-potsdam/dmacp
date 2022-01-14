@@ -19,7 +19,6 @@ export default new Vuex.Store({
   mutations: {
     MUTATE_DATA(state, { status, parsedData}) {
       if (status == "Loaded") {
-        //console.log('in mutate', parsedData)
         state.data = parsedData
         state.status = status
       }
@@ -37,7 +36,6 @@ export default new Vuex.Store({
     MUTATE_SELECTED_MARKER(state, marker) {
       state.selectedMarker.id = marker.id
       state.selectedMarker.type = marker.type
-      //state.selectedMarker.y = marker.cy
     }
   },
   actions: {
@@ -72,7 +70,6 @@ export default new Vuex.Store({
       commit('MUTATE_VIS_PROPERTY', label)
     },
     changeSelectedMarker({commit}, marker) {
-      console.log('!')
       commit('MUTATE_SELECTED_MARKER', marker)
     }
   },

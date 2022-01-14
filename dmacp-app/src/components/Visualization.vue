@@ -44,7 +44,6 @@ export default {
       sizes: { height: 0, width: 0 },
       xTicks: [],
       resetMarkerSelection: {id: null, type: null}
-      //compress: false
     }
   },
   computed: {
