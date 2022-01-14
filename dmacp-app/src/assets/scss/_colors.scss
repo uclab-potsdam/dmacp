@@ -6,14 +6,23 @@ body,
 svg {
     .entity-marker {
         fill: #e0e0e0;
-        stroke: black;
-        stroke-dasharray: 2 1;
-        stroke-dashoffset: 5px;
+        stroke: rgb(120, 115, 243);
+        //stroke-dasharray: 2 1;
+        //stroke-dashoffset: 5px;
         stroke-width: 0.5;
-        transition: all 0.2s;
+        transition: all 0.4s;
     }
 
-    .limited-visibility {
+    .entity-selected {
+        fill: transparent;
+        stroke: white;
+    }
+
+    .disabled-on-compress {
+        pointer-events: none;
+    }
+
+    .limited-visibility, .disabled-on-compress {
         circle {
         fill: #C4C4C4;
         stroke: rgb(117, 117, 117);
@@ -26,27 +35,20 @@ svg {
 
         .marker-stroke {
             fill: #C4C4C4;
-            stroke: black;
-            stroke-dasharray: none;
         }
     }
 
     .marker-density {
 
         .marker-halo {
-            fill: #e0e0e0;
+            fill: white;
             stroke: none;
             fill-opacity: 0.5;
             filter: url(#f1);
         }
 
         .marker-stroke {
-            fill: #e0e0e0;
-            stroke: black;
-            stroke-dasharray: 1 1;
-            stroke-dashoffset: 5px;
-            stroke-width: 0.5;
-            //fill: none;
+            fill: #3f3e3e;
         }
     }
 
@@ -55,10 +57,10 @@ svg {
             z-index: 0;
 
             p {
-                text-shadow: -2px 0 rgba(255, 255, 255, 0.3),
-                0 2px rgba(255, 255, 255, 0.3),
-                2px 0 rgba(255, 255, 255, 0.3),
-                0 -2px rgba(255, 255, 255, 0.3);
+                text-shadow: -1px 0 rgba(255, 255, 255, 0.3),
+                0 1px rgba(255, 255, 255, 0.3),
+                1px 0 rgba(255, 255, 255, 0.3),
+                0 -1px rgba(255, 255, 255, 0.3);
             }
         }
 
@@ -102,21 +104,36 @@ svg {
         stroke-width: 2;
     }
 
+    .limited-visibility {
+
+        g {
+            .finite {
+                stroke: #acacac;
+                //opacity: 0.5;
+            }
+
+            .is-beginning, .is-end {
+                opacity: 0.5;
+            }
+        }
+    }
+
     .individual-links {
         .not-selected {
             path {
                 stroke: #acacac !important;
+                opacity: 0.6;
                 mix-blend-mode: luminosity;
             }
         }
 
         g {
             .precedes {
-                stroke: url(#precedes-grad);
+                stroke: rgb(120, 115, 243);
             }
 
             .follows {
-                stroke: url(#follows-grad);
+                stroke: #727193;
             }
         }
     }

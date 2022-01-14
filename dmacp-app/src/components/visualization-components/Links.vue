@@ -1,6 +1,6 @@
 <template>
     <g class="individual-links">
-      <g v-for="(link, l) in curvesPaths" :key="l" :class="{'not-selected' : selectedMarker !== link.id && selectedMarker !== null}">
+      <g v-for="(link, l) in curvesPaths" :key="l" :class="{'not-selected' : selectedMarker.id !== link.id && selectedMarker.id !== null}">
         <path :class="[`link ${link.id}`, link.position]" :d="link.d" :stroke="link.color" />
       </g>
     </g>
@@ -13,7 +13,7 @@ export default {
   name: 'Links',
     props: {
       linksData: Array,
-      selectedMarker: String
+      selectedMarker: Object
   },
   computed: {
     onlyRelationalEntities () {
@@ -65,17 +65,12 @@ export default {
       return this.sourcesAndTargets.map((d, i) => {
         return {
             id: d.id,
-            //color: this.arrayOfColors[d.id],
             color: '#8482FF',
-            //color: d.position === 'follows' ? 'blue' : 'red',
             d: this.generateDforArc(d),
             position: d.position
           }
       })
     } 
-  },
-  mounted () {
-    // console.log(this.curvesPaths)
   },
   methods: {
     searchForIndex (array, identifier) {
@@ -91,10 +86,10 @@ export default {
       const position = d.position === 'follows' ? 0 : 1
       const startingPoint = d.source[0] > d.target[0] ? [d.target[0], d.target[1]] : [d.source[0], d.source[1]]
       const endPoint = d.source[0] > d.target[0] ?  [d.source[0], d.source[1]] : [d.target[0], d.target[1]]
-      
-      return "M" + startingPoint[0] + "," + startingPoint[1] 
+
+      return !isNaN(dr) ? "M" + startingPoint[0] + "," + startingPoint[1] 
         + "A" + dr + "," + dr + 
-        " 0 0," + position + " " + endPoint[0] + "," + endPoint[1]
+        " 0 0," + position + " " + endPoint[0] + "," + endPoint[1] : "M" + dx + "," + dy + "z"
     }
   }
 }
