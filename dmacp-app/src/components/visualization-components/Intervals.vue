@@ -1,5 +1,5 @@
 <template>
-    <g class="intervals">
+    <g class="intervals" :class="{'limited-visibility': selectedMarker.id !== null}">
         <g v-for="(interval, i) in scaledIntervals" :key="`${i}-interval-key`">
             <rect 
                 v-if="interval.indefinite == 'indefinite' && interval.context !== null"
@@ -23,6 +23,7 @@
 
 <script>
 import { max } from 'd3-array';
+import { mapState } from 'vuex'
 
 export default {
   name: 'Intervals',
@@ -32,7 +33,8 @@ export default {
       ticks: Array
   },
   computed: {
-      scaledIntervals () {
+    ...mapState(['selectedMarker']),
+    scaledIntervals () {
         const { data } = this
         const xTicks = this.ticks
         const xScale = this.scales.xScale

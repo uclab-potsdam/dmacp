@@ -65,17 +65,12 @@ export default {
       return this.sourcesAndTargets.map((d, i) => {
         return {
             id: d.id,
-            //color: this.arrayOfColors[d.id],
             color: '#8482FF',
-            //color: d.position === 'follows' ? 'blue' : 'red',
             d: this.generateDforArc(d),
             position: d.position
           }
       })
     } 
-  },
-  mounted () {
-    // console.log(this.curvesPaths)
   },
   methods: {
     searchForIndex (array, identifier) {

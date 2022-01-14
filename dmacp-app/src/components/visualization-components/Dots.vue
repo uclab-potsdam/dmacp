@@ -16,11 +16,10 @@
                 :class="[
                     {'limited-visibility': selectedMarker.id !== entity.id && selectedMarker.id !== null},
                     {'disabled-on-compress': entity.radius < 3 && compress}
-                ]"
-                >
+                ]">
                     <g v-if="entity.uncertaintyScore !== undefined" class="marker-density" :class="[entity.id]">
                         <circle class="marker-halo" :cx="entity.cx" :cy="entity.cy" :r="entity.radius"/>
-                        <circle class="marker-stroke" :cx="entity.cx" :cy="entity.cy" r="2"/>
+                        <circle class="marker-stroke" :cx="entity.cx" :cy="entity.cy" r="1"/>
                     </g>
                     <circle v-else class="entity-marker" :cx="entity.cx" :cy="entity.cy" :r="entity.radius" />
                     <circle v-if="selectedMarker.id === entity.id" class="entity-selected" :cx="entity.cx" :cy="entity.cy" :r="entity.radius * 2" />
@@ -74,7 +73,6 @@ export default {
   mounted () {
         this.isMounted = true
         if (this.compress) {
-            console.log('!')
             if (this.timeoutContainer) { clearTimeout(this.timeoutContainer) }
             this.timeoutContainer = setTimeout(() => { 
                 changeYPosition(this.compress, this.defaultYPosition, 'label-container') 

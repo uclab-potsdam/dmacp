@@ -35,8 +35,6 @@ svg {
 
         .marker-stroke {
             fill: #C4C4C4;
-            stroke: black;
-            stroke-dasharray: none;
         }
     }
 
@@ -50,14 +48,7 @@ svg {
         }
 
         .marker-stroke {
-            fill: white;
-            //stroke: #3f3e3e;
-            //stroke-dasharray: 1 1;
-            //stroke-dashoffset: 5px;
-            stroke-width: 0.5;
-            filter: blur(1px);
-
-            //fill: none;
+            fill: #3f3e3e;
         }
     }
 
@@ -111,6 +102,20 @@ svg {
     .finite {
         stroke: rgba(78, 86, 94, 0.5);
         stroke-width: 2;
+    }
+
+    .limited-visibility {
+
+        g {
+            .finite {
+                stroke: #acacac;
+                //opacity: 0.5;
+            }
+
+            .is-beginning, .is-end {
+                opacity: 0.5;
+            }
+        }
     }
 
     .individual-links {

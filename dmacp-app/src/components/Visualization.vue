@@ -17,7 +17,7 @@
           <line :y1="sizes.height / 2" :y2="sizes.height / 2" x1="0" :x2="sizes.width" class="axis" />
         </g>
       </g>
-      <Intervals v-if="compress === false && selectedMarker.id === null" :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
+      <Intervals v-if="compress === false" :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
       <Dots :scaled-entities="scaledEntities" :scales="{ xScale, yScale }"/>
     </svg>
   </div>
@@ -49,8 +49,12 @@ export default {
   },
   computed: {
     ...mapState(['data', 'compress', 'selectedMarker']),
-    xValues () { return this.data.map(essay => essay.map(narration => narration.entityTimePosition.map( entity => entity.x ))).flat(2) },
-    yValues () { return this.data.map(essay => essay.map(narration => narration.entityTimePosition.map( entity => entity.y ))).flat(2) },
+    xValues () { 
+      return this.data.map(essay => essay.map(narration => narration.entityTimePosition.map( entity => entity.x ))).flat(2) 
+    },
+    yValues () { 
+      return this.data.map(essay => essay.map(narration => narration.entityTimePosition.map( entity => entity.y ))).flat(2) 
+    },
     xValuesMode () { return mode(this.xValues) }, 
     xScale () {
       const width = this.sizes.width
