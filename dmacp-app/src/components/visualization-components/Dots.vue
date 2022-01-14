@@ -8,8 +8,8 @@
                 <Links :links-data="scaledEntities" :selected-marker="selectedMarker"/>
             </g>
         </g>
-        <g class="dots labels-container">
-            <g v-for="(entity, e) in scaledEntities" :key="`${e}-key`">
+        <g class="dots">
+            <g v-for="(entity, e) in scaledEntities" :key="`${e}-key`" class="marker-container">
                 <g 
                 class="marker" 
                 @click="changeSelectedMarker(entity)" 
@@ -26,15 +26,8 @@
                 </g>
 
             </g>
-            <g v-for="(entity, e) in scaledEntities" :key="`${e}-key-label`">
-                <Labels 
-                    :selected-marker="selectedMarker" 
-                    :entity="entity" 
-                    :e="e"
-                    :y="defaultYPosition"
-                    v-show="events" 
-                    :previous-entity="scaledEntities[e - 1]"
-                />
+            <g>
+                <Labels  v-show="events" :data="scaledEntities" :selected-marker="selectedMarker" />
             </g>
         </g>
     </g>
@@ -45,7 +38,6 @@ import Signature from './Signature.vue';
 import Links from './Links.vue';
 import Labels from './Labels.vue';
 import { mapState, mapActions } from 'vuex';
-import { changeYPosition } from '../../assets/js/utils.js'
 
 export default {
   name: 'Dots',
@@ -72,21 +64,9 @@ export default {
   },
   mounted () {
         this.isMounted = true
-        if (this.compress) {
-            if (this.timeoutContainer) { clearTimeout(this.timeoutContainer) }
-            this.timeoutContainer = setTimeout(() => { 
-                changeYPosition(this.compress, this.defaultYPosition, 'label-container') 
-            }, 500)
-        }
   },
   methods: {
         ...mapActions(['changeSelectedMarker'])
-  },
-    watch: {
-      compress: function (current) {
-            console.log(current)
-            changeYPosition(this.compress, this.defaultYPosition, 'label-container') 
-      }
   }
 }
 </script>

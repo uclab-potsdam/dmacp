@@ -1,15 +1,34 @@
 <template>
-    <g class="marker-event" :class="{'selected': selectedMarker.id === entity.id}" :transform="`translate(${entity.cx}, ${entity.cy})`">
-        <foreignObject class="label-container" :x="x" y="-10" :width="labelWidth" height="100" v-if="showLabel" ref="label">
-            <div class="label">
-                <p v-if="entity.innerText !== undefined">
-                    {{e}}. 
-                    <span :class="{'limited-visibility': selectedMarker.id !== entity.id && selectedMarker.id !== null}">
-                        {{ entity.innerText }}
-                    </span>
-                </p>
-            </div>
-        </foreignObject>
+    <g class="labels-container">
+        <g class="expanded-view" v-if="!this.compress"> 
+            <g class="marker-event" v-for="(entity, e) in dataForLabels.expandedView" :key="`${e}-key-label`" :class="{'selected': selectedMarker.id === entity.id}" :transform="`translate(${entity.x}, ${entity.y})`">
+                <foreignObject class="label-container" x="15" y="-10" width="200" height="100" v-show="entity.relations > 3 || selectedMarker.id === entity.id">
+                    <div class="label">
+                        <p v-if="entity.labelText !== undefined">
+                            {{e}}. 
+                            <span :class="{'limited-visibility': selectedMarker.id !== entity.id && selectedMarker.id !== null}">
+                                {{ entity.labelText }}
+                            </span>
+                        </p>
+                    </div>
+                </foreignObject>
+            </g>
+        </g>
+        <g class="compressed-view" v-else>
+            <g class="marker-event" v-for="(entity, e) in dataForLabels.compressedView" :key="`${e}-key-label`" :class="{'selected': selectedMarker.id === entity.id}" :transform="`translate(${entity.x}, ${entity.y})`">
+                <line v-if="entity.labelText !== undefined" :x1="0" :x2="0" :y1="entity.y1" :y2="entity.y2 " stroke="#e0e0e0"/>
+                <foreignObject class="label-container" x="5" :y="entity.y2" width="200" height="100">
+                    <div class="label">
+                        <p v-if="entity.labelText !== undefined">
+                            {{e}}. 
+                            <span :class="{'limited-visibility': selectedMarker.id !== entity.id && selectedMarker.id !== null}">
+                                {{ entity.labelText }}
+                            </span>
+                        </p>
+                    </div>
+                </foreignObject>
+            </g>
+        </g>
     </g>
 </template>
 
@@ -19,36 +38,79 @@ import { mapState } from 'vuex'
 export default {
   name: 'Labels',
     props: {
-        entity: Object,
-        e: Number,
-        previousEntity: Object,
+        data: Array,
         selectedMarker: Object
-    },
-    data () {
-        return {
-            textAnchor: 'left',
-            timeoutContainer: null
-        }
     },
     computed: {
         ...mapState(['compress']),
-        labelWidth () {
-            return this.selectedMarker.id === this.entity.id ? 300 : 200
-        },
-        x () {
-            
-            let xPosition = 10
-            if (this.compress) {
-                xPosition = 0
-            } else if (this.selectedMarker.id === this.entity.id) {
-                xPosition = 20
+        dataForLabels () {
+
+            // Creating separate arrays for labels
+            // that will be changed based on vis status
+
+            const importantLabels = this.data.filter(d => d.radius > 3)
+            const sortedLabels = importantLabels.map(d => {
+                return {
+                    id: d.id,
+                    x: d.cx,
+                    y: d.cy,
+                    labelText: d.innerText,
+                    relations: d.radius,
+                }
+            }).sort((a, b) => a.y - b.y)
+
+            const positions = sortedLabels.map(d => d.y)
+            const minDist = 15
+
+            // calculate the differences, by using filter() to get an array which is
+            // the same as positions, but without the first item (i > 0). Then those values are
+            // subtracted by the value that comes before them (y - positions[y])
+            let diffs = positions.filter((y, i) => i > 0).map((y, i) => y - positions[i])
+
+            while (diffs.find(d => d < minDist) != null) {
+                // if there is a difference to small, iterate over them
+                diffs.forEach((d, i) => {
+                // if this is difference is to small…
+                if (d < minDist) {
+                    // move the first position up and the one after that down
+                    // we move them by whatever is bigger. the minimum value to reach the
+                    // required distance or 2 pixels
+                    positions[i] = positions[i] - Math.max((minDist - d) / 2, 2)
+                    positions[i + 1] = positions[i + 1] + Math.max((minDist - d) / 2, 2)
+
+                    // Now we can set some boundaries, if we for example don't want a label to be
+                    // lower/higher than a specific value…
+                    if (positions[i + 1] >= 5) {
+                    positions[i + 1] = 5
+                    }
+                }
+                })
+                // since we moved things around, it can be that labels which did not overlap before
+                // do now. so we have to recalculate the diffs, and stay in this while-loop until everything
+                // is fine [Fidel]
+                diffs = positions.filter((y, i) => i > 0).map((y, i) => y - positions[i])
             }
 
-            return xPosition
-        },
-        showLabel () {
-            const { entity, selectedMarker, compress } = this
-            return entity.radius > 3 || selectedMarker.id === entity.id && this.compress === false
+            sortedLabels.forEach((l, i) => {
+                l.y2 = positions[i]
+
+                if (i === sortedLabels.length - 1) {
+                    l.y2 = -minDist * 2
+                }
+            })
+
+            return {
+                compressedView: sortedLabels,
+                expandedView: this.data.map(d => {
+                return {
+                    id: d.id,
+                    x: d.cx,
+                    y: d.cy,
+                    labelText: d.innerText,
+                    relations: d.radius,
+                }
+            })
+            }
         }
     }
 }

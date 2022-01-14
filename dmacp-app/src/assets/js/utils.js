@@ -1,5 +1,5 @@
 export const createRelationalArrays = function (relData, mode) {
-    console.log('!')
+    //console.log('!')
     const copy = relData.map(object => ({ ...object }))
     const orderedIDs = []
     copy.forEach((entity) => {
@@ -58,38 +58,4 @@ export const getRandomColor = function() {
         color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
-}
-
-export const changeYPosition = function (compressState, defaultYPosition, elementsClass) {
-
-        const existingLabels = document.getElementsByClassName(elementsClass)
-        const labelsBoundingBox = [...existingLabels].map(el => el.getBoundingClientRect())
-        
-        for (let index = 0; index < labelsBoundingBox.length; index++) {
-
-            if (compressState) {
-                if (index < labelsBoundingBox.length - 1) {
-                    const element = labelsBoundingBox[index];
-                    const nextElement = labelsBoundingBox[index + 1]
-                    
-                    let isOverlapping = !(
-                        nextElement.left <= element.left ||
-                        nextElement.right <= element.right
-
-                    );
-                    
-                    if (isOverlapping) {
-                        console.log(existingLabels[index])
-                        existingLabels[index].setAttribute('y', index * defaultYPosition * 2)
-                    } else {
-                        existingLabels[index].setAttribute('y', -(index * defaultYPosition * 2))
-                    }
-                } else {
-                    existingLabels[index].setAttribute('y', 30)
-                }
-
-            } else {
-                existingLabels[index].setAttribute('y', defaultYPosition)
-            }
-        }
 }
