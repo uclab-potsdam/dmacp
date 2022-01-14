@@ -41,10 +41,10 @@ svg {
     .marker-density {
 
         .marker-halo {
-            fill: white;
+            fill: #e0e0e0;
             stroke: none;
             fill-opacity: 0.5;
-            filter: url(#f1);
+            filter: url(#blur) drop-shadow(0 0 0.5rem #e0e0e0);
         }
 
         .marker-stroke {

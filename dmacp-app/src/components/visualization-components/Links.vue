@@ -1,6 +1,10 @@
 <template>
     <g class="individual-links">
-      <g v-for="(link, l) in curvesPaths" :key="l" :class="{'not-selected' : selectedMarker.id !== link.id && selectedMarker.id !== null}">
+      <g 
+        v-for="(link, l) in curvesPaths" 
+        :key="l" 
+        :class="{'not-selected' : selectedMarker.id !== link.id && !link['targets'].includes(selectedMarker.id) && selectedMarker.id !== null}
+      ">
         <path :class="[`link ${link.id}`, link.position]" :d="link.d" :stroke="link.color" />
       </g>
     </g>
@@ -37,10 +41,12 @@ export default {
             newObj["source"] = [entity.cx, entity.cy]
             newObj["id"] = entity.id
             newObj["source-position"] = searchForIndex(onlyRelationalEntities, entity.id)
+            newObj["targets"] = ['']
 
             if (currentEntity !== undefined) {
               newObj["target-position"] = searchForIndex(onlyRelationalEntities, currentEntity.id)
               newObj["target"] =  [currentEntity.cx, currentEntity.cy]
+              newObj["targets"] = targets
               newObj["position"] = newObj["target-position"] > newObj["source-position"] 
                 ? 'follows' : 'precedes'
             } else {
@@ -62,10 +68,12 @@ export default {
       return newObj
     },
     curvesPaths () {
+      //console.log()
       return this.sourcesAndTargets.map((d, i) => {
         return {
             id: d.id,
             color: '#8482FF',
+            targets: d.targets,
             d: this.generateDforArc(d),
             position: d.position
           }

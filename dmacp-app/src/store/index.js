@@ -14,7 +14,7 @@ export default new Vuex.Store({
     compress: true,
     events: true,
     relations: 'links',
-    selectedMarker: {id: null, type: null}
+    selectedMarker: {id: null, type: null, targets: []}
   },
   mutations: {
     MUTATE_DATA(state, { status, parsedData}) {
@@ -36,6 +36,7 @@ export default new Vuex.Store({
     MUTATE_SELECTED_MARKER(state, marker) {
       state.selectedMarker.id = marker.id
       state.selectedMarker.type = marker.type
+      state.selectedMarker.targets = marker.targets
     }
   },
   actions: {

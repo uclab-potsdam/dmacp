@@ -1,7 +1,10 @@
 <template>
   <defs>
-    <filter id="f1" x="-75" y="-75" :width="sizes.width" :height="sizes.height">
+    <filter id="blur" x="-75" y="-75" :width="sizes.width" :height="sizes.height">
       <feGaussianBlur in="SourceGraphic" stdDeviation="1" edgeMode="wrap"/>
+    </filter>
+    <filter id='noise' x='0%' y='0%' width='100%' height='100%'>
+      <feTurbulence baseFrequency="1" />
     </filter>
     <linearGradient id="begin-grad" x1="0%" y1="0%" x2="30%" y2="0%">
       <stop offset="0%" style="stop-color:rgb(78, 86, 94, 0.438);stop-opacity:1"/>

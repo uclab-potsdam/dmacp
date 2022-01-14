@@ -47,7 +47,6 @@ export default {
 
             // Creating separate arrays for labels
             // that will be changed based on vis status
-
             const importantLabels = this.data.filter(d => d.radius > 3)
             const sortedLabels = importantLabels.map(d => {
                 return {
