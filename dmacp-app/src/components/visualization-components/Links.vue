@@ -1,25 +1,27 @@
 <template>
     <g class="individual-links">
-      <g 
-        v-for="(link, l) in curvesPaths" 
-        :key="l" 
-        :class="{'not-selected' : selectedMarker.id !== link.id && !link['targets'].includes(selectedMarker.id) && selectedMarker.id !== null}
-      ">
-        <path :class="[`link ${link.id}`, link.position]" :d="link.d" :stroke="link.color" />
+      <transition name="fade-relations">
+      <g v-if="isMounted">
+          <g v-for="(link, l) in curvesPaths" :key="l" :class="{'not-selected' : selectedMarker.id !== link.id && !link['targets'].includes(selectedMarker.id) && selectedMarker.id !== null}">
+            <path :class="[`link ${link.id}`, link.position]" :d="link.d" :stroke="link.color" />
+          </g>
       </g>
+      </transition>
     </g>
 </template>
 
 <script>
-import { getRandomColor } from '../../assets/js/utils.js'
+import {mapState} from 'vuex'
 
 export default {
   name: 'Links',
     props: {
       linksData: Array,
-      selectedMarker: Object
+      selectedMarker: Object,
+      isMounted: Boolean
   },
   computed: {
+    ...mapState(['compress']),
     onlyRelationalEntities () {
       return this.linksData.filter(obj => { return obj.targets.length !== 0})
     },
@@ -58,18 +60,10 @@ export default {
       })
       return sourcesAndTargetsData
     },
-    arrayOfColors () {
-      const groupsIDs = this.sourcesAndTargets.map(d => { return d.id})
-      const newObj = {}
-      groupsIDs.forEach(d => {
-        newObj[d] = getRandomColor()
-      })
-
-      return newObj
-    },
     curvesPaths () {
       //console.log()
       return this.sourcesAndTargets.map((d, i) => {
+
         return {
             id: d.id,
             color: '#8482FF',
@@ -87,8 +81,14 @@ export default {
     generateDforArc (d) {
       const dx = d.target[0] - d.source[0]
       const dy = d.target[1] - d.source[1]
-      const dr = Math.sqrt(dx + dy * dy + dx)
+      let dr = 0
 
+      //Checking mode to avoid negative square numbers for dr
+      if (this.compress) {
+          dr = Math.sign(dx) < 0 ? Math.sqrt(-(dx + dy * dy + dx)) : Math.sqrt(dx + dy * dy + dx)
+      } else {
+        dr = Math.sqrt(dx + dy * dy + dx)
+      }
       // Achieve consistency for arc sweep-flag by forcing smaller 
       // value to always be first in generating the curve
       const position = d.position === 'follows' ? 0 : 1

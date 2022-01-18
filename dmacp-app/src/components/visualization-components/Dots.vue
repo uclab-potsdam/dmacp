@@ -1,11 +1,12 @@
 <template>
     <g>
+    <!-- <transition name="fade-relations"> -->
         <g id="relations" class="relations" v-show="isMounted">
             <g class="curves" v-if="relations === 'signature'">
                 <Signature :relations-data="scaledEntities" />
             </g>
             <g class="links" v-if="relations === 'links'">
-                <Links :links-data="scaledEntities" :selected-marker="selectedMarker"/>
+                <Links :links-data="scaledEntities" :selected-marker="selectedMarker" :is-mounted="isMounted"/>
             </g>
         </g>
         <g class="dots">
@@ -70,3 +71,11 @@ export default {
   }
 }
 </script>
+<style>
+  .fade-relations-enter-active, .fade-relations-leave-active {
+  transition: opacity 1s .2s;
+}
+.fade-relations-enter, .fade-relations-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
+</style>

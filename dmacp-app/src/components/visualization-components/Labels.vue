@@ -2,10 +2,10 @@
     <g class="labels-container">
         <g class="expanded-view" v-if="!this.compress"> 
             <g class="marker-event" v-for="(entity, e) in dataForLabels.expandedView" :key="`${e}-key-label`" :class="{'selected': selectedMarker.id === entity.id}" :transform="`translate(${entity.x}, ${entity.y})`">
-                <foreignObject class="label-container" x="15" y="-10" width="200" height="100" v-show="entity.relations > 3 || selectedMarker.id === entity.id">
+                <foreignObject class="label-container" x="15" y="-10" width="200" height="100" :class="entity.relations > 3 || selectedMarker.id === entity.id ? 'label-visible' : 'label-hidden'">
                     <div class="label">
-                        <p v-if="entity.labelText !== undefined">
-                            {{e}}. 
+                        <p v-if="entity.labelText !== undefined" @click="changeSelectedMarker(entity)">
+                            {{entity.index}}. 
                             <span :class="{'limited-visibility': selectedMarker.id !== entity.id && selectedMarker.id !== null}">
                                 {{ entity.labelText }}
                             </span>
@@ -17,10 +17,10 @@
         <g class="compressed-view" v-else>
             <g class="marker-event" v-for="(entity, e) in dataForLabels.compressedView" :key="`${e}-key-label`" :class="{'selected': selectedMarker.id === entity.id}" :transform="`translate(${entity.x}, ${entity.y})`">
                 <line v-if="entity.labelText !== undefined" :x1="0" :x2="0" :y1="entity.y1" :y2="entity.y2 " stroke="#e0e0e0"/>
-                <foreignObject class="label-container" x="5" :y="entity.y2" width="200" height="100">
+                <foreignObject class="label-container" x="5" :y="entity.y2" width="250" height="100">
                     <div class="label">
-                        <p v-if="entity.labelText !== undefined">
-                            {{e}}. 
+                        <p v-if="entity.labelText !== undefined" @click="changeSelectedMarker(entity)">
+                            {{entity.index}}. 
                             <span :class="{'limited-visibility': selectedMarker.id !== entity.id && selectedMarker.id !== null}">
                                 {{ entity.labelText }}
                             </span>
@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'Labels',
@@ -45,18 +45,23 @@ export default {
         ...mapState(['compress']),
         dataForLabels () {
 
-            // Creating separate arrays for labels
-            // that will be changed based on vis status
-            const importantLabels = this.data.filter(d => d.radius > 3)
-            const sortedLabels = importantLabels.map(d => {
+            const essentialData = this.data.map((d, i) => {
                 return {
+                    index: i,
                     id: d.id,
                     x: d.cx,
                     y: d.cy,
                     labelText: d.innerText,
                     relations: d.radius,
                 }
-            }).sort((a, b) => a.y - b.y)
+            })
+
+            console.log(essentialData)
+
+            // Creating separate arrays for labels
+            // that will be changed based on vis status
+            const importantLabels = essentialData.filter(d => d.relations > 3)
+            const sortedLabels = importantLabels.sort((a, b) => a.y - b.y)
 
             const positions = sortedLabels.map(d => d.y)
             const minDist = 15
@@ -100,17 +105,12 @@ export default {
 
             return {
                 compressedView: sortedLabels,
-                expandedView: this.data.map(d => {
-                return {
-                    id: d.id,
-                    x: d.cx,
-                    y: d.cy,
-                    labelText: d.innerText,
-                    relations: d.radius,
-                }
-            })
+                expandedView: essentialData
             }
         }
+    },
+    methods: {
+        ...mapActions(['changeSelectedMarker'])
     }
 }
 </script>

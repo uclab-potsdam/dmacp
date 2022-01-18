@@ -11,7 +11,7 @@ export default new Vuex.Store({
   state: {
     data: [],
     status: "Waiting",
-    compress: true,
+    compress: false,
     events: true,
     relations: 'links',
     selectedMarker: {id: null, type: null, targets: []}

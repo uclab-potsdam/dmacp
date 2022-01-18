@@ -13,4 +13,14 @@ svg {
     text {
         font-size: 10px;
     }
+
+    .compressed-view {
+
+        .marker-event {
+            p {
+                text-decoration: underline;
+                pointer-events: all;
+            }
+        }
+    }
 }

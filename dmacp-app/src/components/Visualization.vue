@@ -1,7 +1,14 @@
 <template>
   <div class="visualization-container" ref="visualization">
     <svg :width="sizes.width" :height="sizes.height">
-      <rect :width="sizes.width" :height="sizes.height" x="0" y="0" fill="#C4C4C4" @click="changeSelectedMarker(resetMarkerSelection)"/>
+      <rect 
+        :width="sizes.width" 
+        :height="sizes.height" 
+        x="0" 
+        y="0" 
+        fill="#C4C4C4"
+        @click="changeSelectedMarker(resetMarkerSelection)"
+      />
       <Filters :sizes="sizes"/>
       <g class="ticks">
         <g v-for="(tick, t) in xTicks" :key="`${t}-tickX`" :transform="`translate(${xScale(tick)}, 0)`">
@@ -17,8 +24,12 @@
           <line :y1="sizes.height / 2" :y2="sizes.height / 2" x1="0" :x2="sizes.width" class="axis" />
         </g>
       </g>
-      <Intervals v-if="compress === false" :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
-      <Dots :scaled-entities="scaledEntities" :scales="{ xScale, yScale }"/>
+      <transition name="fade">
+        <g v-if="visualization">
+          <Intervals v-if="compress === false" :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
+          <Dots :scaled-entities="scaledEntities" :scales="{ xScale, yScale }"/>
+        </g>
+      </transition>
     </svg>
   </div>
 </template>
@@ -26,7 +37,7 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import { scaleSymlog, scaleLinear } from 'd3-scale'
-import { extent, mode } from 'd3-array'
+import { extent, mode, max } from 'd3-array'
 import Dots from './visualization-components/Dots.vue'
 import Intervals from './visualization-components/Intervals.vue'
 import Filters from './visualization-components/SvgFilters.vue'
@@ -43,7 +54,8 @@ export default {
     return {
       sizes: { height: 0, width: 0 },
       xTicks: [],
-      resetMarkerSelection: {id: null, type: null}
+      resetMarkerSelection: {id: null, type: null},
+      visualization: false
     }
   },
   computed: {
@@ -105,8 +117,11 @@ export default {
     }
   },
   mounted () {
+    this.visualization = true
     this.calcContainerSize()
     window.addEventListener('resize', this.calcContainerSize, false)
+
+    console.log(max(this.scaledEntities.map(d => d.radius)))
  },
   methods: {
     ...mapActions(['changeSelectedMarker']),

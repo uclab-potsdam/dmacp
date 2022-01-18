@@ -7,10 +7,16 @@ svg {
     .entity-marker {
         fill: #e0e0e0;
         stroke: rgb(120, 115, 243);
-        //stroke-dasharray: 2 1;
-        //stroke-dashoffset: 5px;
         stroke-width: 0.5;
         transition: all 0.4s;
+    }
+
+    .label-visible {
+        opacity: 1;
+    }
+
+    .label-hidden {
+        opacity: 0
     }
 
     .entity-selected {
@@ -41,15 +47,31 @@ svg {
     .marker-density {
 
         .marker-halo {
-            fill: #e0e0e0;
-            stroke: none;
+            fill: white;
+            stroke: #8482FF;
             fill-opacity: 0.5;
             filter: url(#blur) drop-shadow(0 0 0.5rem #e0e0e0);
         }
 
-        .marker-stroke {
-            fill: #3f3e3e;
-        }
+        // .marker-stroke {
+        //     fill: #3f3e3e;
+        // }
+    }
+
+    .blurry-2 {
+        filter: url(#blur) drop-shadow(0 0 0.1rem #8482FF);
+    }
+
+    .blurry-4 {
+        filter: url(#blur) drop-shadow(0 0 0.5rem #8482FF);
+    }
+
+    .blurry-6 {
+        filter: url(#blur) drop-shadow(0 0 0.75rem #8482FF);
+    }
+
+    .blurry-8 {
+        filter: url(#blur) drop-shadow(0 0 1rem #8482FF);
     }
 
     .marker-event {
