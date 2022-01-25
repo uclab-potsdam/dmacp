@@ -1,6 +1,7 @@
 <template>
   <div class="controls-container">
       <div class="buttons-container">
+        <Legend />
         <control-button :label="'Compress'" :active="compress" @onClick="changeVisStatus('compress')" />
         <control-button :label="'Events'" :active="events" @onClick="changeVisStatus('events')" />
         <control-button :label="relationsString" :active="true" @onClick="changeVisStatus(relationsString)" />
@@ -11,12 +12,14 @@
 
 <script>
 import ControlButton from '../stories/Button.vue'
+import Legend from './Legend.vue'
 import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'Controls',
   components: {
-      ControlButton
+      ControlButton,
+      Legend
   },
   computed: {
       ...mapState(['compress', 'events', 'relations']),

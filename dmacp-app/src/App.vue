@@ -3,7 +3,7 @@
     <div class="main-container">
       <Visualization v-if="dataAreLoaded"/>
       <Controls />
-      <Legend />
+      <!-- <Legend /> -->
     </div>
   </div>
 </template>
@@ -11,7 +11,7 @@
 <script>
 import Visualization from './components/Visualization.vue'
 import Controls from './components/Controls.vue'
-import Legend from './components/Legend.vue'
+// import Legend from './components/Legend.vue'
 import { mapActions, mapState } from 'vuex'
 
 export default {
@@ -19,7 +19,7 @@ export default {
   components: {
     Visualization,
     Controls,
-    Legend
+    // Legend
   },
   computed: {
       ...mapState({

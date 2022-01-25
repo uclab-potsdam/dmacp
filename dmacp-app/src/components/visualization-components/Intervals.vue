@@ -47,16 +47,18 @@ export default {
             const entityLength = narration.entityTimePosition.length
             if (entityLength > 0) {
                 x1 = xScale(narration.entityTimePosition[0].x)
+                console.log(narration.intervalContext, narration.entityTimePosition[entityLength - 1])
                 x2 = entityLength < 2 ? xScale(max(xTicks.map(d => { return d }))) : xScale(narration.entityTimePosition[entityLength - 1].x)
             }
 
             return narration.entityTimePosition.map( (entity) => {
                 const definitionOfInterval = x2 === xScale(max(xTicks.map(d => { return d }))) ? 'indefinite' : 'finite'
                 const y = yScale(entity.y);
+                console.log(x2, x1)
                 return {
                         narration: e,
-                        x1,
-                        x2,
+                        x1: narration.intervalContext === 'is-end' ? 0 : x1,
+                        x2: narration.intervalContext === 'is-end' ? x1 : x2,
                         y1: y,
                         type: narration.type,
                         indefinite: definitionOfInterval,

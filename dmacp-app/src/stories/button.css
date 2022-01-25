@@ -1,12 +1,11 @@
 .storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 400;
   border-radius: 0.5em;
   cursor: pointer;
   display: inline-block;
   line-height: 1;
-  border: 1px solid white;
-  box-shadow: rgba(102, 102, 102, 0.5) 0px 0px 15px 0px;
+  border: 1px solid #C4C4C4;
+  box-shadow: 0px 0px 10px rgba(59, 59, 59, 0.2);
 }
 .storybook-button--active {
   color: rgb(59, 59, 59);
@@ -15,7 +14,7 @@
 .storybook-button--inactive {
   color: rgb(66, 66, 66);
   background-color: #a7a7a7;
-  border: 1px solid rgb(66, 66, 66);
+  /* border: 1px solid rgb(66, 66, 66); */
 }
 .storybook-button--extra-small {
   font-size: 10px;

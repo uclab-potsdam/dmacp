@@ -19,15 +19,15 @@
                                 <circle :class="`blurry-${blur.blurriness}`" v-for="(blur, b) in legendBlurriness" :key="b" :cx="blur.blurriness * 10" cy="15" r="4"/>
                                 </g>
                                 <g transform="translate(0, 30)">
-                                    <rect x="5" y="5" height="5" width="50" fill="url(#begin-grad)" stroke="black"/>
-                                    <rect x="5" y="20" height="5" width="50" fill="url(#end-grad)"/>
-                                    <line x1="5" x2="55" y1="35" y2="35" stroke="black" stroke-width="5"/>
+                                    <rect x="5" y="5" height="5" width="90" class="is-end" />
+                                    <rect x="5" y="20" height="5" width="90" class="is-beginning" />
+                                    <line x1="5" x2="95" y1="35" y2="35" class="finite"/>
                                 </g>
                             </svg>
                         </div>
                     </div>
                     <div class="relations">
-                        <p class="label">Relation</p>
+                        <p class="label">Orientation of arc: directionality of relation</p>
                         <svg :width="sizes.width" :height="sizes.height * 2">
                             <path class="precedes" d="M10,50A 15,15 0 0,1 80,50" fill="none" stroke="rgb(120, 115, 243)"/>
                             <path class="follows" d="M30,50A 15,15 0 0,0 100,50" fill="none" stroke="#727193" />
@@ -78,64 +78,5 @@ export default {
 }
 </script>
 <style>
-.legend-container {
-    background-color: #c4c4c4;
-    border-radius: 5px;
-    border: 1px solid #4e4e4e;
-}
-
-.legend-inner {
-    padding: 10px;
-    width: 100%;
-    height: 100%;
-    transition: all 0.2s;
-}
-
-.legend {
-    min-height: 100px;
-}
-
-.dots, .relations {
-    width: 50%;
-}
-
-.relations {
-    margin-left: 2.5%;
-}
-
-.label {
-    font-size: 10px;
-}
-
-.legend-elements {
-    display: inline-flex;
-}
-
-h6, p {
-    margin: 0;
-    text-align: left;
-}
-
-circle {
-    fill: white;
-    stroke: #8482FF;
-}
-
-.legend-toggle {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
-}
-
-.helper {
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-}
-
-img {
-    max-height: 50px;
-    vertical-align: middle;
-}
 
 </style>

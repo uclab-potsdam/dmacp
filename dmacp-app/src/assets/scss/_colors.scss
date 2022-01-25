@@ -1,9 +1,17 @@
+#app, body, svg {
+    color: #2c3e50;
+}
+
 body,
 .visualization-container {
     background-color: #C4C4C4;
 }
 
 svg {
+
+    text {
+        color: #2c3e50;
+    }
     .entity-marker {
         fill: #e0e0e0;
         stroke: rgb(120, 115, 243);
@@ -21,7 +29,7 @@ svg {
 
     .entity-selected {
         fill: transparent;
-        stroke: white;
+        stroke: #e0e0e0;
     }
 
     .disabled-on-compress {
@@ -47,30 +55,36 @@ svg {
     .marker-density {
 
         .marker-halo {
-            fill: white;
-            stroke: #8482FF;
-            fill-opacity: 0.5;
-            filter: url(#blur) drop-shadow(0 0 0.5rem #e0e0e0);
+            fill: url(#radial-blurriness);
+            // fill: white;
+            // stroke: #8482FF;
+            // fill-opacity: 0.5;
+            // filter: url(#blur) drop-shadow(0 0 0.1rem #8482FF);
+            // filter: url(#blur) drop-shadow(0 0 1rem #e0e0e0);
         }
 
-        // .marker-stroke {
-        //     fill: #3f3e3e;
-        // }
+        .marker-stroke {
+            fill: #e0e0e0;
+        }
     }
 
     .blurry-2 {
+        fill: url(#radial-blurriness);
         filter: url(#blur) drop-shadow(0 0 0.1rem #8482FF);
     }
 
     .blurry-4 {
+        fill: url(#radial-blurriness);
         filter: url(#blur) drop-shadow(0 0 0.5rem #8482FF);
     }
 
     .blurry-6 {
+        fill: url(#radial-blurriness);
         filter: url(#blur) drop-shadow(0 0 0.75rem #8482FF);
     }
 
     .blurry-8 {
+        fill: url(#radial-blurriness);
         filter: url(#blur) drop-shadow(0 0 1rem #8482FF);
     }
 
@@ -103,18 +117,15 @@ svg {
     }
 
     path.signature {
-        // stroke: red; 
         fill: none;
     }
 
     path.link {
-        //stroke: goldenrod;
         fill: none;
     }
 
     .is-end {
         fill: url(#end-grad);
-        transform: translate(-74%, 0)
     }
 
     .is-beginning {
@@ -122,7 +133,7 @@ svg {
     }
 
     .finite {
-        stroke: rgba(78, 86, 94, 0.5);
+        stroke: #9e9da8;
         stroke-width: 2;
     }
 
@@ -130,8 +141,7 @@ svg {
 
         g {
             .finite {
-                stroke: rgba(78, 86, 94, 0.4);
-                //opacity: 0.5;
+                stroke: #acacac;
             }
 
             .is-beginning, .is-end {
@@ -157,6 +167,34 @@ svg {
             .follows {
                 stroke: #727193;
             }
+        }
+    }
+}
+
+
+.legend-container {
+    background-color: #c4c4c4;
+    border-radius: 5px;
+    // border: 1px solid #4e4e4e;
+    box-shadow: 0px 0px 10px rgba(59, 59, 59, 0.2);
+
+    svg {
+        circle {
+            stroke: rgb(120, 115, 243);
+            fill: #e0e0e0;
+        }
+
+        .is-end {
+            fill: url(#end-legend);
+        }
+
+        .is-beginning {
+            fill: url(#begin-legend);
+        }
+
+        .finite {
+            stroke: #9e9da8;
+            stroke-width: 2;
         }
     }
 }
