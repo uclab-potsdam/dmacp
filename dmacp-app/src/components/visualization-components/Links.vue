@@ -2,7 +2,7 @@
     <g class="individual-links">
       <transition name="fade-relations">
       <g v-if="isMounted">
-          <g v-for="(link, l) in curvesPaths" :key="l" :class="{'not-selected' : selectedMarker.id !== link.id && !link['targets'].includes(selectedMarker.id) && selectedMarker.id !== null}">
+          <g v-for="(link, l) in curvesPaths" :key="l" :class="{'not-selected' : selectedMarker.id !== link.id && selectedMarker.id !== null}">
             <path :class="[`link ${link.id}`, link.position]" :d="link.d" :stroke="link.color" />
             <!-- <path d="M10,10 L15,15 M20,20z" stroke="blue"/> -->
           </g>

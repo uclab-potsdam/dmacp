@@ -2,12 +2,31 @@
     <g class="labels-container">
         <!-- On hover make only text visible, then click to highlight relations -->
         <g class="expanded-view" v-if="!this.compress"> 
-            <g class="marker-event" v-for="(entity, e) in dataForLabels.expandedView" :key="`${e}-key-label`" :class="{'selected': selectedMarker.id === entity.id}" :transform="`translate(${entity.x}, ${entity.y})`">
-                <foreignObject class="label-container" x="15" y="-10" width="200" height="100" :class="entity.relations > 3 || selectedMarker.id === entity.id ? 'label-visible' : 'label-hidden'">
+            <g 
+            class="marker-event" 
+            v-for="(entity, e) in dataForLabels.expandedView" 
+            :key="`${e}-key-label`" 
+            :class="{'selected': selectedMarker.id === entity.id}" 
+            :transform="`translate(${entity.x}, ${entity.y})`"
+            >
+                <foreignObject 
+                class="label-container" 
+                x="10" 
+                y="-5" 
+                width="300" 
+                height="100" 
+                :class="entity.relations > 3 || selectedMarker.id === entity.id || selectedMarker.targets !== undefined && selectedMarker.targets.includes(entity.id) ? 'label-visible' : 'label-hidden'"
+                >
                     <div class="label">
                         <p v-if="entity.labelText !== undefined" @click="changeSelectedMarker(entity)">
-                            {{entity.index + 1}}. 
-                            <span :class="{'limited-visibility': selectedMarker.id !== entity.id && selectedMarker.id !== null}">
+                            <span v-show="selectedMarker.id === entity.id || selectedMarker.targets === undefined || selectedMarker.targets.includes(entity.id)">
+                                {{entity.index + 1}}.
+                            </span>
+                            <span 
+                                :class="{
+                                    'limited-visibility': selectedMarker.id !== entity.id && selectedMarker.id !== null && selectedMarker.targets !== undefined && !selectedMarker.targets.includes(entity.id) 
+                                    }"
+                            >
                                 {{ entity.labelText }}
                             </span>
                         </p>

@@ -10,7 +10,7 @@ body,
 svg {
 
     text {
-        color: #2c3e50;
+        fill: #2c3e50;
     }
     .entity-marker {
         fill: #e0e0e0;
@@ -49,6 +49,7 @@ svg {
 
         .marker-stroke {
             fill: #C4C4C4;
+            stroke-width: 0.5;
         }
     }
 
@@ -56,11 +57,6 @@ svg {
 
         .marker-halo {
             fill: url(#radial-blurriness);
-            // fill: white;
-            // stroke: #8482FF;
-            // fill-opacity: 0.5;
-            // filter: url(#blur) drop-shadow(0 0 0.1rem #8482FF);
-            // filter: url(#blur) drop-shadow(0 0 1rem #e0e0e0);
         }
 
         .marker-stroke {
@@ -106,12 +102,9 @@ svg {
         
     }
 
-    text {
-        fill: black;
-    }
-
     .axis {
-        stroke: rgba(0, 0, 0, 0.5);
+        stroke: #2c3e50;
+        stroke-opacity: 0.5;
         stroke-dasharray: 5 2;
         stroke-width: 0.5;
     }
@@ -141,11 +134,11 @@ svg {
 
         g {
             .finite {
-                stroke: #acacac;
+                stroke: #9e9da8;
             }
 
             .is-beginning, .is-end {
-                opacity: 0.8;
+                opacity: 0.9;
             }
         }
     }
@@ -175,10 +168,21 @@ svg {
 .legend-container {
     background-color: #c4c4c4;
     border-radius: 5px;
-    // border: 1px solid #4e4e4e;
     box-shadow: 0px 0px 10px rgba(59, 59, 59, 0.2);
 
     svg {
+
+        .x-axis, .y-axis {
+            text {
+                -moz-osx-font-smoothing: grayscale;
+                fill: #2c3e50;
+                text-shadow: -1px 0 rgba(255, 255, 255, 0.3),
+                0 1px rgba(255, 255, 255, 0.3),
+                1px 0 rgba(255, 255, 255, 0.3),
+                0 -1px rgba(255, 255, 255, 0.3);
+            }
+        }
+
         circle {
             stroke: rgb(120, 115, 243);
             fill: #e0e0e0;

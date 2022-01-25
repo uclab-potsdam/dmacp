@@ -10,13 +10,13 @@
         @click="changeSelectedMarker(resetMarkerSelection)"
       />
       <Filters :sizes="sizes"/>
-      <Axis :sizes="sizes" :x-ticks="xTicks" :y-ticks="yTicks" :scales="{x: xScale, y: yScale}" :compress="compress"/>
       <transition name="fade">
         <g v-if="visualization">
           <Intervals v-if="compress === false" :data="data" :scales="{ xScale, yScale }" :ticks="xTicks"/>
           <Dots :scaled-entities="scaledEntities" :scales="{ xScale, yScale }"/>
         </g>
       </transition>
+      <Axis :sizes="sizes" :x-ticks="xTicks" :y-ticks="yTicks" :scales="{x: xScale, y: yScale}" :compress="compress"/>
     </svg>
   </div>
 </template>

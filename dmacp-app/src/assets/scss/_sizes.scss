@@ -25,6 +25,7 @@
     position: fixed;
     top: 60px;
     right: 20px;
+    padding: 10px;
 
     .legend-toggle {
         width: 20px;
@@ -38,7 +39,7 @@
         vertical-align: middle;
     }
     .legend-inner {
-        padding: 10px;
+        // padding: 10px;
         width: 100%;
         height: 100%;
         transition: all 0.2s;
@@ -46,26 +47,32 @@
 
     .legend {
         min-height: 100px;
+        padding: 10px;
     }
 
     .dots,
     .relations {
         width: 50%;
-        margin: 5% 2.5%;
+        margin: 5% 2.5% 0% 0;
     }
 
     .label {
         font-size: 10px;
-        margin-bottom:  5%;
+        margin-bottom: 5%;
+        // width: 100%;
     }
 
     .legend-elements {
         display: inline-flex;
     }
 
+    h6 {
+        width: 100%;
+    }
+
     h6,
     p {
-        margin: 0;
+        margin: 0 auto;
         text-align: left;
     }
 
@@ -96,6 +103,10 @@ svg {
     foreignObject {
         transition: all 0.2s;
         pointer-events: none;
+
+        // span {
+        //     pointer-events: all;
+        // }
     }
 
     p {
@@ -103,12 +114,12 @@ svg {
         text-align: left;
         line-height: 1;
         //padding: 5px;
-        font-size: 10px;
+        font-size: 8px;
         transition: all 0.2s;
     }
 
     .selected p {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .not-selected p {
