@@ -130,12 +130,12 @@ svg {
 
         g {
             .finite {
-                stroke: #acacac;
+                stroke: rgba(78, 86, 94, 0.4);
                 //opacity: 0.5;
             }
 
             .is-beginning, .is-end {
-                opacity: 0.5;
+                opacity: 0.8;
             }
         }
     }

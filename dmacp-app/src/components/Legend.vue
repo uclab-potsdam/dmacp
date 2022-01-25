@@ -28,6 +28,14 @@
                     </div>
                     <div class="relations">
                         <p class="label">Relation</p>
+                        <svg :width="sizes.width" :height="sizes.height * 2">
+                            <path class="precedes" d="M10,50A 15,15 0 0,1 80,50" fill="none" stroke="rgb(120, 115, 243)"/>
+                            <path class="follows" d="M30,50A 15,15 0 0,0 100,50" fill="none" stroke="#727193" />
+                            <circle cx="10" cy="50" r="4"/>
+                            <circle cx="100" cy="50" r="4"/>
+                            <circle cx="30" cy="50" r="4"/>
+                            <circle cx="80" cy="50" r="4"/>
+                        </svg>
                     </div>
                 </div>
             </div>
@@ -66,9 +74,6 @@ export default {
               }
           })
       }
-  },
-  mounted () {
-      console.log(this.legendBlurriness)
   }
 }
 </script>
@@ -94,6 +99,10 @@ export default {
     width: 50%;
 }
 
+.relations {
+    margin-left: 2.5%;
+}
+
 .label {
     font-size: 10px;
 }
@@ -102,7 +111,7 @@ export default {
     display: inline-flex;
 }
 
-h6 {
+h6, p {
     margin: 0;
     text-align: left;
 }

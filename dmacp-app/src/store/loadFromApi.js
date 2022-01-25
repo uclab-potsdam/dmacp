@@ -1,4 +1,5 @@
 export default async function loadFromApi(data) {
+
     const arraysOfText = data.acf._content.content
     const arrayOfData = []
     let globalY = 0
@@ -100,6 +101,6 @@ export default async function loadFromApi(data) {
         arrayOfData.push(essay[0])
     })
 
-    //console.log(arrayOfData)
+    // console.log(arrayOfData)
     return arrayOfData
 };

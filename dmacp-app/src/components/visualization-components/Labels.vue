@@ -1,11 +1,12 @@
 <template>
     <g class="labels-container">
+        <!-- On hover make only text visible, then click to highlight relations -->
         <g class="expanded-view" v-if="!this.compress"> 
             <g class="marker-event" v-for="(entity, e) in dataForLabels.expandedView" :key="`${e}-key-label`" :class="{'selected': selectedMarker.id === entity.id}" :transform="`translate(${entity.x}, ${entity.y})`">
                 <foreignObject class="label-container" x="15" y="-10" width="200" height="100" :class="entity.relations > 3 || selectedMarker.id === entity.id ? 'label-visible' : 'label-hidden'">
                     <div class="label">
                         <p v-if="entity.labelText !== undefined" @click="changeSelectedMarker(entity)">
-                            {{entity.index}}. 
+                            {{entity.index + 1}}. 
                             <span :class="{'limited-visibility': selectedMarker.id !== entity.id && selectedMarker.id !== null}">
                                 {{ entity.labelText }}
                             </span>
@@ -20,7 +21,7 @@
                 <foreignObject class="label-container" x="5" :y="entity.y2" width="250" height="100">
                     <div class="label">
                         <p v-if="entity.labelText !== undefined" @click="changeSelectedMarker(entity)">
-                            {{entity.index}}. 
+                            {{entity.index + 1}}. 
                             <span :class="{'limited-visibility': selectedMarker.id !== entity.id && selectedMarker.id !== null}">
                                 {{ entity.labelText }}
                             </span>
@@ -55,8 +56,6 @@ export default {
                     relations: d.radius,
                 }
             })
-
-            console.log(essentialData)
 
             // Creating separate arrays for labels
             // that will be changed based on vis status
