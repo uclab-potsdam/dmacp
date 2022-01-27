@@ -3,15 +3,15 @@
     <filter id="blur" x="-75" y="-75" :width="sizes.width" :height="sizes.height">
       <feGaussianBlur in="SourceGraphic" stdDeviation="1" edgeMode="wrap"/>
     </filter>
-    <linearGradient id="begin-grad" x1="0%" y1="0%" x2="30%" y2="0%">
-      <stop offset="5%"  stop-color="#9e9da8" stop-opacity="1" />
-      <stop offset="15%" stop-color="#9e9da8" stop-opacity="0"/>
+    <linearGradient id="begin-grad">
+      <stop offset="2%"  stop-color="#9e9da8" stop-opacity="1" />
+      <stop offset="5%" stop-color="#9e9da8" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="end-grad">
       <stop offset="90%"  stop-color="#9e9da8" stop-opacity="0" />
       <stop offset="100%" stop-color="#9e9da8" stop-opacity="1" />
     </linearGradient>
-    <linearGradient id="begin-legend" x1="0%" y1="0%" x2="30%" y2="0%">
+    <linearGradient id="begin-legend">
       <stop offset="5%"  stop-color="#9e9da8" stop-opacity="1" />
       <stop offset="100%" stop-color="#9e9da8" stop-opacity="0"/>
     </linearGradient>

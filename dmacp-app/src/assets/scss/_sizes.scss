@@ -56,6 +56,10 @@
         margin: 5% 2.5% 0% 0;
     }
 
+    .dots {
+        margin-right: 5%;
+    }
+
     .label {
         font-size: 10px;
         margin-bottom: 5%;
@@ -83,6 +87,7 @@
 
     svg {
         text {
+            font-size: 8px;
             text-rendering: optimizeLegibility;
             -webkit-font-smoothing: antialiased;
 
@@ -92,6 +97,7 @@
 
 svg {
     text {
+        font-size: 12px;
         text-rendering: optimizeLegibility;
         -webkit-font-smoothing: antialiased;
     }
@@ -114,7 +120,7 @@ svg {
         text-align: left;
         line-height: 1;
         //padding: 5px;
-        font-size: 8px;
+        font-size: 10px;
         transition: all 0.2s;
     }
 

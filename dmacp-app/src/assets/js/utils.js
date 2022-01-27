@@ -51,11 +51,51 @@ export const createRelationalArrays = function (relData, mode) {
 }
 
 
-export const getRandomColor = function() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
+export const calcVerticalSpace = function(data) {
+    // Creating separate arrays for labels
+    // that will be changed based on vis status
+    const importantLabels = data.filter(d => d.relations > 3)
+    const sortedLabels = importantLabels.sort((a, b) => a.y - b.y)
+
+    const positions = sortedLabels.map(d => d.y)
+    const minDist = 15
+
+    // calculate the differences, by using filter() to get an array which is
+    // the same as positions, but without the first item (i > 0). Then those values are
+    // subtracted by the value that comes before them (y - positions[y])
+    let diffs = positions.filter((y, i) => i > 0).map((y, i) => y - positions[i])
+
+    while (diffs.find(d => d < minDist) != null) {
+        // if there is a difference to small, iterate over them
+        diffs.forEach((d, i) => {
+            // if this is difference is to small…
+            if (d < minDist) {
+                // move the first position up and the one after that down
+                // we move them by whatever is bigger. the minimum value to reach the
+                // required distance or 2 pixels
+                positions[i] = positions[i] - Math.max((minDist - d) / 2, 2)
+                positions[i + 1] = positions[i + 1] + Math.max((minDist - d) / 2, 2)
+
+                // Now we can set some boundaries, if we for example don't want a label to be
+                // lower/higher than a specific value…
+                if (positions[i + 1] >= 5) {
+                    positions[i + 1] = 5
+                }
+            }
+        })
+        // since we moved things around, it can be that labels which did not overlap before
+        // do now. so we have to recalculate the diffs, and stay in this while-loop until everything
+        // is fine [Fidel]
+        diffs = positions.filter((y, i) => i > 0).map((y, i) => y - positions[i])
     }
-    return color;
+
+    sortedLabels.forEach((l, i) => {
+        l.y2 = positions[i]
+
+        if (i === sortedLabels.length - 1) {
+            l.y2 = -minDist * 2
+        }
+    })
+
+    return sortedLabels
 }

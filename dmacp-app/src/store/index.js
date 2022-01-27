@@ -37,8 +37,6 @@ export default new Vuex.Store({
       state.selectedMarker.id = marker.id
       state.selectedMarker.type = marker.type
       state.selectedMarker.targets = marker.targets
-
-      console.log(state.selectedMarker)
     }
   },
   actions: {

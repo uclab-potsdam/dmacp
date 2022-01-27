@@ -15,26 +15,47 @@
                             <p class="label">Blurriness: indefiniteness</p>
                             <svg :width="sizes.width" :height="sizes.height * 2">
                                 <Filters :sizes="sizes"/>
-                                <g :transform="`translate(${dummyScale(dummyDots[0])}, 0)`">
-                                <circle :class="`blurry-${blur.blurriness}`" v-for="(blur, b) in legendBlurriness" :key="b" :cx="blur.blurriness * 10" cy="15" r="4"/>
+                                <g :transform="`translate(${dummyScale(dummyDots[0]) + 10}, 0)`" v-for="(blur, b) in legendBlurriness" :key="b">
+                                    <circle :class="`blurry-${blur.blurriness}`" :cx="blur.blurriness * 22" cy="15" r="4"/>
+                                    <text :x="blur.blurriness * 22" y="35" text-anchor="middle">
+                                        {{blur.blurriness / 10}} / {{ (blur.blurriness + 2) / 10}}
+                                    </text>
                                 </g>
-                                <g transform="translate(0, 30)">
-                                    <rect x="5" y="5" height="5" width="90" class="is-end" />
-                                    <rect x="5" y="20" height="5" width="90" class="is-beginning" />
-                                    <line x1="5" x2="95" y1="35" y2="35" class="finite"/>
+                                <g transform="translate(5, 50)">
+                                    <g>
+                                        <rect x="0" y="5" height="5" width="150" class="is-beginning" />
+                                        <circle cx="0" cy="7.5" r="3"/>
+                                        <text x="155" y="10">Indefinite end</text>
+                                    </g>
+                                    <g>
+                                        <rect x="0" y="20" height="5" width="145" class="is-end" />
+                                        <circle cx="145" cy="22" r="3"/>
+                                        <text x="155" y="25">Indefinite beginning</text>
+                                    </g>
+                                    <g>
+                                        <line x1="0" x2="145" y1="40" y2="40" class="finite"/>
+                                        <circle cx="0" cy="40" r="3"/>
+                                        <circle cx="145" cy="40" r="3"/>
+                                        <text x="155" y="42">Definite Interval</text>
+                                    </g>
                                 </g>
                             </svg>
                         </div>
                     </div>
                     <div class="relations">
                         <p class="label">Orientation of arc: directionality of relation</p>
-                        <svg :width="sizes.width" :height="sizes.height * 2">
-                            <path class="precedes" d="M10,50A 15,15 0 0,1 80,50" fill="none" stroke="rgb(120, 115, 243)"/>
-                            <path class="follows" d="M30,50A 15,15 0 0,0 100,50" fill="none" stroke="#727193" />
-                            <circle cx="10" cy="50" r="4"/>
-                            <circle cx="100" cy="50" r="4"/>
-                            <circle cx="30" cy="50" r="4"/>
-                            <circle cx="80" cy="50" r="4"/>
+                        <svg :width="sizes.width - 50" :height="sizes.height * 4">
+                            <g>
+                                <path class="precedes" d="M10,50A 15,15 0 0,1 100,100" fill="none" stroke="rgb(120, 115, 243)"/>
+                                <circle cx="10" cy="50" r="4"/>
+                                <circle cx="100" cy="100" r="4"/>
+                                <text></text>
+                            </g>
+                            <g>
+                                <path class="follows" d="M30,100A 15,15 0 0,0 150,120" fill="none" stroke="#727193" />
+                                <circle cx="30" cy="100" r="4"/>
+                                <circle cx="150" cy="120" r="4"/>
+                            </g>
                         </svg>
                     </div>
                 </div>
@@ -58,13 +79,13 @@ export default {
   data () {
       return {
           dummyDots: [1, 2, 3, 4, 5, 6, 7, 9, 10],
-          sizes: {width: 150, height: 50},
-          legend: false
+          sizes: {width: 250, height: 50},
+          legend: true
       }
   },
   computed: {
       dummyScale () {
-          return scaleLinear().domain([1, 9]).range([10, 140])
+          return scaleLinear().domain([1, 9]).range([10, this.sizes.width - 20])
       },
       legendBlurriness () {
           const slicedArray = this.dummyDots.slice(0, 5)

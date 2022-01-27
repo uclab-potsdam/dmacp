@@ -17,7 +17,7 @@
         </g>
         <g v-if="compress === false" class="y-axis">
           <g transform="translate(20, 50)">
-            <text x="-5" y="0" transform="rotate(90)">
+            <text x="5" y="5" transform="rotate(270)" text-anchor="end">
               Time of the telling: how entities are presented within the essay
             </text>
             <line x1="20" x2="20" y1="-15" y2="50" stroke="#2c3e50"/>

@@ -2,9 +2,11 @@
     <g class="individual-links">
       <transition name="fade-relations">
       <g v-if="isMounted">
-          <g v-for="(link, l) in curvesPaths" :key="l" :class="{'not-selected' : selectedMarker.id !== link.id && selectedMarker.id !== null}">
-            <path :class="[`link ${link.id}`, link.position]" :d="link.d" :stroke="link.color" />
-            <!-- <path d="M10,10 L15,15 M20,20z" stroke="blue"/> -->
+          <g v-for="(link, l) in curvesPaths" :key="l" :class="{'not-selected' : selectedMarker.id !== link.id && selectedMarker.id !== null}" @click="addArrow(l)">
+            <path :class="[`link ${link.id}`, link.position]" :d="link.d" :stroke="link.color" :ref="`link-${l}`"/>
+            <g>
+              <circle :cx="elementCenter.x" :cy="elementCenter.y" r="2"/>
+            </g>
           </g>
       </g>
       </transition>
@@ -19,7 +21,12 @@ export default {
     props: {
       linksData: Array,
       selectedMarker: Object,
-      isMounted: Boolean
+      isMounted: Boolean,
+  },
+  data () {
+    return {
+      elementCenter: {x: 0, y: 0}
+    }
   },
   computed: {
     ...mapState(['compress']),
@@ -64,13 +71,15 @@ export default {
     curvesPaths () {
       //console.log()
       return this.sourcesAndTargets.map((d, i) => {
+        // const coords = this.getDr(d)
+        // const coordinates = d.position === 'follows' ? coords[0] : coords[1]
 
         return {
             id: d.id,
-            color: '#8482FF',
             targets: d.targets,
             d: this.generateDforArc(d),
             position: d.position
+            // coordinates: coordinates === undefined ? [0, 0] : coordinates
           }
       })
     } 
@@ -78,6 +87,15 @@ export default {
   methods: {
     searchForIndex (array, identifier) {
       return array.findIndex((e) => { return e.id === identifier})
+    },
+    addArrow(i) {
+      const linkString = "link-" + i
+      const currentLink = this.$refs[linkString]
+
+      const coordinates = currentLink[0].getPointAtLength(100)
+
+      this.elementCenter.x = coordinates.x
+      this.elementCenter.y = coordinates.y
     },
     generateDforArc (d) {
       const dx = d.target[0] - d.source[0]
@@ -96,9 +114,10 @@ export default {
       const startingPoint = d.source[0] > d.target[0] ? [d.target[0], d.target[1]] : [d.source[0], d.source[1]]
       const endPoint = d.source[0] > d.target[0] ?  [d.source[0], d.source[1]] : [d.target[0], d.target[1]]
 
-      return !isNaN(dr) ? "M" + startingPoint[0] + "," + startingPoint[1] 
-        + "A" + dr + "," + dr + 
-        " 0 0," + position + " " + endPoint[0] + "," + endPoint[1] : "M" + dx + "," + dy + "z"
+      //console.log("A" + dr + "," + dr + " 0 0," + position + "")
+      return !isNaN(dr) ? "M" + 
+        startingPoint[0] + "," + startingPoint[1] + "A" + dr + "," + dr + " 0 0," + position + " " + endPoint[0] + "," + endPoint[1] : 
+        "M" + dx + "," + dy + "z"
     }
   }
 }

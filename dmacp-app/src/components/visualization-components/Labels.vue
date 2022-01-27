@@ -2,37 +2,7 @@
     <g class="labels-container">
         <!-- On hover make only text visible, then click to highlight relations -->
         <g class="expanded-view" v-if="!this.compress"> 
-            <g 
-            class="marker-event" 
-            v-for="(entity, e) in dataForLabels.expandedView" 
-            :key="`${e}-key-label`" 
-            :class="{'selected': selectedMarker.id === entity.id}" 
-            :transform="`translate(${entity.x}, ${entity.y})`"
-            >
-                <foreignObject 
-                class="label-container" 
-                x="10" 
-                y="-5" 
-                width="300" 
-                height="100" 
-                :class="entity.relations > 3 || selectedMarker.id === entity.id || selectedMarker.targets !== undefined && selectedMarker.targets.includes(entity.id) ? 'label-visible' : 'label-hidden'"
-                >
-                    <div class="label">
-                        <p v-if="entity.labelText !== undefined" @click="changeSelectedMarker(entity)">
-                            <span v-show="selectedMarker.id === entity.id || selectedMarker.targets === undefined || selectedMarker.targets.includes(entity.id)">
-                                {{entity.index + 1}}.
-                            </span>
-                            <span 
-                                :class="{
-                                    'limited-visibility': selectedMarker.id !== entity.id && selectedMarker.id !== null && selectedMarker.targets !== undefined && !selectedMarker.targets.includes(entity.id) 
-                                    }"
-                            >
-                                {{ entity.labelText }}
-                            </span>
-                        </p>
-                    </div>
-                </foreignObject>
-            </g>
+            <LabelsContent :data="dataForLabels.expandedView" :selected-marker="selectedMarker"/>
         </g>
         <g class="compressed-view" v-else>
             <g class="marker-event" v-for="(entity, e) in dataForLabels.compressedView" :key="`${e}-key-label`" :class="{'selected': selectedMarker.id === entity.id}" :transform="`translate(${entity.x}, ${entity.y})`">
@@ -54,9 +24,14 @@
 
 <script>
 import { mapState, mapActions } from 'vuex'
+import LabelsContent from './LabelsContent.vue'
+import { calcVerticalSpace } from '../../assets/js/utils.js'
 
 export default {
   name: 'Labels',
+    components: {
+        LabelsContent
+    },
     props: {
         data: Array,
         selectedMarker: Object
@@ -76,50 +51,7 @@ export default {
                 }
             })
 
-            // Creating separate arrays for labels
-            // that will be changed based on vis status
-            const importantLabels = essentialData.filter(d => d.relations > 3)
-            const sortedLabels = importantLabels.sort((a, b) => a.y - b.y)
-
-            const positions = sortedLabels.map(d => d.y)
-            const minDist = 15
-
-            // calculate the differences, by using filter() to get an array which is
-            // the same as positions, but without the first item (i > 0). Then those values are
-            // subtracted by the value that comes before them (y - positions[y])
-            let diffs = positions.filter((y, i) => i > 0).map((y, i) => y - positions[i])
-
-            while (diffs.find(d => d < minDist) != null) {
-                // if there is a difference to small, iterate over them
-                diffs.forEach((d, i) => {
-                // if this is difference is to small…
-                if (d < minDist) {
-                    // move the first position up and the one after that down
-                    // we move them by whatever is bigger. the minimum value to reach the
-                    // required distance or 2 pixels
-                    positions[i] = positions[i] - Math.max((minDist - d) / 2, 2)
-                    positions[i + 1] = positions[i + 1] + Math.max((minDist - d) / 2, 2)
-
-                    // Now we can set some boundaries, if we for example don't want a label to be
-                    // lower/higher than a specific value…
-                    if (positions[i + 1] >= 5) {
-                    positions[i + 1] = 5
-                    }
-                }
-                })
-                // since we moved things around, it can be that labels which did not overlap before
-                // do now. so we have to recalculate the diffs, and stay in this while-loop until everything
-                // is fine [Fidel]
-                diffs = positions.filter((y, i) => i > 0).map((y, i) => y - positions[i])
-            }
-
-            sortedLabels.forEach((l, i) => {
-                l.y2 = positions[i]
-
-                if (i === sortedLabels.length - 1) {
-                    l.y2 = -minDist * 2
-                }
-            })
+            const sortedLabels = calcVerticalSpace(essentialData)
 
             return {
                 compressedView: sortedLabels,

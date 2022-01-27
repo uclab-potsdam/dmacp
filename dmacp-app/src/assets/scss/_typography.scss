@@ -1,5 +1,16 @@
+@font-face {
+    font-family: 'Routed Gothic';
+    src: url(./assets/fonts/routed-gothic.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Routed Gothic Italic';
+    src: url(./assets/fonts/routed-gothic-italic.ttf) format('truetype');
+}
+
+
 #app {
-    font-family: Avenir,
+    font-family: 'Routed Gothic',
     Helvetica,
     Arial,
     sans-serif;
