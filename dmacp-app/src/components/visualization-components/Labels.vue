@@ -5,19 +5,7 @@
             <LabelsContent :data="dataForLabels.expandedView" :selected-marker="selectedMarker"/>
         </g>
         <g class="compressed-view" v-else>
-            <g class="marker-event" v-for="(entity, e) in dataForLabels.compressedView" :key="`${e}-key-label`" :class="{'selected': selectedMarker.id === entity.id}" :transform="`translate(${entity.x}, ${entity.y})`">
-                <line v-if="entity.labelText !== undefined" :x1="0" :x2="0" :y1="entity.y1" :y2="entity.y2 " stroke="#e0e0e0"/>
-                <foreignObject class="label-container" x="5" :y="entity.y2" width="250" height="100">
-                    <div class="label">
-                        <p v-if="entity.labelText !== undefined" @click="changeSelectedMarker(entity)">
-                            {{entity.index + 1}}. 
-                            <span :class="{'limited-visibility': selectedMarker.id !== entity.id && selectedMarker.id !== null}">
-                                {{ entity.labelText }}
-                            </span>
-                        </p>
-                    </div>
-                </foreignObject>
-            </g>
+            <LabelsContent :data="dataForLabels.compressedView" :selected-marker="selectedMarker"/>
         </g>
     </g>
 </template>

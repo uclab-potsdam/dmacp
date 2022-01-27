@@ -1,9 +1,10 @@
 <template>
     <g class="labels-container">
         <!-- On hover make only text visible, then click to highlight relations -->
-        <g class="expanded-view" v-if="!this.compress"> 
+        <g :class="compress === true ? 'compressed-view' : 'expanded-view'"> 
             <g class="marker-event" v-for="(entity, e) in data" :key="`${e}-key-label`" :class="{'selected': evaluateSelection(entity)}" :transform="`translate(${entity.x}, ${entity.y})`">
-                <foreignObject class="label-container" x="10" y="-5" width="300" height="100" :class="evaluateVisibility(entity)">
+                <line v-if="entity.labelText !== undefined && compress" :x1="0" :x2="0" :y1="entity.y1" :y2="entity.y2 " stroke="#e0e0e0"/>
+                <foreignObject class="label-container" x="10" :y="compress ? entity.y2 : -5" width="300" height="100" :class="evaluateVisibility(entity)">
                     <div class="label">
                         <p v-if="entity.labelText !== undefined" @click="changeSelectedMarker(entity)">
                             <span v-show="evaluateVisibility(entity)">
@@ -44,7 +45,7 @@ export default {
             const isRelevant = entity.relations > 3
             const IDsMatch = selectedMarker.id === entity.id
             const targetsExist = selectedMarker.targets !== undefined
-            const entitiesAreRelated = targetsExist ? selectedMarker.targets.includes(entity.id) : false
+            const entitiesAreRelated = selectedMarker.targets.includes(entity.id)
                         
             if (isRelevant || IDsMatch || targetsExist && entitiesAreRelated) {
                 return 'label-visible'
@@ -59,7 +60,7 @@ export default {
             const isNotRelevant = selectedMarker.id !== entity.id
             const isNotDefault = selectedMarker.id !== null
             const targetsExist = selectedMarker.targets !== undefined
-            const entitiesAreUnrelated = targetsExist ? !selectedMarker.targets.includes(entity.id) : false
+            const entitiesAreUnrelated = !selectedMarker.targets.includes(entity.id)
 
             return isNotRelevant && isNotDefault && targetsExist && entitiesAreUnrelated
         }

@@ -36,7 +36,7 @@ export default new Vuex.Store({
     MUTATE_SELECTED_MARKER(state, marker) {
       state.selectedMarker.id = marker.id
       state.selectedMarker.type = marker.type
-      state.selectedMarker.targets = marker.targets
+      state.selectedMarker.targets = marker.targets === undefined ? [] : marker.targets
     }
   },
   actions: {
