@@ -115,6 +115,16 @@ svg {
         // }
     }
 
+    span {
+        pointer-events: all;
+    }
+
+    .limited-visibility {
+        span {
+            pointer-events: none;
+        }
+    }
+
     p {
         margin: 0;
         text-align: left;
@@ -122,6 +132,7 @@ svg {
         //padding: 5px;
         font-size: 10px;
         transition: all 0.2s;
+        pointer-events: none;
     }
 
     .selected p {

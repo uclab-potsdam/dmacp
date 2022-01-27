@@ -7,15 +7,28 @@ body {
 }
 
 svg {
-    .relations {
-        // pointer-events: none;
-    }
-
     circle {
         cursor: pointer;
     }
-}
 
+    .marker-event {
+        .label-container.right {
+            transform-origin: top right;
+            transform: translate(-280px, 0);
+            .label {
+                p {
+                text-align: right;
+                }
+            }
+        }
+
+        .label-container.left-interval {
+            position: absolute;
+            //transform-origin: top right;
+            transform: translate(10%, 0);
+        }
+    }
+}
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity .5s;

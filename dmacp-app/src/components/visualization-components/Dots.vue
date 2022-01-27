@@ -1,6 +1,5 @@
 <template>
-    <g>
-    <!-- <transition name="fade-relations"> -->
+    <g class="dots-and-relations">
         <g id="relations" class="relations" v-show="isMounted">
             <g class="curves" v-if="relations === 'signature'">
                 <Signature :relations-data="scaledEntities" />
@@ -26,7 +25,7 @@
                     <circle v-if="selectedMarker.id === entity.id" class="entity-selected" :cx="entity.cx" :cy="entity.cy" :r="entity.radius * 2" />
                 </g>
             </g>
-            <g>
+            <g class="labels-container">
                 <Labels  v-show="events" :data="scaledEntities" :selected-marker="selectedMarker" />
             </g>
         </g>

@@ -97,7 +97,10 @@ svg {
         }
 
         .limited-visibility {
-            opacity: 0;
+            span#label, span#date {
+                font-size: 0px;
+                opacity: 0;
+            }
         }
         
     }

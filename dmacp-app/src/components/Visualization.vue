@@ -91,6 +91,7 @@ export default {
                         narration: e,
                         id: narration.resource,
                         textualLabel: entity.label,
+                        calendarDate: entity.x,
                         cx: xScale(entity.x),
                         cy: this.compress ? this.sizes.height / 2 : yScale(entity.y),
                         radius: 2 + 1 * narration.targets.length,

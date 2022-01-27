@@ -1,18 +1,14 @@
 <template>
-    <g class="labels-container">
-        <!-- On hover make only text visible, then click to highlight relations -->
-        <g class="expanded-view" v-if="!this.compress"> 
-            <LabelsContent :data="dataForLabels.expandedView" :selected-marker="selectedMarker"/>
-        </g>
-        <g class="compressed-view" v-else>
-            <LabelsContent :data="dataForLabels.compressedView" :selected-marker="selectedMarker"/>
-        </g>
-    </g>
+    <LabelsContent 
+        :data="compress === true ? dataForLabels.compressedView : dataForLabels.expandedView" 
+        :selected-marker="selectedMarker" 
+    />
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
 import LabelsContent from './LabelsContent.vue'
+import { isEmpty } from 'lodash'
 import { calcVerticalSpace } from '../../assets/js/utils.js'
 
 export default {
@@ -27,17 +23,29 @@ export default {
     computed: {
         ...mapState(['compress']),
         dataForLabels () {
-
             const essentialData = this.data.map((d, i) => {
+                
+                // for finite intervals picking only the far left label
+                let previousEntity = this.data[i - 1]
+                let xPos = d.cx
+                if (!isEmpty(previousEntity) && previousEntity.id === d.id) {
+                    xPos = Math.max(previousEntity.cx, xPos)
+                }
+
                 return {
                     index: i,
                     id: d.id,
-                    x: d.cx,
+                    x: xPos,
                     y: d.cy,
+                    timeLabel: d.calendarDate,
                     labelText: d.innerText,
                     relations: d.radius,
+                    context: d.context,
+                    type: d.type
                 }
             })
+
+            console.log(essentialData)
 
             const sortedLabels = calcVerticalSpace(essentialData)
 
