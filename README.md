@@ -39,7 +39,7 @@ Instant (temporal entity): A temporal entity with zero extent or duration. It ma
     - Parameter: Number positive (CE) / negative (BCE) expressing where the instant is located in relation to others
 - `rdfs:label` [standard]
     - Parameter: string of text with readable label that describes the entity
-- `ac.hasConnection`[non standard]
+- `ac:hasConnection`[non standard]
     - Parameters: URI of another entity, string specifying the type of connection, float from 0 to 1 expressing the degree of connectedness. 0 means no connection, 1 means strong connection.
 - `ac:hasIndefiniteness` [non standard]
     - Parameter: Float from 0 to 1 which expresses the degree of uncertainty connected to an instant or an interval. 0 has no uncertainty, 1 has uncertainty.
