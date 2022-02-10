@@ -33,7 +33,7 @@
             "radius": 8,
             "cancelled": false,
             "foreshadowing": false,
-            "connections": [9],
+            "connections": [9, "biomass"],
             "intervalColor":"red",
             "intervalWidth": 5,
             "intervalOpacity": 0.8,

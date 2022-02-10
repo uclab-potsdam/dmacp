@@ -59,7 +59,6 @@ export default new Vuex.Store({
       const promise2 = axios.get(paintboxUrl)
 
       Promise.all([promise1, promise2]).then((responses) => {
-        console.log(responses)
           let essay = responses[0]
           let paintbox = responses [1]
           let parsedData = []

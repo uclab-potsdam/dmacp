@@ -45,8 +45,6 @@ export default {
                 }
             })
 
-            console.log(essentialData)
-
             const sortedLabels = calcVerticalSpace(essentialData)
 
             return {

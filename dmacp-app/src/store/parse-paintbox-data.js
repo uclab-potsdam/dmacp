@@ -1,6 +1,6 @@
-export default function parseToolboxData(toolboxData) {
-    const entities = toolboxData["instants"]
-    console.log(toolboxData)
+export default function parsePaintboxData(paintBoxData) {
+    const entities = paintBoxData["instants"]
+    console.log(paintBoxData)
     const parsedEntities = entities.map((d, i) => {
         const pointsOfEntities = []
         const targets = []
@@ -30,19 +30,19 @@ export default function parseToolboxData(toolboxData) {
                 point['target'] = []
                 entityType = 'interval'
                 pointsOfEntities.push(point)
-                console.log(d.name, d.target, el.name, el.target)
             } else {
             }
         })
 
         d.connections.forEach((c) => { 
             const connection = entities.find(el => {return el.id === c})
-            if (connection !== undefined) {
+            if (connection !== undefined && typeof(c) !== 'string') {
                 targets.push(connection.name)
+            } else if (typeof (c) === 'string') {
+                targets.push(c)
             }
          })
 
-        console.log(d)
         return {
             resource: d.name,
             entityTimePosition: pointsOfEntities,
@@ -54,6 +54,5 @@ export default function parseToolboxData(toolboxData) {
 
     })
 
-    console.log(parsedEntities)
     return parsedEntities
 }
