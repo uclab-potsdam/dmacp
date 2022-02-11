@@ -24,7 +24,8 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import { scaleSymlog, scaleLinear } from 'd3-scale'
-import { extent, mode, max } from 'd3-array'
+import { extent, min, max, quantile, bin, mode, mean } from 'd3-array'
+import * as simplestat from 'simple-statistics'
 import Dots from './visualization-components/Dots.vue'
 import Axis from './visualization-components/Axis.vue'
 import Intervals from './visualization-components/Intervals.vue'
@@ -56,19 +57,34 @@ export default {
     yValues () { 
       return this.data.map(essay => essay.map(narration => narration.entityTimePosition.map( entity => entity.y ))).flat(2) 
     },
-    xValuesMode () { return mode(this.xValues) }, 
+    xValuesQuantile () {
+      const { xValues } = this
+      // create binning operator with custom threshold based on Ckmeans / Jenks algorithm
+      const bin25 = bin().thresholds(data => simplestat.ckmeans(data, 20).map(l => min(l)))
+      // Feed x values to operator
+      const binnedData = bin25(xValues)
+      // Obtain index of longest array (most dense cluster of points)
+      const indexOfLongestArray = binnedData.map(a => a.length).indexOf(Math.max(...binnedData.map(a => a.length)));
+      // Get the most popular value from array, this will become the centre of our scale
+      return mode(binnedData[indexOfLongestArray]) 
+    }, 
     xScale () {
       const width = this.sizes.width
-      const { xValues, xValuesMode } = this
+      const { xValues, xValuesQuantile } = this
+
+      const hasNegative = xValues.some(v => v < 0);
       const xScale_ = scaleSymlog()
                         .domain(extent(xValues.map(d => { return d})))
-                        .constant(1).range([100, 1.33*width])
+                        .constant(1).range([100, width])
                         .clamp(false)
                         .nice()
 
       this.storeRealScale(xScale_)
-      // here fix needed if events are not spread out in time
-      return (x) => { return xScale_(x-xValuesMode) }
+
+return (x) => { 
+        // Shift centre only if negative values are present
+        return hasNegative ? xScale_(x-xValuesQuantile) : xScale_(x)
+      }
     },
     yScale () {
       const height = this.sizes.height
@@ -126,8 +142,21 @@ export default {
     },
     storeRealScale (scale) {
       const logScaleTicks = scale.ticks(5)
-      logScaleTicks.push(this.xValuesMode)
+      logScaleTicks.push(this.xValuesQuantile)
       this.xTicks = logScaleTicks
+    },
+    calcTypeOfData (ar) {
+      var counter = [0, 0, 0];
+      ar.forEach(function(a) {
+        if (a < 0)
+          counter[0]++;
+        else if (a > 0)
+          counter[2]++;
+        else
+          counter[1]++;
+      });
+      console.log(counter)
+      return counter;
     }
   },
   updated () {

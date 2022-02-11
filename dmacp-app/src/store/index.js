@@ -48,7 +48,7 @@ export default new Vuex.Store({
       const promise1 = axios.get(essayUrl).catch(function (error) {
         console.log('Error', error.message)
         if (!error.response) { }
-        loadData('./data/combustion.html')
+        loadData('./data/Nuclear_Anthropocene.html')
           .then((parsedData) => {
             const status = "Loaded"
             console.log('loading from local', parsedData)

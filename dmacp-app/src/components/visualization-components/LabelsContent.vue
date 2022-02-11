@@ -3,7 +3,11 @@
     <g :class="compress === true ? 'compressed-view' : 'expanded-view'"> 
         <g class="marker-event" v-for="(entity, e) in data" :key="`${e}-key-label`" :class="{'selected': evaluateSelection(entity)}" :transform="`translate(${entity.x}, ${entity.y})`">
             <line v-if="entity.labelText !== undefined && compress" :x1="0" :x2="0" :y1="entity.y1" :y2="entity.y2 " stroke="#e0e0e0"/>
-            <foreignObject class="label-container" x="10" :y="compress ? entity.y2 : -5" width="250" height="100" :class="[evaluateVisibility(entity), changeTextFlag(entity)]">
+            <foreignObject 
+                class="label-container" 
+                x="10" 
+                :y="compress ? entity.y2 : -5" width="250" height="100" :class="[evaluateVisibility(entity), changeTextFlag(entity)]" 
+            >
                 <div class="label">
                     <p v-if="entity.labelText !== undefined" @click="changeSelectedMarker(entity)" :class="{'limited-visibility': limitVisibility(entity)}">
                         <span v-show="evaluateVisibility(entity)" id="date">

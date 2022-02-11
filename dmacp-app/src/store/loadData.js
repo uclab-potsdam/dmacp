@@ -28,7 +28,7 @@ export default async function loadData(dataPath) {
                     let label = u + 1 < arrayOfProperties.length ? followingElement.getAttribute('content') : null
 
                     const hasYear = unit.getAttribute('property') === 'time:inXSDgYear'
-                    const hasConnection = unit.getAttribute('property') === 'ac:hasConnection'
+                    const hasConnection = unit.getAttribute('property') === 'ac:linksTo'
                     const hasIndefinetness = unit.getAttribute('property') === 'ac:hasIndefiniteness'
 
                     // Assign position to element if present

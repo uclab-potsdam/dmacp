@@ -13,18 +13,17 @@ svg {
 
     .marker-event {
         .label-container.right {
-            // transform-origin: top right;
-            // transform: translate(-19%, 0);
+            transform-origin: top right;
+            transform: translate(-17em, 0);
             .label {
                 p {
-                // text-align: right;
+                text-align: right;
                 }
             }
         }
 
         .label-container.left-interval {
             position: absolute;
-            //transform-origin: top right;
             transform: translate(10%, 0);
         }
     }

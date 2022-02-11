@@ -46,15 +46,30 @@
                         <p class="label">Orientation of arc: directionality of relation</p>
                         <svg :width="sizes.width - 50" :height="sizes.height * 4">
                             <g>
-                                <path class="precedes" d="M10,50A 15,15 0 0,1 100,100" fill="none" stroke="rgb(120, 115, 243)"/>
-                                <circle cx="10" cy="50" r="4"/>
-                                <circle cx="100" cy="100" r="4"/>
-                                <text></text>
+                                <text x="0" y="10">
+                                    The entity is linked <tspan x="0" y="20">to a future event</tspan>
+                                </text>
                             </g>
-                            <g>
-                                <path class="follows" d="M30,100A 15,15 0 0,0 150,120" fill="none" stroke="#727193" />
-                                <circle cx="30" cy="100" r="4"/>
-                                <circle cx="150" cy="120" r="4"/>
+                            <g transform="translate(0, 20)">
+                                <g>
+                                    <path class="concurs" d="M90,100 V 50" fill="none" stroke="#ffffff" />
+                                    <text x="100" y="70">
+                                        The entity is linked <tspan x="100" y="80">to a concurring event</tspan>
+                                    </text>
+                                </g>
+                                <g>
+                                    <path class="follows" d="M90,100A 15,15 0 0,0 180,100" fill="none" stroke="#727193" />
+                                    <circle cx="90" cy="100" r="4"/>
+                                    <circle cx="180" cy="100" r="4"/>
+                                    <text x="90" y="160">
+                                        The entity is linked <tspan x="90" y="170">to a past event</tspan>
+                                    </text>
+                                </g>
+                                <g>
+                                    <path class="precedes" d="M10,50A 15,15 0 0,1 90,50" fill="none" stroke="rgb(120, 115, 243)"/>
+                                    <circle cx="10" cy="50" r="4"/>
+                                    <circle cx="90" cy="50" r="4"/>
+                                </g>
                             </g>
                         </svg>
                     </div>

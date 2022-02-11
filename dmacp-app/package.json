@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "axios": "^0.24.0",
-    "browserfs": "^1.4.3",
     "core-js": "^3.6.5",
     "d3": "^7.1.1",
     "html-loader": "^3.0.1",
     "lodash": "^4.17.21",
+    "simple-statistics": "^7.7.3",
     "vue": "^2.6.11",
     "vuex": "^3.4.0"
   },

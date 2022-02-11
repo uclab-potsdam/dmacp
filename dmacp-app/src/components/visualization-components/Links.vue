@@ -134,7 +134,9 @@ export default {
       if (this.compress) {
           dr = Math.sign(dx) < 0 ? Math.sqrt(-(dx + dy * dy + dx)) : Math.sqrt(dx + dy * dy + dx)
       } else {
-        dr = Math.sqrt(dx + dy * dy + dx)
+        const originalDr = Math.sqrt(dx + dy * dy + dx)
+        console.log(originalDr > 100)
+        dr = originalDr > 100 ? originalDr + 150 : originalDr
       }
 
       // Check which type of element shall be drawn
