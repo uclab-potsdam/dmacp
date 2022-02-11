@@ -42,6 +42,7 @@ export default {
   data () {
     return {
       sizes: { height: 0, width: 0 },
+      margin: {left: 0, top: 0, right: 0, bottom: 0},
       xTicks: [],
       resetMarkerSelection: {id: null, type: null},
       visualization: false
@@ -66,7 +67,6 @@ export default {
                         .nice()
 
       this.storeRealScale(xScale_)
-      console.log(xValuesMode)
       // here fix needed if events are not spread out in time
       return (x) => { return xScale_(x-xValuesMode) }
     },
@@ -75,7 +75,7 @@ export default {
       const { yValues } = this
       return scaleLinear()
                 .domain(extent(yValues.map(d => { return d })))
-                .range([30, height - 30])
+                .range([this.margin.bottom, height - this.margin.top])
     },
     yTicks () {
       return this.yScale.ticks(50)
@@ -86,7 +86,6 @@ export default {
     const data = this.data
     return data.map((essay, e) => {
         return essay.map((narration, n) => {
-            console.log(narration)
             return narration.entityTimePosition.map((entity) => {
                 const targets = narration.targets
                 return {
@@ -120,7 +119,8 @@ export default {
       const { visualization } = this.$refs
       let cHeight = visualization.clientHeight
       let cWidth = visualization.clientWidth
-
+      
+      this.margin.top = this.margin.bottom = Math.max(cWidth / 100 * 5, 50)
       this.sizes.height = cHeight
       this.sizes.width = cWidth
     },

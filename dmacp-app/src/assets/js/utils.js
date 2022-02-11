@@ -1,5 +1,4 @@
 export const createRelationalArrays = function (relData, mode) {
-    //console.log('!')
     const copy = relData.map(object => ({ ...object }))
     const orderedIDs = []
     copy.forEach((entity) => {

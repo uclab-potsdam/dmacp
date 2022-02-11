@@ -44,9 +44,7 @@ export default {
                 if (entity.context === ('is-beginning' || null)) {
                     flagDirection = 'right'
                 } else if (entity.type === 'interval' && entity.context === null){
-                    console.log(entity.context)
                     flagDirection = 'left'
-
                 }
             }
             return flagDirection
@@ -57,8 +55,6 @@ export default {
         },
         evaluateVisibility(entity) {
             const { selectedMarker } = this
-
-            // console.log(entity)
 
             const isRelevant = entity.relations > 3
             const IDsMatch = selectedMarker.id === entity.id

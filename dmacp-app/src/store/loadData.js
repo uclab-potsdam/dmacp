@@ -2,17 +2,13 @@ import * as d3 from 'd3';
 
 export default async function loadData(dataPath) {
     const data = await d3.html(dataPath).then(function (essay) {
-        // console.log(essay)
         let globalY = 0
         essay = [].map.call(essay.querySelectorAll("p"), (narration, n) => {
-                // console.log(narration)
             // First layer: I am looping over separate paragraphs within the essay. Each paragraph contains many or no entities.
             // console.log('looping over narration', n)
 
             narration = [].map.call(narration.querySelectorAll('[typeof][resource]'), (entity, e) => {
-                // console.log(entity)
                 // This is one single entity. I am creating an array with its properties so it becomes iterable
-                // console.log('entity', e, entity.getAttribute('resource'), entity.getAttribute('typeof'))
                 const entityTimePosition = []
                 const isInstant = entity.getAttribute('typeof') === 'time:ProperInterval' ? false : true
                 const arrayOfProperties = Array.from(entity.querySelectorAll('meta'))
@@ -67,8 +63,6 @@ export default async function loadData(dataPath) {
 
                 })
 
-                //console.log(singleEntity)
-
                 entityTimePosition.push(singleEntity)
 
                 // Separate loop to determine whether one of the interval's end is undefined.
@@ -100,6 +94,5 @@ export default async function loadData(dataPath) {
         })
         return essay
     });
-    // console.log(data)
     return data
 };

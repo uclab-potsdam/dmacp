@@ -1,4 +1,4 @@
-import parseToolboxData from './parse-toolbox-data.js'
+import parsePaintboxData from './parse-paintbox-data.js'
 
 export default async function loadFromApi(data, toolboxData) {
 
@@ -26,6 +26,7 @@ export default async function loadFromApi(data, toolboxData) {
 
                 let intervalPointsCount = 0
                 let singleEntity = {}
+                const targetsOrigin = []
                 const targets = []
                 let intervalContext = null
 
@@ -36,7 +37,8 @@ export default async function loadFromApi(data, toolboxData) {
                     let label = u + 1 < arrayOfProperties.length ? followingElement.getAttribute('content') : null
 
                     const hasYear = unit.getAttribute('property') === 'time:inXSDgYear'
-                    const hasConnection = unit.getAttribute('property') === 'ac:hasConnection'
+                    const hasConnection = unit.getAttribute('property') === 'ac:linksTo'
+                    const hasConnectionOrigin = unit.getAttribute('property') === 'ac:linkedFrom'
                     const hasIndefinetness = unit.getAttribute('property') === 'ac:hasIndefiniteness'
 
                     // Assign position to element if present
@@ -62,6 +64,11 @@ export default async function loadFromApi(data, toolboxData) {
                         singleEntity.target = unit.getAttribute('resource').substring(1)
                         const connection = unit.getAttribute('resource').substring(1)
                         targets.push(connection)
+                    }
+
+                    if (hasConnectionOrigin) {
+                        const connectionOrigin = unit.getAttribute('resource').substring(1)
+                        targetsOrigin.push(connectionOrigin)
                     }
 
                     // Assign indefineteness to element if present
@@ -93,6 +100,7 @@ export default async function loadFromApi(data, toolboxData) {
                     resource: entity.getAttribute('resource').substring(1),
                     type: isInstant ? 'instant' : 'interval',
                     targets,
+                    targetsOrigin,
                     entityTimePosition: entityTimePosition.filter(d => { return d.label !== undefined }),
                     intervalContext,
                     dataSource: "essay"
@@ -104,9 +112,9 @@ export default async function loadFromApi(data, toolboxData) {
         arrayOfData.push(essay[0])
     })
 
-    const parsedPaintboxData = parseToolboxData(toolboxData)
-    const mergedData = arrayOfData.push(parsedPaintboxData)
+    // Parse and merge data from the paintbox
+    const parsedPaintboxData = parsePaintboxData(toolboxData)
+    //arrayOfData.push(parsedPaintboxData)
     console.log(arrayOfData)
-    console.log(mergedData)
     return arrayOfData
 };
