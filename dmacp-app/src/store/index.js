@@ -9,17 +9,23 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    data: [],
-    status: "Waiting",
     compress: false,
+    data: [],
+    essayKey: "",
     events: true,
     relations: 'links',
-    selectedMarker: {id: null, type: null, targets: []}
+    status: "Waiting",
+    selectedMarker: {id: null, type: null, targets: []},
+    localDev: true
   },
   mutations: {
     MUTATE_DATA(state, { status, parsedData}) {
       if (status == "Loaded") {
-        state.data = parsedData
+        const dataKeys = Object.keys(parsedData)
+        // currently only getting first key, if essays will be compared then needs to be reworked
+        const currentKey = dataKeys[0]
+        state.essayKey = currentKey
+        state.data = parsedData[currentKey]
         state.status = status
       }
     },
@@ -40,10 +46,17 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    loadingData ({commit}) {
+    loadingData ({commit, state}) {
 
       const essayUrl = 'https://content-dev.anthropocene-curriculum.org/wp-json/wp/v2/contribution?slug=combustion-products-as-markers-for-the-anthropocene'
       const paintboxUrl = './data/sample-data.json'
+
+      const localEssay = loadData('./data/Nuclear_Anthropocene.html')
+        .then((parsedData) => {
+          const status = "Loaded"
+          console.log('loading from local')
+          commit('MUTATE_DATA', { status, parsedData })
+        })
 
       const promise1 = axios.get(essayUrl).catch(function (error) {
         console.log('Error', error.message)
@@ -57,8 +70,10 @@ export default new Vuex.Store({
       })
 
       const promise2 = axios.get(paintboxUrl)
+      // Remove when loading from ac-frontend
+      const essaySource = state.localDev === true ? localEssay : promise1
 
-      Promise.all([promise1, promise2]).then((responses) => {
+      Promise.all([essaySource, promise2]).then((responses) => {
           let essay = responses[0]
           let paintbox = responses [1]
           let parsedData = []

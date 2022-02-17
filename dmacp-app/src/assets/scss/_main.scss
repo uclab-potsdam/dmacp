@@ -1,3 +1,20 @@
+$default--primary: rgb(120, 115, 243);
+$default--secondary: darken($default--primary, 50);
+$default--tertiary: lighten($default--primary, 50);
+
+$nuclear-anthropocene--primary: rgb(243, 115, 115);
+$nuclear-anthropocene--secondary: darken($nuclear-anthropocene--primary, 50);
+$nuclear-anthropocene--tertiary: lighten($nuclear-anthropocene--primary, 50);
+
+$abgc-cycles--primary: rgb(204, 139, 43);
+$abgc-cycles--secondary: darken($abgc-cycles--primary, 50);
+$abgc-cycles--tertiary: lighten($abgc-cycles--primary, 50);
+
+$biotic-change--primary: rgb(64, 175, 151);
+$biotic-change--secondary: darken($biotic-change--primary, 50);
+$biotic-change--tertiary: lighten($biotic-change--primary, 50);
+
+
 @import 'typography';
 @import 'sizes';
 @import 'colors';
