@@ -1,12 +1,15 @@
 import * as d3 from 'd3';
 
 export default async function loadData(dataPath) {
+    // Small change to incorporate title. Needs to update API fetch
+    const newObj = {}
     const data = await d3.html(dataPath).then(function (essay) {
         let globalY = 0
+
+        const titleTag = essay.getElementById("EssayTitle")
+        const titleString = titleTag.getAttribute('resource').substring(1)
         essay = [].map.call(essay.querySelectorAll("p"), (narration, n) => {
             // First layer: I am looping over separate paragraphs within the essay. Each paragraph contains many or no entities.
-            // console.log('looping over narration', n)
-
             narration = [].map.call(narration.querySelectorAll('[typeof][resource]'), (entity, e) => {
                 // This is one single entity. I am creating an array with its properties so it becomes iterable
                 const entityTimePosition = []
@@ -92,7 +95,9 @@ export default async function loadData(dataPath) {
 
             return narration
         })
-        return essay
+        return { titleString, essay }
     });
-    return data
+    
+    newObj[data.titleString] = data.essay
+    return newObj
 };

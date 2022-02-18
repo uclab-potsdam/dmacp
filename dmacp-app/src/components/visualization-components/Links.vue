@@ -135,7 +135,6 @@ export default {
           dr = Math.sign(dx) < 0 ? Math.sqrt(-(dx + dy * dy + dx)) : Math.sqrt(dx + dy * dy + dx)
       } else {
         const originalDr = Math.sqrt(dx + dy * dy + dx)
-        console.log(originalDr > 100)
         dr = originalDr > 100 ? originalDr + 150 : originalDr
       }
 

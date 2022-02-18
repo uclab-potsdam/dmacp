@@ -1,12 +1,13 @@
 <template>
   <div class="visualization-container" ref="visualization">
-    <svg :width="sizes.width" :height="sizes.height">
+    <svg id="abgc-cycles" :width="sizes.width" :height="sizes.height">
       <rect 
         :width="sizes.width" 
         :height="sizes.height" 
         x="0" 
         y="0" 
         fill="#C4C4C4"
+        fill-opacity="0"
         @click="changeSelectedMarker(resetMarkerSelection)"
       />
       <Filters :sizes="sizes"/>
@@ -43,14 +44,14 @@ export default {
   data () {
     return {
       sizes: { height: 0, width: 0 },
-      margin: {left: 0, top: 0, right: 0, bottom: 0},
+      margin: {left: 200, top: 0, right: 200, bottom: 0},
       xTicks: [],
       resetMarkerSelection: {id: null, type: null},
       visualization: false
     }
   },
   computed: {
-    ...mapState(['data', 'compress', 'selectedMarker']),
+    ...mapState(['data', 'compress', 'selectedMarker', 'essayKey']),
     xValues () { 
       return this.data.map(essay => essay.map(narration => narration.entityTimePosition.map( entity => entity.x ))).flat(2) 
     },
@@ -60,9 +61,9 @@ export default {
     xValuesQuantile () {
       const { xValues } = this
       // create binning operator with custom threshold based on Ckmeans / Jenks algorithm
-      const bin25 = bin().thresholds(data => simplestat.ckmeans(data, 20).map(l => min(l)))
+      const bin20 = bin().thresholds(data => simplestat.ckmeans(data, 20).map(l => min(l)))
       // Feed x values to operator
-      const binnedData = bin25(xValues)
+      const binnedData = bin20(xValues)
       // Obtain index of longest array (most dense cluster of points)
       const indexOfLongestArray = binnedData.map(a => a.length).indexOf(Math.max(...binnedData.map(a => a.length)));
       // Get the most popular value from array, this will become the centre of our scale
@@ -73,17 +74,18 @@ export default {
       const { xValues, xValuesQuantile } = this
 
       const hasNegative = xValues.some(v => v < 0);
+      const currentPivot = hasNegative ? xValuesQuantile : 0
+      // Needs to find consistent way of tweaking right margin for range
       const xScale_ = scaleSymlog()
-                        .domain(extent(xValues.map(d => { return d})))
-                        .constant(1).range([100, width])
+                        .domain([min(xValues.map(d => { return d})), max(xValues.map(d => { return d})) - currentPivot])
+                        .constant(1).range([100, width - this.margin.right])
                         .clamp(false)
                         .nice()
 
       this.storeRealScale(xScale_)
-
 return (x) => { 
         // Shift centre only if negative values are present
-        return hasNegative ? xScale_(x-xValuesQuantile) : xScale_(x)
+        return xScale_(x-currentPivot)
       }
     },
     yScale () {

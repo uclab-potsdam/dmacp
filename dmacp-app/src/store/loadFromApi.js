@@ -1,11 +1,13 @@
 import parsePaintboxData from './parse-paintbox-data.js'
 
 export default async function loadFromApi(data, toolboxData) {
-
+    const newObj = {}
     const arraysOfText = data.acf._content.content
     const arrayOfData = []
     let globalY = 0
-    arraysOfText.forEach((content) => {
+    // needs to be updated with real title id
+    const titleString = ''
+    arraysOfText.forEach((content, c) => {
         const el = document.createElement('html')
         el.innerHTML = content.text
         const htmlBody = el.getElementsByTagName('body')
@@ -115,6 +117,7 @@ export default async function loadFromApi(data, toolboxData) {
     // Parse and merge data from the paintbox
     const parsedPaintboxData = parsePaintboxData(toolboxData)
     //arrayOfData.push(parsedPaintboxData)
-    console.log(arrayOfData)
-    return arrayOfData
+    newObj[titleString] = arrayOfData
+    console.log(newObj)
+    return newObj
 };

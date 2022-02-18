@@ -5,16 +5,23 @@
 body,
 .visualization-container {
     background-color: #C4C4C4;
+    // background-opacity: 0.9;
+    background: 
+        linear-gradient(185deg, #c4c4c4c4 40%, #c4c4c400 100%),
+        // linear-gradient(127deg, rgba(0, 255, 0, .8) 40%, rgba(0, 255, 0, 0) 70.71%),
+        // linear-gradient(336deg, rgba(0, 0, 255, .8), rgba(0, 0, 255, 0) 70.71%);
+
 }
 
 svg {
     text {
         fill: #2c3e50;
     }
+
     .entity-marker {
         fill: #e0e0e0;
-        stroke: rgb(120, 115, 243);
-        stroke-width: 0.5;
+        stroke: $default--primary;
+        stroke-width: 1;
         transition: all 0.4s;
     }
 
@@ -38,7 +45,7 @@ svg {
     .limited-visibility, .disabled-on-compress {
         circle {
         fill: #C4C4C4;
-        stroke: rgb(117, 117, 117);
+        stroke: rgb(117, 117, 117) !important;
         stroke-dasharray: none;
         }
 
@@ -65,22 +72,22 @@ svg {
 
     .blurry-2 {
         fill: url(#radial-blurriness);
-        filter: url(#blur) drop-shadow(0 0 0.1rem #8482FF);
+        filter: url(#blur) drop-shadow(0 0 0.1rem $default--primary);
     }
 
     .blurry-4 {
         fill: url(#radial-blurriness);
-        filter: url(#blur) drop-shadow(0 0 0.5rem #8482FF);
+        filter: url(#blur) drop-shadow(0 0 0.5rem $default--primary);
     }
 
     .blurry-6 {
         fill: url(#radial-blurriness);
-        filter: url(#blur) drop-shadow(0 0 0.75rem #8482FF);
+        filter: url(#blur) drop-shadow(0 0 0.75rem $default--primary);
     }
 
     .blurry-8 {
         fill: url(#radial-blurriness);
-        filter: url(#blur) drop-shadow(0 0 1rem #8482FF);
+        filter: url(#blur) drop-shadow(0 0 1rem $default--primary);
     }
 
     .marker-event {
@@ -157,15 +164,15 @@ svg {
 
         g {
             .precedes {
-                stroke: #727193;
+                stroke: $default--secondary;
             }
 
             .follows {
-                stroke: rgb(120, 115, 243);
+                stroke: $default--primary;
             }
 
             .concurs {
-                stroke: #ffffff;
+                stroke: $default--tertiary;
                 stroke-opacity: 0.7;
             }
 
@@ -179,7 +186,6 @@ svg {
         }
     }
 }
-
 
 .legend-container {
     background-color: #c4c4c4;
@@ -200,7 +206,7 @@ svg {
         }
 
         circle {
-            stroke: rgb(120, 115, 243);
+            stroke: $default--primary;
             fill: #e0e0e0;
         }
 
@@ -218,3 +224,95 @@ svg {
         }
     }
 }
+
+// Essay specific css
+svg#nuclear-anthropocene {
+    .entity-marker {
+        stroke: $nuclear-anthropocene--primary;
+    }
+
+    .precedes {
+        stroke: $nuclear-anthropocene--secondary;
+    }
+
+    .follows {
+        stroke: $nuclear-anthropocene--primary;
+    }
+
+    .blurry-2 {
+        filter: url(#blur) drop-shadow(0 0 0.1rem $nuclear-anthropocene--primary);
+    }
+
+    .blurry-4 {
+        filter: url(#blur) drop-shadow(0 0 0.5rem $nuclear-anthropocene--primary);
+    }
+
+    .blurry-6 {
+        filter: url(#blur) drop-shadow(0 0 0.75rem $nuclear-anthropocene--primary);
+    }
+
+    .blurry-8 {
+        filter: url(#blur) drop-shadow(0 0 1rem $nuclear-anthropocene--primary);
+    }
+}
+
+svg#biotic-change {
+    .entity-marker {
+        stroke: $biotic-change--primary;
+    }
+
+    .precedes {
+        stroke: $biotic-change--secondary;
+    }
+
+    .follows {
+        stroke: $biotic-change--primary;
+    }
+
+    .blurry-2 {
+        filter: url(#blur) drop-shadow(0 0 0.1rem $biotic-change--primary);
+    }
+
+    .blurry-4 {
+        filter: url(#blur) drop-shadow(0 0 0.5rem $biotic-change--primary);
+    }
+
+    .blurry-6 {
+        filter: url(#blur) drop-shadow(0 0 0.75rem $biotic-change--primary);
+    }
+
+    .blurry-8 {
+        filter: url(#blur) drop-shadow(0 0 1rem $biotic-change--primary);
+    }
+}
+
+svg#abgc-cycles {
+    .entity-marker {
+        stroke: $abgc-cycles--primary;
+    }
+
+    .precedes {
+        stroke: $abgc-cycles--secondary;
+    }
+
+    .follows {
+        stroke: $abgc-cycles--primary;
+    }
+
+    .blurry-2 {
+        filter: url(#blur) drop-shadow(0 0 0.1rem $abgc-cycles--primary);
+    }
+
+    .blurry-4 {
+        filter: url(#blur) drop-shadow(0 0 0.5rem $abgc-cycles--primary);
+    }
+
+    .blurry-6 {
+        filter: url(#blur) drop-shadow(0 0 0.75rem $abgc-cycles--primary);
+    }
+
+    .blurry-8 {
+        filter: url(#blur) drop-shadow(0 0 1rem $abgc-cycles--primary);
+    }
+}
+
