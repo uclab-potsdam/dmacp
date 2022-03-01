@@ -30,6 +30,10 @@ The Anthropocene Working Group is preparing the case for the definition of a new
        As these coastal environments are extensively reclaimed for agriculture, urbanization,
        and industry, sea-level rise is an existential threat to many communities.
        <span resource="#water_height_measurements" typeof="time:ProperInterval">
+         <meta property="ac:linksTo" resource="#mean_sea_level_computations" />
+         <meta property="ac:linksTo" resource="#automatic_tide_gauges_invention" />
+         <meta property="ac:linksTo" resource="#sea_level_measurement_before_tide_gauges" />
+         <meta property="ac:linksTo" resource="#absolute_ocean_height_measurements" />
          <span property="time:hasBeginning" typeof="time:Instant">
            <meta property="time:inXSDgYear" content="1682" />
            <meta property="rdfs:label" content="1682" />
@@ -38,20 +42,23 @@ The Anthropocene Working Group is preparing the case for the definition of a new
       </span>
       began in Amsterdam in 1682 and
       <span resource="#mean_sea_level_computations" typeof="time:Instant">
+        <meta property="ac:linksTo" resource="#increased_speed_of_sea_level_rise" />
+        <meta property="ac:linkedFrom" resource="#water_height_measurements" />
+        <meta property="ac:linkedFrom" resource="#automatic_tide_gauges_invention" />
         <meta property="time:inXSDgYear" content="1930" />
         <meta property="rdfs:label" content="1930s" />
         <meta property="ac:hasIndefiniteness" content="0.2" />
-        <!-- <meta property="ac:hasConnection" resource="#automatic_tide_gauges_invention" /> -->
-        <!-- <meta property="ac:hasConnection" resource="#water_height_measurements" /> -->
         computations of mean sea level became possible
       </span>
       when
        <span resource="#automatic_tide_gauges_invention" typeof="time:Instant">
+         <meta property="ac:linksTo" resource="#mean_sea_level_computations" />
+         <meta property="ac:linksTo" resource="#widespread_tide_gauges" />
+         <meta property="ac:linksTo" resource="#widespread_tide_gauges_in_europe" />
+         <meta property="ac:linkedFrom" resource="#water_height_measurements" />
          <meta property="time:inXSDgYear" content="1930" />
          <meta property="rdfs:label" content="1930s" />
          <meta property="ac:hasIndefiniteness" content="0.2" />
-         <!-- <meta property="ac:hasConnection" resource="#mean_sea_level_computations" /> -->
-         <!-- <meta property="ac:hasConnection" resource="#water_height_measurements" /> -->
        automatic tide gauges, which allowed continuous water height measurements, were invented
        </span>
        in the 1930s. Sea level at a given location represents the mean height of the water surface relative to the underlying geological
@@ -63,25 +70,39 @@ The Anthropocene Working Group is preparing the case for the definition of a new
 </p>
 
 <p id="P3">
-  To understand sea level prior to the late twentieth century when
+  To
+  <span resource="#sea_level_measurement_before_tide_gauges" typeof="time:ProperInterval">
+    <meta property="ac:label" content="Geological data used to measure sea level before tide gauges were widespread" />
+    <meta property="ac:linksTo" resource="#increased_speed_of_sea_level_rise" />
+    <meta property="ac:linksTo" resource="#sea_level_measurement_precision" />
+    <meta property="ac:linkedFrom" resource="#water_height_measurements" />
+    <span property="time:hasEnd" typeof="time:Instant">
+      <meta property="time:inXSDgYear" content="1980" />
+      <meta property="rdfs:label" content="Late twentieth century" />
+      <meta property="ac:hasIndefiniteness" content="0.2" />
+    </span>
+  understand sea level prior
+  </span>
+  to the late twentieth century when
   <span resource="#widespread_tide_gauges" typeof="time:ProperInterval">
+    <meta property="ac:linkedFrom" resource="#automatic_tide_gauges_invention" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1980" />
       <meta property="rdfs:label" content="Late twentieth century" />
       <meta property="ac:hasIndefiniteness" content="0.2" />
-      <!-- <meta property="ac:hasConnection" resource="#automatic_tide_gauges_invention" /> -->
     </span>
   tide gauges were widespread
   </span>
   , we must use geological data.
   Salt marsh sediments contain microfossils whose narrow height distribution within the tidal range is delimited by modern
   studies. The sediments can be dated by radiometric analyses (14C, 210Pb) and the use of stratigraphic markers of pollutants,
-  including metals, rare isotopes from atmospheric nuclear test measurements, and human-made pollutants. The
-  <span resource="#sea_level_measurement_precision" typeof="time:Instant">
+  including metals, rare isotopes from atmospheric nuclear test measurements, and human-made pollutants. The resulting records of a
+  <span resource="#sea_level_measurement_proxy" typeof="time:Instant">
+    <meta property="ac:linkedFrom" resource="#sea_level_measurement_before_tide_gauges" />
     <meta property="time:inXSDgYear" content="1950" />
     <meta property="rdfs:label" content="Twentieth century" />
     <meta property="ac:hasIndefiniteness" content="0.4" />
-  resulting records of a proxy for sea level have a precision of ±5 years
+  proxy for sea level have a precision of ±5 years
   </span>
   in the twentieth century and a vertical resolution within ±5 cm (Summerhayes
   and Cearreta 2019).
@@ -91,6 +112,15 @@ The Anthropocene Working Group is preparing the case for the definition of a new
        The primary anthropogenic disturbance to the pre-existing long-term trends in sea level is the emission of greenhouse gases. Since
        the mid-twentieth century,
        <span resource="#carbon_consumption" typeof="time:ProperInterval">
+         <meta property="ac:linksTo" resource="#warming_of_lower_atmosphere" />
+         <meta property="ac:linksTo" resource="#increased_ocean_temperature" />
+         <meta property="ac:linksTo" resource="#mountain_glaciers_retreat" />
+         <meta property="ac:linksTo" resource="#ice_sheets_loss_of_mass" />
+         <meta property="ac:linksTo" resource="#ipcc_projections_for_reduction" />
+         <meta property="ac:linksTo" resource="#ipcc_projections_for_growth" />
+         <meta property="ac:linksTo" resource="#increasing_rate_of_change_in_temperature" />
+         <meta property="ac:linksTo" resource="#sulphur_isotope_regional_variations" />
+         <meta property="ac:linkedFrom" resource="#lead_as_petrol_additive" />
          <span property="time:hasBeginning" typeof="time:Instant">
            <meta property="time:inXSDgYear" content="1950" />
            <meta property="rdfs:label" content="Mid-twentieth century" />
@@ -104,18 +134,25 @@ The Anthropocene Working Group is preparing the case for the definition of a new
        </span>
        (Syvitski et al. 2020). Consequently,
        <span resource="#warming_of_lower_atmosphere" typeof="time:Instant">
+         <meta property="ac:linksTo" resource="#sea_level_rise" />
+         <meta property="ac:linksTo" resource="#ocean_surface_layer_expansion" />
+         <meta property="ac:linkedFrom" resource="#carbon_consumption" />
          <meta property="time:inXSDgYear" content="1950" />
          <meta property="rdfs:label" content="Mid-twentieth century" />
          <meta property="ac:hasIndefiniteness" content="0.2" />
        the lower atmosphere warmed 1.2°C,
        </span>
        <span resource="#increased_ocean_temperature" typeof="time:Instant">
+         <meta property="ac:linksTo" resource="#sea_level_rise" />
+         <meta property="ac:linkedFrom" resource="#carbon_consumption" />
          <meta property="time:inXSDgYear" content="1950" />
          <meta property="rdfs:label" content="Mid-twentieth century" />
          <meta property="ac:hasIndefiniteness" content="0.2" />
        the ocean increased its temperature,
        </span>
        <span resource="#mountain_glaciers_retreat" typeof="time:ProperInterval">
+         <meta property="ac:linksTo" resource="#sea_level_rise" />
+         <meta property="ac:linkedFrom" resource="#carbon_consumption" />
          <span property="time:hasBeginning" typeof="time:Instant">
            <meta property="time:inXSDgYear" content="1950" />
            <meta property="rdfs:label" content="Mid-twentieth century" />
@@ -124,6 +161,10 @@ The Anthropocene Working Group is preparing the case for the definition of a new
        most mountain glaciers are retreating,
        </span>
        <span resource="#ice_sheets_loss_of_mass" typeof="time:ProperInterval">
+         <meta property="ac:linksTo" resource="#sea_level_rise" />
+         <meta property="ac:linksTo" resource="#contribution_of_ice_sheets_loss_of_mass" />
+         <meta property="ac:linkedFrom" resource="#carbon_consumption" />
+         <meta property="ac:linkedFrom" resource="#ice_sheets_understanding" />
          <span property="time:hasBeginning" typeof="time:Instant">
            <meta property="time:inXSDgYear" content="1950" />
            <meta property="rdfs:label" content="Mid-twentieth century" />
@@ -133,6 +174,10 @@ The Anthropocene Working Group is preparing the case for the definition of a new
        </span>
        : accordingly,
        <span resource="#sea_level_rise" typeof="time:ProperInterval">
+         <meta property="ac:linkedFrom" resource="#warming_of_lower_atmosphere" />
+         <meta property="ac:linkedFrom" resource="#increased_ocean_temperature" />
+         <meta property="ac:linkedFrom" resource="#mountain_glaciers_retreat" />
+         <meta property="ac:linkedFrom" resource="#ice_sheets_loss_of_mass" />
          <span property="time:hasBeginning" typeof="time:Instant">
            <meta property="time:inXSDgYear" content="1950" />
            <meta property="rdfs:label" content="Mid-twentieth century" />
@@ -148,12 +193,20 @@ The Anthropocene Working Group is preparing the case for the definition of a new
        variability, as the sea level decreases during glacial intervals and increases during interglacial phases. Comparing the tide-gauge
        and geological records shows that the
        <span resource="#increased_speed_of_sea_level_rise" typeof="time:Instant">
-         <meta property="time:inXSDgYear" content="2000" />
+         <meta property="ac:linkedFrom" resource="#mean_sea_level_computations" />
+         <meta property="ac:linkedFrom" resource="#sea_level_measurement_before_tide_gauges" />
+         <meta property="ac:linkedFrom" resource="#transition_of_sea_level_rise" />
+         <meta property="ac:linkedFrom" resource="#highest_average_sea_levels" />
+         <meta property="ac:linkedFrom" resource="#contribution_of_ice_sheets_loss_of_mass" />
+         <meta property="ac:linkedFrom" resource="#ocean_surface_layer_expansion" />
+         <meta property="ac:linkedFrom" resource="#australian_sea_level_rise" />
+         <meta property="time:inXSDgYear" content="1990" />
          <meta property="rdfs:label" content="Recently" />
          <meta property="ac:hasIndefiniteness" content="0.2" />
        speed of recent sea-level rise in the post-glacial interval has recently increased.
        </span>
        <span resource="#low_speed_of_sea_level_rise" typeof="time:ProperInterval">
+         <meta property="ac:label" content="Low rates of sea-level increase (average <1 mm/year)" />
          <span property="time:hasBeginning" typeof="time:Instant">
            <meta property="time:inXSDgYear" content="-5100" />
            <meta property="rdfs:label" content="7,000 years" />
@@ -167,6 +220,8 @@ The Anthropocene Working Group is preparing the case for the definition of a new
        Relatively low global rates of increase during the last 7,000 years (average <1 mm/year)
        </span>
        <span resource="#transition_of_sea_level_rise" typeof="time:Instant">
+         <meta property="ac:label" content="Rise in rates of sea-level increase (>3 mm/year)" />
+         <meta property="ac:linksTo" resource="#increased_speed_of_sea_level_rise" />
          <meta property="time:inXSDgYear" content="1900" />
          <meta property="rdfs:label" content="Twentieth century" />
          <meta property="ac:hasIndefiniteness" content="0.4" />
@@ -174,6 +229,8 @@ The Anthropocene Working Group is preparing the case for the definition of a new
        </span>
       (Masson-Delmotte et al. 2013).
        <span resource="#highest_average_sea_levels" typeof="time:Instant">
+         <meta property="ac:label" content="Sea levels are higher than at any time in the last 115,000 years" />
+         <meta property="ac:linksTo" resource="#increased_speed_of_sea_level_rise" />
          <meta property="time:inXSDgYear" content="2022" />
          <meta property="rdfs:label" content="Currently" />
        Global average sea levels are currently higher than at any time in the last 115,000 years, after the end of the previous interglacial phase.
@@ -184,6 +241,8 @@ The Anthropocene Working Group is preparing the case for the definition of a new
   We now know the direct causes of this change precisely because of the advent of satellite monitoring complemented by accurate surface
   devices (such as autonomous floats) in the ocean.
   <span resource="#absolute_ocean_height_measurements" typeof="time:ProperInterval">
+    <meta property="ac:linkedFrom" resource="#water_height_measurements" />
+    <meta property="ac:linkedFrom" resource="#launch_of_topex-poseidon" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1992" />
       <meta property="rdfs:label" content="1992" />
@@ -191,7 +250,8 @@ The Anthropocene Working Group is preparing the case for the definition of a new
   Measurements of the absolute height of the ocean surface
   </span>
   began with the
-  <span resource="launch_of_topex-poseidon" typeof="time:Instant">
+  <span resource="#launch_of_topex-poseidon" typeof="time:Instant">
+    <meta property="ac:linksTo" resource="#absolute_ocean_height_measurements" />
     <meta property="time:inXSDgYear" content="1992" />
     <meta property="rdfs:label" content="1992" />
   launch of TOPEX/Poseidon in 1992,
@@ -199,6 +259,8 @@ The Anthropocene Working Group is preparing the case for the definition of a new
   and were later enhanced by the GRACE satellite mission, which uses measurements of gravity to understand ice
   mass loss from ice sheets and glaciers.
   <span resource="#contribution_of_ice_sheets_loss_of_mass" typeof="time:ProperInterval">
+    <meta property="ac:linksTo" resource="#increased_speed_of_sea_level_rise" />
+    <meta property="ac:linkedFrom" resource="#ice_sheets_loss_of_mass" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1990" />
       <meta property="rdfs:label" content="Early 1990s" />
@@ -208,6 +270,8 @@ The Anthropocene Working Group is preparing the case for the definition of a new
   </span>
    since the early 1990s while
    <span resource="#ocean_surface_layer_expansion" typeof="time:ProperInterval">
+     <meta property="ac:linksTo" resource="#increased_speed_of_sea_level_rise" />
+     <meta property="ac:linkedFrom" resource="#warming_of_lower_atmosphere" />
      <span property="time:hasBeginning" typeof="time:Instant">
        <meta property="time:inXSDgYear" content="1990" />
        <meta property="rdfs:label" content="Early 1990s" />
@@ -224,26 +288,26 @@ The Anthropocene Working Group is preparing the case for the definition of a new
    2011 La Niña events (positive and negative deviations, respectively), as can be seen in the Global Mean Sea Level chart provided by the University of Colorado. Other processes, such as ocean dynamics, tectonics, or glacial isostatic adjustment are spatially
    variable and cause sea-level rise to vary (usually very slowly) in rate and magnitude between different regions. Local and
    regional changes in these climatic and geophysical factors produce significant deviations from a global average rate of
-   sea-level change (Masson-Delmotte et al. 2013).
-   <span resource="#illustration_of_ocean_dynamics" typeof="time:Instant">
-     <meta property="time:inXSDgYear" content="2022" />
-     <meta property="rdfs:label" content="Currently" />
-   These dynamics are well illustrated by the interactive graphics at the Permanent Service for Mean Sea Level (PSMSL) based at the National Oceanography Centre in Liverpool.
-   </span>
+   sea-level change (Masson-Delmotte et al. 2013). These dynamics are well illustrated by the interactive graphics at the Permanent Service for Mean Sea Level (PSMSL) based at the National Oceanography Centre in Liverpool.
 </p>
 
 <p id="P7">
   <span resource="#widespread_tide_gauges_in_europe" typeof="time:ProperInterval">
+    <meta property="ac:linksTo" resource="#tide_gauge_data_regional_variation" />
+    <meta property="ac:linksTo" resource="#sea_level_discrepancies" />
+    <meta property="ac:linkedFrom" resource="#automatic_tide_gauges_invention" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1930" />
       <meta property="rdfs:label" content="Beginning of the twentieth century" />
       <meta property="ac:hasIndefiniteness" content="0.2" />
-      <!-- <meta property="ac:hasConnection" resource="#automatic_tide_gauges_invention" /> -->
     </span>
 Europe is a continent well-furnished with tide gauges
 </span>
  since the beginning of the twentieth century.
  <span resource="#tide_gauge_data_regional_variation" typeof="time:ProperInterval">
+   <meta property="ac:label" content="European regional variation in tide gauge data" />
+   <meta property="ac:linkedFrom" resource="#widespread_tide_gauges_in_europe" />
+   <meta property="ac:linkedFrom" resource="#ice_age_rebound_effects" />
    <span property="time:hasBeginning" typeof="time:Instant">
      <meta property="time:inXSDgYear" content="1930" />
      <meta property="rdfs:label" content="Beginning of the twentieth century" />
@@ -258,6 +322,8 @@ Europe is a continent well-furnished with tide gauges
  </span>
  , primarily associated with
 <span resource="#ice_age_rebound_effects" typeof="time:ProperInterval">
+  <meta property="ac:linksTo" resource="#tide_gauge_data_regional_variation" />
+  <meta property="ac:linksTo" resource="#sea_level_discrepancies" />
   <span property="time:hasBeginning" typeof="time:Instant">
     <meta property="time:inXSDgYear" content="-13720" />
     <meta property="rdfs:label" content="Last ice age" />
@@ -267,17 +333,19 @@ Europe is a continent well-furnished with tide gauges
   </span>
   Using data from recent decades,
   <span resource="#sea_level_discrepancies" typeof="time:ProperInterval">
+    <meta property="ac:label" content="Reduction in sea-level fall in Scandinavia and increase in rise elsewhere" />
+    <meta property="ac:linkedFrom" resource="#ice_age_rebound_effects" />
+    <meta property="ac:linkedFrom" resource="#widespread_tide_gauges_in_europe" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1990" />
       <meta property="rdfs:label" content="Recent decades" />
       <meta property="ac:hasIndefiniteness" content="0.2" />
-      <!-- <meta property="ac:hasConnection" resource="#ice_age_rebound_effects" /> -->
     </span>
-  the reduction in sea-level fall in these areas and the increase in rise
-  elsewhere is clear.
+  the reduction in sea-level fall in these areas and the increase in rise elsewhere is clear.
   </span>
   By contrast,
   <span resource="#australian_lack_of_monitoring_sites" typeof="time:ProperInterval">
+    <meta property="ac:label" content="Lack of sea-level monitoring sites in Australia" />
     <span property="time:hasEnd" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1930" />
       <meta property="rdfs:label" content="Early decades of the twentieth century" />
@@ -287,6 +355,8 @@ Europe is a continent well-furnished with tide gauges
   because of the lack of monitoring sites.
   </span>
   <span resource="#australian_sea_level_rise" typeof="time:ProperInterval">
+    <meta property="ac:label" content="Unequivocal rising sea-level trends in Australia" />
+    <meta property="ac:linksTo" resource="#increased_speed_of_sea_level_rise" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1990" />
       <meta property="rdfs:label" content="Last three decades" />
@@ -298,15 +368,36 @@ Europe is a continent well-furnished with tide gauges
 </p>
 
 <p id="P8">
-  <span resource="#ipcc_projections" typeof="time:ProperInterval">
+  <span resource="#ipcc_projections" typeof="time:Instant">
+    <meta property="ac:linksTo" resource="#ipcc_projections_for_reduction" />
+    <meta property="ac:linksTo" resource="#ipcc_projections_for_growth" />
+    <meta property="time:inXSDgYear" content="2019" />
+    <meta property="rdfs:label" content="2019" />
+   The latest IPCC projections
+  </span>
+  (2019) predict an
+  <span resource="#ipcc_projections_for_reduction" typeof="time:ProperInterval">
+    <meta property="ac:label" content="28-57cm average sea-level rise for a drastic reduction in greenhouse effect emissions" />
+    <meta property="ac:linkedFrom" resource="#ipcc_projections" />
+    <meta property="ac:linkedFrom" resource="#carbon_consumption" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="2090" />
       <meta property="rdfs:label" content="End of the twenty-first century" />
       <meta property="ac:hasIndefiniteness" content="0.2" />
-    <!-- Would we want to show a potential future on the timeline as well? -->
     </span>
-   The latest IPCC projections (2019) predict an average rise in the sea level at the end of the twenty-first century of
-   28–57 cm in a scenario of drastic reduction in greenhouse effect emissions, and of 55–140 cm if there is growth in
+   average rise in the sea level at the end of the twenty-first century of
+   28–57 cm in a scenario of drastic reduction in greenhouse effect emissions
+   </span>
+   <span resource="#ipcc_projections_for_growth" typeof="time:ProperInterval">
+     <meta property="ac:label" content="55-140cm average sea-level rise for a growth in greenhouse effect emissions" />
+     <meta property="ac:linkedFrom" resource="#ipcc_projections" />
+     <meta property="ac:linkedFrom" resource="#carbon_consumption" />
+     <span property="time:hasBeginning" typeof="time:Instant">
+       <meta property="time:inXSDgYear" content="2090" />
+       <meta property="rdfs:label" content="End of the twenty-first century" />
+       <meta property="ac:hasIndefiniteness" content="0.2" />
+     </span>
+   , and of 55–140 cm if there is growth in
    emissions (Figure 1).
    </span>
    The spread within the forecasts reflects the uncertainties that exist about the future behaviour
@@ -319,6 +410,10 @@ Europe is a continent well-furnished with tide gauges
   Certain elements and their isotopes (atoms of the same element differing in mass) can be used as geochemical tracers of anthropogenic
   impact. Our
   <span resource="#ice_sheets_understanding" typeof="time:ProperInterval">
+    <meta property="ac:linksTo" resource="#ice_sheets_loss_of_mass" />
+    <meta property="ac:linksTo" resource="#long-term_stratigraphy_of_quaternary" />
+    <meta property="ac:linkedFrom" resource="#harold_urey_work" />
+    <meta property="ac:linkedFrom" resource="#temperature_effect_demonstration" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1947" />
       <meta property="rdfs:label" content="Late 1940s" />
@@ -328,6 +423,7 @@ Europe is a continent well-furnished with tide gauges
   </span>
   has come from the geochemistry of oxygen isotopes, originating from the
   <span resource="#harold_urey_work" typeof="time:ProperInterval">
+   <meta property="ac:linksTo" resource="#ice_sheets_understanding" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1947" />
       <meta property="rdfs:label" content="Late 1940s" />
@@ -348,6 +444,9 @@ Europe is a continent well-furnished with tide gauges
   values which, during an ice age, lead to a higher δ18O value of the remaining seawater. The larger the mass of ice, the larger this
   ice-volume effect.
   <span resource="#temperature_effect_demonstration" typeof="time:Instant">
+    <meta property="ac:label" content="Sir Nicholas Shackleton's ice-volume effect demonstration from deep ocean cores" />
+    <meta property="ac:linksTo" resource="#ice_sheets_understanding" />
+    <meta property="ac:linksTo" resource="#long-term_stratigraphy_of_quaternary" />
     <meta property="time:inXSDgYear" content="1967" />
     <meta property="rdfs:label" content="1967" />
   When considering oxygen in seashells, there is also a temperature effect on the composition of precipitated calcium
@@ -355,6 +454,9 @@ Europe is a continent well-furnished with tide gauges
   </span>
   in 1967. As a result,
   <span resource="#long-term_stratigraphy_of_quaternary" typeof="time:ProperInterval">
+    <!-- long label, but maybe necessary for the reader's understanding? -->
+    <meta property="ac:linkedFrom" resource="#temperature_effect_demonstration" />
+    <meta property="ac:linkedFrom" resource="#ice_sheets_understanding" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1967" />
       <meta property="rdfs:label" content="1967" />
@@ -372,22 +474,23 @@ Although a (small) oxygen isotope (δ18O) signal does mark the base of our curre
        an assemblage of temperature proxies is used, rather than just oxygen isotopes, to establish Holocene temperature archives. When
        it comes to the mid-twentieth century
        <span resource="#proposed_start_of_anthropocene" typeof="time:Instant">
+         <meta property="ac:linkedFrom" resource="#production_and_use_of_fertilizer" />
          <meta property="time:inXSDgYear" content="1950" />
          <meta property="rdfs:label" content="Mid-twentieth century" />
          <meta property="ac:hasIndefiniteness" content="0.2" />
-         <!-- not actually on the timeline, but useful to show? -->
        proposed start for the Anthropocene
        </span>
        , there is no discrete (δ18O) signal in oxygen isotope
        archives, even in the relatively sensitive Antarctic records. In fact, the gradual increase in the rate of temperature change makes
-       it difficult to define an Anthropocene boundary on the basis of any geochemical proxy for temperature. This problem is also the
+       it difficult to define an Anthropocene boundary on the basis of any geochemical proxy for temperature. This problem is also the basis for the
        <span resource="#convincing_of_warming" typeof="time:ProperInterval">
+         <meta property="ac:linkedFrom" resource="#gradual_warming" />
          <span property="time:hasEnd" typeof="time:Instant">
            <meta property="time:inXSDgYear" content="2022" />
            <meta property="rdfs:label" content="Now" />
            <meta property="ac:hasIndefiniteness" content="0.2" />
          </span>
-       basis for the struggle (now largely won) to convince politicians and the public of the reality of warming
+         struggle (now largely won) to convince politicians and the public of the reality of warming
        </span>
        (also known as the “boiling frog syndrome” of inattentiveness to gradual risk increases).
 </p>
@@ -395,6 +498,8 @@ Although a (small) oxygen isotope (δ18O) signal does mark the base of our curre
 <p id="P11">
 The
  <span resource="#increasing_rate_of_change_in_temperature" typeof="time:ProperInterval">
+  <meta property="ac:linksTo" resource="#change_in_ice_core_records" />
+  <meta property="ac:linkedFrom" resource="#carbon_consumption" />
   <span property="time:hasBeginning" typeof="time:Instant">
     <meta property="time:inXSDgYear" content="1990" />
     <meta property="rdfs:label" content="Recent decades" />
@@ -404,6 +509,7 @@ The
   </span>
   in recent decades does, however, lead to
   <span resource="#change_in_ice_core_records" typeof="time:ProperInterval">
+   <meta property="ac:linkedFrom" resource="#increasing_rate_of_change_in_temperature" />
    <span property="time:hasBeginning" typeof="time:Instant">
      <meta property="time:inXSDgYear" content="1990" />
      <meta property="rdfs:label" content="Recent decades" />
@@ -418,6 +524,7 @@ The
   regions of Antarctica that exhibit somewhat different climate signals (Figure 2). Temperature reconstructions based on the isotopic
   data showed warming in recent years in three of these regions. In each case the
   <span resource="#regional_temperature_increase" typeof="time:ProperInterval">
+    <meta property="ac:label" content="Temperature increase in some regions of Antarctica" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1920" />
       <meta property="rdfs:label" content="Around 1920" />
@@ -433,24 +540,39 @@ The
   began around 1920 and continued
   to the latest available measurements (ca. 2005) with rates of warming between 1 and 2°C/100 years. These increases followed
   <span resource="#substantial_temperature_decline" typeof="time:ProperInterval">
+    <meta property="ac:label" content="Substantial temperature decline in some regions of Antarctica" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="20" />
       <meta property="rdfs:label" content="Previous 2,000 years" />
       <meta property="ac:hasIndefiniteness" content="0.6" />
     </span>
     <span property="time:hasEnd" typeof="time:Instant">
-      <meta property="time:inXSDgYear" content="2020" />
+      <meta property="time:inXSDgYear" content="1920" />
       <meta property="rdfs:label" content="Previous 2,000 years" />
       <meta property="ac:hasIndefiniteness" content="0.2" />
     </span>
   substantial declines in temperature
   </span>
-  that lasted over the previous 2,000 years. However, relative to the variability of the climate signal in the
-  rest of Antarctica for the past 2,000 years, only the rise in temperature of the Antarctic Peninsula is unusual. It seems reasonable
+  that lasted over the previous 2,000 years. However, relative to the
+  <span resource="#antarctica_climate_signal_variability" typeof="time:ProperInterval">
+    <span property="time:hasBeginning" typeof="time:Instant">
+      <meta property="time:inXSDgYear" content="20" />
+      <meta property="rdfs:label" content="Past 2,000 years" />
+      <meta property="ac:hasIndefiniteness" content="0.6" />
+    </span>
+    <span property="time:hasEnd" typeof="time:Instant">
+      <meta property="time:inXSDgYear" content="2020" />
+      <meta property="rdfs:label" content="Past 2,000 years" />
+      <meta property="ac:hasIndefiniteness" content="0.2" />
+    </span>
+  variability of the climate signal in the rest of Antarctica
+  </span>
+  for the past 2,000 years, only the rise in temperature of the Antarctic Peninsula is unusual. It seems reasonable
   to assume that because of its more northerly aspect, the Peninsula is subject to a slightly different climatic regime than most of the
   continent, and one that is closely connected to the global warming identified elsewhere on the planet. Close inspection of the isotopic
   temperature signal for the Peninsula suggests
-  <span resource="#sugggested_increase_in_antartctic_peninsula_temperatures" typeof="time:ProperInterval">
+  <span resource="#sugggested_increase_in_antarctic_peninsula_temperatures" typeof="time:ProperInterval">
+    <meta property="ac:label" content="Greater warming in Antarctic Peninsula" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1970" />
       <meta property="rdfs:label" content="About 1970" />
@@ -461,6 +583,8 @@ The
   after about 1970 than between 1920 and 1970, much as is found in the global
   surface temperature signal. It seems likely, then, that the Peninsula temperature signal reflects
   <span resource="#gradual_warming" typeof="time:ProperInterval">
+    <meta property="ac:linksTo" resource="#convincing_of_warming" />
+    <meta property="ac:label" content="Gradual warming in Antarctic Peninsula" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1900" />
       <meta property="rdfs:label" content="after 1900" />
@@ -515,6 +639,8 @@ A contrasting example is provided by sulphur in the atmosphere. It is released n
   the form of microscopic aerosol particles, the abundance of sulphur in geological archives and its stable isotope composition
   show regional variations (Fairchild 2019). For example,
   <span resource="#sulphur_isotope_regional_variations" typeof="time:ProperInterval">
+    <meta property="ac:label" content="Rise and fall of sulphur in atmosphere reflecting changes in industrial activity" />
+    <meta property="ac:linkedFrom" resource="#carbon_consumption" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1950" />
       <meta property="rdfs:label" content="Mid-twentieth century" />
@@ -533,6 +659,7 @@ A contrasting example is provided by sulphur in the atmosphere. It is released n
 The modern nitrogen cycle is a typical anthrobiogeochemical cycle because human activities have led to substantial changes in
        natural processes governing nitrogen fixation, its bioavailability, and its overall fate in the environment. The
        <span resource="#production_and_use_of_fertilizer" typeof="time:ProperInterval">
+         <meta property="ac:linksTo" resource="#proposed_start_of_anthropocene" />
          <span property="time:hasBeginning" typeof="time:Instant">
            <meta property="time:inXSDgYear" content="1900" />
            <meta property="rdfs:label" content="Beginning of the twentieth century" />
@@ -604,6 +731,7 @@ Nitrogen has two stable isotopes, 14N and 15N, with 14N making up 99.63 percent 
        </span>
        were recorded in the skeletons dated from the mid-Holocene to the 1980s, followed by an
        <span resource="#pearl_river_15n_increase" typeof="time:ProperInterval">
+         <meta property="ac:label" content="increase to >13‰ in δ15N values" />
          <span property="time:hasBeginning" typeof="time:Instant">
            <meta property="time:inXSDgYear" content="1987" />
            <meta property="rdfs:label" content="1987" />
@@ -612,11 +740,11 @@ Nitrogen has two stable isotopes, 14N and 15N, with 14N making up 99.63 percent 
           <meta property="time:inXSDgYear" content="1993" />
           <meta property="rdfs:label" content="1993" />
        </span>
-       <!-- <meta property="ac:hasConnection" resource="#15N_enrichment" /> -->
        increase to >13‰
        </span>
        during 1987–1993 CE and later a
        <span resource="#pearl_river_15n_decline" typeof="time:ProperInterval">
+         <meta property="ac:label" content="decline to the pre-1980s δ15N values" />
          <span property="time:hasBeginning" typeof="time:Instant">
            <meta property="time:inXSDgYear" content="1993" />
            <meta property="rdfs:label" content="Later" />
@@ -645,8 +773,12 @@ Trace metals are integral parts of natural element cycles and, before human inte
   toxic element, making the monitoring of Pb contamination as well as searches for its provenance a critical issue in geological,
   environmental, and public research. Beginning as early as thousands of years BCE, the
   <span resource="#anthropogenic_trace_metals" typeof="time:ProperInterval">
+    <meta property="ac:label" content="increased presence of Anthropogenic trace metals in the environment began with ore mining" />
+    <meta property="ac:linksTo" resource="#phoenician_and_greek_mining" />
+    <meta property="ac:linksTo" resource="#industrial_revolution_lead_production" />
+    <meta property="ac:linksTo" resource="#australian_broken_hill_lead_signal" />
     <span property="time:hasBeginning" typeof="time:Instant">
-      <meta property="time:inXSDgYear" content="-10000" />
+      <meta property="time:inXSDgYear" content="-5000" />
       <meta property="rdfs:label" content="Thousands of years BCE" />
       <meta property="ac:hasIndefiniteness" content="0.6" />
     </span>
@@ -671,13 +803,22 @@ Many different techniques are used to determine total Pb concentrations in sampl
 <p id="P19">
 The
 <span resource="#earliest_aerosol_pb_peak" typeof="time:Instant">
-  <meta property="time:inXSDgYear" content="-978" />
+  <meta property="ac:linkedFrom" resource="#phoenician_and_greek_mining" />
+  <meta property="time:inXSDgYear" content="-1000" />
   <meta property="rdfs:label" content="Some 3,000 years ago" />
   <meta property="ac:hasIndefiniteness" content="0.6" />
   earliest regional to supra-regional peaks of aerosol Pb (a by-product of silver mining and smelting processes)
   </span>
-  can be identified in Northern Hemisphere ice cores from Greenland and Arctic Canada, and are linked to Phoenician-Greek mining
-  and smelting activities some 3,000 years ago (Figure 5).
+  can be identified in Northern Hemisphere ice cores from Greenland and Arctic Canada, and are linked to
+  <span resource="#phoenician_and_greek_mining" typeof="time:Instant">
+    <meta property="ac:linksTo" resource="#earliest_aerosol_pb_peak" />
+    <meta property="ac:linkedFrom" resource="#anthropogenic_trace_metals" />
+    <meta property="time:inXSDgYear" content="-1000" />
+    <meta property="rdfs:label" content="Some 3,000 years ago" />
+    <meta property="ac:hasIndefiniteness" content="0.6" />
+  Phoenician-Greek mining and smelting activities
+  </span>
+   some 3,000 years ago (Figure 5).
 <span resource="#earliest_aerosol_pb_peak">
   This minor peak in some environmental archives of the Northern Hemisphere
   was identified as a possible stratigraphic marker for an early Anthropocene
@@ -687,7 +828,6 @@ The
 
 <p id="P20">
 Later, silver, and thus also lead, mining and usage increased substantially during Roman times, which lead to significant human
-       <!-- Roman times timeframe not explicitly denoted. Tag or no tag? -->
        health problems. This usage is recorded in archives by a widespread lead peak, more pronounced than the earlier one, and
        is recognized in ice cores, estuaries, bogs, and remote lakes of the Northern Hemisphere; a Spanish source for the lead was
        revealed by isotope studies (Wagreich and Draganits 2018).
@@ -695,10 +835,11 @@ Later, silver, and thus also lead, mining and usage increased substantially duri
 
 <p id="P21">
 Global lead production and usage only began to rise again with silver production in medieval times.
-<!-- Medieval times timeframe not explicitly denoted. Tag or no tag? -->
   This was followed by an even larger rise due to silver mining and production in the New World, with abundant production and use punctuated by plagues and wars.
   The
   <span resource="#industrial_revolution_lead_production" typeof="time:ProperInterval">
+    <meta property="ac:linksTo" resource="#australian_broken_hill_lead_signal" />
+    <meta property="ac:linkedFrom" resource="#anthropogenic_trace_metals" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1850" />
       <meta property="rdfs:label" content="Around 1850–1890 CE" />
@@ -711,8 +852,22 @@ Global lead production and usage only began to rise again with silver production
     </span>
   Industrial Revolution brought a major rise in lead production and left a peak in archives
   </span>
-  around 1850–1890 CE that was much larger than the Roman peak. The Australian Broken Hill lead signal beginning around the 1850s onward formed the
+  around 1850–1890 CE that was much larger than the Roman peak. The
+  <span resource="#australian_broken_hill_lead_signal" typeof="time:ProperInterval">
+    <meta property="ac:linksTo" resource="#first_antarctic_lead_peak" />
+    <meta property="ac:linkedFrom" resource="#industrial_revolution_lead_production" />
+    <meta property="ac:linkedFrom" resource="#anthropogenic_trace_metals" />
+    <span property="time:hasBeginning" typeof="time:Instant">
+      <meta property="time:inXSDgYear" content="1850s" />
+      <meta property="rdfs:label" content="Around the 1850s" />
+      <meta property="ac:hasIndefiniteness" content="0.2" />
+    </span>
+  Australian Broken Hill lead signal
+  </span>
+  beginning around the 1850s onward formed the
   <span resource="#first_antarctic_lead_peak" typeof="time:ProperInterval">
+    <meta property="ac:label" content="first lead peak in Antarctic ice cores" />
+    <meta property="ac:linkedFrom" resource="#australian_broken_hill_lead_signal" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1850" />
       <meta property="rdfs:label" content="Around the 1850s" />
@@ -721,6 +876,8 @@ Global lead production and usage only began to rise again with silver production
   first peak in Antarctic ice cores.
   </span>
   <span resource="#final_lead_usage_peak" typeof="time:Instant">
+    <meta property="ac:label" content="Final lead peak usage and global environmental contamination" />
+    <meta property="ac:linkedFrom" resource="#lead_as_petrol_additive" />
     <meta property="time:inXSDgYear" content="1950" />
     <meta property="rdfs:label" content="Mid-twentieth century" />
     <meta property="ac:hasIndefiniteness" content="0.2" />
@@ -728,13 +885,15 @@ Global lead production and usage only began to rise again with silver production
  </span>
   was reached during the mid-twentieth century, when
   <span resource="#lead_as_petrol_additive" typeof="time:Instant">
+    <meta property="ac:linksTo" resource="#final_lead_usage_peak" />
+    <meta property="ac:linksTo" resource="#carbon_consumption" />
     <meta property="time:inXSDgYear" content="1950" />
     <meta property="rdfs:label" content="Mid-twentieth century" />
     <meta property="ac:hasIndefiniteness" content="0.2" />
-    <!-- <meta property="ac:hasConnection" resource="#final_lead_usage_peak" /> -->
   lead was used as an antiknock additive for petrol in the increasingly fossil-fuel driven transport system.
   </span>
   <span resource="#final_lead_usage_peak">
+    <meta property="ac:label" content="This last peak provides a marker for the Great Acceleration." />
   This last peak, being in several geological archives an order of magnitude higher than the former more regional peaks of lead usage, provides a marker
   for the Great Acceleration.
   </span>
@@ -744,6 +903,8 @@ Global lead production and usage only began to rise again with silver production
   </span>
   Due to the eventual recognition of its toxic behaviour,
   <span resource="#lead_ban" typeof="time:ProperInterval">
+    <meta property="ac:linksTo" resource="#pb_expulsion_decline" />
+    <meta property="ac:linksTo" resource="#current_lead_contamination_values" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1970" />
       <meta property="rdfs:label" content="From the 1970s" />
@@ -765,8 +926,19 @@ Global lead production and usage only began to rise again with silver production
     </span>
   Pb expulsion, then, began to increase
   </span>
-  in the 1920s, peaked in the late 1960s, and
+  in the 1920s,
+  <span resource="#pb_expulsion_peak" typeof="time:Instant">
+    <meta property="ac:label" content="Pb expulsion peaked" />
+    <meta property="time:inXSDgYear" content="1950" />
+    <meta property="rdfs:label" content="late 1960s" />
+    <meta property="ac:hasIndefiniteness" content="0.2" />
+  peaked in the late 1960s
+  </span>
+  , and
   <span resource="#pb_expulsion_decline" typeof="time:ProperInterval">
+    <meta property="ac:label" content="Pb expulsion declined" />
+    <meta property="ac:linksTo" resource="#current_lead_contamination_values" />
+    <meta property="ac:linkedFrom" resource="#lead_ban" />
     <span property="time:hasBeginning" typeof="time:Instant">
       <meta property="time:inXSDgYear" content="1977" />
       <meta property="rdfs:label" content="Late 1970s" />
@@ -774,8 +946,10 @@ Global lead production and usage only began to rise again with silver production
     </span>
   declined from the late 1970s onward,
   </span>
-  arriving at today’s 
+  arriving at today’s
   <span resource="#current_lead_contamination_values" typeof="time:Instant">
+    <meta property="ac:linkedFrom" resource="#lead_ban" />
+    <meta property="ac:linkedFrom" resource="#pb_expulsion_decline" />
     <meta property="time:inXSDgYear" content="2022" />
     <meta property="rdfs:label" content="Today" />
     <meta property="ac:hasIndefiniteness" content="0.2" />
