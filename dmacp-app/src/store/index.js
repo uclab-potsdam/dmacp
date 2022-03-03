@@ -71,9 +71,9 @@ export default new Vuex.Store({
 
       const promise2 = axios.get(paintboxUrl)
       // Remove when loading from ac-frontend
-      const essaySource = state.localDev === true ? localEssay : promise1
+      // const essaySource = state.localDev === true ? localEssay : promise1
 
-      Promise.all([essaySource, promise2]).then((responses) => {
+      Promise.all([promise1, promise2]).then((responses) => {
           let essay = responses[0]
           let paintbox = responses [1]
           let parsedData = []

@@ -1,3 +1,7 @@
+$pure-white: white;
+$default--gray: #C4C4C4;
+$dark--gray: #2c3e50;
+
 #app, body, svg {
     color: #2c3e50;
 }
@@ -19,7 +23,7 @@ svg {
     }
 
     .entity-marker {
-        fill: #e0e0e0;
+        fill: $pure-white;
         stroke: $default--primary;
         stroke-width: 1;
         transition: all 0.4s;
@@ -35,7 +39,7 @@ svg {
 
     .entity-selected {
         fill: transparent;
-        stroke: #e0e0e0;
+        stroke: $pure-white;
     }
 
     .disabled-on-compress {
@@ -66,7 +70,7 @@ svg {
         }
 
         .marker-stroke {
-            fill: #e0e0e0;
+            fill: $pure-white;
         }
     }
 
@@ -125,6 +129,8 @@ svg {
     path.link {
         transition: all 0.5s;
         fill: none;
+        stroke-width: 1.5;
+        mix-blend-mode: multiply;
     }
 
     .is-end {
@@ -207,7 +213,7 @@ svg {
 
         circle {
             stroke: $default--primary;
-            fill: #e0e0e0;
+            fill: $pure-white;
         }
 
         .is-end {

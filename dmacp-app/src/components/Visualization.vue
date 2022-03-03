@@ -25,7 +25,7 @@
 <script>
 import { mapState, mapActions } from 'vuex'
 import { scaleSymlog, scaleLinear } from 'd3-scale'
-import { extent, min, max, quantile, bin, mode, mean } from 'd3-array'
+import { extent, min, max, bin, mode } from 'd3-array'
 import * as simplestat from 'simple-statistics'
 import Dots from './visualization-components/Dots.vue'
 import Axis from './visualization-components/Axis.vue'
@@ -146,19 +146,6 @@ return (x) => {
       const logScaleTicks = scale.ticks(5)
       logScaleTicks.push(this.xValuesQuantile)
       this.xTicks = logScaleTicks
-    },
-    calcTypeOfData (ar) {
-      var counter = [0, 0, 0];
-      ar.forEach(function(a) {
-        if (a < 0)
-          counter[0]++;
-        else if (a > 0)
-          counter[2]++;
-        else
-          counter[1]++;
-      });
-      console.log(counter)
-      return counter;
     }
   },
   updated () {

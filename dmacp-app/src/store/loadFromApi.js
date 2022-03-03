@@ -116,7 +116,7 @@ export default async function loadFromApi(data, toolboxData) {
 
     // Parse and merge data from the paintbox
     const parsedPaintboxData = parsePaintboxData(toolboxData)
-    //arrayOfData.push(parsedPaintboxData)
+    arrayOfData.push(parsedPaintboxData)
     newObj[titleString] = arrayOfData
     console.log(newObj)
     return newObj
