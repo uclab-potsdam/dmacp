@@ -23,20 +23,30 @@
         The emergence of technofossils
       </h3>
       <p id="P1">
-        Technofossils—human-made artifacts that can become part of
-        <span  resource="#future_geology">
-          Earth’s far-future geology
-        </span>
-          <!-- So here, "far future:" maybe we could look into the paper cited?
-        presumably, it has a clear definition of "far future." to discuss. Update: no hard dates given in the cited paper.
-        Should I cut the tag? -->
-        (Zalasiewicz et al. 2014)—
-        <span resource="#technofossils" typeof="time:ProperInterval">
-          have long existed, reaching back to the flint and bone tools of our distant ancestors.
+        Technofossils—human-made artifacts that can become part of Earth’s
+        far-future geology (Zalasiewicz et al. 2014)—have long existed, reaching back to
+          <!-- Tool use year from https://www.mpg.de/research/oldest-evidence-human-stone-tool-use -->
+        <span resource="#technofossil_earliest" typeof="time:Instant">
+          <meta property="time:inXSDgYear" content="-2497978" />
+          <meta property="rdfs:label" content="2.5 million years ago" />
+          <meta property="ac:hasIndefiniteness" content="1" />
+          <meta property="ac:label" content="earliest human-ancestor tools" />
+          the flint and bone tools of our distant ancestors.
         </span>
          Over time, they have become more abundant and
         sophisticated, as shown by the archaeological record. And,
-        <span resource="#technofossils" typeof="time:ProperInterval">
+        <span resource="#technofossil_acceleration" typeof="time:ProperInterval">
+          <span property="time:hasBeginning" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="1950" />
+            <meta property="rdfs:label" content="1950" />
+            <meta property="ac:hasIndefiniteness" content="0.2" />
+          </span>
+          <span property="time:hasEnd" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="2022" />
+            <meta property="rdfs:label" content="2022" />
+            <meta property="ac:hasIndefiniteness" content="0.2" />
+          </span>
+          <meta property="ac:label" content="mid-century technofossil proliferation" />
           since the mid-twentieth century, technofossils have gone through a phase of particularly explosive growth in abundance and diversity,
         </span>
         many being made of novel materials such as plastics.
@@ -48,20 +58,73 @@
 
       <p id="P2">
         To understand the phenomenon of technofossils, we need to go further back in time to set the framework (or multiple
-        frameworks). The very word “technofossil” is a reframing of the venerable term “artifact” to emphasize that many of
+        frameworks). The very word “technofossil” is a reframing of the venerable term “artifact” to emphasize that many of these objects will enter the fossil record, and
         <span resource="#technofossils" typeof="time:ProperInterval">
-          these objects will enter the fossil record, and may be used—in the near or far future—like the traditional zone fossils,
+          may be used—in the near or far future—like the traditional zone fossils,
         </span>
-        such as trilobites and ammonites, that paleontologists use to age-date strata. Moreover, as these objects enter the
+        such as
+        <span resource="#trilobites" typeof="time:ProperInterval">
+          <span property="time:hasBeginning" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="-520997978" />
+            <meta property="rdfs:label" content="521 million years ago" />
+            <meta property="ac:hasIndefiniteness" content="1" />
+          </span>
+          <span property="time:hasEnd" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="-251897978" />
+            <meta property="rdfs:label" content="251.9 million years ago" />
+            <meta property="ac:hasIndefiniteness" content="1" />
+          </span>
+          <meta property="ac:label" content="trilobite temporal range" />
+        <!-- trilobites dates   521–251.9 Ma source: https://doi.org/10.1666%2F0022-3360%282002%29076%3C0692%3APAOSBE%3E2.0.CO%3B2 -->
+        trilobites
+        </span>
+        and
+        <span resource="#ammonites" typeof="time:ProperInterval">
+          <span property="time:hasBeginning" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="-408997978" />
+            <meta property="rdfs:label" content="409 million years ago" />
+            <meta property="ac:hasIndefiniteness" content="0.2" />
+          </span>
+          <span property="time:hasEnd" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="-64997978" />
+            <meta property="rdfs:label" content="65 million years ago" />
+            <meta property="ac:hasIndefiniteness" content="0.2" />
+          </span>
+          <meta property="ac:label" content="ammonite temporal range" />
+        <!-- Ammonite dates   409–65 Ma source: https://doi.org/10.1007%2F978-94-017-9633-0_19 -->
+        ammonites
+        </span>
+        , that paleontologists use to age-date strata. Moreover, as these objects enter the
         fossil record, one can bring the dark arts of taphonomy to bear, forward-modeling how, and in what form, these objects
         will survive within strata over geological timescales. This, though, is not a simple exercise in telling catchy
         stories of the far future. The very act of fossilization means passing through, and interacting with, the living,
         sensitive “critical zone” that surrounds our planet. A plastic bag, for instance, might ultimately
         <span resource="#plastic_bag" typeof="time:ProperInterval">
+          <span property="time:hasBeginning" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="1965" />
+            <meta property="rdfs:label" content="1965" />
+          </span>
+          <span property="time:hasEnd" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="5002022" />
+            <meta property="rdfs:label" content="a few million years from now" />
+            <meta property="ac:hasIndefiniteness" content="1" />
+          </span>
+          <meta property="ac:label" content="lifespan of the first plastic bags" />
            form a complex flattened impression in a bed of shale,
         </span>
         reminiscent of (say) some exquisitely preserved
         <span resource="#jellyfish_fossil" typeof="time:ProperInterval">
+          <span property="time:hasBeginning" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content=" -540997978" />
+            <meta property="rdfs:label" content="540 million years ago" />
+          </span>
+          <span property="time:hasEnd" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="-485397978" />
+            <meta property="rdfs:label" content="485.4 million years ago" />
+            <meta property="ac:hasIndefiniteness" content="1" />
+          </span>
+          <meta property="ac:label" content="Cambrian jellyfish" />
+          <!-- Cambrian dates   541.0 ± 1.0 – 485.4 ± 1.9 Ma source: http://www.stratigraphy.org/index.php/ics-chart-timescale -->
           jellyfish from Cambrian times.
         </span>
         But, in passing from the surface to its ultimate burial, the bag may have choked a seagull, trapped some marine worms
