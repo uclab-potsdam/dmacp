@@ -131,7 +131,17 @@
         on the sea floor and, as a novel barrier to water and oxygen, formed different microbial micro-communities on its lower
         and upper surfaces that would react differently to the conditions of ever-deeper burial—before that subterranean life
         eventually winks out,
-        <span resource="#plastic_bag" typeof="time:ProperInterval">
+        <span resource="#plastic_bag_fossilization" typeof="time:ProperInterval">
+          <span property="time:hasBeginning" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="2022" />
+            <meta property="rdfs:label" content="Now" />
+          </span>
+          <span property="time:hasEnd" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="2002022" />
+            <meta property="rdfs:label" content="millions of years later" />
+            <meta property="ac:hasIndefiniteness" content="1" />
+          </span>
+            <meta property="ac:label" content="A plastic bag's fossilization process" />
           millions of years later,
         </span>
         several hundred meters below the sea floor. Technofossilization is therefore an active process, making its own living
@@ -151,10 +161,33 @@
         encouraging cross-collaborative discussions which would help us understand this enormous and rapidly evolving phenomenon.
         Archaeology has a long tradition and practice of collecting, classifying, interpreting, and curating artifacts of all kinds,
         a tradition almost entirely lacking in geology (except when collaborating—with archaeologists, naturally—on
+          <!-- Pleistocene and Holcene dates source: http://www.stratigraphy.org/ICSchart/ChronostratChart2020-01.pdf
+        note I am using indefiniteness per the uncertainty interval provided by the chart-->
         <span resource="#pleistocene" typeof="time:ProperInterval">
-          Pleistocene and
+          <span property="time:hasBeginning" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content=" -2577978" />
+            <meta property="rdfs:label" content="2.58 million years ago" />
+            <meta property="ac:hasIndefiniteness" content="0.6" />
+          </span>
+          <span property="time:hasEnd" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="-9678" />
+            <meta property="rdfs:label" content="11,700 years ago" />
+            <meta property="ac:hasIndefiniteness" content="0.4" />
+          </span>
+          Pleistocene
         </span>
+         and
         <span resource="#holocene" typeof="time:ProperInterval">
+          <span property="time:hasBeginning" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content=" -9628" />
+            <meta property="rdfs:label" content=" 11,650 years ago" />
+            <meta property="ac:hasIndefiniteness" content="0.4" />
+          </span>
+          <span property="time:hasEnd" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="2022" />
+            <meta property="rdfs:label" content="until present" />
+            <meta property="ac:hasIndefiniteness" content="0.2" />
+          </span>
           Holocene
         </span>
         strata). This knowledge and experience could usefully inform a paleontologist’s approach, whose natural reflex might be to try out
@@ -167,15 +200,22 @@
         committees in nomenclatural changes for individual species. Taxonomic systems, however, reflect evolutionary patterns, and
         technofossil evolution differs from biological evolution, as we discuss below.
       </p>
-
       <p id="P4">
        The archaeologists’ experience and traditions with this kind of material provide an alternative and complementary platform for
-        coping with this challenge. And archaeology, while traditionally tasked with
-        <span resource="#archeology_traditional_focus" typeof="time:ProperInterval">
-          exploring the human world of the past—from ancient times prior to literacy up to historical times
-        </span>
-        <span resource="#archeology_anthropocene_focus" typeof="time:ProperInterval">
-          —now looks increasingly at the contemporary past,
+        coping with this challenge. And archaeology, while traditionally tasked with exploring the human world of the
+        past—from ancient times prior to literacy up to historical times—now looks increasingly at
+        <!-- had previously thought about tagging "archeology" also—thoughts? -->
+        <span resource="#contemporary_past" typeof="time:ProperInterval">
+          <span property="time:hasBeginning" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="1950" />
+            <meta property="rdfs:label" content="Now" />
+          </span>
+          <span property="time:hasEnd" typeof="time:Instant">
+            <meta property="time:inXSDgYear" content="2022" />
+            <meta property="rdfs:label" content="Now" />
+          </span>
+            <meta property="ac:label" content="Great Acceleration" />
+            the contemporary past,
         </span>
         when the scale, speed, and nature of anthropogenic change accelerated. This focus has led to pioneering archaeologically-based
         or -influenced studies of contemporary “material culture”—for example, the analysis of the kinds of waste accumulating in landfill
