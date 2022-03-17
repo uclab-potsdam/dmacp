@@ -13,6 +13,7 @@
       Changes in the environment affect all living organisms. The reaction of biota to these changes depends on both their character and scale, and on the ability of an organism or a group of organisms to tolerate them.
       <span resource="#environmental_changes_acceleration" typeof="time:ProperInterval">
         <meta property="ac:linksTo" resource="#anthropocene_epoch" />
+        <meta property="ac:linksTo" resource="#slower_environmental_changes" />
         <meta property="ac:linkedFrom" resource="#metal_pollution_acceleration" />
         <meta property="ac:linkedFrom" resource="#ph_precipitation_value_drop" />
         <meta property="ac:linkedFrom" resource="#industrial_nitrogen_and_phosphorus" />
@@ -36,6 +37,7 @@
       </span>
       , compared to the
       <span resource="#slower_environmental_changes" typeof="time:ProperInterval">
+        <meta property="ac:linkedFrom" resource="#environmental_changes_acceleration" />
         <span property="time:hasEnd" typeof="time:Instant">
           <meta property="time:inXSDgYear" content="1960" />
           <meta property="rdfs:label" content="Before the mid-twentieth century" />
@@ -120,11 +122,13 @@
 
     <p id="P5" prefix="time: http://www.w3.org/2006/time# ac: http://anthropocene-curriculum.org/tbd rdfs: http://www.w3.org/2000/01/rdf-schema#">
       Ocean acidification, caused by an increase in atmospheric CO2 emissions, changes the carbonate system which creates a risk of marine biodiversity loss, especially for those organisms that build shells, tests, and skeletons of calcium carbonate, which include corals, mollusks, echinoderms, crustose algae, and foraminifers. Ocean acidification events have had a profound impact on organisms during Earth’s history, and the
+      <!-- Could "Ocean acidification events" possibly be tagged as an interval with end point 2022 and open beginning? -->
       <span resource="#ocean_ph_value" typeof="time:Instant">
         <meta property="time:inXSDgYear" content="2022" />
         <meta property="rdfs:label" content="Current" />
         current pH value of surface ocean water (8.1) is probably the lowest
       </span>
+      <!-- Wondering if the above can be connected to anything else so it's not just free floating? -->
       it has been for the last two million years.
       <!-- Ah, this is annoying that we don't have the means to catch this reference to the last two million years. I also wouldn't know how though -->
     </p>
@@ -135,8 +139,10 @@
         <meta property="ac:linkedFrom" resource="#ion_water_concentration" />
         <span property="time:hasBeginning" typeof="time:Instant">
           <meta property="time:inXSDgYear" content="1986" />
+          <meta property="rdfs:label" content="1986" />
           <!-- Did you look this date up? -->
           <!-- I did, I thought this paragraph would be a bit sparse with tagging otherwise. Should we remove it? -->
+          <!-- If there is a definite and universally acknowledged date, I'd say let's use it! -->
         </span>
         remediation of the abandoned Iron Mountain Mine (California, USA)
       </span>
@@ -150,6 +156,7 @@
         <meta property="ac:linkedFrom" resource="#metal_consumption" />
         <span property="time:hasEnd" typeof="time:Instant">
           <meta property="time:inXSDgYear" content="1986" />
+          <meta property="rdfs:label" content="1986" />
         </span>
         water concentrations of Zn, Cu, and Cd ions on site were several grams per liter
       </span>
@@ -164,6 +171,7 @@
         <meta property="ac:linksTo" resource="#lake_and_river_acidification" />
         <span property="time:hasEnd" typeof="time:Instant">
           <meta property="time:inXSDgYear" content="1986" />
+          <meta property="rdfs:label" content="1986" />
           <meta property="ac:hasIndefiniteness" content="0.2" />
         </span>
         discharged into the Sacramento River.
@@ -319,6 +327,7 @@
         started to decline around the 1980s in industrialized countries.
       </span>
       <span resource="#lead_emissions_peak" typeof="time:Instant">
+        <meta property="ac:linksTo" resource="#lead_emissions_decrease" />
         <meta property="ac:linkedFrom" resource="#metal_pollution_acceleration" />
         <meta property="time:inXSDgYear" content="1970" />
         <meta property="rdfs:label" content="Between the 1960s to the 1980s" />
@@ -333,6 +342,7 @@
         <meta property="ac:linkedFrom" resource="#gasoline_lead_concentration_reduction" />
         <meta property="ac:linkedFrom" resource="#unleaded_gasoline" />
         <meta property="ac:linkedFrom" resource="#leaded_gasoline_elimination" />
+        <meta property="ac:linkedFrom" resource="#lead_emissions_peak" />
         <span property="time:hasBeginning" typeof="time:Instant">
           <meta property="time:inXSDgYear" content="1980" />
           <meta property="rdfs:label" content="1980s" />
@@ -411,7 +421,7 @@
         <meta property="ac:linksTo" resource="#organic_contaminants" />
         <meta property="ac:linksTo" resource="#pesticide_ban" />
         <meta property="ac:linksTo" resource="#pollutants_persistent_effects" />
-        <meta property="ac:linksTo" resource="environmental_changes_acceleration" />
+        <meta property="ac:linksTo" resource="#environmental_changes_acceleration" />
         <meta property="time:inXSDgYear" content="1960" />
         <meta property="rdfs:label" content="1960s" />
         <meta property="ac:hasIndefiniteness" content="0.2" />
