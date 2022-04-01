@@ -1,1 +1,0 @@
-# anthropocene-curriculum

@@ -2,12 +2,7 @@
 .DS_Store
 __pycache__
 /archived_experiments
-/dmacp-app/node_modules
-/dmacp-app/src/assets/fonts/
-/dmacp-app/public/build/
-/dmacp-app/.DS_Store
-/dmacp-svelte-legacy/node_modules
-/dmacp-svelte-legacy/public/build/
-/dmacp-svelte-legacy/.DS_Store
+/dmacp-app
+/dmacp-svelte-legacy
 .vscode
 dmacp-app/package-lock.json

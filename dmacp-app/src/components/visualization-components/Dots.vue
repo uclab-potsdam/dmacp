@@ -63,6 +63,7 @@ export default {
   },
   mounted () {
         this.isMounted = true
+        console.log(this.scaledEntities)
   },
   methods: {
         ...mapActions(['changeSelectedMarker'])

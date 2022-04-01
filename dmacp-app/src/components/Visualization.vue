@@ -130,6 +130,7 @@ return (x) => {
     this.visualization = true
     this.calcContainerSize()
     window.addEventListener('resize', this.calcContainerSize, false)
+
  },
   methods: {
     ...mapActions(['changeSelectedMarker']),
