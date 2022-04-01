@@ -10,22 +10,6 @@
         <!-- <script src="js/scripts.js"></script> -->
         <div>Open developer tools and go to console to check how data are loaded</div>
         <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-        <script>
-            d3.xml("sample.xml").then(function (data) {
-
-                    const XMLsource = data.querySelector("document")
-                    // Convert the XML document to an array of objects.
-                    // Note that querySelectorAll returns a NodeList, not a proper Array,
-                    // so we must use map.call to invoke array methods.
-                    data = [].map.call(XMLsource.querySelectorAll("span"), function (letter) {
-                        return {
-                            resource: letter.getAttribute("resource"),
-                            type: letter.getAttribute("typeof")
-                        };
-                    });
-
-                    console.log(data)
-                });
-        </script>
+        <script src="parse-contribution.js"></script>
     </body>
 </html>

@@ -3,6 +3,7 @@ Here you can find the complete documentation, tagset and pipeline for the Anthro
 
 Resources:
 - [Installation](#installation)
+- [Original tagset](/collaborative_tagging/)
 - [Tagging procedure and synthax](https://github.com/uclab-potsdam/dmacp/wiki/Tagging-Synthax)
 - Structure of output data
 
