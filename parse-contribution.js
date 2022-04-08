@@ -46,34 +46,83 @@ function transformData(parsedText) {
     const textTitle = essayContent.find((e) => { return e.id === 'EssayTitle' })
     const textBody = essayContent.find((e) => { return e.id === 'EssayBody' })
     const paragraphs = arrayFromCollection(textBody, "p")
+    let entityPositionInText = 0
 
     return paragraphs.map((paragraph, p) => {
-        const entities = arrayFromCollection(paragraph, "[typeof][resource]").map((parentEntity) => {
-            const childrenEntities = arrayFromCollection(parentEntity, 'span')
-            const parentProperties = arrayFromCollection(parentEntity, 'meta').filter(node => node.parentNode === parentEntity)
+        const entities = arrayFromCollection(paragraph, "[typeof][resource]").map((parentEntity, pe) => {
+            entityPositionInText = entityPositionInText + 1
+            console.log('current entity >>>', entityPositionInText)
+            // init arrays to store resources
             const targets = []
             const targetedBy = []
+            // arrays from collection of nodes
+            const timePoints = arrayFromCollection(parentEntity, 'span')
+            const parentProperties = arrayFromCollection(parentEntity, 'meta')
             
-            // iterate over parents properties to infer causality
-            parentProperties.forEach((prop) => {
+            // init container for instant child
+            const instantObj = {}
+
+            // default text label is content of span
+            let textLabel = ''
+            const rawSpanContent = parentEntity.innerText
+            textLabel = rawSpanContent.replace(/ {2}|\n/g, "")
+            console.log(parentProperties)
+            // iterate over parents properties to infer causality and other props
+            parentProperties.forEach((prop) =>  {
                 const currentAttribute = prop.getAttribute('property')
+                console.log(currentAttribute)
                 switch (currentAttribute) {
+                    // Adding resources id to arrays
                     case 'ac:linksTo':
-                        targets.push(prop.getAttribute('resource'))
+                        targets.push(prop.getAttribute('resource').substring(1))
                         break;
                     case 'ac:linkedFrom':
-                        targetedBy.push(prop.getAttribute('resource'))
+                        targetedBy.push(prop.getAttribute('resource').substring(1))
+                        break;
+                    case 'ac:label':
+                        textLabel = prop.getAttribute('content')
+                        break;
+                    // Adding properties for instant child
+                    case 'time:inXSDgYear':
+                        instantObj[currentAttribute] = +prop.getAttribute('content')
+                        break;
+                    case 'rdfs:label':
+                    case 'ac:hasIndefiniteness':
+                        instantObj[currentAttribute] = prop.getAttribute('content')
                         break;
                 }
             })
 
+            if (timePoints.length === 0) {
+                // if there is no child: create one and store instant metadata
+                instantObj['time:positionInText'] = entityPositionInText
+                timePoints[0] = instantObj
+            } else {
+                // if there are children: parse them and format them
+                timePoints.forEach((entity, e) => {
+                    const intervalObj = {}
+                    instantObj['time:positionInText'] = entityPositionInText
+                    const childrenProps = arrayFromCollection(entity, 'meta')
+                    childrenProps.forEach((cprop) => {
+                        const currentAttribute = cprop.getAttribute('property')
+                        if (currentAttribute === 'time:inXSDgYear') {
+                            intervalObj[currentAttribute] = +cprop.getAttribute('content')
+                        } else {
+                            intervalObj[currentAttribute] = cprop.getAttribute('content')
+                        }
+                    })
+                    // substitute formatted element within the array
+                    timePoints[e] = intervalObj
+                })
+            }
             return {
                 entityType: parentEntity.getAttribute('typeof'),
                 targets,
-                targetedBy
+                targetedBy,
+                textLabel,
+                timePoints
             }
         })
-        
         return {
             paragraphNumber: p + 1,
             entities
@@ -90,8 +139,6 @@ async function init () {
 
     const parsedEssay = parse(rawText, 'text/html')
     const data = transformData(parsedEssay)
-
-
     console.log(data)
 }
 

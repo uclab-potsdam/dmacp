@@ -1,0 +1,1019 @@
+[
+    {
+        "paragraphNumber": 1,
+        "entities": [
+            {
+                "entityType": "time:Instant",
+                "targets": [],
+                "targetedBy": [],
+                "textLabel": "oxygenation of the atmosphere",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -1999997978,
+                        "rdfs:label": "2 Billion Years Ago",
+                        "ac:hasIndefiniteness": "1",
+                        "time:positionInText": 1
+                    }
+                ]
+            },
+            {
+                "entityType": "time:Instant",
+                "targets": [],
+                "targetedBy": [],
+                "textLabel": "evolution of terrestrial vegetation",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -499997978,
+                        "rdfs:label": "0.5 Billion Years Ago",
+                        "ac:hasIndefiniteness": "1",
+                        "time:positionInText": 2
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "hominin_harnessing_of_fire"
+                ],
+                "targetedBy": [],
+                "textLabel": "A growing proportion of fire as been caused by humans",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -497978,
+                        "rdfs:label": "0.5 Million Years Ago",
+                        "ac:hasIndefiniteness": "0.8"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "ancient_use_of_fire",
+                    "industrial_use_of_fire",
+                    "great_leap_in_combustion",
+                    "human_energy_use"
+                ],
+                "targetedBy": [
+                    "anthropogenic_fire"
+                ],
+                "textLabel": "hominin harnessing of fire",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -1498050,
+                        "rdfs:label": "1.5 Million Years BP",
+                        "ac:hasIndefiniteness": "1"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "biomass"
+                ],
+                "targetedBy": [
+                    "human_colonization_of_globe",
+                    "ancient_use_of_fire"
+                ],
+                "textLabel": "cooking",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -498050,
+                        "rdfs:label": "0.5 Million Years BP",
+                        "ac:hasIndefiniteness": "0.8"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "paragraphNumber": 2,
+        "entities": [
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "wood_charcoal",
+                    "charcoal",
+                    "anthropocene"
+                ],
+                "targetedBy": [
+                    "cooking",
+                    "coal_surpasses_biomass"
+                ],
+                "textLabel": "biomass",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -1498050,
+                        "rdfs:label": "1.5 Million Years BP",
+                        "ac:hasIndefiniteness": "1"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "human_colonization_of_globe",
+                    "ancient_use_of_fire"
+                ],
+                "textLabel": "landscape and ecosystem modification",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -498050,
+                        "rdfs:label": "0.5 Million Years BP",
+                        "ac:hasIndefiniteness": "0.8"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "cooking",
+                    "landscape_modification",
+                    "warmth"
+                ],
+                "targetedBy": [
+                    "ancient_use_of_fire"
+                ],
+                "textLabel": "Human colonization of the globe",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -98050,
+                        "rdfs:label": "100,000 Years BP",
+                        "ac:hasIndefiniteness": "0.8"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "human_colonization_of_globe",
+                    "ancient_use_of_fire"
+                ],
+                "textLabel": "Fire's warmth helped humans to survive in high latitudes",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -9700,
+                        "rdfs:label": "End of Pleistocene"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "cooking",
+                    "landscape_modification",
+                    "human_colonization_of_globe",
+                    "warmth",
+                    "pottery",
+                    "kiln_fired_pottery",
+                    "burnt_remains"
+                ],
+                "targetedBy": [
+                    "hominin_harnessing_of_fire"
+                ],
+                "textLabel": "ancient uses of anthropogenic fire",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -498050,
+                        "rdfs:label": "0.5 Million Years BP",
+                        "ac:hasIndefiniteness": "0.8"
+                    },
+                    {
+                        "time:inXSDgYear": -6000,
+                        "rdfs:label": "6th Millenium BCE",
+                        "ac:hasIndefiniteness": "0.6"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "ancient_use_of_fire"
+                ],
+                "textLabel": "pottery",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -18050,
+                        "rdfs:label": "20,000 Years BP"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "wood_charcoal"
+                ],
+                "targetedBy": [
+                    "ancient_use_of_fire"
+                ],
+                "textLabel": "Kiln-fired pottery",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -6050,
+                        "rdfs:label": "8,000 Years BP"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "kiln_fired_pottery",
+                    "bronze",
+                    "biomass"
+                ],
+                "textLabel": "wood and charcoal",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -1498050,
+                        "rdfs:label": "1.5 Million Years BP",
+                        "ac:hasIndefiniteness": "1"
+                    },
+                    {
+                        "time:inXSDgYear": -2000,
+                        "rdfs:label": "2,000 BCE"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:Instant",
+                "targets": [],
+                "targetedBy": [
+                    "ancient_use_of_fire"
+                ],
+                "textLabel": "Burnt remains in the archaeological record",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 2022,
+                        "rdfs:label": "Now",
+                        "time:positionInText": 14
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "paragraphNumber": 3,
+        "entities": [
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "metallurgy",
+                    "other_traditional_industries",
+                    "scale_increase_industrial_combustion",
+                    "industrial_revolution"
+                ],
+                "targetedBy": [
+                    "hominin_harnessing_of_fire"
+                ],
+                "textLabel": "industrial use of fire",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -6000,
+                        "rdfs:label": "6th Millenium BCE",
+                        "ac:hasIndefiniteness": "0.6"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "lead",
+                    "tin",
+                    "copper",
+                    "bronze",
+                    "iron",
+                    "american_metal_production",
+                    "surge_in_metal_production"
+                ],
+                "targetedBy": [
+                    "industrial_use_of_fire"
+                ],
+                "textLabel": "metallurgy",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -6000,
+                        "rdfs:label": "6th Millenium BCE",
+                        "ac:hasIndefiniteness": "0.6"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "metallurgy"
+                ],
+                "textLabel": "Lead",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -6000,
+                        "rdfs:label": "6th Millenium BCE",
+                        "ac:hasIndefiniteness": "0.6"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "metallurgy"
+                ],
+                "textLabel": "tin",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -6000,
+                        "rdfs:label": "6th Millenium BCE",
+                        "ac:hasIndefiniteness": "0.6"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "metallurgy"
+                ],
+                "textLabel": "copper",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -6000,
+                        "rdfs:label": "6th Millenium BCE",
+                        "ac:hasIndefiniteness": "0.6"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "wood_charcoal"
+                ],
+                "targetedBy": [
+                    "metallurgy"
+                ],
+                "textLabel": "bronze",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -3500,
+                        "rdfs:label": "3500 BCE",
+                        "ac:hasIndefiniteness": "0.4"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "charcoal",
+                    "large_scale_iron-making",
+                    "blast_furnaces",
+                    "surge_in_metal_production"
+                ],
+                "targetedBy": [
+                    "metallurgy"
+                ],
+                "textLabel": "iron",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -2000,
+                        "rdfs:label": "2000 BCE"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:Instant",
+                "targets": [],
+                "targetedBy": [
+                    "iron",
+                    "great_leap_in_combustion"
+                ],
+                "textLabel": "iron-making began on a large scale",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -1200,
+                        "rdfs:label": "1200 BCE",
+                        "time:positionInText": 22
+                    }
+                ]
+            },
+            {
+                "entityType": "time:Instant",
+                "targets": [
+                    "large_scale_iron-making"
+                ],
+                "targetedBy": [
+                    "hominin_harnessing_of_fire"
+                ],
+                "textLabel": "great leap in the scale of intentional combustion",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -300,
+                        "rdfs:label": "300 BCE",
+                        "time:positionInText": 23
+                    }
+                ]
+            },
+            {
+                "entityType": "time:Instant",
+                "targets": [],
+                "targetedBy": [
+                    "iron"
+                ],
+                "textLabel": "blast furnaces",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -200,
+                        "rdfs:label": "Final Centuries BCE",
+                        "ac:hasIndefiniteness": "0.4",
+                        "time:positionInText": 24
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "biomass",
+                    "iron"
+                ],
+                "textLabel": "Charcoal",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -2000,
+                        "rdfs:label": "2,000 BCE"
+                    },
+                    {
+                        "time:inXSDgYear": 1775,
+                        "rdfs:label": "Late 18th Century",
+                        "ac:hasIndefiniteness": "0.2"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "metallurgy"
+                ],
+                "textLabel": "Metal production in the pre-Columbian Americas",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1100,
+                        "rdfs:label": "1100",
+                        "ac:hasIndefiniteness": "0.4"
+                    },
+                    {
+                        "time:inXSDgYear": 1492,
+                        "rdfs:label": "1492"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "paragraphNumber": 4,
+        "entities": [
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "lime",
+                    "brickmaking",
+                    "glassmaking"
+                ],
+                "targetedBy": [
+                    "industrial_use_of_fire"
+                ],
+                "textLabel": "other traditional industries",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -8000,
+                        "rdfs:label": "8th Millenium BCE",
+                        "ac:hasIndefiniteness": "0.4"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "other_traditional_industries"
+                ],
+                "textLabel": "Lime",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -8000,
+                        "rdfs:label": "8th Millenium BCE"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "other_traditional_industries"
+                ],
+                "textLabel": "Brickmaking",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -5000,
+                        "rdfs:label": "5th Millenium BCE",
+                        "ac:hasIndefiniteness": "0.6"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "other_traditional_industries"
+                ],
+                "textLabel": "Glassmaking",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -3000,
+                        "rdfs:label": "3rd Millenium BCE"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "roman_combustion_peak"
+                ],
+                "targetedBy": [
+                    "industrial_use_of_fire"
+                ],
+                "textLabel": "Increase in scale of industrial combustion",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -200,
+                        "rdfs:label": "2nd Century BCE"
+                    },
+                    {
+                        "time:inXSDgYear": 200,
+                        "rdfs:label": "2nd Century CE"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "scale_increase_industrial_combustion"
+                ],
+                "textLabel": "Presumed combustion peak in the Roman Empire",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": -200,
+                        "rdfs:label": "2nd Century BCE"
+                    },
+                    {
+                        "time:inXSDgYear": 0,
+                        "rdfs:label": "1st Century BCE"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "coal"
+                ],
+                "targetedBy": [
+                    "metallurgy",
+                    "iron"
+                ],
+                "textLabel": "surge in iron and other metal production",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 901,
+                        "rdfs:label": "10th Century"
+                    },
+                    {
+                        "time:inXSDgYear": 1100,
+                        "rdfs:label": "11th Century"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "surge_in_metal_production",
+                    "pumping_engine",
+                    "coal_surpasses_biomass",
+                    "electricity",
+                    "massive_coal_combustion_expansion",
+                    "fossil_fuels"
+                ],
+                "textLabel": "coal",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 901,
+                        "rdfs:label": "10th Century"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "paragraphNumber": 5,
+        "entities": [
+            {
+                "entityType": "time:Instant",
+                "targets": [
+                    "coal"
+                ],
+                "targetedBy": [
+                    "industrial_revolution"
+                ],
+                "textLabel": "pumping engine",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1775,
+                        "rdfs:label": "Late 18th Century",
+                        "ac:hasIndefiniteness": "0.2",
+                        "time:positionInText": 35
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "pumping_engine"
+                ],
+                "targetedBy": [
+                    "industrial_use_of_fire"
+                ],
+                "textLabel": "Industrial Revolution",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1775,
+                        "rdfs:label": "Late 18th Century",
+                        "ac:hasIndefiniteness": "0.2"
+                    },
+                    {
+                        "time:inXSDgYear": 1900,
+                        "rdfs:label": "1900",
+                        "ac:hasIndefiniteness": "0.2"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:Instant",
+                "targets": [
+                    "coal",
+                    "biomass"
+                ],
+                "targetedBy": [],
+                "textLabel": "Coal surpasses biomass in global use",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1900,
+                        "rdfs:label": "1900",
+                        "ac:hasIndefiniteness": "0.2",
+                        "time:positionInText": 37
+                    }
+                ]
+            },
+            {
+                "entityType": "time:Instant",
+                "targets": [],
+                "targetedBy": [
+                    "electricity"
+                ],
+                "textLabel": "first power plant",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1882,
+                        "rdfs:label": "1882",
+                        "time:positionInText": 38
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "first_power_plant",
+                    "public_lighting",
+                    "electricity_demand_escalation",
+                    "coal",
+                    "fuel-oils",
+                    "natural_gas"
+                ],
+                "targetedBy": [
+                    "human_energy_use"
+                ],
+                "textLabel": "electricity",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1882,
+                        "rdfs:label": "1882"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "electricity"
+                ],
+                "textLabel": "public lighting",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1882,
+                        "rdfs:label": "1882"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "massive_coal_combustion_expansion"
+                ],
+                "targetedBy": [
+                    "electricity"
+                ],
+                "textLabel": "demand for electricity escalated",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1945,
+                        "rdfs:label": "Following World War II"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "coal"
+                ],
+                "targetedBy": [
+                    "electricity_demand_escalation"
+                ],
+                "textLabel": "massive expansion of industrial coal burning",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1945,
+                        "rdfs:label": "Following World War II"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "electricity",
+                    "fossil_fuels"
+                ],
+                "textLabel": "fuel-oils",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1945,
+                        "rdfs:label": "Following World War II"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "electricity",
+                    "fossil_fuels"
+                ],
+                "textLabel": "natural gas",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1945,
+                        "rdfs:label": "Following World War II"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "anthropocene"
+                ],
+                "targetedBy": [
+                    "human_energy_use"
+                ],
+                "textLabel": "the Great Acceleration",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1945,
+                        "rdfs:label": "Following World War II"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "great_acceleration",
+                    "fossil_fuels",
+                    "biomass"
+                ],
+                "textLabel": "Anthropocene Epoch",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1945,
+                        "rdfs:label": "Following World War II"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "great_acceleration",
+                    "electricity",
+                    "transport"
+                ],
+                "targetedBy": [
+                    "hominin_harnessing_of_fire"
+                ],
+                "textLabel": "extraordinary increase in human energy use",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1945,
+                        "rdfs:label": "Following World War II"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "gasoline",
+                    "diesel",
+                    "aviation_fuels"
+                ],
+                "targetedBy": [
+                    "human_energy_use"
+                ],
+                "textLabel": "transport",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1945,
+                        "rdfs:label": "Following World War II"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "transport",
+                    "fossil_fuels"
+                ],
+                "textLabel": "gasoline",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1945,
+                        "rdfs:label": "Following World War II"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "transport",
+                    "fossil_fuels"
+                ],
+                "textLabel": "diesel",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1945,
+                        "rdfs:label": "Following World War II"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "transport",
+                    "fossil_fuels"
+                ],
+                "textLabel": "aviation fuels",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1945,
+                        "rdfs:label": "Following World War II"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "paragraphNumber": 6,
+        "entities": [
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "coal",
+                    "fuel-oils",
+                    "natural_gas",
+                    "gasoline",
+                    "diesel",
+                    "aviation_fuels",
+                    "anthropocene",
+                    "13c_depletion"
+                ],
+                "targetedBy": [],
+                "textLabel": "fossil fuels",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 901,
+                        "rdfs:label": "10th Century"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "paragraphNumber": 7,
+        "entities": []
+    },
+    {
+        "paragraphNumber": 8,
+        "entities": []
+    },
+    {
+        "paragraphNumber": 9,
+        "entities": []
+    },
+    {
+        "paragraphNumber": 10,
+        "entities": []
+    },
+    {
+        "paragraphNumber": 11,
+        "entities": []
+    },
+    {
+        "paragraphNumber": 12,
+        "entities": []
+    },
+    {
+        "paragraphNumber": 13,
+        "entities": []
+    },
+    {
+        "paragraphNumber": 14,
+        "entities": []
+    },
+    {
+        "paragraphNumber": 15,
+        "entities": []
+    },
+    {
+        "paragraphNumber": 16,
+        "entities": []
+    },
+    {
+        "paragraphNumber": 17,
+        "entities": [
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [
+                    "co2_concentration"
+                ],
+                "targetedBy": [
+                    "fossil_fuels"
+                ],
+                "textLabel": "depletion of δ13C in ice cores",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1980,
+                        "rdfs:label": "1980s"
+                    }
+                ]
+            },
+            {
+                "entityType": "time:ProperInterval",
+                "targets": [],
+                "targetedBy": [
+                    "13c_depletion"
+                ],
+                "textLabel": "Unprecedented CO2 concentrations",
+                "timePoints": [
+                    {
+                        "time:inXSDgYear": 1980,
+                        "rdfs:label": "1980s"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "paragraphNumber": 18,
+        "entities": []
+    },
+    {
+        "paragraphNumber": 19,
+        "entities": []
+    },
+    {
+        "paragraphNumber": 20,
+        "entities": []
+    }
+]
